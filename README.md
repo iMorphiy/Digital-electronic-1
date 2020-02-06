@@ -1,5 +1,6 @@
 ### Digital-electronic1
 
+
     | **A** | **NOT** |
     | :-: | :-: |
     | 0 | 1 |
