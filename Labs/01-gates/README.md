@@ -30,27 +30,27 @@
 ![logic](../../IMG/Screenshot_2020-02-06_10-53-02.png)
 
 
-   ![equation](https://latex.codecogs.com/gif.latex?f%20%3D%20a%5Ccdot%20%5Coverline%7Bb%7D%20&plus;%20%5Coverline%7Bb%7D%5Ccdot%20%5Coverline%7Bc%7D)
+![equation](https://latex.codecogs.com/gif.latex?f%20%3D%20a%5Ccdot%20%5Coverline%7Bb%7D%20&plus;%20%5Coverline%7Bb%7D%5Ccdot%20%5Coverline%7Bc%7D)
 
-    &nbsp;
+&nbsp;
 
-    ![equation](https://latex.codecogs.com/gif.latex?f_%7BAND%7D%20%3D)
+![equation](https://latex.codecogs.com/gif.latex?f_%7BAND%7D%20%3D)
     
-    &nbsp;
+ &nbsp;
     
-    ![equation](https://latex.codecogs.com/gif.latex?f_%7BOR%7D%20%3D)
+   ![equation](https://latex.codecogs.com/gif.latex?f_%7BOR%7D%20%3D)
     
-    &nbsp;
+ &nbsp;
 
-    | **A** | **B** |**C** | ![equation](https://latex.codecogs.com/gif.latex?f) | ![equation](https://latex.codecogs.com/gif.latex?f_%7BAND%7D) | ![equation](https://latex.codecogs.com/gif.latex?f_%7BOR%7D) |
-    | :-: | :-: | :-: | :-: | :-: | :-: |
-    | 0 | 0 | 0 | 1 | 1 | 1 |
-    | 0 | 0 | 1 | 0 | 0 | 0 |
-    | 0 | 1 | 0 | 0 | 0 | 0 |
-    | 0 | 1 | 1 | 0 | 0 | 0 |
-    | 1 | 0 | 0 | 1 | 1 | 1 |
-    | 1 | 0 | 1 | 0 | 0 | 0 |
-    | 1 | 1 | 0 | 1 | 1 | 1 |
-    | 1 | 1 | 1 | 0 | 0 | 0 |
+| **A** | **B** |**C** | ![equation](https://latex.codecogs.com/gif.latex?f) | ![equation](https://latex.codecogs.com/gif.latex?f_%7BAND%7D) | ![equation](https://latex.codecogs.com/gif.latex?f_%7BOR%7D) |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| 0 | 0 | 0 | 1 | 1 | 1 |
+| 0 | 0 | 1 | 0 | 0 | 0 |
+| 0 | 1 | 0 | 0 | 0 | 0 |
+| 0 | 1 | 1 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 1 | 1 | 1 |
+| 1 | 0 | 1 | 0 | 0 | 0 |
+| 1 | 1 | 0 | 1 | 1 | 1 |
+| 1 | 1 | 1 | 0 | 0 | 0 |
 
 ![logic](../../IMG/Screenshot_2020-02-06_11-16-34.png)
