@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2020-02-13T10:46:55</DateModified>
+  <DateModified>2020-02-13T12:15:38</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>2020-02-13T10:20:45</SummaryTimeStamp>
   <SavedFilePath>/home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/02-ise/Comparator/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/02-ise/Comparator</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/02-ise/Comparator/</ImplementationReportsDirectory>
   <DateInitialized>2020-02-13T10:19:46</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
