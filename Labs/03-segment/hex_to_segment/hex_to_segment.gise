@@ -57,6 +57,7 @@
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="top_ngdbuild.xrpt"/>
     <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="top_pad.csv"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="top_summary.html"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="top_vhdl.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="top_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
@@ -72,9 +73,8 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1582192590" xil_pn:in_ck="-444701085450451569" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="831314429168425491" xil_pn:start_ts="1582192583">
+    <transform xil_pn:end_ts="1582194988" xil_pn:in_ck="-444701085450451569" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="831314429168425491" xil_pn:start_ts="1582194981">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="top.lso"/>
@@ -92,7 +92,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1582192598" xil_pn:in_ck="5192480206366003468" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="2820029809837737375" xil_pn:start_ts="1582192590">
+    <transform xil_pn:end_ts="1582194994" xil_pn:in_ck="5192480206366003468" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="2820029809837737375" xil_pn:start_ts="1582194988">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="_ngo"/>
@@ -101,7 +101,7 @@
       <outfile xil_pn:name="top.ngd"/>
       <outfile xil_pn:name="top_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1582192603" xil_pn:in_ck="154288912570" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="-2226312470911523757" xil_pn:start_ts="1582192598">
+    <transform xil_pn:end_ts="1582195000" xil_pn:in_ck="154288912570" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="-2226312470911523757" xil_pn:start_ts="1582194994">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -122,7 +122,7 @@
       <outfile xil_pn:name="top_html"/>
       <outfile xil_pn:name="top_pad.csv"/>
     </transform>
-    <transform xil_pn:end_ts="1582192604" xil_pn:in_ck="154288921434" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="5245363024343" xil_pn:start_ts="1582192603">
+    <transform xil_pn:end_ts="1582195001" xil_pn:in_ck="154288921434" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="5245363024343" xil_pn:start_ts="1582195000">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="top.jed"/>
@@ -130,6 +130,8 @@
     <transform xil_pn:end_ts="1582192609" xil_pn:in_ck="154288908148" xil_pn:name="TRAN_impactProgrammingTool_CPLD" xil_pn:prop_ck="7996569619189960536" xil_pn:start_ts="1582192609">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_impact.cmd"/>
       <outfile xil_pn:name="_impact.log"/>
     </transform>
@@ -143,6 +145,8 @@
     <transform xil_pn:end_ts="1582192678" xil_pn:in_ck="5192480206366003469" xil_pn:name="TRAN_createTimingConstraints" xil_pn:start_ts="1582192678">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
   </transforms>
 

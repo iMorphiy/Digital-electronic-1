@@ -1,0 +1,8 @@
+[Inputs]
+carry_i
+b_i
+a_i
+[Outputs]
+carry_o
+sum_o
+[BiDir]
