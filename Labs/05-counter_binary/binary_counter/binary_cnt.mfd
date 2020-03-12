@@ -1,0 +1,72 @@
+MDF Database:  version 1.0
+MDF_INFO | binary_cnt | XC2C256-6-TQ144
+MACROCELL | 0 | 12 | cnt_o<0>_MC
+ATTRIBUTES | 2156167938 | 0
+OUTPUTMC | 5 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 0 | 2
+INPUTS | 3 | srst_n_i  | cnt_o<0>  | en_i
+INPUTMC | 1 | 0 | 12
+INPUTP | 2 | 1 | 211
+EQ | 3 | 
+   cnt_o<0> := srst_n_i & cnt_o<0> & !en_i
+	# srst_n_i & !cnt_o<0> & en_i;	// (2 pt, 3 inp)
+   cnt_o<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 0 | 11 | cnt_o<1>_MC
+ATTRIBUTES | 2151973634 | 0
+OUTPUTMC | 4 | 0 | 11 | 0 | 5 | 0 | 3 | 0 | 2
+INPUTS | 4 | srst_n_i  | cnt_o<1>  | cnt_o<0>  | en_i
+INPUTMC | 2 | 0 | 11 | 0 | 12
+INPUTP | 2 | 1 | 211
+EQ | 3 | 
+   cnt_o<1>.T := !srst_n_i & cnt_o<1>
+	# srst_n_i & cnt_o<0> & en_i;	// (2 pt, 4 inp)
+   cnt_o<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 0 | 5 | cnt_o<2>_MC
+ATTRIBUTES | 2151973634 | 0
+OUTPUTMC | 3 | 0 | 5 | 0 | 3 | 0 | 2
+INPUTS | 5 | srst_n_i  | cnt_o<2>  | cnt_o<0>  | en_i  | cnt_o<1>
+INPUTMC | 3 | 0 | 5 | 0 | 12 | 0 | 11
+INPUTP | 2 | 1 | 211
+EQ | 3 | 
+   cnt_o<2>.T := !srst_n_i & cnt_o<2>
+	# srst_n_i & cnt_o<0> & en_i & cnt_o<1>;	// (2 pt, 5 inp)
+   cnt_o<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 0 | 3 | cnt_o<3>_MC
+ATTRIBUTES | 2151973634 | 0
+OUTPUTMC | 2 | 0 | 3 | 0 | 2
+INPUTS | 6 | srst_n_i  | cnt_o<3>  | cnt_o<0>  | en_i  | cnt_o<1>  | cnt_o<2>
+INPUTMC | 4 | 0 | 3 | 0 | 12 | 0 | 11 | 0 | 5
+INPUTP | 2 | 1 | 211
+EQ | 4 | 
+   cnt_o<3>.T := !srst_n_i & cnt_o<3>
+	# srst_n_i & cnt_o<0> & en_i & cnt_o<1> & 
+	cnt_o<2>;	// (2 pt, 6 inp)
+   cnt_o<3>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 0 | 2 | cnt_o<4>_MC
+ATTRIBUTES | 2151973634 | 0
+OUTPUTMC | 1 | 0 | 2
+INPUTS | 7 | srst_n_i  | cnt_o<4>  | cnt_o<0>  | en_i  | cnt_o<1>  | cnt_o<2>  | cnt_o<3>
+INPUTMC | 5 | 0 | 2 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3
+INPUTP | 2 | 1 | 211
+EQ | 4 | 
+   cnt_o<4>.T := !srst_n_i & cnt_o<4>
+	# srst_n_i & cnt_o<0> & en_i & cnt_o<1> & 
+	cnt_o<2> & cnt_o<3>;	// (2 pt, 7 inp)
+   cnt_o<4>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+PIN | clk_i | 8192 | 16 | LVCMOS18 | 50 | 5 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 0 | 2
+PIN | srst_n_i | 64 | 16 | LVCMOS18 | 1 | 5 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 0 | 2
+PIN | en_i | 64 | 16 | LVCMOS18 | 211 | 5 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 0 | 2
+PIN | cnt_o<0> | 536871040 | 0 | LVCMOS18 | 212
+PIN | cnt_o<1> | 536871040 | 0 | LVCMOS18 | 213
+PIN | cnt_o<2> | 536871040 | 0 | LVCMOS18 | 214
+PIN | cnt_o<3> | 536871040 | 0 | LVCMOS18 | 217
+PIN | cnt_o<4> | 536871040 | 0 | LVCMOS18 | 218

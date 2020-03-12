@@ -1,0 +1,8 @@
+EN binary_cnt NULL /home/lab661/Documents/vymazal/Digital-electronics-1/Labs/05-counter_binary/binary_counter/binary_cnt.vhd sub00/vhpl02 1583404121
+EN hex_to_7seg NULL /home/lab661/Documents/vymazal/Digital-electronics-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd sub00/vhpl04 1583404123
+AR binary_cnt behavioral /home/lab661/Documents/vymazal/Digital-electronics-1/Labs/05-counter_binary/binary_counter/binary_cnt.vhd sub00/vhpl03 1583404122
+EN top NULL /home/lab661/Documents/vymazal/Digital-electronics-1/Labs/05-counter_binary/binary_counter/top.vhd sub00/vhpl06 1583404125
+AR clock_enable behavioral /home/lab661/Documents/vymazal/Digital-electronics-1/Labs/05-counter_binary/binary_counter/clock_enable.vhd sub00/vhpl01 1583404120
+AR hex_to_7seg behavioral /home/lab661/Documents/vymazal/Digital-electronics-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd sub00/vhpl05 1583404124
+EN clock_enable NULL /home/lab661/Documents/vymazal/Digital-electronics-1/Labs/05-counter_binary/binary_counter/clock_enable.vhd sub00/vhpl00 1583404119
+AR top behavioral /home/lab661/Documents/vymazal/Digital-electronics-1/Labs/05-counter_binary/binary_counter/top.vhd sub00/vhpl07 1583404126

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/lab661/Documents/vymazal/Digital-electronics-1/Labs/05-counter_binary/binary_counter/test3_isim_beh.exe" -prj "/home/lab661/Documents/vymazal/Digital-electronics-1/Labs/05-counter_binary/binary_counter/test3_beh.prj" "work.test3" 
