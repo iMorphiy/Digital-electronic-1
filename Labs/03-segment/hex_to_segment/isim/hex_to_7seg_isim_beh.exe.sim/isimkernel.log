@@ -1,0 +1,5 @@
+Command line:
+   hex_to_7seg_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  39897

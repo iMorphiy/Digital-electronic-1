@@ -1,11 +1,5 @@
-V3 7
+V3 8
 FL /home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd 2020/02/20.10:56:16 P.20131013
-EN work/hex_to_7seg 1582194984 \
-      FL /home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd \
-      PB ieee/std_logic_1164 1381692176
-AR work/hex_to_7seg/Behavioral 1582194985 \
-      FL /home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd \
-      EN work/hex_to_7seg 1582194984
 FL /home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/03-segment/hex_to_segment/top.vhd 2020/02/20.11:36:20 P.20131013
 EN work/top 1582194986 \
       FL /home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/03-segment/hex_to_segment/top.vhd \
@@ -13,3 +7,10 @@ EN work/top 1582194986 \
 AR work/top/Behavioral 1582194987 \
       FL /home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/03-segment/hex_to_segment/top.vhd \
       EN work/top 1582194986 CP work/hex_to_7seg
+FL /home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd 2020/03/12.00:34:05 P.20131013
+EN work/hex_to_7seg 1583981249 \
+      FL /home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/hex_to_7seg/Behavioral 1583981250 \
+      FL /home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd \
+      EN work/hex_to_7seg 1583981249

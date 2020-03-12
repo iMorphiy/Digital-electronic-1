@@ -1,0 +1,5 @@
+Command line:
+   test1_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  44915

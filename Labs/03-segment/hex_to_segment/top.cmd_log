@@ -60,3 +60,4 @@ cpldfit -intstyle ise -p xc2c256-6-TQ144 -ofmt vhdl -optimize density -htmlrpt -
 XSLTProcess top_build.xml 
 tsim -intstyle ise top top.nga 
 hprep6 -s IEEE1149 -i top 
+XSLTProcess top_build.xml 

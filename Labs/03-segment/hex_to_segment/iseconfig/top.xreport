@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2020-02-26T11:04:44</DateModified>
+  <DateModified>2020-03-12T03:43:48</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>/home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/03-segment/hex_to_segment/iseconfig/top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/lab661/Documents/xalech-xvymazal/Digital-electronic1/Labs/03-segment/hex_to_segment/</ImplementationReportsDirectory>
+  <SavedFilePath>/home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/iseconfig/top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/</ImplementationReportsDirectory>
   <DateInitialized>2020-02-20T10:58:31</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

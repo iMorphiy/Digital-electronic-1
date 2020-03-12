@@ -1,0 +1,69 @@
+Pin Freeze File:  version P.20131013
+
+2C256144 XC2C256-6-TQ144
+clk_i S:PIN32
+data0_i<0> S:PIN137
+data0_i<1> S:PIN10
+data0_i<2> S:PIN135
+data0_i<3> S:PIN134
+data1_i<0> S:PIN133
+data1_i<1> S:PIN132
+data1_i<2> S:PIN131
+data1_i<3> S:PIN11
+data2_i<0> S:PIN12
+data2_i<1> S:PIN13
+data2_i<2> S:PIN14
+data2_i<3> S:PIN15
+data3_i<0> S:PIN16
+data3_i<1> S:PIN17
+data3_i<2> S:PIN18
+data3_i<3> S:PIN33
+dp_i<0> S:PIN31
+dp_i<1> S:PIN30
+dp_i<2> S:PIN28
+dp_i<3> S:PIN34
+srst_n_i S:PIN136
+dig_o<0> S:PIN5
+dig_o<1> S:PIN6
+dig_o<2> S:PIN7
+dig_o<3> S:PIN9
+dp_o S:PIN4
+seg_o<0> S:PIN3
+seg_o<1> S:PIN142
+seg_o<2> S:PIN139
+seg_o<3> S:PIN140
+seg_o<4> S:PIN2
+seg_o<5> S:PIN138
+seg_o<6> S:PIN143
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 CLOCK_ENABLE/s_cnt<3> CLOCK_ENABLE/s_cnt<2> seg_o<6> seg_o<1>
+		 CLOCK_ENABLE/s_cnt<15> seg_o<3> CLOCK_ENABLE/s_cnt<14> CLOCK_ENABLE/s_cnt<13>
+		 CLOCK_ENABLE/s_cnt<12> CLOCK_ENABLE/s_cnt<11> CLOCK_ENABLE/s_cnt<10> seg_o<2>
+		 seg_o<5> CLOCK_ENABLE/s_cnt<4> s_cnt<1> N_PZ_179
+		
+PARTITION FB2_1 seg_o<4> s_cnt<0> seg_o<0> dp_o
+		 dig_o<0> CLOCK_ENABLE/s_cnt<9> CLOCK_ENABLE/s_cnt<8> CLOCK_ENABLE/s_cnt<7>
+		 CLOCK_ENABLE/s_cnt<6> CLOCK_ENABLE/s_cnt<5> N_PZ_170 dig_o<1>
+		 dig_o<2> dig_o<3>
+PARTITION FB2_16 N_PZ_163
+PARTITION FB3_12 s_en CLOCK_ENABLE/s_cnt<1>
+PARTITION FB3_15 CLOCK_ENABLE/s_cnt<0>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

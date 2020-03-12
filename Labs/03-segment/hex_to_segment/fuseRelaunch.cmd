@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg_isim_beh.exe" -prj "/home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg_beh.prj" "work.hex_to_7seg" 
