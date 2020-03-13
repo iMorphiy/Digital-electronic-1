@@ -147,7 +147,7 @@ end architecture Behavioral;
 
 1. QUARTUS II simulation
 
-![sim_QUARTUS](/display_driver/SIMULATION.wcfg)
+![sim_QUARTUS](../../IMG/Simulation.png)
 
 2. ISE simulation
 
@@ -160,4 +160,4 @@ end architecture Behavioral;
 
 ![sim_QUARTUS](../../IMG/ISim_cv6.png)
 
-[Simulation FILE]()
+[Simulation FILE](display_driver/SIMULATION.wcfg)
