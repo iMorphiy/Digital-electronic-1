@@ -1,6 +1,6 @@
-EN hex_to_7seg NULL /home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd sub00/vhpl02 1583981003
-EN driver_7seg NULL /home/vyma/Digital-electronic-1/Labs/06-display_driver/display_driver/driver_7seg.vhd sub00/vhpl04 1583981005
-AR driver_7seg behavioral /home/vyma/Digital-electronic-1/Labs/06-display_driver/display_driver/driver_7seg.vhd sub00/vhpl05 1583980971
-AR clock_enable behavioral /home/vyma/Digital-electronic-1/Labs/05-counter_binary/binary_counter/clock_enable.vhd sub00/vhpl01 1583981002
-AR hex_to_7seg behavioral /home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd sub00/vhpl03 1583981004
-EN clock_enable NULL /home/vyma/Digital-electronic-1/Labs/05-counter_binary/binary_counter/clock_enable.vhd sub00/vhpl00 1583981001
+EN hex_to_7seg NULL D:/Xilinx/projects/display_driver/hex_to_7seg.vhd sub00/vhpl02 1584103578
+EN driver_7seg NULL D:/Xilinx/projects/display_driver/top.vhd sub00/vhpl04 1584103580
+AR driver_7seg behavioral D:/Xilinx/projects/display_driver/top.vhd sub00/vhpl05 1584103581
+AR clock_enable behavioral D:/Xilinx/projects/display_driver/clock_enable.vhd sub00/vhpl01 1584103577
+AR hex_to_7seg behavioral D:/Xilinx/projects/display_driver/hex_to_7seg.vhd sub00/vhpl03 1584103579
+EN clock_enable NULL D:/Xilinx/projects/display_driver/clock_enable.vhd sub00/vhpl00 1584103576

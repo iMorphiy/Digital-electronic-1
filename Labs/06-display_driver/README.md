@@ -141,12 +141,23 @@ begin
 end architecture Behavioral;
 ```
 
-## Error during simulation :(
+## Simulation
 
-After several unsuccessful installations of ISE or failed to start ISim
+* After several unsuccessful installations of ISE or failed to start ISim
 
 1. QUARTUS II simulation
 
-![sim_QUARTUS](../../IMG/Simulation.png)
+![sim_QUARTUS](/display_driver/SIMULATION.wcfg)
 
-2. ISE simulation still in progress (hope it will be soon)
+2. ISE simulation
+
+* Afrer installing 3 virtual machines (ubuntu, Mint 18.3, Mint 18) and trying to install.
+    * ubuntu - NOT supported, small disk, install fault
+    * Mint 18.3 - installed but broken graphic
+    * Mint 18 - installed, ISE after startup falls on segfault
+    * FINAL WIN10 - installed successfully, program failed into opening existing project and save as .. actions, [solution](https://www.xilinx.com/support/answers/62380.html)
+
+
+![sim_QUARTUS](../../IMG/ISim_cv6.png)
+
+[Simulation FILE]()

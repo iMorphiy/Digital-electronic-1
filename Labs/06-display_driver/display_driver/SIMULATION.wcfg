@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Xilinx/projects/display_driver/test_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/test/clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/srst_n_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">srst_n_i</obj_property>
+      <obj_property name="ObjectShortName">srst_n_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/data0_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data0_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data0_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/data1_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data1_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data1_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/data2_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data2_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data2_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/data3_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data3_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">data3_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/dp_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dp_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dp_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/dp_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dp_o</obj_property>
+      <obj_property name="ObjectShortName">dp_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/seg_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">seg_o[6:0]</obj_property>
+      <obj_property name="ObjectShortName">seg_o[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/dig_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dig_o[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dig_o[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/clk_i_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i_period</obj_property>
+      <obj_property name="ObjectShortName">clk_i_period</obj_property>
+   </wvobject>
+</wave_config>

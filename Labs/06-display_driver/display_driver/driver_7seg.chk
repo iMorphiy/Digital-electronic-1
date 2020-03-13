@@ -4,78 +4,65 @@
 ----------------------------------------
 0 Group(s)
 
-GCLK1: 2=clk_i.p
+GCLK1: 0=clk_i.p
 ----------------- B l o c k 0 ------------------
-PLApt(56/56), Fanin(23/38), Clk(1/3), Bct(0/4), Pin(6/6), Mcell(16/16)
-PLApts[56/56] 4 9 22 26 30 40 44 48 57 62 85 86 5 7 24 31 42 49 58 60 80 88 91 10 16 19 27 34 45 52 63 69 72 
-              8 15 25 43 61 68 81 82 83 84 87 89 90 92 12 29 47 65 14 79 32 50 67
-Fanins[23] N_PZ_163.n N_PZ_170.n N_PZ_179.n s_cnt<0>.n s_cnt<1>.n s_en.n data0_i<0>.p data0_i<1>.p 
-           data0_i<2>.p data0_i<3>.p data1_i<0>.p data1_i<1>.p data1_i<2>.p data1_i<3>.p data2_i<0>.p 
-           data2_i<1>.p data2_i<2>.p data2_i<3>.p data3_i<0>.p data3_i<1>.p data3_i<2>.p data3_i<3>.p 
-           srst_n_i.p
+PLApt(56/56), Fanin(21/38), Clk(1/3), Bct(0/4), Pin(6/6), Mcell(16/16)
+PLApts[56/56] 6 10 14 25 29 33 44 48 52 63 67 71 103 8 15 27 34 46 53 65 72 93 98 11 18 30 37 49 56 68 75 9 28 47 66 94 95 96 97 99 100 101 102 13 32 51 70 16 35 60 54 73 21 78 40 59
+Fanins[21] N_PZ_176.n N_PZ_177.n N_PZ_198.n s_cnt<0>.n s_cnt<1>.n data0_i<0>.p data0_i<1>.p data0_i<2>.p data0_i<3>.p data1_i<0>.p data1_i<1>.p data1_i<2>.p data1_i<3>.p data2_i<0>.p data2_i<1>.p data2_i<2>.p data2_i<3>.p data3_i<0>.p data3_i<1>.p data3_i<2>.p data3_i<3>.p
 clk[1] clk_i 
 CTC: 
 CTR: 
 CTS: 
 CTE: 
 vref: [0]
-Signal[17] [seg_o<1>(148),seg_o<1>(142)] [seg_o<2>(156),seg_o<2>(139)] [seg_o<3>(150),seg_o<3>(140)]  
-           [seg_o<5>(157),seg_o<5>(138)] [seg_o<6>(147),seg_o<6>(143)] [data0_i<0>(137)] [N_PZ_179(160)]  
-           [s_cnt<1>(159)] [CLOCK_ENABLE/s_cnt<10>(155)] [CLOCK_ENABLE/s_cnt<11>(154)]  
-           [CLOCK_ENABLE/s_cnt<12>(153)] [CLOCK_ENABLE/s_cnt<13>(152)] [CLOCK_ENABLE/s_cnt<14>(151)]  
-           [CLOCK_ENABLE/s_cnt<15>(149)] [CLOCK_ENABLE/s_cnt<2>(146)] [CLOCK_ENABLE/s_cnt<3>(145)]  
-           [CLOCK_ENABLE/s_cnt<4>(158)] 
-Signal[17] [ 0: CLOCK_ENABLE/s_cnt<3>(145)  ][ 1: CLOCK_ENABLE/s_cnt<2>(146)  ][ 2: seg_o<6>(147)  
-           seg_o<6>(143)  ][ 3: seg_o<1>(148) seg_o<1>(142)  ][ 4: CLOCK_ENABLE/s_cnt<15>(149)  ][ 5:  
-           seg_o<3>(150) seg_o<3>(140)  ][ 6: CLOCK_ENABLE/s_cnt<14>(151)  ][ 7: CLOCK_ENABLE/s_cnt<13>(152)  
-            ][ 8: CLOCK_ENABLE/s_cnt<12>(153)  ][ 9: CLOCK_ENABLE/s_cnt<11>(154)  ][ 10:  
-           CLOCK_ENABLE/s_cnt<10>(155)  ][ 11: seg_o<2>(156) seg_o<2>(139)  ][ 12: seg_o<5>(157)  
-           seg_o<5>(138)  ][ 13: CLOCK_ENABLE/s_cnt<4>(158) data0_i<0>(137)  ][ 14: s_cnt<1>(159)  ][ 15:  
-           N_PZ_179(160)  ]
+Signal[16] [dig_o<0>(158),dig_o<0>(137)] [seg_o<1>(157),seg_o<1>(138)] [seg_o<2>(150),seg_o<2>(140)]  
+           [seg_o<3>(147),seg_o<3>(143)] [seg_o<5>(156),seg_o<5>(139)] [seg_o<6>(148),seg_o<6>(142)]  
+           [N_PZ_198(160)] [N_PZ_176(159)] [N_PZ_177(155)] [CLOCK_ENABLE/s_cnt<10>(154)]  
+           [CLOCK_ENABLE/s_cnt<11>(153)] [CLOCK_ENABLE/s_cnt<12>(152)] [CLOCK_ENABLE/s_cnt<13>(151)]  
+           [CLOCK_ENABLE/s_cnt<14>(149)] [CLOCK_ENABLE/s_cnt<15>(146)] [CLOCK_ENABLE/s_cnt<4>(145)] 
+Signal[16] [ 0: CLOCK_ENABLE/s_cnt<4>(145)  ][ 1: CLOCK_ENABLE/s_cnt<15>(146)  ][ 2: seg_o<3>(147)  
+           seg_o<3>(143)  ][ 3: seg_o<6>(148) seg_o<6>(142)  ][ 4: CLOCK_ENABLE/s_cnt<14>(149)  ][ 5:  
+           seg_o<2>(150) seg_o<2>(140)  ][ 6: CLOCK_ENABLE/s_cnt<13>(151)  ][ 7: CLOCK_ENABLE/s_cnt<12>(152)  
+            ][ 8: CLOCK_ENABLE/s_cnt<11>(153)  ][ 9: CLOCK_ENABLE/s_cnt<10>(154)  ][ 10: N_PZ_177(155)  ] 
+           [ 11: seg_o<5>(156) seg_o<5>(139)  ][ 12: seg_o<1>(157) seg_o<1>(138)  ][ 13: dig_o<0>(158)  
+           dig_o<0>(137)  ][ 14: N_PZ_176(159)  ][ 15: N_PZ_198(160)  ]
 ----------------- B l o c k 1 ------------------
-PLApt(31/56), Fanin(25/38), Clk(1/3), Bct(0/4), Pin(8/8), Mcell(15/16)
-PLApts[31/31] 3 20 38 56 6 11 18 23 28 36 41 46 54 78 59 64 71 17 21 33 35 39 51 53 70 87 90 13 66 37 55
-Fanins[25] N_PZ_163.n s_cnt<0>.n s_cnt<1>.n s_en.n data0_i<0>.p data0_i<1>.p data0_i<2>.p data0_i<3>.p 
-           data1_i<0>.p data1_i<1>.p data1_i<2>.p data1_i<3>.p data2_i<0>.p data2_i<1>.p data2_i<2>.p 
-           data2_i<3>.p data3_i<0>.p data3_i<1>.p data3_i<2>.p data3_i<3>.p dp_i<0>.p dp_i<1>.p dp_i<2>.p 
-           dp_i<3>.p srst_n_i.p
+PLApt(35/56), Fanin(24/38), Clk(1/3), Bct(0/4), Pin(8/8), Mcell(13/16)
+PLApts[35/44] 4 23 42 61 7 12 20 26 31 39 45 50 58 64 69 77 5 17 19 22 24 36 41 38 43 55 57 62 74 76 2 90 91 92 () () () () () () () () () 3
+Fanins[24] s_cnt<0>.n s_cnt<1>.n s_en.n data0_i<0>.p data0_i<1>.p data0_i<2>.p data0_i<3>.p data1_i<0>.p data1_i<1>.p data1_i<2>.p data1_i<3>.p data2_i<0>.p data2_i<1>.p data2_i<2>.p data2_i<3>.p data3_i<0>.p data3_i<1>.p data3_i<2>.p data3_i<3>.p dp_i<0>.p dp_i<1>.p dp_i<2>.p dp_i<3>.p srst_n_i.p
 clk[1] clk_i 
 CTC: 
 CTR: 
 CTS: 
 CTE: 
 vref: [0]
-Signal[16] [dig_o<0>(165),dig_o<0>(5)] [dig_o<1>(172),dig_o<1>(6)] [dig_o<2>(173),dig_o<2>(7)]  
-           [dig_o<3>(174),dig_o<3>(9)] [dp_o(164),dp_o(4)] [seg_o<0>(163),seg_o<0>(3)]  
-           [seg_o<4>(161),seg_o<4>(2)] [data0_i<1>(10)] [N_PZ_163(176)] [N_PZ_170(171)]  
-           [CLOCK_ENABLE/s_cnt<5>(170)] [CLOCK_ENABLE/s_cnt<6>(169)] [CLOCK_ENABLE/s_cnt<7>(168)]  
-           [CLOCK_ENABLE/s_cnt<8>(167)] [CLOCK_ENABLE/s_cnt<9>(166)] [s_cnt<0>(162)] 
-Signal[16] [ 0: seg_o<4>(161) seg_o<4>(2)  ][ 1: s_cnt<0>(162)  ][ 2: seg_o<0>(163) seg_o<0>(3)  ][ 3:  
-           dp_o(164) dp_o(4)  ][ 4: dig_o<0>(165) dig_o<0>(5)  ][ 5: CLOCK_ENABLE/s_cnt<9>(166)  ][ 6:  
+Signal[15] [dig_o<1>(164),dig_o<1>(4)] [dig_o<2>(165),dig_o<2>(5)] [dig_o<3>(172),dig_o<3>(6)]  
+           [dp_o(173),dp_o(7)] [seg_o<0>(161),seg_o<0>(2)] [seg_o<4>(163),seg_o<4>(3)] [data0_i<0>(9)]  
+           [data0_i<1>(10)] [s_cnt<1>(176)] [s_cnt<0>(171)] [CLOCK_ENABLE/s_cnt<5>(170)]  
+           [CLOCK_ENABLE/s_cnt<6>(169)] [CLOCK_ENABLE/s_cnt<7>(168)] [CLOCK_ENABLE/s_cnt<8>(167)]  
+           [CLOCK_ENABLE/s_cnt<9>(166)] 
+Signal[15] [ 0: seg_o<0>(161) seg_o<0>(2)  ][ 1:  ][ 2: seg_o<4>(163) seg_o<4>(3)  ][ 3: dig_o<1>(164)  
+           dig_o<1>(4)  ][ 4: dig_o<2>(165) dig_o<2>(5)  ][ 5: CLOCK_ENABLE/s_cnt<9>(166)  ][ 6:  
            CLOCK_ENABLE/s_cnt<8>(167)  ][ 7: CLOCK_ENABLE/s_cnt<7>(168)  ][ 8: CLOCK_ENABLE/s_cnt<6>(169)  ] 
-           [ 9: CLOCK_ENABLE/s_cnt<5>(170)  ][ 10: N_PZ_170(171)  ][ 11: dig_o<1>(172) dig_o<1>(6)  ][ 12:  
-           dig_o<2>(173) dig_o<2>(7)  ][ 13: dig_o<3>(174) dig_o<3>(9)  ][ 14: data0_i<1>(10)  ][ 15:  
-           N_PZ_163(176)  ]
+           [ 9: CLOCK_ENABLE/s_cnt<5>(170)  ][ 10: s_cnt<0>(171)  ][ 11: dig_o<3>(172) dig_o<3>(6)  ][ 12:  
+           dp_o(173) dp_o(7)  ][ 13: data0_i<0>(9)  ][ 14: data0_i<1>(10)  ][ 15: s_cnt<1>(176)  ]
 ----------------- B l o c k 2 ------------------
-PLApt(6/56), Fanin(17/38), Clk(1/3), Bct(0/4), Pin(6/6), Mcell(3/16)
-PLApts[6/53] 75 77 1 73 76 () () () () () () () () () () () () () () () () () () () () () () () () () () () 
-             () () () () () () () () () () () () () () () () () () () () 74
-Fanins[17] CLOCK_ENABLE/s_cnt<0>.n CLOCK_ENABLE/s_cnt<10>.n CLOCK_ENABLE/s_cnt<11>.n CLOCK_ENABLE/s_cnt<12>.n 
-           CLOCK_ENABLE/s_cnt<13>.n CLOCK_ENABLE/s_cnt<14>.n CLOCK_ENABLE/s_cnt<15>.n CLOCK_ENABLE/s_cnt<1>.n 
-           CLOCK_ENABLE/s_cnt<2>.n CLOCK_ENABLE/s_cnt<3>.n CLOCK_ENABLE/s_cnt<4>.n CLOCK_ENABLE/s_cnt<5>.n 
-           CLOCK_ENABLE/s_cnt<6>.n CLOCK_ENABLE/s_cnt<7>.n CLOCK_ENABLE/s_cnt<8>.n CLOCK_ENABLE/s_cnt<9>.n 
-           srst_n_i.p
+PLApt(12/56), Fanin(17/38), Clk(1/3), Bct(0/4), Pin(6/6), Mcell(5/16)
+PLApts[12/12] 84 85 80 83 81 87 86 88 89 1 79 82
+Fanins[17] CLOCK_ENABLE/s_cnt<0>.n CLOCK_ENABLE/s_cnt<10>.n CLOCK_ENABLE/s_cnt<11>.n CLOCK_ENABLE/s_cnt<12>.n CLOCK_ENABLE/s_cnt<13>.n CLOCK_ENABLE/s_cnt<14>.n CLOCK_ENABLE/s_cnt<15>.n CLOCK_ENABLE/s_cnt<1>.n CLOCK_ENABLE/s_cnt<2>.n CLOCK_ENABLE/s_cnt<3>.n CLOCK_ENABLE/s_cnt<4>.n CLOCK_ENABLE/s_cnt<5>.n CLOCK_ENABLE/s_cnt<6>.n CLOCK_ENABLE/s_cnt<7>.n CLOCK_ENABLE/s_cnt<8>.n CLOCK_ENABLE/s_cnt<9>.n srst_n_i.p
 clk[1] clk_i 
 CTC: 
 CTR: 
 CTS: 
 CTE: 
 vref: [0]
-Signal[ 9] [data0_i<2>(135)] [data0_i<3>(134)] [data1_i<0>(133)] [data1_i<1>(132)] [data1_i<2>(131)]  
-           [srst_n_i(136)] [CLOCK_ENABLE/s_cnt<0>(191)] [CLOCK_ENABLE/s_cnt<1>(189)] [s_en(188)] 
-Signal[ 9] [ 0: srst_n_i(136)  ][ 1: data0_i<2>(135)  ][ 2: data0_i<3>(134)  ][ 3:  ][ 4: data1_i<0>(133)  ] 
-           [ 5:  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10:  ][ 11: s_en(188)  ][ 12: CLOCK_ENABLE/s_cnt<1>(189)  ] 
-           [ 13: data1_i<1>(132)  ][ 14: CLOCK_ENABLE/s_cnt<0>(191)  ][ 15: data1_i<2>(131)  ]
+Signal[11] [data0_i<2>(135)] [data0_i<3>(134)] [data1_i<0>(133)] [data1_i<1>(132)] [data1_i<2>(131)]  
+           [srst_n_i(136)] [CLOCK_ENABLE/s_cnt<1>(191)] [CLOCK_ENABLE/s_cnt<0>(189)]  
+           [CLOCK_ENABLE/s_cnt<3>(188)] [CLOCK_ENABLE/s_cnt<2>(187)] [s_en(186)] 
+Signal[11] [ 0: srst_n_i(136)  ][ 1: data0_i<2>(135)  ][ 2: data0_i<3>(134)  ][ 3:  ][ 4: data1_i<0>(133)  ] 
+           [ 5:  ][ 6:  ][ 7:  ][ 8:  ][ 9: s_en(186)  ][ 10: CLOCK_ENABLE/s_cnt<2>(187)  ][ 11:  
+           CLOCK_ENABLE/s_cnt<3>(188)  ][ 12: CLOCK_ENABLE/s_cnt<0>(189)  ][ 13: data1_i<1>(132)  ][ 14:  
+           CLOCK_ENABLE/s_cnt<1>(191)  ][ 15: data1_i<2>(131)  ]
 ----------------- B l o c k 3 ------------------
 PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(8/8), Mcell(0/16)
 PLApts[0/0]

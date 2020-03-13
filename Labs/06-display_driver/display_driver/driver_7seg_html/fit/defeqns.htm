@@ -6,30 +6,66 @@
 ********** Mapped Logic **********
 </td></tr><tr><td>
 FDCPE_CLOCK_ENABLE/s_cnt0: FDCPE port map (CLOCK_ENABLE/s_cnt(0),CLOCK_ENABLE/s_cnt_D(0),clk_i,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLOCK_ENABLE/s_cnt_D(0) <= (srst_n_i AND NOT CLOCK_ENABLE/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLOCK_ENABLE/s_cnt_D(0) <= ((srst_n_i AND NOT CLOCK_ENABLE/s_cnt(0) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(10) AND NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(3) AND NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND NOT CLOCK_ENABLE/s_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(7) AND NOT CLOCK_ENABLE/s_cnt(8) AND NOT CLOCK_ENABLE/s_cnt(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT CLOCK_ENABLE/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(10) AND NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(2) AND NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND NOT CLOCK_ENABLE/s_cnt(8) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15)));
 </td></tr><tr><td>
 FDCPE_CLOCK_ENABLE/s_cnt1: FDCPE port map (CLOCK_ENABLE/s_cnt(1),CLOCK_ENABLE/s_cnt_D(1),clk_i,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLOCK_ENABLE/s_cnt_D(1) <= ((srst_n_i AND CLOCK_ENABLE/s_cnt(0) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(10) AND NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(3) AND NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND NOT CLOCK_ENABLE/s_cnt(8) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15) AND NOT CLOCK_ENABLE/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT CLOCK_ENABLE/s_cnt(0) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(10) AND NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND CLOCK_ENABLE/s_cnt(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(3) AND NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND NOT CLOCK_ENABLE/s_cnt(8) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15) AND CLOCK_ENABLE/s_cnt(1)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15)));
 </td></tr><tr><td>
-FDCPE_CLOCK_ENABLE/s_cnt2: FDCPE port map (CLOCK_ENABLE/s_cnt(2),'0',clk_i,'0','0','1');
+FDCPE_CLOCK_ENABLE/s_cnt2: FDCPE port map (CLOCK_ENABLE/s_cnt(2),CLOCK_ENABLE/s_cnt_D(2),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLOCK_ENABLE/s_cnt_D(2) <= ((srst_n_i AND NOT CLOCK_ENABLE/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(10) AND NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	CLOCK_ENABLE/s_cnt(2) AND NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND NOT CLOCK_ENABLE/s_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND NOT CLOCK_ENABLE/s_cnt(13) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(1) AND NOT CLOCK_ENABLE/s_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	CLOCK_ENABLE/s_cnt(2) AND NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND NOT CLOCK_ENABLE/s_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND CLOCK_ENABLE/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(10) AND NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND CLOCK_ENABLE/s_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(3) AND NOT CLOCK_ENABLE/s_cnt(2) AND NOT CLOCK_ENABLE/s_cnt(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(5) AND NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(8) AND NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15)));
 </td></tr><tr><td>
-FDCPE_CLOCK_ENABLE/s_cnt3: FDCPE port map (CLOCK_ENABLE/s_cnt(3),'0',clk_i,'0','0','1');
+FDCPE_CLOCK_ENABLE/s_cnt3: FDCPE port map (CLOCK_ENABLE/s_cnt(3),CLOCK_ENABLE/s_cnt_D(3),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLOCK_ENABLE/s_cnt_D(3) <= ((srst_n_i AND CLOCK_ENABLE/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(10) AND NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND CLOCK_ENABLE/s_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(3) AND CLOCK_ENABLE/s_cnt(2) AND NOT CLOCK_ENABLE/s_cnt(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(5) AND NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(8) AND NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT CLOCK_ENABLE/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(10) AND NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	CLOCK_ENABLE/s_cnt(3) AND NOT CLOCK_ENABLE/s_cnt(2) AND NOT CLOCK_ENABLE/s_cnt(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(5) AND NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(8) AND NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15)));
 </td></tr><tr><td>
 FDCPE_CLOCK_ENABLE/s_cnt4: FDCPE port map (CLOCK_ENABLE/s_cnt(4),'0',clk_i,'0','0','1');
 </td></tr><tr><td>
@@ -56,19 +92,19 @@ FDCPE_CLOCK_ENABLE/s_cnt14: FDCPE port map (CLOCK_ENABLE/s_cnt(14),'0',clk_i,'0'
 FDCPE_CLOCK_ENABLE/s_cnt15: FDCPE port map (CLOCK_ENABLE/s_cnt(15),'0',clk_i,'0','0','1');
 </td></tr><tr><td>
 </td></tr><tr><td>
-N_PZ_163 <= ((s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(1) AND data3_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(3) AND data0_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(1) AND data0_i(0)));
+N_PZ_176 <= ((s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND data3_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(1) AND NOT data3_i(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT data0_i(3) AND data0_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(1) AND NOT data0_i(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-N_PZ_170 <= ((s_cnt(1) AND NOT s_cnt(0) AND NOT data2_i(3) AND data2_i(2) AND 
+N_PZ_177 <= ((s_cnt(1) AND NOT s_cnt(0) AND NOT data2_i(3) AND data2_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data2_i(1) AND NOT data2_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND NOT data1_i(3) AND data1_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data1_i(1) AND NOT data1_i(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-N_PZ_179 <= ((s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND NOT data3_i(2) AND 
+N_PZ_198 <= ((s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND NOT data3_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(1) AND data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND NOT data2_i(3) AND NOT data2_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data2_i(1) AND data2_i(0))
@@ -78,43 +114,44 @@ N_PZ_179 <= ((s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND NOT data3_i(2) AND
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(1) AND data0_i(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-dig_o(0) <= NOT ('0');
+dig_o(0) <= NOT ((NOT s_cnt(1) AND NOT s_cnt(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-dig_o(1) <= NOT ('0');
+dig_o(1) <= NOT ((NOT s_cnt(1) AND s_cnt(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-dig_o(2) <= NOT ('0');
+dig_o(2) <= NOT ((s_cnt(1) AND NOT s_cnt(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-dig_o(3) <= NOT ('0');
+dig_o(3) <= NOT ((s_cnt(1) AND s_cnt(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-dp_o <= NOT (((NOT dp_i(3) AND s_cnt(1) AND s_cnt(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND NOT dp_i(2))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND NOT dp_i(1))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT dp_i(0))));
+dp_o <= NOT (((s_cnt(1) AND s_cnt(0) AND dp_i(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND dp_i(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND dp_i(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND dp_i(0))));
 </td></tr><tr><td>
-FTCPE_s_cnt0: FTCPE port map (s_cnt(0),s_cnt_T(0),clk_i,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s_cnt_T(0) <= (srst_n_i AND s_en);
+FDCPE_s_cnt0: FDCPE port map (s_cnt(0),s_cnt_D(0),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s_cnt_D(0) <= ((srst_n_i AND s_cnt(0) AND NOT s_en)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT s_cnt(0) AND s_en));
 </td></tr><tr><td>
 FTCPE_s_cnt1: FTCPE port map (s_cnt(1),s_cnt_T(1),clk_i,'0','0','1');
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s_cnt_T(1) <= (srst_n_i AND s_cnt(0) AND s_en);
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s_cnt_T(1) <= ((s_cnt(1) AND NOT srst_n_i)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND s_cnt(0) AND s_en));
 </td></tr><tr><td>
 FDCPE_s_en: FDCPE port map (s_en,s_en_D,clk_i,'0','0','1');
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s_en_D <= NOT (((NOT srst_n_i)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT CLOCK_ENABLE/s_cnt(0) AND NOT CLOCK_ENABLE/s_cnt(10) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND NOT CLOCK_ENABLE/s_cnt(13) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(2) AND NOT CLOCK_ENABLE/s_cnt(3) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND NOT CLOCK_ENABLE/s_cnt(6) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(7) AND NOT CLOCK_ENABLE/s_cnt(8) AND NOT CLOCK_ENABLE/s_cnt(9) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(15))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT CLOCK_ENABLE/s_cnt(10) AND NOT CLOCK_ENABLE/s_cnt(11) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(12) AND NOT CLOCK_ENABLE/s_cnt(13) AND NOT CLOCK_ENABLE/s_cnt(14) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(2) AND NOT CLOCK_ENABLE/s_cnt(3) AND NOT CLOCK_ENABLE/s_cnt(4) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(5) AND NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(8) AND NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(1))));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(3) AND NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(6) AND NOT CLOCK_ENABLE/s_cnt(7) AND NOT CLOCK_ENABLE/s_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(9) AND NOT CLOCK_ENABLE/s_cnt(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT CLOCK_ENABLE/s_cnt(0) AND NOT CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(11) AND NOT CLOCK_ENABLE/s_cnt(12) AND NOT CLOCK_ENABLE/s_cnt(13) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(14) AND NOT CLOCK_ENABLE/s_cnt(1) AND NOT CLOCK_ENABLE/s_cnt(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(4) AND NOT CLOCK_ENABLE/s_cnt(5) AND NOT CLOCK_ENABLE/s_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(7) AND NOT CLOCK_ENABLE/s_cnt(8) AND NOT CLOCK_ENABLE/s_cnt(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT CLOCK_ENABLE/s_cnt(15))));
 </td></tr><tr><td>
 </td></tr><tr><td>
 seg_o(0) <= ((s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND NOT data3_i(2) AND 
@@ -143,8 +180,7 @@ seg_o(0) <= ((s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND NOT data3_i(2) AND
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(1) AND data0_i(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-seg_o(1) <= ((N_PZ_179)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_163)
+seg_o(1) <= ((N_PZ_198)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND NOT data3_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data3_i(1))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND data3_i(1) AND 
@@ -161,33 +197,35 @@ seg_o(1) <= ((N_PZ_179)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(1))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT data0_i(3) AND data0_i(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(1) AND data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND data2_i(3) AND data2_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data2_i(1) AND data2_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND data1_i(3) AND data1_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data1_i(1) AND data1_i(0)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data1_i(1) AND data1_i(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(3) AND data0_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(1) AND data0_i(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-seg_o(2) <= ((N_PZ_170)
+seg_o(2) <= ((N_PZ_176)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_177)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND NOT data2_i(3) AND data2_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND NOT data1_i(3) AND data1_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT data0_i(3) AND data0_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND data3_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(1))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(1) AND data3_i(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_163)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(2) AND NOT data3_i(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND NOT data2_i(2) AND NOT data2_i(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data2_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND NOT data1_i(2) AND NOT data1_i(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data1_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT data0_i(3) AND data0_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(1))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT data0_i(1) AND data0_i(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_163));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT data0_i(2) AND NOT data0_i(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-seg_o(3) <= ((N_PZ_179)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_170)
+seg_o(3) <= ((N_PZ_198)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_176)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_177)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(2) AND data3_i(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND data2_i(2) AND data2_i(1) AND 
@@ -198,20 +236,18 @@ seg_o(3) <= ((N_PZ_179)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(3) AND NOT data3_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data3_i(1) AND NOT data3_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND data3_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(1) AND NOT data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND data2_i(3) AND NOT data2_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data2_i(1) AND NOT data2_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND data1_i(3) AND NOT data1_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data1_i(1) AND NOT data1_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(3) AND NOT data0_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(1) AND NOT data0_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT data0_i(3) AND data0_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(1) AND NOT data0_i(0)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(1) AND NOT data0_i(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
 seg_o(4) <= ((s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_163)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data3_i(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND data2_i(3) AND data2_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data2_i(1))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND data2_i(3) AND data2_i(2) AND 
@@ -221,7 +257,9 @@ seg_o(4) <= ((s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(2) AND
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND data1_i(3) AND data1_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data1_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(3) AND data0_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_163)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(3) AND data0_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND NOT data3_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data3_i(1) AND NOT data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND NOT data2_i(3) AND NOT data2_i(2) AND 
@@ -232,43 +270,39 @@ seg_o(4) <= ((s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(2) AND
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(1) AND NOT data0_i(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
-seg_o(5) <= ((s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_163)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(1) AND 
+seg_o(5) <= ((s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data3_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(2) AND data3_i(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(2) AND NOT data3_i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_176)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND data2_i(3) AND data2_i(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data2_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND data2_i(2) AND NOT data2_i(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_170)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_177)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND data1_i(3) AND data1_i(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data1_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND data1_i(2) AND NOT data1_i(0) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_170)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(3) AND data0_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_163)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_177)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(3) AND data0_i(1) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(2) AND data0_i(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(2) AND NOT data3_i(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data3_i(0) AND NOT N_PZ_163)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(2) AND NOT data0_i(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_176)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND data3_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(1) AND NOT N_PZ_176)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND NOT data2_i(3) AND data2_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data2_i(1) AND NOT N_PZ_170)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data2_i(1) AND NOT N_PZ_177)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND NOT data1_i(3) AND data1_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data1_i(1) AND NOT N_PZ_170)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(2) AND NOT data0_i(1) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(0) AND NOT N_PZ_163));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data1_i(1) AND NOT N_PZ_177)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT data0_i(3) AND data0_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(1) AND NOT N_PZ_176));
 </td></tr><tr><td>
 </td></tr><tr><td>
-seg_o(6) <= ((N_PZ_179)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_163)
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_170)
+seg_o(6) <= ((N_PZ_198)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_176)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (N_PZ_177)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(3) AND data3_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(1) AND data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND data3_i(3) AND NOT data3_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data3_i(1) AND data3_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND s_cnt(0) AND NOT data3_i(3) AND data3_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data3_i(1) AND NOT data3_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND data2_i(3) AND data2_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data2_i(1) AND data2_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (s_cnt(1) AND NOT s_cnt(0) AND data2_i(3) AND NOT data2_i(2) AND 
@@ -277,10 +311,10 @@ seg_o(6) <= ((N_PZ_179)
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data1_i(1) AND data1_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND s_cnt(0) AND data1_i(3) AND NOT data1_i(2) AND 
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data1_i(1) AND data1_i(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(3) AND data0_i(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(1) AND data0_i(0))
 <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND data0_i(3) AND NOT data0_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(1) AND data0_i(0))
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT s_cnt(1) AND NOT s_cnt(0) AND NOT data0_i(3) AND data0_i(2) AND 
-<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT data0_i(1) AND NOT data0_i(0)));
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	data0_i(1) AND data0_i(0)));
 </td></tr><tr><td>
 </td></tr><tr><td>
 Register Legend:

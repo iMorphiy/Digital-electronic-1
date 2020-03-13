@@ -1,22 +1,18 @@
 V3 11
-FL /home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd 2020/03/12.00:34:05 P.20131013
-EN work/hex_to_7seg 1583981003 \
-      FL /home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd \
-      PB ieee/std_logic_1164 1381692176
-AR work/hex_to_7seg/Behavioral 1583981004 \
-      FL /home/vyma/Digital-electronic-1/Labs/03-segment/hex_to_segment/hex_to_7seg.vhd \
-      EN work/hex_to_7seg 1583981003
-FL /home/vyma/Digital-electronic-1/Labs/05-counter_binary/binary_counter/clock_enable.vhd 2020/03/12.01:24:23 P.20131013
-EN work/clock_enable 1583981001 \
-      FL /home/vyma/Digital-electronic-1/Labs/05-counter_binary/binary_counter/clock_enable.vhd \
+FL D:/Xilinx/projects/display_driver/clock_enable.vhd 2020/03/13.13:43:14 P.20131013
+EN work/clock_enable 1584103576 \
+      FL D:/Xilinx/projects/display_driver/clock_enable.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/clock_enable/Behavioral 1583981002 \
-      FL /home/vyma/Digital-electronic-1/Labs/05-counter_binary/binary_counter/clock_enable.vhd \
-      EN work/clock_enable 1583981001
-FL /home/vyma/Digital-electronic-1/Labs/06-display_driver/display_driver/driver_7seg.vhd 2020/03/12.03:42:40 P.20131013
-EN work/driver_7seg 1583980970 \
-      FL /home/vyma/Digital-electronic-1/Labs/06-display_driver/display_driver/driver_7seg.vhd \
+AR work/clock_enable/Behavioral 1584103577 \
+      FL D:/Xilinx/projects/display_driver/clock_enable.vhd EN work/clock_enable 1584103576
+FL D:/Xilinx/projects/display_driver/hex_to_7seg.vhd 2020/03/13.13:44:00 P.20131013
+EN work/hex_to_7seg 1584103578 \
+      FL D:/Xilinx/projects/display_driver/hex_to_7seg.vhd PB ieee/std_logic_1164 1381692176
+AR work/hex_to_7seg/Behavioral 1584103579 \
+      FL D:/Xilinx/projects/display_driver/hex_to_7seg.vhd EN work/hex_to_7seg 1584103578
+FL D:/Xilinx/projects/display_driver/top.vhd 2020/03/13.13:46:12 P.20131013
+EN work/driver_7seg 1584103580 FL D:/Xilinx/projects/display_driver/top.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/driver_7seg/Behavioral 1583980971 \
-      FL /home/vyma/Digital-electronic-1/Labs/06-display_driver/display_driver/driver_7seg.vhd \
-      EN work/driver_7seg 1583980970 CP work/clock_enable CP work/hex_to_7seg
+AR work/driver_7seg/Behavioral 1584103581 \
+      FL D:/Xilinx/projects/display_driver/top.vhd EN work/driver_7seg 1584103580 \
+      CP work/clock_enable CP work/hex_to_7seg

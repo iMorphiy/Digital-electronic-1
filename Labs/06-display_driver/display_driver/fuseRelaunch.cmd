@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "/home/vyma/Digital-electronic-1/Labs/06-display_driver/display_driver/test1_isim_beh.exe" -prj "/home/vyma/Digital-electronic-1/Labs/06-display_driver/display_driver/test1_beh.prj" "work.test1" 
+-intstyle "ise" -incremental -o "D:/Xilinx/projects/display_driver/test_isim_beh.exe" -prj "D:/Xilinx/projects/display_driver/test_beh.prj" "work.test" 

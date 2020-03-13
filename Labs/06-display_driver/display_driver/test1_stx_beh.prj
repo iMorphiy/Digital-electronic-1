@@ -1,4 +1,0 @@
-vhdl isim_temp "../../05-counter_binary/binary_counter/clock_enable.vhd"
-vhdl isim_temp "../../03-segment/hex_to_segment/hex_to_7seg.vhd"
-vhdl isim_temp "driver_7seg.vhd"
-vhdl isim_temp "test1.vhd"
