@@ -66,7 +66,7 @@ begin
 		CLOCK_ENABLE : entity work.clock_enable
 		generic map (
             -- period of 4 ms = 40 * 0.1 ms ;{40 dec => 28 hex}
-			g_NPERIOD => x"0028"   
+			g_NPERIOD => x"000A"   
 		)
 		port map (
 			clk_i => clk_i,
@@ -80,7 +80,7 @@ begin
 		HEX_TO_7SEG : entity work.hex_to_7seg
 		port map (
 			hex_i => s_hex,
-            seg_o => seg_o
+         seg_o => seg_o
 		);
 
     --------------------------------------------------------------------
@@ -93,15 +93,14 @@ begin
     begin
         if rising_edge(clk_i) then  -- Rising clock edge
             if srst_n_i = '0' then  -- Synchronous reset (active low)
-                -- WRITE YOUR CODE HERE
-				s_dig <= "1111";
+					s_cnt <= "00";
             elsif s_en = '1' then
                 -- WRITE YOUR CODE HERE
-				if s_cnt = "11" then
-					s_cnt <= "00";
-				else
-					s_cnt <= s_cnt + '1';
-				end if;
+					 if s_cnt = "11" then
+						s_cnt <= "00";
+					else
+						s_cnt <= s_cnt + '1';
+					end if;
             end if;
         end if;
     end process p_select_cnt;
@@ -116,34 +115,38 @@ begin
         when "00" =>
             -- WRITE YOUR CODE HERE
 			s_hex <= data0_i;
-			s_dig <= "1110";
-			dp_o <= dp_i(0);
+			dig_o <= "1110";
+			dp_o <= not dp_i(0);
         when "01" =>
             -- WRITE YOUR CODE HERE
 			s_hex <= data1_i;
-			s_dig <= "1101";
-			dp_o <= dp_i(1);
+			dig_o <= "1101";
+			dp_o <= not dp_i(1);
         when "10" =>
             -- WRITE YOUR CODE HERE
 			s_hex <= data2_i;
-			s_dig <= "1011";
-			dp_o <= dp_i(2);
-        when others =>
+			dig_o <= "1011";
+			dp_o <= not dp_i(2);
+			when "11" =>
             -- WRITE YOUR CODE HERE
 			s_hex <= data3_i;
-			s_dig <= "0111";
-			dp_o <= dp_i(3);
+			dig_o <= "0111";
+			dp_o <= not dp_i(3);
         end case;
 
 
 
     end process p_mux;
 
-    dig_o <= s_dig;
-
 end architecture Behavioral;
 ```
 
 ## Error during simulation :(
 
-* still in progress
+After several unsuccessful installations of ISE or failed to start ISim
+
+1. QUARTUS II simulation
+
+![sim_QUARTUS](../../IMG/Simulation.png)
+
+2. ISE simulation still in progress (hope it will be soon)
