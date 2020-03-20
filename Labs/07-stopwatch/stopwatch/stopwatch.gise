@@ -100,6 +100,8 @@
     <transform xil_pn:end_ts="1584718177" xil_pn:in_ck="1205341205807623631" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6402233276290343731" xil_pn:start_ts="1584718169">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -110,6 +112,8 @@
     <transform xil_pn:end_ts="1584718177" xil_pn:in_ck="-8935870945308699263" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5245461193743342534" xil_pn:start_ts="1584718177">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="test02_isim_beh.wdb"/>

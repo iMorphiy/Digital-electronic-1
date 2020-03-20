@@ -12,8 +12,8 @@
 |3| 20. 2. 2020 |[03-segment](Labs/03-segment)| Hex to seven-segment decoder |
 |4| 27. 2. 2020 | [04-sadder](Labs/04-adder)| Binary adder, full && half |
 |5| 5. 3. 2020 | [05-counter_binary](Labs/05-counter_binary)| Binary counter |
-|6| 12. 3. 2020 |  |
-|7| 19. 3. 2020 |  |
+|6| 12. 3. 2020 | [06-display_driver](Labs/06-display_driver)| write number into 4x 7seg display |
+|7| 19. 3. 2020 | [07-stopwatch](Labs/07-stopwatch)| implementation of stopwatch |
 |8| 26. 3. 2020 |  |
 |9| 2. 4. 2020 |  |
 |10| 9. 4. 2020 |  |
