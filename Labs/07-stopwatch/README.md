@@ -1,4 +1,4 @@
-## File stopwatchCounter.vhd
+# File stopwatchCounter.vhd
 
 ```vhdl
 ----------------------------------------------------------------------------------
@@ -123,7 +123,7 @@ begin
 end Behavioral;
 
 ```
-## Component file decimalCounter.vhd
+# Component file decimalCounter.vhd
 
 ```vhdl
 ----------------------------------------------------------------------------------
@@ -195,15 +195,16 @@ begin
 end Behavioral;
 ```
 
-## SIMULATION
-# Test of sequential register
+# SIMULATION
+## Test of sequential register
 ![SIM_0](../../IMG/SIM_07_0.png)
-# Test of reset functions
+## Test of reset functions
 ![SIM_0](../../IMG/SIM_07_1.png)
 
-## Implementation
+# Implementation
 
-# top schematic
+## top schematic
 ![SIM_0](../../IMG/SCH_07_top.png)
 
-# video
+## video
+[![IMAGE ALT TEXT HERE](../../IMG/PS_07.png)](https://www.youtube.com/watch?v=CqTHemRm_CI&feature=youtu.be)
