@@ -1,0 +1,3 @@
+vhdl isim_temp "decimalCounter.vhd"
+vhdl isim_temp "stopwatchCounter.vhd"
+vhdl isim_temp "test01.vhd"

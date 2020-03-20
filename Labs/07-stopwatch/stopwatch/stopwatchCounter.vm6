@@ -1,0 +1,1343 @@
+NDS Database:  version P.20131013
+
+NDS_INFO | xbr | 2C256144 | XC2C256-6-TQ144
+
+DEVICE | 2C256 | 2C256144 | 
+
+NETWORK | stopwatchCounter | 0 | 0 | 1073758214 | 0
+
+MACROCELL_INSTANCE | PrldLow | carry0_0_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 4 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | cnt_en_i_II/UIM | 2703 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | cnt_en_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | ce_100Hz_i_II/UIM | 2705 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | ce_100Hz_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | carry0_0_MC.Q | 2709 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | carry0_0_MC.SI | carry0_0_MC | 0 | 3 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | cnt_en_i_II/UIM | 2703 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | cnt_en_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | ce_100Hz_i_II/UIM | 2705 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | ce_100Hz_i_II | 0 | 5 | II_IMUX
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | carry0_0_MC.D1 | 2698 | ? | 0 | 0 | carry0_0_MC | NULL | NULL | carry0_0_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | cnt_en_i_II/UIM | IV_TRUE | ce_100Hz_i_II/UIM
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | carry0_0_MC.D2 | 2699 | ? | 0 | 0 | carry0_0_MC | NULL | NULL | carry0_0_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | carry0_0_MC.REG | carry0_0_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | carry0_0_MC.D | 2697 | ? | 0 | 0 | carry0_0_MC | NULL | NULL | carry0_0_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | carry0_0_MC.Q | 2708 | ? | 0 | 0 | carry0_0_MC | NULL | NULL | carry0_0_MC.REG | 0 | 8 | SRFF_Q
+
+INPUT_INSTANCE | 0 | 0 | NULL | srst_n_i_II | stopwatchCounter_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | srst_n_i | 2700 | PI | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+
+INPUT_INSTANCE | 0 | 0 | NULL | cnt_en_i_II | stopwatchCounter_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | cnt_en_i | 2702 | PI | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
+NODE | cnt_en_i_II/UIM | 2703 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | cnt_en_i_II | 0 | 5 | II_IMUX
+
+INPUT_INSTANCE | 0 | 0 | NULL | ce_100Hz_i_II | stopwatchCounter_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | ce_100Hz_i | 2704 | PI | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 0 | 5 | II_IMUX
+NODE | ce_100Hz_i_II/UIM | 2705 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | ce_100Hz_i_II | 0 | 5 | II_IMUX
+
+INPUT_INSTANCE | 0 | 0 | NULL | clk_i_II | stopwatchCounter_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | clk_i | 2706 | PI | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 3 | 5 | II_FCLK
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+
+OUTPUT_INSTANCE | 0 | carry0_0 | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | carry0_0_MC.Q | 2709 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | carry0_0 | 2710 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | carry0_0 | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | PrldLow | carry4_0_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 7 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<2>_MC.UIM | 2799 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<3>_MC.UIM | 2804 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<1>_MC.UIM | 2809 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | carry4_0_MC.Q | 2811 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry4_0_MC.Q | carry4_0_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | carry4_0_MC.SI | carry4_0_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<2>_MC.UIM | 2799 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<3>_MC.UIM | 2804 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<1>_MC.UIM | 2809 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | carry4_0_MC.D1 | 2712 | ? | 0 | 0 | carry4_0_MC | NULL | NULL | carry4_0_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 6 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<2>_MC.UIM | IV_FALSE | sec_h_o<3>_MC.UIM | IV_FALSE | sec_h_o<1>_MC.UIM
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | carry4_0_MC.D2 | 2713 | ? | 0 | 0 | carry4_0_MC | NULL | NULL | carry4_0_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | carry4_0_MC.REG | carry4_0_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | carry4_0_MC.D | 2711 | ? | 0 | 0 | carry4_0_MC | NULL | NULL | carry4_0_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | carry4_0_MC.Q | 2810 | ? | 0 | 0 | carry4_0_MC | NULL | NULL | carry4_0_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | sec_h_o<0>_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 4 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | sec_h_o<0>_MC.Q | 2829 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | sec_h_o<0>_MC.SI | sec_h_o<0>_MC | 0 | 3 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | sec_h_o<0>_MC.D1 | 2716 | ? | 0 | 0 | sec_h_o<0>_MC | NULL | NULL | sec_h_o<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | sec_h_o<0>_MC.D2 | 2715 | ? | 0 | 0 | sec_h_o<0>_MC | NULL | NULL | sec_h_o<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_FALSE | s_carry3
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3
+
+SRFF_INSTANCE | sec_h_o<0>_MC.REG | sec_h_o<0>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | sec_h_o<0>_MC.D | 2714 | ? | 0 | 0 | sec_h_o<0>_MC | NULL | NULL | sec_h_o<0>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | sec_h_o<0>_MC.Q | 2717 | ? | 0 | 0 | sec_h_o<0>_MC | NULL | NULL | sec_h_o<0>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | s_carry3_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 7 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<3>_MC.UIM | 2784 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<3>_MC.Q | sec_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<2>_MC.UIM | 2789 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<1>_MC.UIM | 2794 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | s_carry3_MC.SI | s_carry3_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<3>_MC.UIM | 2784 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<3>_MC.Q | sec_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<2>_MC.UIM | 2789 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<1>_MC.UIM | 2794 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | s_carry3_MC.D1 | 2722 | ? | 0 | 0 | s_carry3_MC | NULL | NULL | s_carry3_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 6 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<3>_MC.UIM | IV_FALSE | sec_l_o<2>_MC.UIM | IV_FALSE | sec_l_o<1>_MC.UIM
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | s_carry3_MC.D2 | 2723 | ? | 0 | 0 | s_carry3_MC | NULL | NULL | s_carry3_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | s_carry3_MC.REG | s_carry3_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | s_carry3_MC.D | 2721 | ? | 0 | 0 | s_carry3_MC | NULL | NULL | s_carry3_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | s_carry3_MC.Q | 2720 | ? | 0 | 0 | s_carry3_MC | NULL | NULL | s_carry3_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | sec_l_o<0>_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 4 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | sec_l_o<0>_MC.Q | 2837 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | sec_l_o<0>_MC.SI | sec_l_o<0>_MC | 0 | 3 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | sec_l_o<0>_MC.D1 | 2726 | ? | 0 | 0 | sec_l_o<0>_MC | NULL | NULL | sec_l_o<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | sec_l_o<0>_MC.D2 | 2725 | ? | 0 | 0 | sec_l_o<0>_MC | NULL | NULL | sec_l_o<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_FALSE | s_carry2
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2
+
+SRFF_INSTANCE | sec_l_o<0>_MC.REG | sec_l_o<0>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | sec_l_o<0>_MC.D | 2724 | ? | 0 | 0 | sec_l_o<0>_MC | NULL | NULL | sec_l_o<0>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | sec_l_o<0>_MC.Q | 2727 | ? | 0 | 0 | sec_l_o<0>_MC | NULL | NULL | sec_l_o<0>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | s_carry2_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 7 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<3>_MC.UIM | 2769 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<3>_MC.Q | hth_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<2>_MC.UIM | 2774 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<1>_MC.UIM | 2779 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | s_carry2_MC.SI | s_carry2_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<3>_MC.UIM | 2769 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<3>_MC.Q | hth_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<2>_MC.UIM | 2774 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<1>_MC.UIM | 2779 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | s_carry2_MC.D1 | 2732 | ? | 0 | 0 | s_carry2_MC | NULL | NULL | s_carry2_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 6 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<3>_MC.UIM | IV_FALSE | hth_h_o<2>_MC.UIM | IV_FALSE | hth_h_o<1>_MC.UIM
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | s_carry2_MC.D2 | 2733 | ? | 0 | 0 | s_carry2_MC | NULL | NULL | s_carry2_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | s_carry2_MC.REG | s_carry2_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | s_carry2_MC.D | 2731 | ? | 0 | 0 | s_carry2_MC | NULL | NULL | s_carry2_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | s_carry2_MC.Q | 2730 | ? | 0 | 0 | s_carry2_MC | NULL | NULL | s_carry2_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | hth_h_o<0>_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 4 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | hth_h_o<0>_MC.Q | 2813 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | hth_h_o<0>_MC.SI | hth_h_o<0>_MC | 0 | 3 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | hth_h_o<0>_MC.D1 | 2736 | ? | 0 | 0 | hth_h_o<0>_MC | NULL | NULL | hth_h_o<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | hth_h_o<0>_MC.D2 | 2735 | ? | 0 | 0 | hth_h_o<0>_MC | NULL | NULL | hth_h_o<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_FALSE | s_carry1
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1
+
+SRFF_INSTANCE | hth_h_o<0>_MC.REG | hth_h_o<0>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | hth_h_o<0>_MC.D | 2734 | ? | 0 | 0 | hth_h_o<0>_MC | NULL | NULL | hth_h_o<0>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | hth_h_o<0>_MC.Q | 2737 | ? | 0 | 0 | hth_h_o<0>_MC | NULL | NULL | hth_h_o<0>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | s_carry1_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 7 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<3>_MC.UIM | 2754 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<3>_MC.Q | hth_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<2>_MC.UIM | 2759 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<1>_MC.UIM | 2764 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | s_carry1_MC.SI | s_carry1_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<3>_MC.UIM | 2754 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<3>_MC.Q | hth_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<2>_MC.UIM | 2759 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<1>_MC.UIM | 2764 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | s_carry1_MC.D1 | 2742 | ? | 0 | 0 | s_carry1_MC | NULL | NULL | s_carry1_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 6 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<3>_MC.UIM | IV_FALSE | hth_l_o<2>_MC.UIM | IV_FALSE | hth_l_o<1>_MC.UIM
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | s_carry1_MC.D2 | 2743 | ? | 0 | 0 | s_carry1_MC | NULL | NULL | s_carry1_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | s_carry1_MC.REG | s_carry1_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | s_carry1_MC.D | 2741 | ? | 0 | 0 | s_carry1_MC | NULL | NULL | s_carry1_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | s_carry1_MC.Q | 2740 | ? | 0 | 0 | s_carry1_MC | NULL | NULL | s_carry1_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | hth_l_o<0>_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 4 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | hth_l_o<0>_MC.Q | 2821 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | hth_l_o<0>_MC.SI | hth_l_o<0>_MC | 0 | 3 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | hth_l_o<0>_MC.D1 | 2746 | ? | 0 | 0 | hth_l_o<0>_MC | NULL | NULL | hth_l_o<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | hth_l_o<0>_MC.D2 | 2745 | ? | 0 | 0 | hth_l_o<0>_MC | NULL | NULL | hth_l_o<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_FALSE | carry0_0_MC.UIM
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM
+
+SRFF_INSTANCE | hth_l_o<0>_MC.REG | hth_l_o<0>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | hth_l_o<0>_MC.D | 2744 | ? | 0 | 0 | hth_l_o<0>_MC | NULL | NULL | hth_l_o<0>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | hth_l_o<0>_MC.Q | 2747 | ? | 0 | 0 | hth_l_o<0>_MC | NULL | NULL | hth_l_o<0>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | hth_l_o<3>_MC | stopwatchCounter_COPY_0_COPY_0 | 5120 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<3>_MC.UIM | 2754 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<3>_MC.Q | hth_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<2>_MC.UIM | 2759 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<1>_MC.UIM | 2764 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | hth_l_o<3>_MC.Q | 2827 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<3>_MC.Q | hth_l_o<3>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | hth_l_o<3>_MC.UIM | 2754 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<3>_MC.Q | hth_l_o<3>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | hth_l_o<3>_MC.SI | hth_l_o<3>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<3>_MC.UIM | 2754 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<3>_MC.Q | hth_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<2>_MC.UIM | 2759 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<1>_MC.UIM | 2764 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | hth_l_o<3>_MC.D1 | 2752 | ? | 0 | 0 | hth_l_o<3>_MC | NULL | NULL | hth_l_o<3>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | hth_l_o<3>_MC.D2 | 2751 | ? | 0 | 0 | hth_l_o<3>_MC | NULL | NULL | hth_l_o<3>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<3>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<2>_MC.UIM | IV_TRUE | hth_l_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<3>_MC.UIM | IV_FALSE | hth_l_o<2>_MC.UIM | IV_FALSE | hth_l_o<1>_MC.UIM
+
+SRFF_INSTANCE | hth_l_o<3>_MC.REG | hth_l_o<3>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | hth_l_o<3>_MC.D | 2750 | ? | 0 | 0 | hth_l_o<3>_MC | NULL | NULL | hth_l_o<3>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | hth_l_o<3>_MC.Q | 2753 | ? | 0 | 0 | hth_l_o<3>_MC | NULL | NULL | hth_l_o<3>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | hth_l_o<2>_MC | stopwatchCounter_COPY_0_COPY_0 | 5120 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<2>_MC.UIM | 2759 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<1>_MC.UIM | 2764 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | hth_l_o<2>_MC.Q | 2825 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | hth_l_o<2>_MC.UIM | 2759 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | hth_l_o<2>_MC.SI | hth_l_o<2>_MC | 0 | 5 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<2>_MC.UIM | 2759 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<1>_MC.UIM | 2764 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | hth_l_o<2>_MC.D1 | 2757 | ? | 0 | 0 | hth_l_o<2>_MC | NULL | NULL | hth_l_o<2>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | hth_l_o<2>_MC.D2 | 2756 | ? | 0 | 0 | hth_l_o<2>_MC | NULL | NULL | hth_l_o<2>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<2>_MC.UIM
+SPPTERM | 4 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<1>_MC.UIM
+
+SRFF_INSTANCE | hth_l_o<2>_MC.REG | hth_l_o<2>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | hth_l_o<2>_MC.D | 2755 | ? | 0 | 0 | hth_l_o<2>_MC | NULL | NULL | hth_l_o<2>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | hth_l_o<2>_MC.Q | 2758 | ? | 0 | 0 | hth_l_o<2>_MC | NULL | NULL | hth_l_o<2>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | hth_l_o<1>_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<1>_MC.UIM | 2764 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<3>_MC.UIM | 2754 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<3>_MC.Q | hth_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<2>_MC.UIM | 2759 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | hth_l_o<1>_MC.Q | 2823 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | hth_l_o<1>_MC.UIM | 2764 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | hth_l_o<1>_MC.SI | hth_l_o<1>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<0>_MC.UIM | 2748 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<1>_MC.UIM | 2764 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | carry0_0_MC.UIM | 2749 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry0_0_MC.Q | carry0_0_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<3>_MC.UIM | 2754 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<3>_MC.Q | hth_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_l_o<2>_MC.UIM | 2759 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | hth_l_o<1>_MC.D1 | 2762 | ? | 0 | 0 | hth_l_o<1>_MC | NULL | NULL | hth_l_o<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | hth_l_o<1>_MC.D2 | 2761 | ? | 0 | 0 | hth_l_o<1>_MC | NULL | NULL | hth_l_o<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | hth_l_o<0>_MC.UIM | IV_TRUE | hth_l_o<1>_MC.UIM
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_FALSE | hth_l_o<3>_MC.UIM | IV_FALSE | hth_l_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<2>_MC.UIM | IV_FALSE | hth_l_o<1>_MC.UIM
+
+SRFF_INSTANCE | hth_l_o<1>_MC.REG | hth_l_o<1>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | hth_l_o<1>_MC.D | 2760 | ? | 0 | 0 | hth_l_o<1>_MC | NULL | NULL | hth_l_o<1>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | hth_l_o<1>_MC.Q | 2763 | ? | 0 | 0 | hth_l_o<1>_MC | NULL | NULL | hth_l_o<1>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | hth_h_o<3>_MC | stopwatchCounter_COPY_0_COPY_0 | 5120 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<3>_MC.UIM | 2769 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<3>_MC.Q | hth_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<2>_MC.UIM | 2774 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<1>_MC.UIM | 2779 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | hth_h_o<3>_MC.Q | 2819 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<3>_MC.Q | hth_h_o<3>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | hth_h_o<3>_MC.UIM | 2769 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<3>_MC.Q | hth_h_o<3>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | hth_h_o<3>_MC.SI | hth_h_o<3>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<3>_MC.UIM | 2769 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<3>_MC.Q | hth_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<2>_MC.UIM | 2774 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<1>_MC.UIM | 2779 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | hth_h_o<3>_MC.D1 | 2767 | ? | 0 | 0 | hth_h_o<3>_MC | NULL | NULL | hth_h_o<3>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | hth_h_o<3>_MC.D2 | 2766 | ? | 0 | 0 | hth_h_o<3>_MC | NULL | NULL | hth_h_o<3>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<3>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<2>_MC.UIM | IV_TRUE | hth_h_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<3>_MC.UIM | IV_FALSE | hth_h_o<2>_MC.UIM | IV_FALSE | hth_h_o<1>_MC.UIM
+
+SRFF_INSTANCE | hth_h_o<3>_MC.REG | hth_h_o<3>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | hth_h_o<3>_MC.D | 2765 | ? | 0 | 0 | hth_h_o<3>_MC | NULL | NULL | hth_h_o<3>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | hth_h_o<3>_MC.Q | 2768 | ? | 0 | 0 | hth_h_o<3>_MC | NULL | NULL | hth_h_o<3>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | hth_h_o<2>_MC | stopwatchCounter_COPY_0_COPY_0 | 5120 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<2>_MC.UIM | 2774 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<1>_MC.UIM | 2779 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | hth_h_o<2>_MC.Q | 2817 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | hth_h_o<2>_MC.UIM | 2774 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | hth_h_o<2>_MC.SI | hth_h_o<2>_MC | 0 | 5 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<2>_MC.UIM | 2774 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<1>_MC.UIM | 2779 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | hth_h_o<2>_MC.D1 | 2772 | ? | 0 | 0 | hth_h_o<2>_MC | NULL | NULL | hth_h_o<2>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | hth_h_o<2>_MC.D2 | 2771 | ? | 0 | 0 | hth_h_o<2>_MC | NULL | NULL | hth_h_o<2>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<2>_MC.UIM
+SPPTERM | 4 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<1>_MC.UIM
+
+SRFF_INSTANCE | hth_h_o<2>_MC.REG | hth_h_o<2>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | hth_h_o<2>_MC.D | 2770 | ? | 0 | 0 | hth_h_o<2>_MC | NULL | NULL | hth_h_o<2>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | hth_h_o<2>_MC.Q | 2773 | ? | 0 | 0 | hth_h_o<2>_MC | NULL | NULL | hth_h_o<2>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | hth_h_o<1>_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<1>_MC.UIM | 2779 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<3>_MC.UIM | 2769 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<3>_MC.Q | hth_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<2>_MC.UIM | 2774 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | hth_h_o<1>_MC.Q | 2815 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | hth_h_o<1>_MC.UIM | 2779 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | hth_h_o<1>_MC.SI | hth_h_o<1>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<0>_MC.UIM | 2738 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<1>_MC.UIM | 2779 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry1 | 2739 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry1_MC.Q | s_carry1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<3>_MC.UIM | 2769 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<3>_MC.Q | hth_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | hth_h_o<2>_MC.UIM | 2774 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | hth_h_o<1>_MC.D1 | 2777 | ? | 0 | 0 | hth_h_o<1>_MC | NULL | NULL | hth_h_o<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | hth_h_o<1>_MC.D2 | 2776 | ? | 0 | 0 | hth_h_o<1>_MC | NULL | NULL | hth_h_o<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | hth_h_o<0>_MC.UIM | IV_TRUE | hth_h_o<1>_MC.UIM
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | s_carry1 | IV_TRUE | hth_h_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_FALSE | hth_h_o<3>_MC.UIM | IV_FALSE | hth_h_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<2>_MC.UIM | IV_FALSE | hth_h_o<1>_MC.UIM
+
+SRFF_INSTANCE | hth_h_o<1>_MC.REG | hth_h_o<1>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | hth_h_o<1>_MC.D | 2775 | ? | 0 | 0 | hth_h_o<1>_MC | NULL | NULL | hth_h_o<1>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | hth_h_o<1>_MC.Q | 2778 | ? | 0 | 0 | hth_h_o<1>_MC | NULL | NULL | hth_h_o<1>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | sec_l_o<3>_MC | stopwatchCounter_COPY_0_COPY_0 | 5120 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<3>_MC.UIM | 2784 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<3>_MC.Q | sec_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<2>_MC.UIM | 2789 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<1>_MC.UIM | 2794 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | sec_l_o<3>_MC.Q | 2843 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<3>_MC.Q | sec_l_o<3>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | sec_l_o<3>_MC.UIM | 2784 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<3>_MC.Q | sec_l_o<3>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | sec_l_o<3>_MC.SI | sec_l_o<3>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<3>_MC.UIM | 2784 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<3>_MC.Q | sec_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<2>_MC.UIM | 2789 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<1>_MC.UIM | 2794 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | sec_l_o<3>_MC.D1 | 2782 | ? | 0 | 0 | sec_l_o<3>_MC | NULL | NULL | sec_l_o<3>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | sec_l_o<3>_MC.D2 | 2781 | ? | 0 | 0 | sec_l_o<3>_MC | NULL | NULL | sec_l_o<3>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<3>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<2>_MC.UIM | IV_TRUE | sec_l_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<3>_MC.UIM | IV_FALSE | sec_l_o<2>_MC.UIM | IV_FALSE | sec_l_o<1>_MC.UIM
+
+SRFF_INSTANCE | sec_l_o<3>_MC.REG | sec_l_o<3>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | sec_l_o<3>_MC.D | 2780 | ? | 0 | 0 | sec_l_o<3>_MC | NULL | NULL | sec_l_o<3>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | sec_l_o<3>_MC.Q | 2783 | ? | 0 | 0 | sec_l_o<3>_MC | NULL | NULL | sec_l_o<3>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | sec_l_o<2>_MC | stopwatchCounter_COPY_0_COPY_0 | 5120 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<2>_MC.UIM | 2789 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<1>_MC.UIM | 2794 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | sec_l_o<2>_MC.Q | 2841 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | sec_l_o<2>_MC.UIM | 2789 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | sec_l_o<2>_MC.SI | sec_l_o<2>_MC | 0 | 5 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<2>_MC.UIM | 2789 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<1>_MC.UIM | 2794 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | sec_l_o<2>_MC.D1 | 2787 | ? | 0 | 0 | sec_l_o<2>_MC | NULL | NULL | sec_l_o<2>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | sec_l_o<2>_MC.D2 | 2786 | ? | 0 | 0 | sec_l_o<2>_MC | NULL | NULL | sec_l_o<2>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<2>_MC.UIM
+SPPTERM | 4 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<1>_MC.UIM
+
+SRFF_INSTANCE | sec_l_o<2>_MC.REG | sec_l_o<2>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | sec_l_o<2>_MC.D | 2785 | ? | 0 | 0 | sec_l_o<2>_MC | NULL | NULL | sec_l_o<2>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | sec_l_o<2>_MC.Q | 2788 | ? | 0 | 0 | sec_l_o<2>_MC | NULL | NULL | sec_l_o<2>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | sec_l_o<1>_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<1>_MC.UIM | 2794 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<3>_MC.UIM | 2784 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<3>_MC.Q | sec_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<2>_MC.UIM | 2789 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | sec_l_o<1>_MC.Q | 2839 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | sec_l_o<1>_MC.UIM | 2794 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | sec_l_o<1>_MC.SI | sec_l_o<1>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<0>_MC.UIM | 2728 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<1>_MC.UIM | 2794 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry2 | 2729 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry2_MC.Q | s_carry2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<3>_MC.UIM | 2784 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<3>_MC.Q | sec_l_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_l_o<2>_MC.UIM | 2789 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | sec_l_o<1>_MC.D1 | 2792 | ? | 0 | 0 | sec_l_o<1>_MC | NULL | NULL | sec_l_o<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | sec_l_o<1>_MC.D2 | 2791 | ? | 0 | 0 | sec_l_o<1>_MC | NULL | NULL | sec_l_o<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | sec_l_o<0>_MC.UIM | IV_TRUE | sec_l_o<1>_MC.UIM
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | s_carry2 | IV_TRUE | sec_l_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_FALSE | sec_l_o<3>_MC.UIM | IV_FALSE | sec_l_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<2>_MC.UIM | IV_FALSE | sec_l_o<1>_MC.UIM
+
+SRFF_INSTANCE | sec_l_o<1>_MC.REG | sec_l_o<1>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | sec_l_o<1>_MC.D | 2790 | ? | 0 | 0 | sec_l_o<1>_MC | NULL | NULL | sec_l_o<1>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | sec_l_o<1>_MC.Q | 2793 | ? | 0 | 0 | sec_l_o<1>_MC | NULL | NULL | sec_l_o<1>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | sec_h_o<2>_MC | stopwatchCounter_COPY_0_COPY_0 | 5120 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<2>_MC.UIM | 2799 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<1>_MC.UIM | 2809 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<3>_MC.UIM | 2804 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | sec_h_o<2>_MC.Q | 2833 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | sec_h_o<2>_MC.UIM | 2799 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | sec_h_o<2>_MC.SI | sec_h_o<2>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<2>_MC.UIM | 2799 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<1>_MC.UIM | 2809 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<3>_MC.UIM | 2804 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | sec_h_o<2>_MC.D1 | 2797 | ? | 0 | 0 | sec_h_o<2>_MC | NULL | NULL | sec_h_o<2>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | sec_h_o<2>_MC.D2 | 2796 | ? | 0 | 0 | sec_h_o<2>_MC | NULL | NULL | sec_h_o<2>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<2>_MC.UIM
+SPPTERM | 4 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<1>_MC.UIM
+SPPTERM | 4 | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<2>_MC.UIM | IV_FALSE | sec_h_o<3>_MC.UIM
+
+SRFF_INSTANCE | sec_h_o<2>_MC.REG | sec_h_o<2>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | sec_h_o<2>_MC.D | 2795 | ? | 0 | 0 | sec_h_o<2>_MC | NULL | NULL | sec_h_o<2>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | sec_h_o<2>_MC.Q | 2798 | ? | 0 | 0 | sec_h_o<2>_MC | NULL | NULL | sec_h_o<2>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | sec_h_o<3>_MC | stopwatchCounter_COPY_0_COPY_0 | 5120 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<3>_MC.UIM | 2804 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<2>_MC.UIM | 2799 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<1>_MC.UIM | 2809 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | sec_h_o<3>_MC.Q | 2835 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | sec_h_o<3>_MC.UIM | 2804 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | sec_h_o<3>_MC.SI | sec_h_o<3>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<3>_MC.UIM | 2804 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<2>_MC.UIM | 2799 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<1>_MC.UIM | 2809 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | sec_h_o<3>_MC.D1 | 2802 | ? | 0 | 0 | sec_h_o<3>_MC | NULL | NULL | sec_h_o<3>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | sec_h_o<3>_MC.D2 | 2801 | ? | 0 | 0 | sec_h_o<3>_MC | NULL | NULL | sec_h_o<3>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<3>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<2>_MC.UIM | IV_TRUE | sec_h_o<1>_MC.UIM
+
+SRFF_INSTANCE | sec_h_o<3>_MC.REG | sec_h_o<3>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | sec_h_o<3>_MC.D | 2800 | ? | 0 | 0 | sec_h_o<3>_MC | NULL | NULL | sec_h_o<3>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | sec_h_o<3>_MC.Q | 2803 | ? | 0 | 0 | sec_h_o<3>_MC | NULL | NULL | sec_h_o<3>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | sec_h_o<1>_MC | stopwatchCounter_COPY_0_COPY_0 | 1024 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<1>_MC.UIM | 2809 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<2>_MC.UIM | 2799 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<3>_MC.UIM | 2804 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | sec_h_o<1>_MC.Q | 2831 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | sec_h_o<1>_MC.UIM | 2809 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | sec_h_o<1>_MC.SI | sec_h_o<1>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | srst_n_i_II/UIM | 2701 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | srst_n_i_II | 0 | 5 | II_IMUX
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<0>_MC.UIM | 2718 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<1>_MC.UIM | 2809 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | s_carry3 | 2719 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | s_carry3_MC.Q | s_carry3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<2>_MC.UIM | 2799 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | sec_h_o<3>_MC.UIM | 2804 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | sec_h_o<1>_MC.D1 | 2807 | ? | 0 | 0 | sec_h_o<1>_MC | NULL | NULL | sec_h_o<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | sec_h_o<1>_MC.D2 | 2806 | ? | 0 | 0 | sec_h_o<1>_MC | NULL | NULL | sec_h_o<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | sec_h_o<0>_MC.UIM | IV_TRUE | sec_h_o<1>_MC.UIM
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | s_carry3 | IV_TRUE | sec_h_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_FALSE | sec_h_o<2>_MC.UIM | IV_FALSE | sec_h_o<1>_MC.UIM
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<3>_MC.UIM | IV_FALSE | sec_h_o<1>_MC.UIM
+
+SRFF_INSTANCE | sec_h_o<1>_MC.REG | sec_h_o<1>_MC | 0 | 2 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | sec_h_o<1>_MC.D | 2805 | ? | 0 | 0 | sec_h_o<1>_MC | NULL | NULL | sec_h_o<1>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_i_II/FCLK | 2707 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | clk_i_II | 3 | 5 | II_FCLK
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | sec_h_o<1>_MC.Q | 2808 | ? | 0 | 0 | sec_h_o<1>_MC | NULL | NULL | sec_h_o<1>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | carry4_0 | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | carry4_0_MC.Q | 2811 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | carry4_0_MC.Q | carry4_0_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | carry4_0 | 2812 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | carry4_0 | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | hth_h_o<0> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | hth_h_o<0>_MC.Q | 2813 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<0>_MC.Q | hth_h_o<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | hth_h_o<0> | 2814 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | hth_h_o<0> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | hth_h_o<1> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | hth_h_o<1>_MC.Q | 2815 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<1>_MC.Q | hth_h_o<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | hth_h_o<1> | 2816 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | hth_h_o<1> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | hth_h_o<2> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | hth_h_o<2>_MC.Q | 2817 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<2>_MC.Q | hth_h_o<2>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | hth_h_o<2> | 2818 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | hth_h_o<2> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | hth_h_o<3> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | hth_h_o<3>_MC.Q | 2819 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_h_o<3>_MC.Q | hth_h_o<3>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | hth_h_o<3> | 2820 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | hth_h_o<3> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | hth_l_o<0> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | hth_l_o<0>_MC.Q | 2821 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<0>_MC.Q | hth_l_o<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | hth_l_o<0> | 2822 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | hth_l_o<0> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | hth_l_o<1> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | hth_l_o<1>_MC.Q | 2823 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<1>_MC.Q | hth_l_o<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | hth_l_o<1> | 2824 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | hth_l_o<1> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | hth_l_o<2> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | hth_l_o<2>_MC.Q | 2825 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<2>_MC.Q | hth_l_o<2>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | hth_l_o<2> | 2826 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | hth_l_o<2> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | hth_l_o<3> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | hth_l_o<3>_MC.Q | 2827 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | hth_l_o<3>_MC.Q | hth_l_o<3>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | hth_l_o<3> | 2828 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | hth_l_o<3> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | sec_h_o<0> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | sec_h_o<0>_MC.Q | 2829 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<0>_MC.Q | sec_h_o<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | sec_h_o<0> | 2830 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | sec_h_o<0> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | sec_h_o<1> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | sec_h_o<1>_MC.Q | 2831 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<1>_MC.Q | sec_h_o<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | sec_h_o<1> | 2832 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | sec_h_o<1> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | sec_h_o<2> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | sec_h_o<2>_MC.Q | 2833 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<2>_MC.Q | sec_h_o<2>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | sec_h_o<2> | 2834 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | sec_h_o<2> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | sec_h_o<3> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | sec_h_o<3>_MC.Q | 2835 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_h_o<3>_MC.Q | sec_h_o<3>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | sec_h_o<3> | 2836 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | sec_h_o<3> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | sec_l_o<0> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | sec_l_o<0>_MC.Q | 2837 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<0>_MC.Q | sec_l_o<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | sec_l_o<0> | 2838 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | sec_l_o<0> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | sec_l_o<1> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | sec_l_o<1>_MC.Q | 2839 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<1>_MC.Q | sec_l_o<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | sec_l_o<1> | 2840 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | sec_l_o<1> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | sec_l_o<2> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | sec_l_o<2>_MC.Q | 2841 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<2>_MC.Q | sec_l_o<2>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | sec_l_o<2> | 2842 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | sec_l_o<2> | 0 | 6 | OI_OUT
+
+OUTPUT_INSTANCE | 0 | sec_l_o<3> | stopwatchCounter_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | sec_l_o<3>_MC.Q | 2843 | ? | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | sec_l_o<3>_MC.Q | sec_l_o<3>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | sec_l_o<3> | 2844 | PO | 0 | 0 | stopwatchCounter_COPY_0_COPY_0 | NULL | NULL | sec_l_o<3> | 0 | 6 | OI_OUT
+
+FB_INSTANCE | FOOBAR1_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 3 | hth_h_o<1>_MC | 1 | NULL | 0 | hth_h_o<1> | 1 | 143 | 51200
+FBPIN | 4 | hth_h_o<3>_MC | 1 | NULL | 0 | hth_h_o<3> | 1 | 142 | 49152
+FBPIN | 6 | hth_h_o<2>_MC | 1 | NULL | 0 | hth_h_o<2> | 1 | 140 | 49152
+FBPIN | 11 | s_carry3_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 12 | hth_h_o<0>_MC | 1 | NULL | 0 | hth_h_o<0> | 1 | 139 | 49152
+FBPIN | 13 | carry0_0_MC | 1 | NULL | 0 | carry0_0 | 1 | 138 | 49152
+FBPIN | 14 | hth_l_o<0>_MC | 1 | NULL | 0 | hth_l_o<0> | 1 | 137 | 49152
+FBPIN | 15 | s_carry1_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 16 | s_carry2_MC | 1 | NULL | 0 | NULL | 0
+
+FB_INSTANCE | FOOBAR2_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 1 | hth_l_o<1>_MC | 1 | NULL | 0 | hth_l_o<1> | 1 | 2 | 53248
+FBPIN | 3 | hth_l_o<3>_MC | 1 | NULL | 0 | hth_l_o<3> | 1 | 3 | 53248
+FBPIN | 4 | hth_l_o<2>_MC | 1 | NULL | 0 | hth_l_o<2> | 1 | 4 | 49152
+FBPIN | 5 | sec_h_o<0>_MC | 1 | NULL | 0 | sec_h_o<0> | 1 | 5 | 53248
+FBPIN | 12 | carry4_0_MC | 1 | NULL | 0 | carry4_0 | 1 | 6 | 53248
+FBPIN | 13 | sec_h_o<3>_MC | 1 | NULL | 0 | sec_h_o<3> | 1 | 7 | 49152
+FBPIN | 14 | sec_h_o<2>_MC | 1 | NULL | 0 | sec_h_o<2> | 1 | 9 | 49152
+FBPIN | 15 | sec_h_o<1>_MC | 1 | NULL | 0 | sec_h_o<1> | 1 | 10 | 49152
+
+FB_INSTANCE | FOOBAR3_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 1 | sec_l_o<1>_MC | 1 | NULL | 0 | sec_l_o<1> | 1 | 136 | 49152
+FBPIN | 2 | sec_l_o<3>_MC | 1 | NULL | 0 | sec_l_o<3> | 1 | 135 | 49152
+FBPIN | 3 | sec_l_o<2>_MC | 1 | NULL | 0 | sec_l_o<2> | 1 | 134 | 49152
+FBPIN | 5 | sec_l_o<0>_MC | 1 | NULL | 0 | sec_l_o<0> | 1 | 133 | 49152
+FBPIN | 14 | NULL | 0 | srst_n_i_II | 1 | NULL | 0 | 132 | 49152
+FBPIN | 16 | NULL | 0 | ce_100Hz_i_II | 1 | NULL | 0 | 131 | 49152
+
+FB_INSTANCE | FOOBAR4_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 1 | NULL | 0 | cnt_en_i_II | 1 | NULL | 0 | 11 | 49152
+
+FB_INSTANCE | FOOBAR5_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 4 | NULL | 0 | clk_i_II | 1 | NULL | 0 | 32 | 57344
+
+FB_INSTANCE | FOOBAR6_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR7_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR8_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR9_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR10_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR11_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR12_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR13_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR14_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR15_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR16_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | INPUTPINS_FOOBAR17_ | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR1_ | FOOBAR1__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR2_ | FOOBAR2__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR3_ | FOOBAR3__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR4_ | FOOBAR4__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR5_ | FOOBAR5__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR6_ | FOOBAR6__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR7_ | FOOBAR7__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR8_ | FOOBAR8__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR9_ | FOOBAR9__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR10_ | FOOBAR10__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR11_ | FOOBAR11__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR12_ | FOOBAR12__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR13_ | FOOBAR13__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR14_ | FOOBAR14__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR15_ | FOOBAR15__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR16_ | FOOBAR16__ctinst | stopwatchCounter_COPY_0_COPY_0 | 0 | 0 | 0
+
+PLA | FOOBAR1_ | 17
+PLA_TERM | 0 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1
+PLA_TERM | 1 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_FALSE | s_carry1
+PLA_TERM | 2 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | hth_h_o<0>_MC.UIM | IV_TRUE | hth_h_o<1>_MC.UIM
+PLA_TERM | 3 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_FALSE | hth_h_o<3>_MC.UIM | IV_FALSE | hth_h_o<1>_MC.UIM
+PLA_TERM | 4 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<2>_MC.UIM | IV_FALSE | hth_h_o<1>_MC.UIM
+PLA_TERM | 5 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | s_carry1 | IV_TRUE | hth_h_o<1>_MC.UIM
+PLA_TERM | 6 | 
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<2>_MC.UIM
+PLA_TERM | 7 | 
+SPPTERM | 4 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<1>_MC.UIM
+PLA_TERM | 8 | 
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<3>_MC.UIM
+PLA_TERM | 9 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<2>_MC.UIM | IV_TRUE | hth_h_o<1>_MC.UIM
+PLA_TERM | 10 | 
+SPPTERM | 5 | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<3>_MC.UIM | IV_FALSE | hth_h_o<2>_MC.UIM | IV_FALSE | hth_h_o<1>_MC.UIM
+PLA_TERM | 11 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM
+PLA_TERM | 12 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_FALSE | carry0_0_MC.UIM
+PLA_TERM | 40 | 
+SPPTERM | 6 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<3>_MC.UIM | IV_FALSE | sec_l_o<2>_MC.UIM | IV_FALSE | sec_l_o<1>_MC.UIM
+PLA_TERM | 46 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | cnt_en_i_II/UIM | IV_TRUE | ce_100Hz_i_II/UIM
+PLA_TERM | 52 | 
+SPPTERM | 6 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<3>_MC.UIM | IV_FALSE | hth_l_o<2>_MC.UIM | IV_FALSE | hth_l_o<1>_MC.UIM
+PLA_TERM | 55 | 
+SPPTERM | 6 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_h_o<0>_MC.UIM | IV_TRUE | s_carry1 | IV_TRUE | hth_h_o<3>_MC.UIM | IV_FALSE | hth_h_o<2>_MC.UIM | IV_FALSE | hth_h_o<1>_MC.UIM
+
+PLA | FOOBAR2_ | 21
+PLA_TERM | 0 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | hth_l_o<0>_MC.UIM | IV_TRUE | hth_l_o<1>_MC.UIM
+PLA_TERM | 1 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<1>_MC.UIM
+PLA_TERM | 2 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_FALSE | hth_l_o<3>_MC.UIM | IV_FALSE | hth_l_o<1>_MC.UIM
+PLA_TERM | 3 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<2>_MC.UIM | IV_FALSE | hth_l_o<1>_MC.UIM
+PLA_TERM | 4 | 
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<2>_MC.UIM
+PLA_TERM | 5 | 
+SPPTERM | 4 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<1>_MC.UIM
+PLA_TERM | 6 | 
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<3>_MC.UIM
+PLA_TERM | 7 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<2>_MC.UIM | IV_TRUE | hth_l_o<1>_MC.UIM
+PLA_TERM | 8 | 
+SPPTERM | 5 | IV_TRUE | hth_l_o<0>_MC.UIM | IV_TRUE | carry0_0_MC.UIM | IV_TRUE | hth_l_o<3>_MC.UIM | IV_FALSE | hth_l_o<2>_MC.UIM | IV_FALSE | hth_l_o<1>_MC.UIM
+PLA_TERM | 9 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3
+PLA_TERM | 10 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_FALSE | s_carry3
+PLA_TERM | 11 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | sec_h_o<0>_MC.UIM | IV_TRUE | sec_h_o<1>_MC.UIM
+PLA_TERM | 12 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_FALSE | sec_h_o<2>_MC.UIM | IV_FALSE | sec_h_o<1>_MC.UIM
+PLA_TERM | 13 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<3>_MC.UIM | IV_FALSE | sec_h_o<1>_MC.UIM
+PLA_TERM | 14 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | s_carry3 | IV_TRUE | sec_h_o<1>_MC.UIM
+PLA_TERM | 15 | 
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<2>_MC.UIM
+PLA_TERM | 16 | 
+SPPTERM | 4 | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<2>_MC.UIM | IV_FALSE | sec_h_o<3>_MC.UIM
+PLA_TERM | 17 | 
+SPPTERM | 4 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<1>_MC.UIM
+PLA_TERM | 18 | 
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<3>_MC.UIM
+PLA_TERM | 19 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<2>_MC.UIM | IV_TRUE | sec_h_o<1>_MC.UIM
+PLA_TERM | 43 | 
+SPPTERM | 6 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_h_o<0>_MC.UIM | IV_TRUE | s_carry3 | IV_TRUE | sec_h_o<2>_MC.UIM | IV_FALSE | sec_h_o<3>_MC.UIM | IV_FALSE | sec_h_o<1>_MC.UIM
+
+PLA | FOOBAR3_ | 11
+PLA_TERM | 0 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2
+PLA_TERM | 1 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_FALSE | s_carry2
+PLA_TERM | 2 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | sec_l_o<0>_MC.UIM | IV_TRUE | sec_l_o<1>_MC.UIM
+PLA_TERM | 3 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_FALSE | sec_l_o<3>_MC.UIM | IV_FALSE | sec_l_o<1>_MC.UIM
+PLA_TERM | 4 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<2>_MC.UIM | IV_FALSE | sec_l_o<1>_MC.UIM
+PLA_TERM | 5 | 
+SPPTERM | 3 | IV_TRUE | srst_n_i_II/UIM | IV_FALSE | s_carry2 | IV_TRUE | sec_l_o<1>_MC.UIM
+PLA_TERM | 6 | 
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<2>_MC.UIM
+PLA_TERM | 7 | 
+SPPTERM | 4 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<1>_MC.UIM
+PLA_TERM | 8 | 
+SPPTERM | 2 | IV_FALSE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<3>_MC.UIM
+PLA_TERM | 9 | 
+SPPTERM | 5 | IV_TRUE | srst_n_i_II/UIM | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<2>_MC.UIM | IV_TRUE | sec_l_o<1>_MC.UIM
+PLA_TERM | 10 | 
+SPPTERM | 5 | IV_TRUE | sec_l_o<0>_MC.UIM | IV_TRUE | s_carry2 | IV_TRUE | sec_l_o<3>_MC.UIM | IV_FALSE | sec_l_o<2>_MC.UIM | IV_FALSE | sec_l_o<1>_MC.UIM
+
+BUSINFO | HTH_H_O<3:0> | 4 | 0 | 1 | hth_h_o<0> | 3 | hth_h_o<1> | 2 | hth_h_o<2> | 1 | hth_h_o<3> | 0
+BUSINFO | HTH_L_O<3:0> | 4 | 0 | 1 | hth_l_o<0> | 3 | hth_l_o<1> | 2 | hth_l_o<2> | 1 | hth_l_o<3> | 0
+BUSINFO | SEC_H_O<3:0> | 4 | 0 | 1 | sec_h_o<0> | 3 | sec_h_o<1> | 2 | sec_h_o<2> | 1 | sec_h_o<3> | 0
+BUSINFO | SEC_L_O<3:0> | 4 | 0 | 1 | sec_l_o<0> | 3 | sec_l_o<1> | 2 | sec_l_o<2> | 1 | sec_l_o<3> | 0
+
+IOSTD | LVCMOS18
+srst_n_i | LVCMOS18
+cnt_en_i | LVCMOS18
+ce_100Hz_i | LVCMOS18
+clk_i | LVCMOS18
+carry0_0 | LVCMOS18
+carry4_0 | LVCMOS18
+hth_h_o<0> | LVCMOS18
+hth_h_o<1> | LVCMOS18
+hth_h_o<2> | LVCMOS18
+hth_h_o<3> | LVCMOS18
+hth_l_o<0> | LVCMOS18
+hth_l_o<1> | LVCMOS18
+hth_l_o<2> | LVCMOS18
+hth_l_o<3> | LVCMOS18
+sec_h_o<0> | LVCMOS18
+sec_h_o<1> | LVCMOS18
+sec_h_o<2> | LVCMOS18
+sec_h_o<3> | LVCMOS18
+sec_l_o<0> | LVCMOS18
+sec_l_o<1> | LVCMOS18
+sec_l_o<2> | LVCMOS18
+sec_l_o<3> | LVCMOS18
+
+
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 0 | sec_l_o<3>_MC.UIM | NULL | 1 | hth_h_o<3>_MC.UIM | NULL | 2 | sec_l_o<1>_MC.UIM | NULL | 3 | hth_l_o<1>_MC.UIM | NULL | 4 | sec_l_o<0>_MC.UIM | NULL
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 5 | srst_n_i | 132 | 6 | hth_l_o<3>_MC.UIM | NULL | 8 | sec_l_o<2>_MC.UIM | NULL | 9 | s_carry2 | NULL | 13 | hth_l_o<0>_MC.UIM | NULL
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 14 | hth_h_o<1>_MC.UIM | NULL | 15 | hth_l_o<2>_MC.UIM | NULL | 17 | carry0_0_MC.UIM | NULL | 18 | hth_h_o<2>_MC.UIM | NULL | 20 | s_carry1 | NULL
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 24 | ce_100Hz_i | 131 | 30 | hth_h_o<0>_MC.UIM | NULL | 31 | cnt_en_i | 11
+
+FB_IMUX_INDEX | FOOBAR1_ | 217 | 187 | 216 | 200 | 220 | 30 | 202 | -1 | 218 | 199 | -1 | -1 | -1 | 197 | 186 | 203 | -1 | 196 | 189 | -1 | 198 | -1 | -1 | -1 | 32 | -1 | -1 | -1 | -1 | -1 | 195 | 33 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1
+
+
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 1 | sec_h_o<2>_MC.UIM | NULL | 3 | hth_l_o<1>_MC.UIM | NULL | 4 | sec_h_o<3>_MC.UIM | NULL | 5 | srst_n_i | 132 | 6 | hth_l_o<3>_MC.UIM | NULL
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 7 | sec_h_o<1>_MC.UIM | NULL | 8 | hth_l_o<2>_MC.UIM | NULL | 13 | sec_h_o<0>_MC.UIM | NULL | 16 | s_carry3 | NULL | 17 | carry0_0_MC.UIM | NULL
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 32 | hth_l_o<0>_MC.UIM | NULL
+
+FB_IMUX_INDEX | FOOBAR2_ | -1 | 213 | -1 | 200 | 212 | 30 | 202 | 214 | 203 | -1 | -1 | -1 | -1 | 204 | -1 | -1 | 194 | 196 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | 197 | -1 | -1 | -1 | -1 | -1 | -1 | -1
+
+
+FB_ORDER_OF_INPUTS | FOOBAR3_ | 0 | sec_l_o<3>_MC.UIM | NULL | 2 | sec_l_o<1>_MC.UIM | NULL | 4 | sec_l_o<0>_MC.UIM | NULL | 5 | srst_n_i | 132 | 8 | sec_l_o<2>_MC.UIM | NULL
+FB_ORDER_OF_INPUTS | FOOBAR3_ | 9 | s_carry2 | NULL
+
+FB_IMUX_INDEX | FOOBAR3_ | 217 | -1 | 216 | -1 | 220 | 30 | -1 | -1 | 218 | 199 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1
+
+
+GLOBAL_FCLK | clk_i | 1 | 1

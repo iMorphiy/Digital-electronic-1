@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/07-stopwatch/stopwatch/test02_isim_beh.exe" -prj "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/07-stopwatch/stopwatch/test02_beh.prj" "work.test02" 

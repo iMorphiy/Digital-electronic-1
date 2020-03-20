@@ -1,0 +1,31 @@
+Creating log file
+C:\Users\vyma9\OneDrive\Plocha\VUT\DE1\Digital-electronic-1\Labs\07-stopwatch\st
+opwatch\stopwatchCounter_xpa.log.
+Design load 35% complete
+INFO:Power:1692 - 
+   --------------------------------------------------------------
+                         The power estimate will be calculated using PREVIEW
+   data.
+   --------------------------------------------------------------
+
+Design load 70% completeDesign load 100% complete
+Running Vector-less Activity Propagation
+......
+Finished Running Vector-less Activity Propagation
+Finished Running Vector-less Activity Propagation 0 secs 
+WARNING:Power:1337 - Clock frequency for clock net "clk_i" is zero.
+WARNING:Power:1369 - Clock frequency for one or more clocks was not found
+   through
+   timing constraints (PCF file) or simulation data.  Without knowing the
+   clock frequency of all clocks, dynamic power information for those clock
+   domains will default to zero which may under-estimate the power for this
+   design.  To avoid this warning, provide at least one of the following:
+     1. The proper timing constraints (PERIOD) for clocks (re-implement design
+        and load the newly generated PCF file into XPower Analyzer)
+     2. A post PAR simulation-generated VCD or SAIF file indicating clock
+        frequencies
+     3. The clock frequency for clocks in the "By Type -> Clocks" view in the
+        XPower Analyzer GUI and then applying "Update Power Analysis"
+
+Design 'stopwatchCounter.cxt' opened successfully
+

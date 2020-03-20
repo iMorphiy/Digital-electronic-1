@@ -1,0 +1,2 @@
+vhdl work "decimalCounter.vhd"
+vhdl work "stopwatchCounter.vhd"

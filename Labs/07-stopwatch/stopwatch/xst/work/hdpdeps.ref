@@ -1,0 +1,15 @@
+V3 7
+FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/07-stopwatch/stopwatch/decimalCounter.vhd 2020/03/20.14:04:38 P.20131013
+EN work/decimalCounter 1584709486 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/07-stopwatch/stopwatch/decimalCounter.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/decimalCounter/Behavioral 1584709487 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/07-stopwatch/stopwatch/decimalCounter.vhd \
+      EN work/decimalCounter 1584709486
+FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/07-stopwatch/stopwatch/stopwatchCounter.vhd 2020/03/20.14:03:39 P.20131013
+EN work/stopwatchCounter 1584709488 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/07-stopwatch/stopwatch/stopwatchCounter.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/stopwatchCounter/Behavioral 1584709489 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/07-stopwatch/stopwatch/stopwatchCounter.vhd \
+      EN work/stopwatchCounter 1584709488 CP work/decimalCounter

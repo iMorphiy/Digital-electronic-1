@@ -1,0 +1,132 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+FDCPE_carry0_0: FDCPE port map (carry0_0,carry0_0_D,clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carry0_0_D <= (srst_n_i AND cnt_en_i AND ce_100Hz_i);
+</td></tr><tr><td>
+FDCPE_carry4_0: FDCPE port map (carry4_0,carry4_0_D,clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carry4_0_D <= (srst_n_i AND sec_h_o(0) AND s_carry3 AND sec_h_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sec_h_o(3) AND NOT sec_h_o(1));
+</td></tr><tr><td>
+FDCPE_hth_h_o0: FDCPE port map (hth_h_o(0),hth_h_o_D(0),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hth_h_o_D(0) <= ((srst_n_i AND hth_h_o(0) AND NOT s_carry1)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT hth_h_o(0) AND s_carry1));
+</td></tr><tr><td>
+FDCPE_hth_h_o1: FDCPE port map (hth_h_o(1),hth_h_o_D(1),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hth_h_o_D(1) <= ((srst_n_i AND NOT hth_h_o(0) AND hth_h_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT s_carry1 AND hth_h_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND hth_h_o(0) AND s_carry1 AND NOT hth_h_o(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT hth_h_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND hth_h_o(0) AND s_carry1 AND hth_h_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT hth_h_o(1)));
+</td></tr><tr><td>
+FTCPE_hth_h_o2: FTCPE port map (hth_h_o(2),hth_h_o_T(2),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hth_h_o_T(2) <= ((NOT srst_n_i AND hth_h_o(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND hth_h_o(0) AND s_carry1 AND hth_h_o(1)));
+</td></tr><tr><td>
+FTCPE_hth_h_o3: FTCPE port map (hth_h_o(3),hth_h_o_T(3),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hth_h_o_T(3) <= ((NOT srst_n_i AND hth_h_o(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND hth_h_o(0) AND s_carry1 AND hth_h_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	hth_h_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (hth_h_o(0) AND s_carry1 AND hth_h_o(3) AND NOT hth_h_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT hth_h_o(1)));
+</td></tr><tr><td>
+FDCPE_hth_l_o0: FDCPE port map (hth_l_o(0),hth_l_o_D(0),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hth_l_o_D(0) <= ((srst_n_i AND hth_l_o(0) AND NOT carry0_0)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT hth_l_o(0) AND carry0_0));
+</td></tr><tr><td>
+FDCPE_hth_l_o1: FDCPE port map (hth_l_o(1),hth_l_o_D(1),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hth_l_o_D(1) <= ((srst_n_i AND NOT hth_l_o(0) AND hth_l_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT carry0_0 AND hth_l_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND hth_l_o(0) AND carry0_0 AND NOT hth_l_o(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT hth_l_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND hth_l_o(0) AND carry0_0 AND hth_l_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT hth_l_o(1)));
+</td></tr><tr><td>
+FTCPE_hth_l_o2: FTCPE port map (hth_l_o(2),hth_l_o_T(2),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hth_l_o_T(2) <= ((NOT srst_n_i AND hth_l_o(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND hth_l_o(0) AND carry0_0 AND hth_l_o(1)));
+</td></tr><tr><td>
+FTCPE_hth_l_o3: FTCPE port map (hth_l_o(3),hth_l_o_T(3),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hth_l_o_T(3) <= ((NOT srst_n_i AND hth_l_o(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND hth_l_o(0) AND carry0_0 AND hth_l_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	hth_l_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (hth_l_o(0) AND carry0_0 AND hth_l_o(3) AND NOT hth_l_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT hth_l_o(1)));
+</td></tr><tr><td>
+FDCPE_s_carry1: FDCPE port map (s_carry1,s_carry1_D,clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s_carry1_D <= (srst_n_i AND hth_l_o(0) AND carry0_0 AND hth_l_o(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT hth_l_o(2) AND NOT hth_l_o(1));
+</td></tr><tr><td>
+FDCPE_s_carry2: FDCPE port map (s_carry2,s_carry2_D,clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s_carry2_D <= (srst_n_i AND hth_h_o(0) AND s_carry1 AND hth_h_o(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT hth_h_o(2) AND NOT hth_h_o(1));
+</td></tr><tr><td>
+FDCPE_s_carry3: FDCPE port map (s_carry3,s_carry3_D,clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s_carry3_D <= (srst_n_i AND sec_l_o(0) AND s_carry2 AND sec_l_o(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sec_l_o(2) AND NOT sec_l_o(1));
+</td></tr><tr><td>
+FDCPE_sec_h_o0: FDCPE port map (sec_h_o(0),sec_h_o_D(0),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sec_h_o_D(0) <= ((srst_n_i AND sec_h_o(0) AND NOT s_carry3)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT sec_h_o(0) AND s_carry3));
+</td></tr><tr><td>
+FDCPE_sec_h_o1: FDCPE port map (sec_h_o(1),sec_h_o_D(1),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sec_h_o_D(1) <= ((srst_n_i AND NOT sec_h_o(0) AND sec_h_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT s_carry3 AND sec_h_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND sec_h_o(0) AND s_carry3 AND NOT sec_h_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sec_h_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND sec_h_o(0) AND s_carry3 AND sec_h_o(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sec_h_o(1)));
+</td></tr><tr><td>
+FTCPE_sec_h_o2: FTCPE port map (sec_h_o(2),sec_h_o_T(2),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sec_h_o_T(2) <= ((NOT srst_n_i AND sec_h_o(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND sec_h_o(0) AND s_carry3 AND sec_h_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sec_h_o(0) AND s_carry3 AND sec_h_o(2) AND NOT sec_h_o(3)));
+</td></tr><tr><td>
+FTCPE_sec_h_o3: FTCPE port map (sec_h_o(3),sec_h_o_T(3),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sec_h_o_T(3) <= ((NOT srst_n_i AND sec_h_o(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND sec_h_o(0) AND s_carry3 AND sec_h_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sec_h_o(1)));
+</td></tr><tr><td>
+FDCPE_sec_l_o0: FDCPE port map (sec_l_o(0),sec_l_o_D(0),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sec_l_o_D(0) <= ((srst_n_i AND sec_l_o(0) AND NOT s_carry2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT sec_l_o(0) AND s_carry2));
+</td></tr><tr><td>
+FDCPE_sec_l_o1: FDCPE port map (sec_l_o(1),sec_l_o_D(1),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sec_l_o_D(1) <= ((srst_n_i AND NOT sec_l_o(0) AND sec_l_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND NOT s_carry2 AND sec_l_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND sec_l_o(0) AND s_carry2 AND NOT sec_l_o(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sec_l_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND sec_l_o(0) AND s_carry2 AND sec_l_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sec_l_o(1)));
+</td></tr><tr><td>
+FTCPE_sec_l_o2: FTCPE port map (sec_l_o(2),sec_l_o_T(2),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sec_l_o_T(2) <= ((NOT srst_n_i AND sec_l_o(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND sec_l_o(0) AND s_carry2 AND sec_l_o(1)));
+</td></tr><tr><td>
+FTCPE_sec_l_o3: FTCPE port map (sec_l_o(3),sec_l_o_T(3),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sec_l_o_T(3) <= ((NOT srst_n_i AND sec_l_o(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (srst_n_i AND sec_l_o(0) AND s_carry2 AND sec_l_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	sec_l_o(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (sec_l_o(0) AND s_carry2 AND sec_l_o(3) AND NOT sec_l_o(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT sec_l_o(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>
