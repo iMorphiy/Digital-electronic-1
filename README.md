@@ -14,7 +14,7 @@
 |5| 5. 3. 2020 | [05-counter_binary](Labs/05-counter_binary)| Binary counter |
 |6| 12. 3. 2020 | [06-display_driver](Labs/06-display_driver)| write number into 4x 7seg display |
 |7| 19. 3. 2020 | [07-stopwatch](Labs/07-stopwatch)| implementation of stopwatch |
-|8| 26. 3. 2020 |  |
+|8| 26. 3. 2020 | [08-traffic_lights](Labs/08-traffic_lights)| implementation of Traffic light controller |
 |9| 2. 4. 2020 |  |
 |10| 9. 4. 2020 |  |
 |11| 16. 4. 2020 |  |
