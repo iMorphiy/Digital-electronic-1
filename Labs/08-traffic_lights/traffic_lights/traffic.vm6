@@ -1,0 +1,773 @@
+NDS Database:  version P.20131013
+
+NDS_INFO | xbr | 2C256144 | XC2C256-6-TQ144
+
+DEVICE | 2C256 | 2C256144 | 
+
+NETWORK | traffic | 0 | 0 | 1073758214 | 0
+
+INPUT_INSTANCE | 0 | 0 | NULL | clk_II | traffic_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | clk | 1699 | PI | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 3 | 5 | II_FCLK
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+
+INPUT_INSTANCE | 0 | 0 | NULL | clr_II | traffic_COPY_0_COPY_0 | 16 | 1 | 1
+INPUT_NODE_TYPE | 0 | 5 | II_IN
+NODE | clr | 1700 | PI | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | NULL | 0 | 100 | NOTYPE
+OUTPUT_NODE_TYPE | 6 | 5 | II_FSR
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+
+MACROCELL_INSTANCE | NULL | lights<0>_MC | traffic_COPY_0_COPY_0 | 0 | 2 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | lights<0>_MC.Q | 1742 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<0>_MC.Q | lights<0>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | lights<0>_MC.SI | lights<0>_MC | 0 | 2 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | lights<0>_MC.D1 | 1702 | ? | 0 | 0 | lights<0>_MC | NULL | NULL | lights<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 2 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | lights<0>_MC.D2 | 1703 | ? | 0 | 0 | lights<0>_MC | NULL | NULL | lights<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | lights<0>_MC.REG | lights<0>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | lights<0>_MC.D | 1701 | ? | 0 | 0 | lights<0>_MC | NULL | NULL | lights<0>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | lights<0>_MC.Q | 1741 | ? | 0 | 0 | lights<0>_MC | NULL | NULL | lights<0>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | Inv+PrldLow | state_FSM_FFd1_MC | traffic_COPY_0_COPY_0 | 1280 | 9 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | state_FSM_FFd1_MC.SI | state_FSM_FFd1_MC | 0 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | state_FSM_FFd1_MC.D1 | 1708 | ? | 0 | 0 | state_FSM_FFd1_MC | NULL | NULL | state_FSM_FFd1_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | state_FSM_FFd1_MC.D2 | 1707 | ? | 0 | 0 | state_FSM_FFd1_MC | NULL | NULL | state_FSM_FFd1_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd2
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<2>
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<3>
+SPPTERM | 4 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<1>
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_FALSE | count<0> | IV_FALSE | count<2> | IV_FALSE | count<3>
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_FALSE | count<2> | IV_FALSE | count<1> | IV_FALSE | count<3>
+
+SRFF_INSTANCE | state_FSM_FFd1_MC.REG | state_FSM_FFd1_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | state_FSM_FFd1_MC.D | 1706 | ? | 0 | 0 | state_FSM_FFd1_MC | NULL | NULL | state_FSM_FFd1_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 3 | 8 | SRFF_R
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | state_FSM_FFd1_MC.Q | 1705 | ? | 0 | 0 | state_FSM_FFd1_MC | NULL | NULL | state_FSM_FFd1_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | Inv+PrldLow | state_FSM_FFd2_MC | traffic_COPY_0_COPY_0 | 1280 | 9 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | state_FSM_FFd2_MC.SI | state_FSM_FFd2_MC | 0 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | state_FSM_FFd2_MC.D1 | 1713 | ? | 0 | 0 | state_FSM_FFd2_MC | NULL | NULL | state_FSM_FFd2_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | state_FSM_FFd2_MC.D2 | 1712 | ? | 0 | 0 | state_FSM_FFd2_MC | NULL | NULL | state_FSM_FFd2_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 2 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3
+SPPTERM | 3 | IV_TRUE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<2>
+SPPTERM | 3 | IV_TRUE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<3>
+SPPTERM | 4 | IV_TRUE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<1>
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | count<0> | IV_FALSE | count<2> | IV_FALSE | count<3>
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | count<2> | IV_FALSE | count<1> | IV_FALSE | count<3>
+
+SRFF_INSTANCE | state_FSM_FFd2_MC.REG | state_FSM_FFd2_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | state_FSM_FFd2_MC.D | 1711 | ? | 0 | 0 | state_FSM_FFd2_MC | NULL | NULL | state_FSM_FFd2_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 3 | 8 | SRFF_R
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | state_FSM_FFd2_MC.Q | 1710 | ? | 0 | 0 | state_FSM_FFd2_MC | NULL | NULL | state_FSM_FFd2_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | state_FSM_FFd3_MC | traffic_COPY_0_COPY_0 | 5120 | 9 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | state_FSM_FFd3_MC.SI | state_FSM_FFd3_MC | 0 | 7 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | state_FSM_FFd3_MC.D1 | 1718 | ? | 0 | 0 | state_FSM_FFd3_MC | NULL | NULL | state_FSM_FFd3_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | state_FSM_FFd3_MC.D2 | 1717 | ? | 0 | 0 | state_FSM_FFd3_MC | NULL | NULL | state_FSM_FFd3_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3
+SPPTERM | 6 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<2> | IV_TRUE | count<1> | IV_TRUE | count<3>
+SPPTERM | 7 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd2 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<2> | IV_TRUE | count<1> | IV_TRUE | count<3>
+
+SRFF_INSTANCE | state_FSM_FFd3_MC.REG | state_FSM_FFd3_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | state_FSM_FFd3_MC.D | 1716 | ? | 0 | 0 | state_FSM_FFd3_MC | NULL | NULL | state_FSM_FFd3_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 3 | 8 | SRFF_R
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | state_FSM_FFd3_MC.Q | 1715 | ? | 0 | 0 | state_FSM_FFd3_MC | NULL | NULL | state_FSM_FFd3_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | count<0>_MC | traffic_COPY_0_COPY_0 | 1024 | 7 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | count<0>_MC.SI | count<0>_MC | 0 | 5 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | count<0>_MC.D1 | 1723 | ? | 0 | 0 | count<0>_MC | NULL | NULL | count<0>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | count<0>_MC.D2 | 1722 | ? | 0 | 0 | count<0>_MC | NULL | NULL | count<0>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_FALSE | count<0>
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_FALSE | count<0>
+SPPTERM | 3 | IV_FALSE | count<0> | IV_FALSE | count<2> | IV_FALSE | count<3>
+
+SRFF_INSTANCE | count<0>_MC.REG | count<0>_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | count<0>_MC.D | 1721 | ? | 0 | 0 | count<0>_MC | NULL | NULL | count<0>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 3 | 8 | SRFF_R
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | count<0>_MC.Q | 1720 | ? | 0 | 0 | count<0>_MC | NULL | NULL | count<0>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | count<2>_MC | traffic_COPY_0_COPY_0 | 5120 | 7 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | count<2>_MC.SI | count<2>_MC | 0 | 5 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | count<2>_MC.D1 | 1728 | ? | 0 | 0 | count<2>_MC | NULL | NULL | count<2>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | count<2>_MC.D2 | 1727 | ? | 0 | 0 | count<2>_MC | NULL | NULL | count<2>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<2>
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<2>
+SPPTERM | 4 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<1>
+SPPTERM | 4 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<1>
+
+SRFF_INSTANCE | count<2>_MC.REG | count<2>_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | count<2>_MC.D | 1726 | ? | 0 | 0 | count<2>_MC | NULL | NULL | count<2>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 3 | 8 | SRFF_R
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | count<2>_MC.Q | 1725 | ? | 0 | 0 | count<2>_MC | NULL | NULL | count<2>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow | count<1>_MC | traffic_COPY_0_COPY_0 | 1024 | 8 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | count<1>_MC.SI | count<1>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | count<1>_MC.D1 | 1733 | ? | 0 | 0 | count<1>_MC | NULL | NULL | count<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | count<1>_MC.D2 | 1732 | ? | 0 | 0 | count<1>_MC | NULL | NULL | count<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 4 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_FALSE | count<1>
+SPPTERM | 4 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_FALSE | count<0> | IV_TRUE | count<1>
+SPPTERM | 4 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_FALSE | count<1>
+SPPTERM | 4 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_FALSE | count<0> | IV_TRUE | count<1>
+SPPTERM | 4 | IV_TRUE | count<0> | IV_FALSE | count<2> | IV_FALSE | count<1> | IV_FALSE | count<3>
+SPPTERM | 4 | IV_FALSE | count<0> | IV_FALSE | count<2> | IV_TRUE | count<1> | IV_FALSE | count<3>
+
+SRFF_INSTANCE | count<1>_MC.REG | count<1>_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | count<1>_MC.D | 1731 | ? | 0 | 0 | count<1>_MC | NULL | NULL | count<1>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 3 | 8 | SRFF_R
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | count<1>_MC.Q | 1730 | ? | 0 | 0 | count<1>_MC | NULL | NULL | count<1>_MC.REG | 0 | 8 | SRFF_Q
+
+MACROCELL_INSTANCE | PrldLow+Tff | count<3>_MC | traffic_COPY_0_COPY_0 | 5120 | 8 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 1 | 0 | MC_UIM
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+
+SIGNAL_INSTANCE | count<3>_MC.SI | count<3>_MC | 0 | 6 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<3> | 1734 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<3>_MC.Q | count<3>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<0> | 1719 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<0>_MC.Q | count<0>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<2> | 1724 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<2>_MC.Q | count<2>_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | count<1> | 1729 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | count<1>_MC.Q | count<1>_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | count<3>_MC.D1 | 1738 | ? | 0 | 0 | count<3>_MC | NULL | NULL | count<3>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 0 | IV_ZERO
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | count<3>_MC.D2 | 1737 | ? | 0 | 0 | count<3>_MC | NULL | NULL | count<3>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 3 | IV_TRUE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<3>
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<3>
+SPPTERM | 5 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<2> | IV_TRUE | count<1>
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<2> | IV_TRUE | count<1>
+
+SRFF_INSTANCE | count<3>_MC.REG | count<3>_MC | 0 | 3 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | count<3>_MC.D | 1736 | ? | 0 | 0 | count<3>_MC | NULL | NULL | count<3>_MC.XOR | 0 | 7 | ALU_F
+INPUT_NODE_TYPE | 1 | 8 | SRFF_C
+NODE | clk_II/FCLK | 1739 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clk_II | 3 | 5 | II_FCLK
+INPUT_NODE_TYPE | 3 | 8 | SRFF_R
+NODE | clr_II/FSR | 1740 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | clr_II | 6 | 5 | II_FSR
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | count<3>_MC.Q | 1735 | ? | 0 | 0 | count<3>_MC | NULL | NULL | count<3>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | lights<0> | traffic_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | lights<0>_MC.Q | 1742 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<0>_MC.Q | lights<0>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | lights<0> | 1743 | PO | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | lights<0> | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | NULL | lights<1>_MC | traffic_COPY_0_COPY_0 | 0 | 2 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | lights<1>_MC.Q | 1748 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<1>_MC.Q | lights<1>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | lights<1>_MC.SI | lights<1>_MC | 0 | 2 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | lights<1>_MC.D1 | 1745 | ? | 0 | 0 | lights<1>_MC | NULL | NULL | lights<1>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 2 | IV_FALSE | state_FSM_FFd2 | IV_TRUE | state_FSM_FFd3
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | lights<1>_MC.D2 | 1746 | ? | 0 | 0 | lights<1>_MC | NULL | NULL | lights<1>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | lights<1>_MC.REG | lights<1>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | lights<1>_MC.D | 1744 | ? | 0 | 0 | lights<1>_MC | NULL | NULL | lights<1>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | lights<1>_MC.Q | 1747 | ? | 0 | 0 | lights<1>_MC | NULL | NULL | lights<1>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | lights<1> | traffic_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | lights<1>_MC.Q | 1748 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<1>_MC.Q | lights<1>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | lights<1> | 1749 | PO | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | lights<1> | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | Inv | lights<2>_MC | traffic_COPY_0_COPY_0 | 256 | 2 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | lights<2>_MC.Q | 1754 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<2>_MC.Q | lights<2>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | lights<2>_MC.SI | lights<2>_MC | 0 | 2 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | lights<2>_MC.D1 | 1751 | ? | 0 | 0 | lights<2>_MC | NULL | NULL | lights<2>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 2 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd2
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | lights<2>_MC.D2 | 1752 | ? | 0 | 0 | lights<2>_MC | NULL | NULL | lights<2>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | lights<2>_MC.REG | lights<2>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | lights<2>_MC.D | 1750 | ? | 0 | 0 | lights<2>_MC | NULL | NULL | lights<2>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | lights<2>_MC.Q | 1753 | ? | 0 | 0 | lights<2>_MC | NULL | NULL | lights<2>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | lights<2> | traffic_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | lights<2>_MC.Q | 1754 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<2>_MC.Q | lights<2>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | lights<2> | 1755 | PO | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | lights<2> | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | NULL | lights<3>_MC | traffic_COPY_0_COPY_0 | 0 | 2 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | lights<3>_MC.Q | 1760 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<3>_MC.Q | lights<3>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | lights<3>_MC.SI | lights<3>_MC | 0 | 2 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | lights<3>_MC.D1 | 1757 | ? | 0 | 0 | lights<3>_MC | NULL | NULL | lights<3>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 2 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | lights<3>_MC.D2 | 1758 | ? | 0 | 0 | lights<3>_MC | NULL | NULL | lights<3>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | lights<3>_MC.REG | lights<3>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | lights<3>_MC.D | 1756 | ? | 0 | 0 | lights<3>_MC | NULL | NULL | lights<3>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | lights<3>_MC.Q | 1759 | ? | 0 | 0 | lights<3>_MC | NULL | NULL | lights<3>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | lights<3> | traffic_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | lights<3>_MC.Q | 1760 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<3>_MC.Q | lights<3>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | lights<3> | 1761 | PO | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | lights<3> | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | NULL | lights<4>_MC | traffic_COPY_0_COPY_0 | 0 | 2 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | lights<4>_MC.Q | 1766 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<4>_MC.Q | lights<4>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | lights<4>_MC.SI | lights<4>_MC | 0 | 2 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd3 | 1714 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd3_MC.Q | state_FSM_FFd3_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | lights<4>_MC.D1 | 1763 | ? | 0 | 0 | lights<4>_MC | NULL | NULL | lights<4>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 2 | IV_TRUE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | lights<4>_MC.D2 | 1764 | ? | 0 | 0 | lights<4>_MC | NULL | NULL | lights<4>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | lights<4>_MC.REG | lights<4>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | lights<4>_MC.D | 1762 | ? | 0 | 0 | lights<4>_MC | NULL | NULL | lights<4>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | lights<4>_MC.Q | 1765 | ? | 0 | 0 | lights<4>_MC | NULL | NULL | lights<4>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | lights<4> | traffic_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | lights<4>_MC.Q | 1766 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<4>_MC.Q | lights<4>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | lights<4> | 1767 | PO | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | lights<4> | 0 | 6 | OI_OUT
+
+MACROCELL_INSTANCE | Inv | lights<5>_MC | traffic_COPY_0_COPY_0 | 256 | 2 | 1
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 0 | 0 | MC_Q
+NODE | lights<5>_MC.Q | 1772 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<5>_MC.Q | lights<5>_MC | 0 | 0 | MC_Q
+
+SIGNAL_INSTANCE | lights<5>_MC.SI | lights<5>_MC | 0 | 2 | 2
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd1 | 1704 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd1_MC.Q | state_FSM_FFd1_MC | 1 | 0 | MC_UIM
+INPUT_NODE_TYPE | 1 | 100 | NOTYPE
+NODE | state_FSM_FFd2 | 1709 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | state_FSM_FFd2_MC.Q | state_FSM_FFd2_MC | 1 | 0 | MC_UIM
+OUTPUT_NODE_TYPE | 1 | 9 | MC_SI_D1
+SIGNAL | NODE | lights<5>_MC.D1 | 1769 | ? | 0 | 0 | lights<5>_MC | NULL | NULL | lights<5>_MC.SI | 1 | 9 | MC_SI_D1
+SPPTERM | 2 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd2
+OUTPUT_NODE_TYPE | 2 | 9 | MC_SI_D2
+SIGNAL | NODE | lights<5>_MC.D2 | 1770 | ? | 0 | 0 | lights<5>_MC | NULL | NULL | lights<5>_MC.SI | 2 | 9 | MC_SI_D2
+SPPTERM | 0 | IV_ZERO
+
+SRFF_INSTANCE | lights<5>_MC.REG | lights<5>_MC | 0 | 1 | 1
+INPUT_NODE_TYPE | 0 | 8 | SRFF_D
+NODE | lights<5>_MC.D | 1768 | ? | 0 | 0 | lights<5>_MC | NULL | NULL | lights<5>_MC.XOR | 0 | 7 | ALU_F
+OUTPUT_NODE_TYPE | 0 | 8 | SRFF_Q
+NODE | lights<5>_MC.Q | 1771 | ? | 0 | 0 | lights<5>_MC | NULL | NULL | lights<5>_MC.REG | 0 | 8 | SRFF_Q
+
+OUTPUT_INSTANCE | 0 | lights<5> | traffic_COPY_0_COPY_0 | 3 | 1 | 1
+INPUT_NODE_TYPE | 0 | 6 | OI_IN
+NODE | lights<5>_MC.Q | 1772 | ? | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | lights<5>_MC.Q | lights<5>_MC | 0 | 0 | MC_Q
+OUTPUT_NODE_TYPE | 0 | 6 | OI_OUT
+NODE | lights<5> | 1773 | PO | 0 | 0 | traffic_COPY_0_COPY_0 | NULL | NULL | lights<5> | 0 | 6 | OI_OUT
+
+FB_INSTANCE | FOOBAR1_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 3 | NULL | 0 | clr_II | 1 | NULL | 0 | 143 | 51200
+FBPIN | 4 | lights<2>_MC | 1 | NULL | 0 | lights<2> | 1 | 142 | 49152
+FBPIN | 6 | lights<0>_MC | 1 | NULL | 0 | lights<0> | 1 | 140 | 49152
+FBPIN | 7 | count<0>_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 8 | count<2>_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 9 | count<1>_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 10 | count<3>_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 11 | state_FSM_FFd2_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 12 | lights<1>_MC | 1 | NULL | 0 | lights<1> | 1 | 139 | 49152
+FBPIN | 13 | lights<3>_MC | 1 | NULL | 0 | lights<3> | 1 | 138 | 49152
+FBPIN | 14 | lights<4>_MC | 1 | NULL | 0 | lights<4> | 1 | 137 | 49152
+FBPIN | 15 | state_FSM_FFd3_MC | 1 | NULL | 0 | NULL | 0
+FBPIN | 16 | state_FSM_FFd1_MC | 1 | NULL | 0 | NULL | 0
+
+FB_INSTANCE | FOOBAR2_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 1 | lights<5>_MC | 1 | NULL | 0 | lights<5> | 1 | 2 | 53248
+
+FB_INSTANCE | FOOBAR3_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR4_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR5_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+FBPIN | 4 | NULL | 0 | clk_II | 1 | NULL | 0 | 32 | 57344
+
+FB_INSTANCE | FOOBAR6_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR7_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR8_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR9_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR10_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR11_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR12_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR13_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR14_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR15_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | FOOBAR16_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+FB_INSTANCE | INPUTPINS_FOOBAR17_ | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR1_ | FOOBAR1__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR2_ | FOOBAR2__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR3_ | FOOBAR3__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR4_ | FOOBAR4__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR5_ | FOOBAR5__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR6_ | FOOBAR6__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR7_ | FOOBAR7__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR8_ | FOOBAR8__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR9_ | FOOBAR9__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR10_ | FOOBAR10__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR11_ | FOOBAR11__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR12_ | FOOBAR12__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR13_ | FOOBAR13__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR14_ | FOOBAR14__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR15_ | FOOBAR15__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+CT_INSTANCE | FOOBAR16_ | FOOBAR16__ctinst | traffic_COPY_0_COPY_0 | 0 | 0 | 0
+
+PLA | FOOBAR1_ | 34
+PLA_TERM | 0 | 
+SPPTERM | 4 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<1>
+PLA_TERM | 1 | 
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<2>
+PLA_TERM | 2 | 
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<3>
+PLA_TERM | 3 | 
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_FALSE | count<0> | IV_FALSE | count<2> | IV_FALSE | count<3>
+PLA_TERM | 4 | 
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_FALSE | count<2> | IV_FALSE | count<1> | IV_FALSE | count<3>
+PLA_TERM | 5 | 
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3
+PLA_TERM | 6 | 
+SPPTERM | 6 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<2> | IV_TRUE | count<1> | IV_TRUE | count<3>
+PLA_TERM | 7 | 
+SPPTERM | 7 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd2 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<2> | IV_TRUE | count<1> | IV_TRUE | count<3>
+PLA_TERM | 8 | 
+SPPTERM | 2 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3
+PLA_TERM | 9 | 
+SPPTERM | 4 | IV_TRUE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<1>
+PLA_TERM | 10 | 
+SPPTERM | 3 | IV_TRUE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<2>
+PLA_TERM | 11 | 
+SPPTERM | 3 | IV_TRUE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<3>
+PLA_TERM | 12 | 
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | count<0> | IV_FALSE | count<2> | IV_FALSE | count<3>
+PLA_TERM | 13 | 
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd2 | IV_FALSE | count<2> | IV_FALSE | count<1> | IV_FALSE | count<3>
+PLA_TERM | 14 | 
+SPPTERM | 5 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<2> | IV_TRUE | count<1>
+PLA_TERM | 15 | 
+SPPTERM | 5 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<2> | IV_TRUE | count<1>
+PLA_TERM | 16 | 
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<3>
+PLA_TERM | 17 | 
+SPPTERM | 4 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_FALSE | count<0> | IV_TRUE | count<1>
+PLA_TERM | 18 | 
+SPPTERM | 4 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_FALSE | count<0> | IV_TRUE | count<1>
+PLA_TERM | 19 | 
+SPPTERM | 2 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd2
+PLA_TERM | 20 | 
+SPPTERM | 4 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_FALSE | count<1>
+PLA_TERM | 21 | 
+SPPTERM | 4 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_FALSE | count<1>
+PLA_TERM | 22 | 
+SPPTERM | 4 | IV_FALSE | count<0> | IV_FALSE | count<2> | IV_TRUE | count<1> | IV_FALSE | count<3>
+PLA_TERM | 23 | 
+SPPTERM | 4 | IV_TRUE | count<0> | IV_FALSE | count<2> | IV_FALSE | count<1> | IV_FALSE | count<3>
+PLA_TERM | 24 | 
+SPPTERM | 4 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<1>
+PLA_TERM | 25 | 
+SPPTERM | 2 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3
+PLA_TERM | 26 | 
+SPPTERM | 4 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_TRUE | count<0> | IV_TRUE | count<1>
+PLA_TERM | 27 | 
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_TRUE | count<2>
+PLA_TERM | 28 | 
+SPPTERM | 3 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3 | IV_FALSE | count<0>
+PLA_TERM | 29 | 
+SPPTERM | 3 | IV_FALSE | state_FSM_FFd1 | IV_FALSE | state_FSM_FFd3 | IV_FALSE | count<0>
+PLA_TERM | 30 | 
+SPPTERM | 3 | IV_FALSE | count<0> | IV_FALSE | count<2> | IV_FALSE | count<3>
+PLA_TERM | 43 | 
+SPPTERM | 2 | IV_FALSE | state_FSM_FFd2 | IV_TRUE | state_FSM_FFd3
+PLA_TERM | 46 | 
+SPPTERM | 2 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd3
+PLA_TERM | 49 | 
+SPPTERM | 2 | IV_TRUE | state_FSM_FFd2 | IV_FALSE | state_FSM_FFd3
+
+PLA | FOOBAR2_ | 1
+PLA_TERM | 10 | 
+SPPTERM | 2 | IV_TRUE | state_FSM_FFd1 | IV_TRUE | state_FSM_FFd2
+
+BUSINFO | LIGHTS<5:0> | 6 | 0 | 1 | lights<0> | 5 | lights<1> | 4 | lights<2> | 3 | lights<3> | 2 | lights<4> | 1 | lights<5> | 0
+
+IOSTD | LVCMOS18
+clk | LVCMOS18
+clr | LVCMOS18
+lights<0> | LVCMOS18
+lights<1> | LVCMOS18
+lights<2> | LVCMOS18
+lights<3> | LVCMOS18
+lights<4> | LVCMOS18
+lights<5> | LVCMOS18
+
+
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 0 | count<3> | NULL | 2 | state_FSM_FFd3 | NULL | 5 | count<0> | NULL | 6 | state_FSM_FFd2 | NULL | 7 | count<2> | NULL
+FB_ORDER_OF_INPUTS | FOOBAR1_ | 9 | state_FSM_FFd1 | NULL | 10 | count<1> | NULL
+
+FB_IMUX_INDEX | FOOBAR1_ | 193 | -1 | 198 | -1 | -1 | 190 | 194 | 191 | -1 | 199 | 192 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1
+
+
+FB_ORDER_OF_INPUTS | FOOBAR2_ | 6 | state_FSM_FFd2 | NULL | 9 | state_FSM_FFd1 | NULL
+
+FB_IMUX_INDEX | FOOBAR2_ | -1 | -1 | -1 | -1 | -1 | -1 | 194 | -1 | -1 | 199 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1 | -1
+
+
+GLOBAL_FCLK | clk | 1 | 1
+
+GLOBAL_FSR | clr | 0 | 0

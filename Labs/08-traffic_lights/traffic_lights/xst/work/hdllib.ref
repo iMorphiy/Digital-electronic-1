@@ -1,0 +1,6 @@
+EN top NULL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/08-traffic_lights/traffic_lights/top.vhd sub00/vhpl04 1585346266
+EN traffic NULL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/08-traffic_lights/traffic_lights/traffic.vhd sub00/vhpl00 1585346262
+AR traffic traffic C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/08-traffic_lights/traffic_lights/traffic.vhd sub00/vhpl01 1585346263
+AR clock_enable behavioral C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/06-display_driver/display_driver/clock_enable.vhd sub00/vhpl03 1585346265
+EN clock_enable NULL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/06-display_driver/display_driver/clock_enable.vhd sub00/vhpl02 1585346264
+AR top behavioral C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/08-traffic_lights/traffic_lights/top.vhd sub00/vhpl05 1585346267

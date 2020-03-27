@@ -1,0 +1,4 @@
+vhdl isim_temp "traffic.vhd"
+vhdl isim_temp "../../06-display_driver/display_driver/clock_enable.vhd"
+vhdl isim_temp "top.vhd"
+vhdl isim_temp "test_top.vhd"

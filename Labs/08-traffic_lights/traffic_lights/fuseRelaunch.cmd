@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/08-traffic_lights/traffic_lights/test_isim_beh.exe" -prj "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Labs/08-traffic_lights/traffic_lights/test_beh.prj" "work.test" 
