@@ -3,96 +3,96 @@
 ```vhdl
 library ieee;
 use ieee.std_logic_1164.all;
---use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 
 
 entity traffic is
-	port(	clk		: in std_logic;
-			clr		: in std_logic;
-			lights	: out std_logic_vector(5 downto 0));
+	port(
+				clk_i		:	in std_logic;
+				clr_i		:	in std_logic;
+				lights_i 	:	out std_logic_vector(5 downto 0));
 end traffic;
 
 architecture traffic of traffic is
 
-	type state_type is (s0, s1, s2, s3, s4, s5);
-	signal state: state_type := s0;
-	signal count : unsigned(3 downto 0) := (others => '0');
+	type state_type is (state0, state1, state2, state3, state4, state5);
+	signal s_state: state_type := state0;
+	signal s_count : unsigned(3 downto 0) := (others => '0');
 	constant SEC5: unsigned(3 downto 0) := "1111";
 	constant SEC1: unsigned(3 downto 0) := "0011";
 
 begin
-	process(clk, clr) begin
+	process(clk_i, clr_i) begin
 		if clr = '1' then
-			state <= s0;
-			count <= (others => '0');
-		elsif rising_edge(clk) then
+			s_state <= state0;
+			s_count <= (others => '0');
+		elsif rising_edge(clk_i) then
 			case state is
-				when s0 =>
-					if count < SEC5 then
-						state <= s0;
-						count <= count + 1;
+				when state0 =>
+					if s_count < SEC5 then
+						s_state <= state0;
+						s_count <= s_count + 1;
 					else
-						state <= s1;
-						count <= (others => '0');
+						s_state <= state1;
+						s_count <= (others => '0');
 					end if;
-				when s1 =>
-					if count < SEC1 then
-						state <= s1;
-						count <= count + 1;
+				when state1 =>
+					if s_count < SEC1 then
+						s_state <= state1;
+						s_count <= s_count + 1;
 					else
-						state <= s2;
-						count <= (others => '0');
+						s_state <= state2;
+						s_count <= (others => '0');
 					end if;
-				when s2 =>
-					if count < SEC1 then
-						state <= s2;
-						count <= count + 1;
+				when state2 =>
+					if s_count < SEC1 then
+						s_state <= state2;
+						s_count <= s_count + 1;
 					else
-						state <= s3;
-						count <= (others => '0');
+						s_state <= state3;
+						s_count <= (others => '0');
 					end if;
-				when s3 =>
-					if count < SEC5 then
-						state <= s3;
-						count <= count + 1;
+				when state3 =>
+					if s_count < SEC5 then
+						s_state <= state3;
+						s_count <= s_count + 1;
 					else
-						state <= s4;
-						count <= (others => '0');
+						s_state <= state4;
+						s_count <= (others => '0');
 					end if;
-				when s4 =>
-					if count < SEC1 then
-						state <= s4;
-						count <= count + 1;
+				when state4 =>
+					if s_count < SEC1 then
+						s_state <= state4;
+						s_count <= s_count + 1;
 					else
-						state <= s5;
-						count <= (others => '0');
+						s_state <= state5;
+						s_count <= (others => '0');
 					end if;
-				when s5 =>
-					if count < SEC1 then
-						state <= s5;
-						count <= count + 1;
+				when state5 =>
+					if s_count < SEC1 then
+						s_state <= state5;
+						s_count <= s_count + 1;
 					else
-						state <= s0;
-						count <= (others => '0');
+						s_state <= state0;
+						s_count <= (others => '0');
 					end if;
 				when others =>
-					state <= s0;
+					s_state <= state0;
 			end case;
 		end if;
 	end process;
 
-	C2: process(state)
+	C2: process(s_state)
 	begin
 		case state is
-			when s0 => lights <= "100001";
-			when s1 => lights <= "100010";
-			when s2 => lights <= "100100";
-			when s3 => lights <= "001100";
-			when s4 => lights <= "010100";
-			when s5 => lights <= "100100";
-			when others => lights <= "100001";
+			when state0 => lights_i <= "100001";
+			when state1 => lights_i <= "100010";
+			when state2 => lights_i <= "100100";
+			when state3 => lights_i <= "001100";
+			when state4 => lights_i <= "010100";
+			when state5 => lights_i <= "100100";
+			when others => lights_i <= "100001";
 		end case;
 	end process;
 
@@ -111,24 +111,24 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity top is
 	port(
 			-- OUTPUTS
---			LD15_CPLD : out  std_logic;
---			LD14_CPLD : out  std_logic;
---			LD13_CPLD : out  std_logic;
---			LD12_CPLD : out  std_logic;
---			LD11_CPLD : out  std_logic;
---			LD10_CPLD : out  std_logic;
+			--LD15_CPLD : out  std_logic;
+			--LD14_CPLD : out  std_logic;
+			--LD13_CPLD : out  std_logic;
+			--LD12_CPLD : out  std_logic;
+			--LD11_CPLD : out  std_logic;
+			--LD10_CPLD : out  std_logic;
 
-			TRAFFIC1_LED_RED 		: out std_logic;
+			TRAFFIC1_LED_RED		: out std_logic;
 			TRAFFIC1_LED_ORANGE 	: out std_logic;
-			TRAFFIC1_LED_GREEN 	: out std_logic;
+			TRAFFIC1_LED_GREEN	  : out std_logic;
 
-			TRAFFIC2_LED_RED 		: out std_logic;
-			TRAFFIC2_LED_ORANGE 	: out std_logic;
-			TRAFFIC2_LED_GREEN 	: out std_logic;
+			TRAFFIC2_LED_RED		: out std_logic;
+			TRAFFIC2_LED_ORANGE	 : out std_logic;
+			TRAFFIC2_LED_GREEN	  : out std_logic;
 
 			-- INPUTS
-			clk_i 	: in  std_logic;
-         BTN0 		: in  std_logic
+			clk_i		: in  std_logic;
+			BTN0 		: in  std_logic
 
 			);
 end top;
@@ -140,8 +140,8 @@ begin
 
 	MAIN : entity work.traffic
 		port map (
-			clk => s_en,
-			clr => not BTN0,
+			clk_i => s_en,
+			clr_i => not BTN0,
 			lights => s_lights
 		);
 
