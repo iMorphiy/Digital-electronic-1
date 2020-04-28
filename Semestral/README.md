@@ -7,13 +7,44 @@ Implementation of ALU (arithmetic logic unit)
 
 ## Problem analysis
 For easier implementation we will concentrate into MIPS architecture.\
-Simple ALU should by able to do this instuctions[[1]]():
-  - add
-  - sub
-  - and
-  - or
-  - slt
+Simple ALU should by able to do this instructions[[1]](1):\
 
+(C code is demonstration how to this instructions should work)
+
+  - add - sum two numbers
+  ```c
+    int8_t sum(int8_t A, int8_t B){
+      return(A+B);
+    }
+  ```
+
+  - sub - subtraction two numbers
+  ```c
+    int8_t sub(int8_t A, int8_t B){
+      return(A-B);
+    }
+  ```
+  - and - binary and two numbers
+  ```c
+    int8_t and(int8_t A, int8_t B){
+      return(A&B);
+    }
+  ```
+  - or - binary or two numbers
+  ```c
+    int8_t or(int8_t A, int8_t B){
+      return(A|B);
+    }
+  ```
+  - slt - Compare two numbers *FOR YOURE IMPLEMENTATION IS NOT NECESSARY*
+  ```c
+    int8_t sum(int8_t A, int8_t B){
+      if(A < B){
+        return(1);
+      }
+      return(0);
+    }
+  ```
 
 
 ## Implementation
@@ -21,3 +52,10 @@ Simple ALU should by able to do this instuctions[[1]]():
 
 ## Resources
 [1] [https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf](https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf)
+[1]: https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf
+[2] [http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html](http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html)
+[2]: http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html
+[3] [https://en.wikipedia.org/wiki/Arithmetic_logic_unit](https://en.wikipedia.org/wiki/Arithmetic_logic_unit)
+[3]: https://en.wikipedia.org/wiki/Arithmetic_logic_unit
+[4] []()
+[4]:
