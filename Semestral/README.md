@@ -147,7 +147,7 @@ In the top file is action_i signal connected into state machine created in file 
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | **number A** | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 5 |
 | **number B** | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | -1 |
-| **number of oper.** | X | X | X | X | X | X | 0 | 0 |
+| **number of oper.** | X | X | X | X | X | X | 0 | 0 | ADD |
 
 **Each byte is separated by pushing BTN0**
 
@@ -160,6 +160,29 @@ In the top file is action_i signal connected into state machine created in file 
 #### List of created components
 
   - [top.vhd](ALU/top.vhd)
+  - [signed_to_display_driver.vhd](ALU/signed_to_display_driver.vhd)
+  - [READER.vhd](ALU/READER.vhd)
+  - [instruction_enable.vhd](ALU/instruction_enable.vhd)
+  - [hex_to_7seg.vhd](ALU/hex_to_7seg.vhd)
+  - [FULL_ADDER.vhd](ALU/FULL_ADDER.vhd)
+  - [driver_7seg.vhd](ALU/driver_7seg.vhd)
+  - [clock_enable.vhd](ALU/clock_enable.vhd)
+  - [ALU.vhd](ALU/ALU.vhd)
+  - [ADDER8BIT.vhd](ALU/ADDER8BIT.vhd)
+
+#### coolrunner.ucf
+
+  - [coolrunner.ucf](ALU/coolrunner.ucf)
+
+#### List of ALLS TEST
+
+  - [TEST_READER.vhd](ALU/TEST_READER.vhd)
+  - [test_FULL_ADDER.vhd](ALU/test_FULL_ADDER.vhd)
+  - [TEST_DRIVER_TO_DIGITS.vhd](ALU/TEST_DRIVER_TO_DIGITS.vhd)
+  - [test_button.vhd](ALU/test_button.vhd)
+  - [TEST_ALU.vhd](ALU/TEST_ALU.vhd)
+  - [TEST_ADDER8BIT.vhd](ALU/TEST_ADDER8BIT.vhd)
+
 
 
 
