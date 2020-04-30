@@ -1,3 +1,7 @@
 vhdl work "C:\Users\vyma9\OneDrive\Plocha\VUT\DE1\Digital-electronic-1\Semestral\ALU\FULL_ADDER.vhd"
+vhdl work "C:\Users\vyma9\OneDrive\Plocha\VUT\DE1\Digital-electronic-1\Semestral\ALU\hex_to_7seg.vhd"
+vhdl work "C:\Users\vyma9\OneDrive\Plocha\VUT\DE1\Digital-electronic-1\Semestral\ALU\clock_enable.vhd"
 vhdl work "C:\Users\vyma9\OneDrive\Plocha\VUT\DE1\Digital-electronic-1\Semestral\ALU\ADDER8BIT.vhd"
+vhdl work "C:\Users\vyma9\OneDrive\Plocha\VUT\DE1\Digital-electronic-1\Semestral\ALU\driver_7seg.vhd"
+vhdl work "C:\Users\vyma9\OneDrive\Plocha\VUT\DE1\Digital-electronic-1\Semestral\ALU\ALU.vhd"
 vhdl work "C:\Users\vyma9\OneDrive\Plocha\VUT\DE1\Digital-electronic-1\Semestral\ALU\top.vhd"

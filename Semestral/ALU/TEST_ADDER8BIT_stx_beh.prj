@@ -1,0 +1,3 @@
+vhdl isim_temp "FULL_ADDER.vhd"
+vhdl isim_temp "ADDER8BIT.vhd"
+vhdl isim_temp "TEST_ADDER8BIT.vhd"

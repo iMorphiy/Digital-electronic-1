@@ -1,0 +1,4 @@
+vhdl work "FULL_ADDER.vhd"
+vhdl work "ADDER8BIT.vhd"
+vhdl work "ALU.vhd"
+vhdl work "TEST_ALU.vhd"

@@ -2,7 +2,7 @@ Release 14.7 ngdbuild P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Command Line: D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
--intstyle ise -dd _ngo -i -p xc2c256-TQ144-6 ALU.ngc ALU.ngd
+-intstyle ise -dd _ngo -uc coolrunner.ucf -p xc2c256-TQ144-6 ALU.ngc ALU.ngd
 
 Reading NGO file
 "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.n
@@ -10,8 +10,315 @@ gc" ...
 Gathering constraint information from source properties...
 Done.
 
+Annotating constraints to design from ucf file "coolrunner.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
+ERROR:ConstraintSystem:59 - Constraint <NET SW<1>         LOC = P124;>
+   [coolrunner.ucf(20)]: NET "SW<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW<1>         LOC = P124;> [coolrunner.ucf(20)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW<0>         LOC = P39;>
+   [coolrunner.ucf(21)]: NET "SW<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW<0>         LOC = P39;> [coolrunner.ucf(21)]' could not be found and
+   so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_seg_o<6>   LOC = P56;>
+   [coolrunner.ucf(35)]: NET "disp_seg_o<6>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_seg_o<6>   LOC = P56;> [coolrunner.ucf(35)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_seg_o<5>   LOC = P53;>
+   [coolrunner.ucf(36)]: NET "disp_seg_o<5>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_seg_o<5>   LOC = P53;> [coolrunner.ucf(36)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_seg_o<4>   LOC = P60;>
+   [coolrunner.ucf(37)]: NET "disp_seg_o<4>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_seg_o<4>   LOC = P60;> [coolrunner.ucf(37)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_seg_o<3>   LOC = P58;>
+   [coolrunner.ucf(38)]: NET "disp_seg_o<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_seg_o<3>   LOC = P58;> [coolrunner.ucf(38)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_seg_o<2>   LOC = P57;>
+   [coolrunner.ucf(39)]: NET "disp_seg_o<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_seg_o<2>   LOC = P57;> [coolrunner.ucf(39)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_seg_o<1>   LOC = P54;>
+   [coolrunner.ucf(40)]: NET "disp_seg_o<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_seg_o<1>   LOC = P54;> [coolrunner.ucf(40)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_seg_o<0>   LOC = P61;>
+   [coolrunner.ucf(41)]: NET "disp_seg_o<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_seg_o<0>   LOC = P61;> [coolrunner.ucf(41)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_dig_o<3>   LOC = P130;>
+   [coolrunner.ucf(44)]: NET "disp_dig_o<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_dig_o<3>   LOC = P130;> [coolrunner.ucf(44)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_dig_o<2>   LOC = P129;>
+   [coolrunner.ucf(45)]: NET "disp_dig_o<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_dig_o<2>   LOC = P129;> [coolrunner.ucf(45)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_dig_o<1>   LOC = P128;>
+   [coolrunner.ucf(46)]: NET "disp_dig_o<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_dig_o<1>   LOC = P128;> [coolrunner.ucf(46)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET disp_dig_o<0>   LOC = P126;>
+   [coolrunner.ucf(47)]: NET "disp_dig_o<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET disp_dig_o<0>   LOC = P126;> [coolrunner.ucf(47)]' could not be found
+   and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<15>           LOC = P9;>
+   [coolrunner.ucf(86)]: NET "SW_CPLD<15>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<15>           LOC = P9;> [coolrunner.ucf(86)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<14>           LOC = P10;>
+   [coolrunner.ucf(87)]: NET "SW_CPLD<14>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<14>           LOC = P10;> [coolrunner.ucf(87)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<13>           LOC = P6;>
+   [coolrunner.ucf(88)]: NET "SW_CPLD<13>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<13>           LOC = P6;> [coolrunner.ucf(88)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<12>           LOC = P7;>
+   [coolrunner.ucf(89)]: NET "SW_CPLD<12>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<12>           LOC = P7;> [coolrunner.ucf(89)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<11>           LOC = P4;>
+   [coolrunner.ucf(90)]: NET "SW_CPLD<11>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<11>           LOC = P4;> [coolrunner.ucf(90)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<10>           LOC = P5;>
+   [coolrunner.ucf(91)]: NET "SW_CPLD<10>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<10>           LOC = P5;> [coolrunner.ucf(91)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<9>            LOC = P2;>
+   [coolrunner.ucf(92)]: NET "SW_CPLD<9>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<9>            LOC = P2;> [coolrunner.ucf(92)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<8>            LOC = P3;>
+   [coolrunner.ucf(93)]: NET "SW_CPLD<8>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<8>            LOC = P3;> [coolrunner.ucf(93)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<7>            LOC = P140;>
+   [coolrunner.ucf(94)]: NET "SW_CPLD<7>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<7>            LOC = P140;> [coolrunner.ucf(94)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<6>            LOC = P142;>
+   [coolrunner.ucf(95)]: NET "SW_CPLD<6>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<6>            LOC = P142;> [coolrunner.ucf(95)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<5>            LOC = P138;>
+   [coolrunner.ucf(96)]: NET "SW_CPLD<5>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<5>            LOC = P138;> [coolrunner.ucf(96)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<4>            LOC = P139;>
+   [coolrunner.ucf(97)]: NET "SW_CPLD<4>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<4>            LOC = P139;> [coolrunner.ucf(97)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<3>            LOC = P135;>
+   [coolrunner.ucf(98)]: NET "SW_CPLD<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<3>            LOC = P135;> [coolrunner.ucf(98)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<2>            LOC = P136;>
+   [coolrunner.ucf(99)]: NET "SW_CPLD<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<2>            LOC = P136;> [coolrunner.ucf(99)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<1>            LOC = P133;>
+   [coolrunner.ucf(100)]: NET "SW_CPLD<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<1>            LOC = P133;> [coolrunner.ucf(100)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET SW_CPLD<0>            LOC = P134;>
+   [coolrunner.ucf(101)]: NET "SW_CPLD<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET SW_CPLD<0>            LOC = P134;> [coolrunner.ucf(101)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET LED_CPLD<4>            LOC = P102;>
+   [coolrunner.ucf(123)]: NET "LED_CPLD<4>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET LED_CPLD<4>            LOC = P102;> [coolrunner.ucf(123)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET LED_CPLD<3>            LOC = P98;>
+   [coolrunner.ucf(124)]: NET "LED_CPLD<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET LED_CPLD<3>            LOC = P98;> [coolrunner.ucf(124)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET LED_CPLD<2>            LOC = P100;>
+   [coolrunner.ucf(125)]: NET "LED_CPLD<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET LED_CPLD<2>            LOC = P100;> [coolrunner.ucf(125)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET LED_CPLD<1>            LOC = P96;>
+   [coolrunner.ucf(126)]: NET "LED_CPLD<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET LED_CPLD<1>            LOC = P96;> [coolrunner.ucf(126)]' could not be
+   found and so the Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET LED_CPLD<0>            LOC = P97;>
+   [coolrunner.ucf(127)]: NET "LED_CPLD<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET LED_CPLD<0>            LOC = P97;> [coolrunner.ucf(127)]' could not be
+   found and so the Locate constraint will be removed.
+
 Done...
 
 Checking expanded design ...
@@ -24,13 +331,14 @@ Partition Implementation Status
 -------------------------------
 
 NGDBUILD Design Results Summary:
-  Number of errors:     0
-  Number of warnings:   0
+  Number of errors:    34
+  Number of warnings:  34
 
-Total memory usage is 4386152 kilobytes
+Total memory usage is 4402324 kilobytes
 
-Writing NGD file "ALU.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec
 Total CPU time to NGDBUILD completion:   3 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
 
 Writing NGDBUILD log file "ALU.bld"...

@@ -1,0 +1,127 @@
+#-----------------------------------------------------------------------
+#
+# Constraints file with pin assignments.
+# CoolRunner-II CPLD starter board, ISE Design Suite 14.7
+#
+# Copyright (c) 2017-2020 Tomas Fryza
+# Dept. of Radio Electronics, Brno University of Technology, Czechia
+# This work is licensed under the terms of the MIT license.
+#
+#-----------------------------------------------------------------------
+
+#-----------------------------------------------------------------------
+# Buttons & switches
+#-----------------------------------------------------------------------
+# Two push buttons
+#NET BTN1        LOC = P94;
+#NET BTN0        LOC = P143;
+
+# Two slide switches
+NET SW<1>         LOC = P124;
+NET SW<0>         LOC = P39;
+
+#-----------------------------------------------------------------------
+# Four discrete LEDs
+#-----------------------------------------------------------------------
+#NET LD3         LOC = P64;
+#NET LD2         LOC = P66;
+#NET LD1         LOC = P68;
+#NET LD0         LOC = P69;
+
+#-----------------------------------------------------------------------
+# Four-digit time-multiplexed seven-segment LED display
+#-----------------------------------------------------------------------
+# LED segments
+NET disp_seg_o<6>   LOC = P56;  # segment a
+NET disp_seg_o<5>   LOC = P53;  # segment b
+NET disp_seg_o<4>   LOC = P60;  # segment c
+NET disp_seg_o<3>   LOC = P58;  # segment d
+NET disp_seg_o<2>   LOC = P57;  # segment e
+NET disp_seg_o<1>   LOC = P54;  # segment f
+NET disp_seg_o<0>   LOC = P61;  # segment g
+
+# Digits
+NET disp_dig_o<3>   LOC = P130;
+NET disp_dig_o<2>   LOC = P129;
+NET disp_dig_o<1>   LOC = P128;
+NET disp_dig_o<0>   LOC = P126;
+
+# Decimal point
+#NET disp_dp         LOC = P59;
+
+#-----------------------------------------------------------------------
+# Clock
+#-----------------------------------------------------------------------
+NET clk_i           LOC = P38;
+
+#-----------------------------------------------------------------------
+#
+# Constraints file with pin assignments.
+# CPLD expansion board, ISE Design Suite 14.7
+#
+# Copyright (c) 2019-2020 Tomas Fryza
+# Dept. of Radio Electronics, Brno University of Technology, Czechia
+# This work is licensed under the terms of the MIT license.
+#
+#-----------------------------------------------------------------------
+
+#-----------------------------------------------------------------------
+# Buttons & switches
+# 16 shared push buttons and slide switches
+#-----------------------------------------------------------------------
+#
+# 15  ...  8       7  ...  0
+# +-+     +-+     +-+     +-+
+# | | ... | |     | | ... | | H
+# |.|     |.|     |.|     |.| L
+# +-+     +-+     +-+     +-+
+#
+#  15  11  7   3
+#  o   o   o   o   H: pressed
+#  o   o   o   o   L: released
+#  o   o   o   o
+#  o   o   o   o
+#  12  8   4   0
+#
+NET SW_CPLD<15>	LOC = P9;
+NET SW_CPLD<14>	LOC = P10;
+NET SW_CPLD<13>	LOC = P6;
+NET SW_CPLD<12>	LOC = P7;
+NET SW_CPLD<11>	LOC = P4;
+NET SW_CPLD<10>	LOC = P5;
+NET SW_CPLD<9>		LOC = P2;
+NET SW_CPLD<8>		LOC = P3;
+NET SW_CPLD<7>		LOC = P140;
+NET SW_CPLD<6>		LOC = P142;
+NET SW_CPLD<5>		LOC = P138;
+NET SW_CPLD<4>		LOC = P139;
+NET SW_CPLD<3>		LOC = P135;
+NET SW_CPLD<2>		LOC = P136;
+NET SW_CPLD<1>		LOC = P133;
+NET SW_CPLD<0>		LOC = P134;
+
+#-----------------------------------------------------------------------
+# 16 discrete LEDs
+#-----------------------------------------------------------------------
+#
+# 15 ... 12 11 ... 8
+#  * * * *   * * * *   H: turn LED on
+#  * * * *   * * * *   L: turn LED off
+#  7 ... 4   3 ... 0
+#
+#NET LD15_CPLD           LOC = P118;
+#NET LD14_CPLD           LOC = P119;
+#NET LD13_CPLD           LOC = P116;
+#NET LD12_CPLD           LOC = P117;
+#NET LD11_CPLD           LOC = P114;
+#NET LD10_CPLD           LOC = P115;
+#NET LD9_CPLD            LOC = P112;
+#NET LD8_CPLD            LOC = P113;
+#NET LD7_CPLD            LOC = P103;
+#NET LD6_CPLD            LOC = P104;
+#NET LD5_CPLD            LOC = P101;
+NET LED_CPLD<4>            LOC = P102;
+NET LED_CPLD<3>            LOC = P98;
+NET LED_CPLD<2>            LOC = P100;
+NET LED_CPLD<1>            LOC = P96;
+NET LED_CPLD<0>            LOC = P97;

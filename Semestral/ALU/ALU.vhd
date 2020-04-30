@@ -34,7 +34,7 @@ begin
 		overFlow_o => overFlow_staus_s
 	);
 
-	process(clk_i) begin
+	process(clk_i, instruction_i, SA_number_s, S_number_s, B_number_i, A_number_i) begin
 		if rising_edge(clk_i) then
 			case instruction_i is
 				when "00" =>
@@ -51,24 +51,24 @@ begin
 					S_number_s <= "00000000";
 			end case;
 		end if;
-		status_o(0) <= carryOut_staus_s;
-		
-		Y1_s <= S_number_s(0) or S_number_s(1) or S_number_s(2) or S_number_s(3);
-		Y2_s <= S_number_s(4) or S_number_s(5) or S_number_s(6) or S_number_s(7);
-		status_o(1) <= not (Y1_s or Y2_s);
-		
-		status_o(2) <= S_number_s(7);
-		
-		status_o(3) <= overFlow_staus_s;
-		
-		X1_s <= S_number_s(0) xor S_number_s(1) xor S_number_s(2) xor S_number_s(3);
-		X2_s <= S_number_s(4) xor S_number_s(5) xor S_number_s(6) xor S_number_s(7);
-		status_o(4) <= X1_s xor X2_s;
-		
-		S_number_o <= S_number_s;
+
 	end process;
 	
-	
+	status_o(0) <= carryOut_staus_s;
+		
+	Y1_s <= S_number_s(0) or S_number_s(1) or S_number_s(2) or S_number_s(3);
+	Y2_s <= S_number_s(4) or S_number_s(5) or S_number_s(6) or S_number_s(7);
+	status_o(1) <= not (Y1_s or Y2_s);
+		
+	status_o(2) <= S_number_s(7);
+		
+	status_o(3) <= overFlow_staus_s;
+		
+	X1_s <= S_number_s(0) xor S_number_s(1) xor S_number_s(2) xor S_number_s(3);
+	X2_s <= S_number_s(4) xor S_number_s(5) xor S_number_s(6) xor S_number_s(7);
+	status_o(4) <= X1_s xor X2_s;
+		
+	S_number_o <= S_number_s;
 
 
 end Behavioral;

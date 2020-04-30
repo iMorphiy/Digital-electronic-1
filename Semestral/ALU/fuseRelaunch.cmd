@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_ALU_isim_beh.exe" -prj "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_ALU_beh.prj" "work.TEST_ALU" 

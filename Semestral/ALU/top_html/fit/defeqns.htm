@@ -1,0 +1,482 @@
+<html><head><link type='text/css' href='style.css' rel='stylesheet'></head><body class='pgBgnd'>
+<h3 align='center'>Equations</h3>
+<table width='90%' align='center' border='1' cellpadding='0' cellspacing='0'>
+<tr><td>
+</td></tr><tr><td>
+********** Mapped Logic **********
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt0: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(0),DISPLAY/CLOCK_ENABLE/s_cnt_D(0),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISPLAY/CLOCK_ENABLE/s_cnt_D(0) <= (NOT DISPLAY/CLOCK_ENABLE/s_cnt(0) AND N_PZ_291);
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt1: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(1),DISPLAY/CLOCK_ENABLE/s_cnt_D(1),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISPLAY/CLOCK_ENABLE/s_cnt_D(1) <= ((DISPLAY/CLOCK_ENABLE/s_cnt(0) AND N_PZ_291 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(0) AND N_PZ_291 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/CLOCK_ENABLE/s_cnt(1)));
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt2: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(2),DISPLAY/CLOCK_ENABLE/s_cnt_D(2),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISPLAY/CLOCK_ENABLE/s_cnt_D(2) <= ((NOT N_PZ_134 AND N_PZ_291 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/CLOCK_ENABLE/s_cnt(2))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT N_PZ_134 AND DISPLAY/CLOCK_ENABLE/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_291 AND DISPLAY/CLOCK_ENABLE/s_cnt(1)));
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt3: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(3),DISPLAY/CLOCK_ENABLE/s_cnt_D(3),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISPLAY/CLOCK_ENABLE/s_cnt_D(3) <= ((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_134)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND N_PZ_134));
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt4: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(4),DISPLAY/CLOCK_ENABLE/s_cnt_D(4),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISPLAY/CLOCK_ENABLE/s_cnt_D(4) <= ((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND DISPLAY/CLOCK_ENABLE/s_cnt(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_134 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/CLOCK_ENABLE/s_cnt(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND N_PZ_134 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(4)));
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt5: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(5),DISPLAY/CLOCK_ENABLE/s_cnt_D(5),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISPLAY/CLOCK_ENABLE/s_cnt_D(5) <= ((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_134 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(4))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND N_PZ_134 AND DISPLAY/CLOCK_ENABLE/s_cnt(4)));
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt6: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(6),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt7: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(7),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt8: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(8),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt9: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(9),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt10: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(10),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt11: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(11),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt12: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(12),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt13: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(13),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt14: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(14),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt15: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(15),'0',clk_i,'0','0','1');
+</td></tr><tr><td>
+FTCPE_DISPLAY/s_cnt0: FTCPE port map (DISPLAY/s_cnt(0),DISPLAY/s_cnt_0__or0000,clk_i,'0','0','1');
+</td></tr><tr><td>
+FTCPE_DISPLAY/s_cnt1: FTCPE port map (DISPLAY/s_cnt(1),DISPLAY/s_cnt_T(1),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISPLAY/s_cnt_T(1) <= (DISPLAY/s_cnt(0) AND DISPLAY/s_cnt_0__or0000);
+</td></tr><tr><td>
+FDCPE_DISPLAY/s_cnt_0__or0000: FDCPE port map (DISPLAY/s_cnt_0__or0000,DISPLAY/s_cnt_0__or0000_D,clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DISPLAY/s_cnt_0__or0000_D <= NOT (((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_134 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(4))));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LED_CPLD(0) <= NOT (((NOT N_PZ_239 AND N_PZ_139)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT N_PZ_218 AND NOT SW_CPLD(6) AND N_PZ_239)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW_CPLD(14) AND MYALU/control_s AND N_PZ_218 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_239)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(14) AND NOT MYALU/control_s AND N_PZ_218 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_239)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LED_CPLD(1) <= (NOT LED_CPLD(2) AND NOT number_s(0) AND NOT number_s(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT number_s(2) AND NOT number_s(3) AND NOT number_s(4) AND NOT number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT number_s(6));
+</td></tr><tr><td>
+FDCPE_LED_CPLD2: FDCPE port map (LED_CPLD(2),LED_CPLD_D(2),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LED_CPLD_D(2) <= NOT (((NOT SW(0) AND SW(1) AND NOT SW_CPLD(7))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW(1) AND NOT SW_CPLD(7) AND NOT SW_CPLD(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(14) AND N_PZ_218 AND NOT SW_CPLD(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND SW_CPLD(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/F_ADDER_1/carry_6to7_s AND N_PZ_239)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND NOT SW_CPLD(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	MYALU/F_ADDER_1/carry_6to7_s AND NOT N_PZ_239)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW_CPLD(14) AND NOT SW(1) AND N_PZ_218 AND SW_CPLD(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW_CPLD(14) AND NOT SW(1) AND N_PZ_218 AND NOT SW_CPLD(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(14) AND NOT SW(1) AND N_PZ_218 AND SW_CPLD(7) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(15))));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LED_CPLD(3) <= ((SW_CPLD(7) AND N_PZ_139 AND LED_CPLD(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(7) AND NOT N_PZ_139 AND NOT LED_CPLD(0)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+LED_CPLD(4) <= LED_CPLD(2)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((number_s(5) AND MYALU/Mxor_status_o(4)__xor0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_222)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(5) AND NOT MYALU/Mxor_status_o(4)__xor0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_222)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(5) AND MYALU/Mxor_status_o(4)__xor0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_222)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(5) AND NOT MYALU/Mxor_status_o(4)__xor0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_222));
+</td></tr><tr><td>
+</td></tr><tr><td>
+MYALU/F_ADDER_1/carry_2to3_s <= ((MYALU/control_s AND NOT SW_CPLD(1) AND SW_CPLD(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(1) AND NOT SW_CPLD(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(1) AND NOT N_PZ_238)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(9) AND NOT N_PZ_238)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(8) AND NOT SW_CPLD(0) AND NOT SW_CPLD(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND NOT SW_CPLD(8) AND NOT SW_CPLD(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(9)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+MYALU/F_ADDER_1/carry_4to5_s <= ((MYALU/control_s AND SW_CPLD(11) AND NOT SW_CPLD(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(11) AND NOT SW_CPLD(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(3) AND NOT SW_CPLD(2) AND N_PZ_136)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND SW_CPLD(11) AND NOT SW_CPLD(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_136)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND SW_CPLD(11) AND NOT N_PZ_136 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND NOT SW_CPLD(3) AND NOT N_PZ_136 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(11) AND NOT SW_CPLD(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_136)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(11) AND NOT N_PZ_136 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(3) AND NOT N_PZ_136 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(10)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+MYALU/F_ADDER_1/carry_6to7_s <= ((MYALU/control_s AND SW_CPLD(13) AND NOT SW_CPLD(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(13) AND NOT SW_CPLD(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(5) AND NOT SW_CPLD(4) AND N_PZ_137)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND SW_CPLD(13) AND NOT SW_CPLD(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_137)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND SW_CPLD(13) AND NOT N_PZ_137 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND NOT SW_CPLD(5) AND NOT N_PZ_137 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(13) AND NOT SW_CPLD(4) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	N_PZ_137)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(13) AND NOT N_PZ_137 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(5) AND NOT N_PZ_137 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(12)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+MYALU/Mxor_status_o(4)__xor0001 <= number_s(0)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((number_s(1) AND number_s(2) AND number_s(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(1) AND NOT number_s(2) AND NOT number_s(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(1) AND number_s(2) AND NOT number_s(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(1) AND NOT number_s(2) AND number_s(3)));
+</td></tr><tr><td>
+FDCPE_MYALU/control_s: FDCPE port map (MYALU/control_s,MYALU/control_s_D,clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MYALU/control_s_D <= NOT (((NOT MYALU/control_s AND SW(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(0) AND NOT SW(1))));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_134 <= (DISPLAY/CLOCK_ENABLE/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/CLOCK_ENABLE/s_cnt(1) AND DISPLAY/CLOCK_ENABLE/s_cnt(2));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_136 <= ((SW_CPLD(2) AND NOT MYALU/F_ADDER_1/carry_2to3_s)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(2) AND MYALU/F_ADDER_1/carry_2to3_s));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_137 <= ((SW_CPLD(4) AND NOT MYALU/F_ADDER_1/carry_4to5_s)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(4) AND MYALU/F_ADDER_1/carry_4to5_s));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_139 <= ((MYALU/control_s AND SW_CPLD(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(15)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_218 <= ((SW_CPLD(6) AND MYALU/F_ADDER_1/carry_6to7_s)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(6) AND NOT MYALU/F_ADDER_1/carry_6to7_s));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_222 <= ((number_s(4) AND NOT number_s(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(4) AND number_s(6)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_238 <= (SW_CPLD(8) AND SW_CPLD(0));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_239 <= ((SW_CPLD(7) AND N_PZ_139)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(7) AND NOT N_PZ_139));
+</td></tr><tr><td>
+</td></tr><tr><td>
+N_PZ_291 <= ((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/CLOCK_ENABLE/s_cnt(4)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_dig_o(0) <= NOT ((NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_dig_o(1) <= NOT ((DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_dig_o(2) <= NOT ((NOT DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_dig_o(3) <= NOT ((DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_seg_o(0) <= ((DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT LED_CPLD(2) AND NOT number_s(5) AND NOT number_s(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(0) AND NOT number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(0) AND NOT number_s(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (LED_CPLD(2) AND NOT number_s(4) AND NOT number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	number_s(6) AND DISPLAY/s_cnt(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT LED_CPLD(2) AND number_s(4) AND number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	number_s(6) AND DISPLAY/s_cnt(0)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_seg_o(1) <= ((NOT LED_CPLD(2) AND number_s(5) AND NOT N_PZ_222 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT LED_CPLD(2) AND NOT number_s(6) AND N_PZ_222 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(0) AND number_s(1) AND NOT number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(0) AND NOT number_s(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(1) AND NOT number_s(2) AND NOT number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (LED_CPLD(2) AND NOT number_s(5) AND number_s(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_222 AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_seg_o(2) <= ((NOT LED_CPLD(2) AND number_s(4) AND DISPLAY/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(0) AND NOT number_s(3) AND NOT DISPLAY/s_cnt(0) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(0) AND NOT number_s(1) AND NOT number_s(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(4) AND NOT number_s(5) AND NOT number_s(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT LED_CPLD(2) AND NOT number_s(4) AND NOT number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(0) AND NOT number_s(1) AND number_s(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT number_s(3) AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_seg_o(3) <= ((NOT LED_CPLD(2) AND NOT number_s(5) AND N_PZ_222 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(0) AND number_s(1) AND number_s(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(1) AND number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(1) AND NOT number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(4) AND number_s(5) AND number_s(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (LED_CPLD(2) AND NOT number_s(4) AND number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_seg_o(4) <= ((LED_CPLD(2) AND NOT number_s(4) AND number_s(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (LED_CPLD(2) AND number_s(5) AND number_s(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(0) AND number_s(2) AND number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(1) AND number_s(2) AND number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT LED_CPLD(2) AND NOT number_s(4) AND number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(0) AND number_s(1) AND NOT number_s(2) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT number_s(3) AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_seg_o(5) <= ((number_s(2) AND NOT MYALU/Mxor_status_o(4)__xor0001 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (LED_CPLD(2) AND number_s(4) AND number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (LED_CPLD(2) AND NOT number_s(4) AND number_s(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(0) AND number_s(1) AND number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(0) AND number_s(2) AND number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(4) AND number_s(5) AND number_s(6) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT LED_CPLD(2) AND number_s(4) AND NOT number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+</td></tr><tr><td>
+disp_seg_o(6) <= ((NOT LED_CPLD(2) AND NOT number_s(5) AND N_PZ_222 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (number_s(0) AND number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT number_s(1) AND NOT number_s(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (LED_CPLD(2) AND number_s(4) AND number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (LED_CPLD(2) AND number_s(4) AND NOT number_s(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+</td></tr><tr><td>
+FDCPE_number_s0: FDCPE port map (number_s(0),number_s_D(0),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_s_D(0) <= NOT ((MYALU/control_s AND NOT SW(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((NOT SW(1) AND N_PZ_238)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(8) AND NOT SW_CPLD(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(0) AND SW(1) AND NOT N_PZ_238)));
+</td></tr><tr><td>
+FDCPE_number_s1: FDCPE port map (number_s(1),number_s_D(1),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_s_D(1) <= NOT (((NOT SW(0) AND SW(1) AND NOT SW_CPLD(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW(1) AND NOT SW_CPLD(1) AND NOT SW_CPLD(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_2to3_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(1))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND NOT SW(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/F_ADDER_1/carry_2to3_s AND SW_CPLD(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/F_ADDER_1/carry_2to3_s AND NOT SW_CPLD(9))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/F_ADDER_1/carry_2to3_s AND NOT N_PZ_238)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(1) AND NOT SW_CPLD(9) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT N_PZ_238)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_2to3_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(8) AND NOT SW_CPLD(0))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND NOT SW(1) AND NOT SW_CPLD(8) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(0) AND NOT SW_CPLD(1) AND SW_CPLD(9))));
+</td></tr><tr><td>
+FDCPE_number_s2: FDCPE port map (number_s(2),number_s_D(2),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_s_D(2) <= NOT (NOT SW_CPLD(10)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((MYALU/control_s AND NOT SW(1) AND N_PZ_136)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW(1) AND NOT N_PZ_136)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW(0) AND SW(1) AND SW_CPLD(2) AND NOT SW_CPLD(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(2) AND SW_CPLD(10))));
+</td></tr><tr><td>
+FDCPE_number_s3: FDCPE port map (number_s(3),number_s_D(3),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_s_D(3) <= NOT (((NOT SW(0) AND SW(1) AND NOT SW_CPLD(11))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW(1) AND NOT SW_CPLD(11) AND NOT SW_CPLD(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_4to5_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(3))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND NOT SW(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/F_ADDER_1/carry_4to5_s AND SW_CPLD(11))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/F_ADDER_1/carry_4to5_s AND NOT SW_CPLD(11))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_4to5_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(2) AND N_PZ_136)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(11) AND NOT SW_CPLD(3) AND NOT N_PZ_136 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(11) AND NOT SW_CPLD(3) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(2) AND N_PZ_136)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND SW_CPLD(11) AND SW_CPLD(3) AND NOT N_PZ_136 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND SW_CPLD(11) AND NOT SW_CPLD(3) AND NOT N_PZ_136 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND NOT SW_CPLD(11) AND SW_CPLD(3) AND NOT N_PZ_136 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(10))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND NOT SW(1) AND SW_CPLD(11) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(3) AND NOT SW_CPLD(2) AND N_PZ_136)));
+</td></tr><tr><td>
+FDCPE_number_s4: FDCPE port map (number_s(4),number_s_D(4),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_s_D(4) <= NOT (NOT SW_CPLD(12)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((MYALU/control_s AND NOT SW(1) AND N_PZ_137)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW(1) AND NOT N_PZ_137)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW(0) AND SW(1) AND SW_CPLD(4) AND NOT SW_CPLD(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(4) AND SW_CPLD(12))));
+</td></tr><tr><td>
+FDCPE_number_s5: FDCPE port map (number_s(5),number_s_D(5),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_s_D(5) <= NOT (((NOT SW(0) AND SW(1) AND NOT SW_CPLD(13))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW(1) AND NOT SW_CPLD(13) AND NOT SW_CPLD(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_6to7_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(5))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND NOT SW(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/F_ADDER_1/carry_6to7_s AND SW_CPLD(13))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW(1) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT MYALU/F_ADDER_1/carry_6to7_s AND NOT SW_CPLD(13))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_6to7_s AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(4) AND N_PZ_137)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(13) AND NOT SW_CPLD(5) AND NOT N_PZ_137 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW_CPLD(13) AND NOT SW_CPLD(5) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(4) AND N_PZ_137)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND SW_CPLD(13) AND SW_CPLD(5) AND NOT N_PZ_137 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND SW_CPLD(13) AND NOT SW_CPLD(5) AND NOT N_PZ_137 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW(1) AND NOT SW_CPLD(13) AND SW_CPLD(5) AND NOT N_PZ_137 AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	SW_CPLD(12))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (MYALU/control_s AND NOT SW(1) AND SW_CPLD(13) AND 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	NOT SW_CPLD(5) AND NOT SW_CPLD(4) AND N_PZ_137)));
+</td></tr><tr><td>
+FDCPE_number_s6: FDCPE port map (number_s(6),number_s_D(6),clk_i,'0','0','1');
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number_s_D(6) <= NOT (NOT SW_CPLD(14)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	XOR ((MYALU/control_s AND NOT SW(1) AND NOT N_PZ_218)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT MYALU/control_s AND NOT SW(1) AND N_PZ_218)
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (SW_CPLD(14) AND NOT SW(0) AND SW(1) AND NOT SW_CPLD(6))
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	OR (NOT SW_CPLD(14) AND SW(0) AND SW(1) AND SW_CPLD(6))));
+</td></tr><tr><td>
+</td></tr><tr><td>
+Register Legend:
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FDDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FTDCPE (Q,D,C,CLR,PRE,CE); 
+<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LDCP  (Q,D,G,CLR,PRE); 
+</td></tr><tr><td>
+</td></tr>
+</table>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>
