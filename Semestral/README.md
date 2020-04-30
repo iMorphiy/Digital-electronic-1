@@ -85,6 +85,9 @@ The next output is 5 LEDs, each of which signals the other outputs, in order Car
   - Overflow - output value from ALU is NOT true, value has been Overflow
   - Parity bit - get parity bit from output value (odd parity)
 
+The most interesting of these is the test of Overflow[[5]]
+![TEST_OVERFLOW](IMG/TEST_OVERFLOW.png)
+
 ## Implementation
 
 
@@ -106,8 +109,10 @@ The next output is 5 LEDs, each of which signals the other outputs, in order Car
 
 \[4] [https://minnie.tuhs.org/CompArch/Tutes/week02.html](https://minnie.tuhs.org/CompArch/Tutes/week02.html)
 
+\[5] [https://circuitverse.org/simulator](https://circuitverse.org/simulator)
 
 [1]: https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf
 [2]: http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html
 [3]: https://en.wikipedia.org/wiki/Arithmetic_logic_unit
 [4]: https://minnie.tuhs.org/CompArch/Tutes/week02.html
+[5]: https://circuitverse.org/simulator
