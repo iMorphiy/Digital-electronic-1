@@ -8,7 +8,8 @@ Implementation of ALU (arithmetic logic unit)
   >Vlastní ALU (Arithmetic Logic Unit) jednotka. Možnost výběru instrukcí a vstupních hodnot za chodu aplikace. Výstup na 7segmentovém displeji.
 
 ## Problem analysis
-For easier implementation we will concentrate into MIPS architecture.\
+ALU (arithmetic logic unit) is a combinatorial logic unit witch do mathematical operations,  usually is used part of processor. All ALU must be implemented partially sequentially for reasons that would be huge. For study purposes, we also decided to implement it sequentially too.
+
 Simple ALU should by able to do this instructions[[1]](1):\
 
 (C code is demonstration how to this instructions should work)
@@ -47,6 +48,25 @@ Simple ALU should by able to do this instructions[[1]](1):\
       return(0);
     }
   ```
+
+#### Control instructions
+
+Our assignment of operations to control signals.
+
+| **Instruction** | **Set of control bits** |
+| :-: | :-: |
+| **ADD** | 00 |
+| **SUB** | 01 |
+| **bin AND** | 10 |
+| **bin OR** | 11 |
+
+
+#### Representation of numbers in ALU
+After many hours of study, we decide to use *2`s complement* code.
+It brings many benefits. Sum of two signed numbers is easier and subtraction can again be converted to addition, by binary inverting second number and set carry_i to 1.
+
+Let's see a picture[[4]]
+![TEST_FULL_ADDRE](IMG/NbitAdder.gif)
 
 
 ## Implementation
