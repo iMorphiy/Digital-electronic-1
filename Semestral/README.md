@@ -10,9 +10,9 @@ Implementation of ALU (arithmetic logic unit)
 ## Problem analysis
 ALU (arithmetic logic unit) is a combinatorial logic unit witch do mathematical operations,  usually is used part of processor. All ALU must be implemented partially sequentially for reasons that would be huge. For study purposes, we also decided to implement it sequentially too.
 
-Simple ALU should by able to do this instructions[[1]](1):\
+Simple ALU should by able to do this instructions:[[1]](1)
 
-(C code is demonstration how to this instructions should work)
+\(C code is demonstration how to this instructions should work)
 
   - add - sum two numbers
   ```c
