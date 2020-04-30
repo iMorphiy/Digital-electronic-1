@@ -73,7 +73,32 @@ Let's see a picture[[4]]
 For easier implementation, we used modules from previous LABs.
 For this reason, the statement is NOT clear, because we display individual bytes as they are in output. for positive numbers is not so big problem but if we will want display negative member, output will be difficult to read.
 
-**It is one of the problems that should be solved in the future**
+~**It is one of the problems that should be solved in the future**~ - **SOLVED**
+
+Output into 7 seg. display is solved as print:
+
+```VHDL
+
+
+--------------------------------------------------------------------
+--             1.           2.           3.           4.
+--           -----        -----        -----        -----           
+--          |     |      |     |      |     |      |     |
+--          |     |      |     |      |     |      |     |
+--           -----        -----        -----        -----
+--          |     |      |     |      |     |      |     |
+--          |     |      |     |      |     |      |     |        
+--           -----        -----        -----        -----        
+--          TOP VIEW
+--------------------------------------------------------------------
+
+```  
+
+- 1. digit - show NULL or only g segment as minus
+- 2. digit - show only NULL
+- 3. digit - show 3 the most significant bits as hexadecimal code
+- 4. digit - show last 4 bit of answer as hexadecimal code
+
 
 #### OUTPUT into 5 LEDs
 The next output is 5 LEDs, each of which signals the other outputs, in order Carry-out Output, Zero Output, Negative Output, Overflow Output and Parity bit.
@@ -91,11 +116,19 @@ The most interesting of these is the test of Overflow[[5]]
 ## Sequential implementation
 
 #### Possibility of use Sequential READER
-Sequential READER can be placed in top.vhdl. It is able to read 3 bytes in a row (reads in rising_edge), Number_A, Number_B and operation (you can decide witch 2 bits will use for oper.)
+~Sequential READER can be placed in top.vhdl. It is able to read 3 bytes in a row (reads in rising_edge), Number_A, Number_B and operation (you can decide witch 2 bits will use for oper.)~
 
+Sequential READER is used in top.vhdl module where it expects at the input 3 consecutive bytes, which are separated by an impulse (action_i) which must not be as serviceable as the clock cli_i. (rising edge into action_i reads inputs). This circuit remembers the entered values until they are replaced by others.
+
+Let's see test
 #### TEST of Sequential READER
 ![TEST_FULL_ADDRE](IMG/TEST_READER.png)
 
+#### Control of Sequential READER
+In the top file is action_i signal connected into state machine created in file instruction_enable, witch is connected into BTN0. If you push the BTN0, this module will create short impulse for loading data into Sequential READER (input byte of READER is connected into switch(0 to 7)).
+
+#### TEST of generating short impulse for Sequential READER by instruction_enable
+![TEST_buttonEnable](IMG/TEST_buttonEnable.png)
 
 ## SIMULATIONS
 
@@ -105,6 +138,14 @@ Sequential READER can be placed in top.vhdl. It is able to read 3 bytes in a row
 ![TEST_ADDER8BIT](IMG/TEST_ADDER8BIT.png)
 #### Test of final ALU
 ![TEST_ALU](IMG/TEST_ALU.png)
+
+## SIMULATIONS WITCH LOOKS NICE BUT CAN NOT BE COMPILED (build for Isim is different to desk)
+
+#### Creating 8 bit signed number decoder to decimals into 7 seg. display
+###### first number of MOD operation must be multiple of 2 :(
+###### first number of / operation must be multiple of 2 :( the same problem 
+![TEST_signed2displaydriver](IMG/TEST_signed2displaydriver.png)
+
 
 ## Resources
 \[1] [https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf](https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf)
