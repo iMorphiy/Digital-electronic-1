@@ -1,0 +1,68 @@
+Pin Freeze File:  version P.20131013
+
+2C256144 XC2C256-6-TQ144
+A_number_i<0> S:PIN137
+A_number_i<1> S:PIN135
+A_number_i<2> S:PIN10
+A_number_i<3> S:PIN134
+A_number_i<4> S:PIN133
+A_number_i<5> S:PIN132
+A_number_i<6> S:PIN131
+A_number_i<7> S:PIN11
+B_number_i<0> S:PIN12
+B_number_i<1> S:PIN13
+B_number_i<2> S:PIN14
+B_number_i<3> S:PIN15
+B_number_i<4> S:PIN16
+B_number_i<5> S:PIN17
+B_number_i<6> S:PIN18
+B_number_i<7> S:PIN33
+clk_i S:PIN32
+instruction_i<0> S:PIN31
+instruction_i<1> S:PIN30
+S_number_o<0> S:PIN140
+S_number_o<1> S:PIN139
+S_number_o<2> S:PIN142
+S_number_o<3> S:PIN143
+S_number_o<4> S:PIN138
+S_number_o<5> S:PIN2
+S_number_o<6> S:PIN3
+S_number_o<7> S:PIN4
+status_o<0> S:PIN6
+status_o<1> S:PIN136
+status_o<2> S:PIN5
+status_o<3> S:PIN7
+status_o<4> S:PIN9
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_3 S_number_o<3> S_number_o<2>
+PARTITION FB1_6 S_number_o<0>
+PARTITION FB1_9 N_PZ_104 N_PZ_114 control_s S_number_o<1>
+		 S_number_o<4>
+PARTITION FB1_15 F_ADDER_1/carry_4to5_s F_ADDER_1/carry_2to3_s
+PARTITION FB2_1 S_number_o<5>
+PARTITION FB2_3 S_number_o<6> S_number_o<7> status_o<2>
+PARTITION FB2_8 N_PZ_49 N_PZ_50 N_PZ_103 N_PZ_150
+		 status_o<0> status_o<3> status_o<4>
+PARTITION FB2_16 F_ADDER_1/carry_6to7_s
+PARTITION FB3_1 status_o<1>
+PARTITION FB3_13 N_PZ_127
+PARTITION FB3_15 N_PZ_124
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

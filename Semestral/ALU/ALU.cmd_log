@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.xst" -ofn "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc2c256-TQ144-6 ALU.ngc ALU.ngd  
+cpldfit -intstyle ise -p xc2c256-6-TQ144 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 ALU.ngd 
+tsim -intstyle ise ALU ALU.nga 
+hprep6 -s IEEE1149 -i ALU 

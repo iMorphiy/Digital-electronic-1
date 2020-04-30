@@ -1,0 +1,8 @@
+AR adder8bit behavioral C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ADDER8BIT.vhd sub00/vhpl03 1588207001
+EN adder8bit NULL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ADDER8BIT.vhd sub00/vhpl02 1588207000
+EN top NULL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/top.vhd sub00/vhpl04 1588206841
+EN full_adder NULL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/FULL_ADDER.vhd sub00/vhpl00 1588206998
+AR alu behavioral C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.vhd sub00/vhpl07 1588207003
+AR full_adder behavioral C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/FULL_ADDER.vhd sub00/vhpl01 1588206999
+AR top behavioral C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/top.vhd sub00/vhpl05 1588206842
+EN alu NULL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.vhd sub00/vhpl06 1588207002

@@ -3,7 +3,9 @@
 # Notes - semester project
 Implementation of ALU (arithmetic logic unit)
 
+#### Task:
 
+  >Vlastní ALU (Arithmetic Logic Unit) jednotka. Možnost výběru instrukcí a vstupních hodnot za chodu aplikace. Výstup na 7segmentovém displeji.
 
 ## Problem analysis
 For easier implementation we will concentrate into MIPS architecture.\
@@ -57,10 +59,10 @@ Simple ALU should by able to do this instructions[[1]](1):\
 
 \[3] [https://en.wikipedia.org/wiki/Arithmetic_logic_unit](https://en.wikipedia.org/wiki/Arithmetic_logic_unit)
 
-\[4] []()
+\[4] [https://minnie.tuhs.org/CompArch/Tutes/week02.html](https://minnie.tuhs.org/CompArch/Tutes/week02.html)
 
 
 [1]: https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf
 [2]: http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html
 [3]: https://en.wikipedia.org/wiki/Arithmetic_logic_unit
-[4]:
+[4]: https://minnie.tuhs.org/CompArch/Tutes/week02.html
