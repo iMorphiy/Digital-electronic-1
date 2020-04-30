@@ -61,6 +61,14 @@ Our assignment of operations to control signals.
 | **bin AND** | 10 |
 | **bin OR** | 11 |
 
+#### EXAMPLE of control instructions
+
+| **Instruction** | SW 7 | SW 6 | SW 5 | SW 4 | SW 3 | SW 2 | SW 1 | SW 0 |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| **ADD** | X | X | X | X | X | X | 0 | 0 |
+| **SUB** | X | X | X | X | X | X | 0 | 1 |
+| **bin AND** | X | X | X | X | X | X | 1 | 0 |
+| **bin OR** | X | X | X | X | X | X | 1 | 1 |
 
 #### Representation of numbers in ALU
 After many hours of study, we decide to use *2`s complement* code.
@@ -68,6 +76,9 @@ It brings many benefits. Sum of two signed numbers is easier and subtraction can
 
 Let's see a picture[[4]]
 ![TEST_FULL_ADDRE](IMG/NbitAdder.gif)
+
+
+# IMPLEMENTATION
 
 #### OUTPUT into 7 segment display
 For easier implementation, we used modules from previous LABs.
@@ -130,6 +141,21 @@ In the top file is action_i signal connected into state machine created in file 
 #### TEST of generating short impulse for Sequential READER by instruction_enable
 ![TEST_buttonEnable](IMG/TEST_buttonEnable.png)
 
+#### EXAMPLE of INPUT values
+
+| **Byte order** | SW 7 | SW 6 | SW 5 | SW 4 | SW 3 | SW 2 | SW 1 | SW 0 | dec. number |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| **number A** | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 | 5 |
+| **number B** | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | -1 |
+| **number of oper.** | X | X | X | X | X | X | 0 | 0 |
+
+**Each byte is separated by pushing BTN0**
+
+
+
+#### Schematic of TOP module
+![TOP_module](IMG/TOP_SCHEMATIC.png)
+
 ## SIMULATIONS
 
 #### Test of FULL ADDER block
@@ -143,7 +169,7 @@ In the top file is action_i signal connected into state machine created in file 
 
 #### Creating 8 bit signed number decoder to decimals into 7 seg. display
 ###### first number of MOD operation must be multiple of 2 :(
-###### first number of / operation must be multiple of 2 :( the same problem 
+###### first number of / operation must be multiple of 2 :( the same problem
 ![TEST_signed2displaydriver](IMG/TEST_signed2displaydriver.png)
 
 
@@ -158,8 +184,15 @@ In the top file is action_i signal connected into state machine created in file 
 
 \[5] [https://circuitverse.org/simulator](https://circuitverse.org/simulator)
 
+\[6] [https://www.bitweenie.com/listings/vhdl-type-conversion/](https://www.bitweenie.com/listings/vhdl-type-conversion/)
+
+\[7] [https://moodle.vutbr.cz/pluginfile.php/183804/mod_resource/content/1/vhdl_kubicek.pdf](https://moodle.vutbr.cz/pluginfile.php/183804/mod_resource/content/1/vhdl_kubicek.pdf)
+
+
 [1]: https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf
 [2]: http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html
 [3]: https://en.wikipedia.org/wiki/Arithmetic_logic_unit
 [4]: https://minnie.tuhs.org/CompArch/Tutes/week02.html
 [5]: https://circuitverse.org/simulator
+[6]: https://www.bitweenie.com/listings/vhdl-type-conversion/
+[7]: https://moodle.vutbr.cz/pluginfile.php/183804/mod_resource/content/1/vhdl_kubicek.pdf
