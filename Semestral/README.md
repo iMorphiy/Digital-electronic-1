@@ -156,6 +156,13 @@ In the top file is action_i signal connected into state machine created in file 
 #### Schematic of TOP module
 ![TOP_module](IMG/TOP_SCHEMATIC.png)
 
+
+#### List of created components
+
+  - [top.vhd](ALU/top.vhd)
+
+
+
 ## SIMULATIONS
 
 #### Test of FULL ADDER block
@@ -164,6 +171,14 @@ In the top file is action_i signal connected into state machine created in file 
 ![TEST_ADDER8BIT](IMG/TEST_ADDER8BIT.png)
 #### Test of final ALU
 ![TEST_ALU](IMG/TEST_ALU.png)
+
+## SUMARY
+
+  > - The project contains many components and is huge by our standards.
+  > - Functionality has not been verified, I'm sure there are bugs that I missed and that would then be debugged to the desk.
+  > - It is NOT standard to use sequential reading of values for ALU (ALU is a typical combinational logic)
+  > - The use of a sequential adder can limit us, a longer time is needed to perform the whole calculation.
+  > - I wanted to check the functionality on my ALTERA desk, but I'm absolutely tired (Maybe I'll try in a few days later)
 
 ## SIMULATIONS WITCH LOOKS NICE BUT CAN NOT BE COMPILED (build for Isim is different to desk)
 
