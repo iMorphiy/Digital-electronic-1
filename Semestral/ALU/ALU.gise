@@ -53,10 +53,12 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TEST_ADDER8BIT_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TEST_ALU_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TEST_ALU_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TEST_READER_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TEST_DRIVER_TO_DIGITS_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TEST_READER_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="TEST_READER_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TEST_READER_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TEST_SIGNED_TO_DISPLAY_DRIVER_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TEST_SIGNED_TO_DISPLAY_DRIVER_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="TEST_SIGNED_TO_DISPLAY_DRIVER_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
@@ -66,6 +68,9 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_FULL_ADDER_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test_FULL_ADDER_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test_button_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_button_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="test_button_isim_beh.wdb"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="top.bld"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CHK" xil_pn:name="top.chk"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="top.cmd_log"/>
@@ -103,10 +108,10 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1588244047" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1588244047">
+    <transform xil_pn:end_ts="1588273885" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1588273885">
       <status xil_pn:value="SuccessfullyRun"/>
     </transform>
-    <transform xil_pn:end_ts="1588244047" xil_pn:in_ck="-3479625053278792582" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1588244047">
+    <transform xil_pn:end_ts="1588273885" xil_pn:in_ck="2078477873035105929" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1588273885">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ADDER8BIT.vhd"/>
@@ -115,18 +120,22 @@
       <outfile xil_pn:name="READER.vhd"/>
       <outfile xil_pn:name="TEST_ADDER8BIT.vhd"/>
       <outfile xil_pn:name="TEST_ALU.vhd"/>
+      <outfile xil_pn:name="TEST_DRIVER_TO_DIGITS.vhd"/>
       <outfile xil_pn:name="TEST_READER.vhd"/>
       <outfile xil_pn:name="clock_enable.vhd"/>
       <outfile xil_pn:name="driver_7seg.vhd"/>
       <outfile xil_pn:name="hex_to_7seg.vhd"/>
+      <outfile xil_pn:name="instruction_enable.vhd"/>
+      <outfile xil_pn:name="signed_to_display_driver.vhd"/>
       <outfile xil_pn:name="test_FULL_ADDER.vhd"/>
+      <outfile xil_pn:name="test_button.vhd"/>
       <outfile xil_pn:name="top.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1588244047" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-7886735683214240541" xil_pn:start_ts="1588244047">
+    <transform xil_pn:end_ts="1588273885" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-3184729958693645972" xil_pn:start_ts="1588273885">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1588244047" xil_pn:in_ck="-3479625053278792582" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1588244047">
+    <transform xil_pn:end_ts="1588273885" xil_pn:in_ck="2078477873035105929" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1588273885">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ADDER8BIT.vhd"/>
@@ -135,34 +144,38 @@
       <outfile xil_pn:name="READER.vhd"/>
       <outfile xil_pn:name="TEST_ADDER8BIT.vhd"/>
       <outfile xil_pn:name="TEST_ALU.vhd"/>
+      <outfile xil_pn:name="TEST_DRIVER_TO_DIGITS.vhd"/>
       <outfile xil_pn:name="TEST_READER.vhd"/>
       <outfile xil_pn:name="clock_enable.vhd"/>
       <outfile xil_pn:name="driver_7seg.vhd"/>
       <outfile xil_pn:name="hex_to_7seg.vhd"/>
+      <outfile xil_pn:name="instruction_enable.vhd"/>
+      <outfile xil_pn:name="signed_to_display_driver.vhd"/>
       <outfile xil_pn:name="test_FULL_ADDER.vhd"/>
+      <outfile xil_pn:name="test_button.vhd"/>
       <outfile xil_pn:name="top.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1588244050" xil_pn:in_ck="-3479625053278792582" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-7917689440822599987" xil_pn:start_ts="1588244047">
+    <transform xil_pn:end_ts="1588273889" xil_pn:in_ck="2078477873035105929" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="1213911342316339103" xil_pn:start_ts="1588273885">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="TEST_READER_beh.prj"/>
-      <outfile xil_pn:name="TEST_READER_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="test_button_beh.prj"/>
+      <outfile xil_pn:name="test_button_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1588244051" xil_pn:in_ck="3779435699823622550" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-4284905965307337318" xil_pn:start_ts="1588244050">
+    <transform xil_pn:end_ts="1588273889" xil_pn:in_ck="5861614020220025823" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5540333207929103668" xil_pn:start_ts="1588273889">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="TEST_READER_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="test_button_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1588201092" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1588201092">
       <status xil_pn:value="SuccessfullyRun"/>
     </transform>
-    <transform xil_pn:end_ts="1588216557" xil_pn:in_ck="-657829466016704675" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="831314429168425491" xil_pn:start_ts="1588216549">
+    <transform xil_pn:end_ts="1588271699" xil_pn:in_ck="2318131640849424108" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="831314429168425491" xil_pn:start_ts="1588271689">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -186,18 +199,22 @@
     <transform xil_pn:end_ts="1588216219" xil_pn:in_ck="-4791860397297344589" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="6693835875156060939" xil_pn:start_ts="1588216219">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1588216562" xil_pn:in_ck="-1820291493493390156" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="2820029809837737375" xil_pn:start_ts="1588216557">
+    <transform xil_pn:end_ts="1588271713" xil_pn:in_ck="-1820291493493390156" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="2820029809837737375" xil_pn:start_ts="1588271699">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
       <outfile xil_pn:name="top.bld"/>
       <outfile xil_pn:name="top.ngd"/>
       <outfile xil_pn:name="top_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1588216576" xil_pn:in_ck="958840121453771587" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="-2226312470911523757" xil_pn:start_ts="1588216562">
+    <transform xil_pn:end_ts="1588271736" xil_pn:in_ck="958840121453771587" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="-2226312470911523757" xil_pn:start_ts="1588271713">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -219,7 +236,7 @@
       <outfile xil_pn:name="top_html"/>
       <outfile xil_pn:name="top_pad.csv"/>
     </transform>
-    <transform xil_pn:end_ts="1588216579" xil_pn:in_ck="154288921434" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="5245363024343" xil_pn:start_ts="1588216576">
+    <transform xil_pn:end_ts="1588271739" xil_pn:in_ck="154288921434" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="5245363024343" xil_pn:start_ts="1588271736">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
@@ -227,7 +244,6 @@
     </transform>
     <transform xil_pn:end_ts="1588216249" xil_pn:in_ck="154288921434" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1588216247">
       <status xil_pn:value="AbortedRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>

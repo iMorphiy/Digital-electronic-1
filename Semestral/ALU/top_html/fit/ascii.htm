@@ -3,7 +3,7 @@
  
 cpldfit:  version P.20131013                        Xilinx Inc.
                                   Fitter Report
-Design Name: top                                 Date:  4-30-2020,  5:16AM
+Design Name: top                                 Date:  4-30-2020,  9:16PM
 Device Used: XC2C256-6-TQ144
 Fitting Status: Successful
 
@@ -11,21 +11,21 @@ Fitting Status: Successful
 
 Macrocells     Product Terms    Function Block   Registers      Pins           
 Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
-56 /256 ( 22%) 181 /896  ( 20%) 97  /640  ( 15%) 28 /256 ( 11%) 35 /118 ( 30%)
+124/256 ( 48%) 295 /896  ( 33%) 162 /640  ( 25%) 94 /256 ( 37%) 27 /118 ( 23%)
 
 ** Function Block Resources **
 
 Function Mcells   FB Inps  Pterms   IO       CTC      CTR      CTS      CTE     
 Block    Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot
-FB1      16/16*     7/40     8/56     0/ 6    0/1      0/1      0/1      0/1
-FB2      14/16     19/40    55/56     8/ 8*   0/1      0/1      0/1      0/1
-FB3       7/16     17/40    55/56     1/ 6    0/1      0/1      0/1      0/1
-FB4      16/16*    35/40    54/56     6/ 8    0/1      0/1      0/1      0/1
-FB5       3/16     19/40     9/56     1/ 5    0/1      0/1      0/1      0/1
-FB6       0/16      0/40     0/56     0/ 8    0/1      0/1      0/1      0/1
-FB7       0/16      0/40     0/56     0/ 8    0/1      0/1      0/1      0/1
-FB8       0/16      0/40     0/56     0/ 8    0/1      0/1      0/1      0/1
-FB9       0/16      0/40     0/56     0/ 8    0/1      0/1      0/1      0/1
+FB1      16/16*    10/40    25/56     0/ 6    0/1      0/1      0/1      0/1
+FB2      16/16*     7/40    10/56     0/ 8    0/1      0/1      0/1      0/1
+FB3      16/16*    30/40    28/56     4/ 6    0/1      0/1      0/1      0/1
+FB4      16/16*    25/40    56/56*    7/ 8    0/1      0/1      0/1      0/1
+FB5      16/16*    19/40    36/56     1/ 5    0/1      0/1      0/1      0/1
+FB6      14/16     26/40    56/56*    1/ 8    0/1      0/1      0/1      0/1
+FB7      11/16     19/40    55/56     3/ 8    0/1      0/1      0/1      0/1
+FB8      16/16*    22/40    25/56     0/ 8    1/1*     0/1      0/1      0/1
+FB9       3/16      4/40     4/56     0/ 8    1/1*     0/1      0/1      0/1
 FB10      0/16      0/40     0/56     0/ 9    0/1      0/1      0/1      0/1
 FB11      0/16      0/40     0/56     0/ 8    0/1      0/1      0/1      0/1
 FB12      0/16      0/40     0/56     0/ 6    0/1      0/1      0/1      0/1
@@ -34,7 +34,7 @@ FB14      0/16      0/40     0/56     0/ 8    0/1      0/1      0/1      0/1
 FB15      0/16      0/40     0/56     0/ 7    0/1      0/1      0/1      0/1
 FB16      0/16      0/40     0/56     0/ 7    0/1      0/1      0/1      0/1
          -----    -------  -------   -----    ---      ---      ---      ---
-Total    56/256    97/640  181/896   16/118   0/16     0/16     0/16     0/16
+Total   124/256   162/640  295/896   16/118   2/16     0/16     0/16     0/16
 
 CTC - Control Term Clock
 CTR - Control Term Reset
@@ -47,22 +47,23 @@ CTE - Control Term Output Enable
 
 GCK         GSR         GTS         DGE         
 Used/Tot    Used/Tot    Used/Tot    Used/Tot    
-1/3         0/1         0/4         0/1
+1/3         1/1         0/4         0/1
 
 Signal 'clk_i' mapped onto global clock net GCK1.
+Signal 'BTN1' mapped onto global set/reset net GSR.
 
 ** Pin Resources **
 
 Signal Type    Required     Mapped  |  Pin Type            Used    Total 
 ------------------------------------|------------------------------------
-Input         :   18          18    |  I/O              :    27    108
-Output        :   16          16    |  GCK/IO           :     2      3
-Bidirectional :    0           0    |  GTS/IO           :     4      4
+Input         :    9           9    |  I/O              :    22    108
+Output        :   16          16    |  GCK/IO           :     1      3
+Bidirectional :    0           0    |  GTS/IO           :     3      4
 GCK           :    1           1    |  GSR/IO           :     1      1
-GTS           :    0           0    |  CDR/IO           :     1      1
-GSR           :    0           0    |  DGE/IO           :     0      1
+GTS           :    0           0    |  CDR/IO           :     0      1
+GSR           :    1           1    |  DGE/IO           :     0      1
                  ----        ----
-        Total     35          35
+        Total     27          27
 
 End of Mapped Resource Summary
 **************************  Errors and Warnings  ***************************
@@ -73,93 +74,159 @@ WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
 
 ** 16 Outputs **
 
-Signal                           Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
-Name                             Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
-disp_seg_o<3>                    6     12    2    FB2_1   2     GTS/I/O   O       LVCMOS18           FAST         
-disp_seg_o<6>                    5     11    2    FB2_3   3     GTS/I/O   O       LVCMOS18           FAST         
-disp_seg_o<1>                    6     11    2    FB2_4   4     I/O       O       LVCMOS18           FAST         
-disp_seg_o<5>                    7     11    2    FB2_5   5     GTS/I/O   O       LVCMOS18           FAST         
-disp_seg_o<4>                    6     10    2    FB2_12  6     GTS/I/O   O       LVCMOS18           FAST         
-disp_seg_o<0>                    6     10    2    FB2_13  7     I/O       O       LVCMOS18           FAST         
-disp_seg_o<2>                    6     10    2    FB2_14  9     I/O       O       LVCMOS18           FAST         
-LED_CPLD<1>                      1     8     2    FB2_15  10    I/O       O       LVCMOS18           FAST         
-disp_dig_o<0>                    1     2     2    FB3_1   136   I/O       O       LVCMOS18           FAST         
-LED_CPLD<2>                      9     9     2    FB4_1   11    I/O       O       LVCMOS18           FAST DFF     RESET
-LED_CPLD<0>                      4     6     2    FB4_2   12    I/O       O       LVCMOS18           FAST         
-LED_CPLD<3>                      2     3     2    FB4_3   13    I/O       O       LVCMOS18           FAST         
-disp_dig_o<1>                    1     2     2    FB4_4   14    I/O       O       LVCMOS18           FAST         
-disp_dig_o<2>                    1     2     2    FB4_5   15    I/O       O       LVCMOS18           FAST         
-disp_dig_o<3>                    1     2     2    FB4_6   16    I/O       O       LVCMOS18           FAST         
-LED_CPLD<4>                      5     4     1    FB5_2   33    I/O       O       LVCMOS18           FAST         
+Signal                              Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
+Name                                Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
+disp_dig_o<0>                       1     2     2    FB3_1   136   I/O       O       LVCMOS18           FAST         
+disp_dig_o<1>                       1     2     2    FB3_2   135   I/O       O       LVCMOS18           FAST         
+disp_dig_o<2>                       1     2     2    FB3_3   134   I/O       O       LVCMOS18           FAST         
+disp_dig_o<3>                       1     2     2    FB3_5   133   I/O       O       LVCMOS18           FAST         
+disp_seg_o<3>                       8     12    2    FB4_1   11    I/O       O       LVCMOS18           FAST         
+disp_seg_o<6>                       8     12    2    FB4_2   12    I/O       O       LVCMOS18           FAST         
+disp_seg_o<2>                       6     12    2    FB4_3   13    I/O       O       LVCMOS18           FAST         
+disp_seg_o<5>                       7     12    2    FB4_4   14    I/O       O       LVCMOS18           FAST         
+disp_seg_o<1>                       9     11    2    FB4_5   15    I/O       O       LVCMOS18           FAST         
+disp_seg_o<4>                       7     11    2    FB4_6   16    I/O       O       LVCMOS18           FAST         
+disp_seg_o<0>                       8     11    2    FB4_12  17    I/O       O       LVCMOS18           FAST         
+LED_CPLD<4>                         5     4     1    FB5_2   33    I/O       O       LVCMOS18           FAST         
+LED_CPLD<1>                         1     2     1    FB6_1   34    I/O       O       LVCMOS18           FAST         
+LED_CPLD<2>                         9     9     1    FB7_5   26    I/O       O       LVCMOS18           FAST DFF     RESET
+LED_CPLD<0>                         4     6     1    FB7_6   25    I/O       O       LVCMOS18           FAST         
+LED_CPLD<3>                         2     3     1    FB7_11  24    I/O       O       LVCMOS18           FAST         
 
-** 40 Buried Nodes **
+** 108 Buried Nodes **
 
-Signal                           Total Total Loc     Reg     Reg Init
-Name                             Pts   Inps          Use     State
-DISPLAY/CLOCK_ENABLE/s_cnt<9>    0     0     FB1_1   DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<8>    0     0     FB1_2   DFF     RESET
-N_PZ_134                         1     3     FB1_3           
-DISPLAY/CLOCK_ENABLE/s_cnt<2>    2     5     FB1_4   DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<7>    0     0     FB1_5   DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<1>    2     3     FB1_6   DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<6>    0     0     FB1_7   DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<15>   0     0     FB1_8   DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<14>   0     0     FB1_9   DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<13>   0     0     FB1_10  DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<12>   0     0     FB1_11  DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<0>    1     2     FB1_12  DFF     RESET
-DISPLAY/s_cnt<1>                 1     2     FB1_13  TFF     RESET
-DISPLAY/s_cnt<0>                 1     1     FB1_14  TFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<11>   0     0     FB1_15  DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<10>   0     0     FB1_16  DFF     RESET
-N_PZ_139                         2     2     FB2_7           
-N_PZ_238                         1     2     FB2_8           
-number_s<0>                      4     6     FB2_9   DFF     RESET
-MYALU/control_s                  2     3     FB2_10  DFF     RESET
-N_PZ_222                         2     2     FB2_11          
-MYALU/Mxor_status_o<4>__xor0001  5     4     FB2_16          
-MYALU/F_ADDER_1/carry_6to7_s     9     6     FB3_9           
-number_s<5>                      13    9     FB3_10  DFF     RESET
-number_s<4>                      5     6     FB3_11  DFF     RESET
-MYALU/F_ADDER_1/carry_4to5_s     9     6     FB3_12          
-number_s<3>                      13    9     FB3_13  DFF     RESET
-number_s<2>                      5     6     FB3_15  DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<5>    2     14    FB4_7   DFF     RESET
-DISPLAY/CLOCK_ENABLE/s_cnt<3>    2     13    FB4_8   DFF     RESET
-N_PZ_136                         2     2     FB4_9           
-N_PZ_239                         2     2     FB4_10          
-N_PZ_218                         2     2     FB4_11          
-DISPLAY/CLOCK_ENABLE/s_cnt<4>    3     14    FB4_12  DFF     RESET
-MYALU/F_ADDER_1/carry_2to3_s     6     6     FB4_13          
-DISPLAY/s_cnt_0__or0000          2     14    FB4_14  DFF     RESET
-number_s<1>                      10    9     FB4_15  DFF     RESET
-number_s<6>                      5     6     FB4_16  DFF     RESET
-N_PZ_291                         2     13    FB5_15          
-N_PZ_137                         2     2     FB5_16          
+Signal                              Total Total Loc     Reg     Reg Init
+Name                                Pts   Inps          Use     State
+SECV_READER/regB<4>                 2     3     FB1_1   DEFF    RESET
+SECV_READER/regB<3>                 2     3     FB1_2   DEFF    RESET
+SECV_READER/regB<5>                 2     3     FB1_3   DEFF    RESET
+SECV_READER/regA<0>                 1     2     FB1_4   DEFF    RESET
+SECV_READER/regB<2>                 2     3     FB1_5   DEFF    RESET
+SECV_READER/regA<1>                 1     2     FB1_6   DEFF    RESET
+SECV_READER/regO<1>                 2     3     FB1_7   DEFF    RESET
+SECV_READER/regB<1>                 2     3     FB1_8   DEFF    RESET
+SECV_READER/s_state_FSM_FFd3        2     2     FB1_9   DEFF/S  SET
+SECV_READER/regO<0>                 2     3     FB1_10  DEFF    RESET
+SECV_READER/regB<0>                 2     3     FB1_11  DEFF    RESET
+SECV_READER/regA<2>                 1     2     FB1_12  DEFF    RESET
+SECV_READER/regA<3>                 1     2     FB1_13  DEFF    RESET
+SECV_READER/regA<4>                 1     2     FB1_14  DEFF    RESET
+SECV_READER/s_state_FSM_FFd1        2     2     FB1_15  DEFF    RESET
+SECV_READER/s_state_FSM_FFd2        2     2     FB1_16  DEFF    RESET
+SECV_READER/regA<5>                 1     2     FB2_1   DEFF    RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<13>      0     0     FB2_2   DFF     RESET
+SECV_READER/regA<6>                 1     2     FB2_3   DEFF    RESET
+SECV_READER/regA<7>                 1     2     FB2_4   DEFF    RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<8>       0     0     FB2_5   DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<12>      0     0     FB2_6   DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<11>      0     0     FB2_7   DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<10>      0     0     FB2_8   DFF     RESET
+BUTTON_ENABLE/s_state_FSM_FFd1      2     3     FB2_9   DFF     RESET
+enable_s                            1     3     FB2_10  DFF     RESET
+SECV_READER/regB<7>                 2     3     FB2_11  DEFF    RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<7>       0     0     FB2_12  DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<6>       0     0     FB2_13  DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<15>      0     0     FB2_14  DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<14>      0     0     FB2_15  DFF     RESET
+SECV_READER/regB<6>                 2     3     FB2_16  DEFF    RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<1>       2     3     FB3_4   DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<2>       2     5     FB3_6   DFF     RESET
+N_PZ_560                            2     14    FB3_7           
+DISPLAY/s_en                        3     15    FB3_8   DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<4>       3     15    FB3_9   DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<5>       2     15    FB3_10  DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<3>       2     14    FB3_11  DFF     RESET
+N_PZ_507                            2     10    FB3_12          
 
-** 19 Inputs **
+Signal                              Total Total Loc     Reg     Reg Init
+Name                                Pts   Inps          Use     State
+DISPLAY/s_cnt<0>                    2     3     FB3_13  DFF     RESET
+N_PZ_373                            1     3     FB3_14          
+DISPLAY/s_cnt<1>                    2     4     FB3_15  TFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<0>       1     2     FB3_16  DFF     RESET
+DISPLAY/SIGNED_DECODER/dataSI_s<4>  3     7     FB4_7   DFF     RESET
+N_PZ_468                            1     7     FB4_8           
+DISPLAY/SIGNED_DECODER/dataSI_s<5>  3     8     FB4_9   DFF     RESET
+DISPLAY/SIGNED_DECODER/dataSI_s<6>  3     10    FB4_10  DFF     RESET
+DISPLAY/SIGNED_DECODER/dataUN_s<0>  2     3     FB4_11  DEFF    RESET
+DISPLAY/SIGNED_DECODER/dataSI_s<0>  2     2     FB4_13  DEFF    RESET
+DISPLAY/SIGNED_DECODER/dataSI_s<2>  3     5     FB4_14  DFF     RESET
+DISPLAY/data_minus_s                1     1     FB4_15  DFF     RESET
+DISPLAY/CLOCK_ENABLE/s_cnt<9>       0     0     FB4_16  DFF     RESET
+DISPLAY/data0_s<3>                  2     4     FB5_1   DFF     RESET
+DISPLAY/SIGNED_DECODER/dataUN_s<3>  2     3     FB5_3   DEFF    RESET
+MY_ALU/Mxor_status_o<4>__xor0001    3     3     FB5_4           
+DISPLAY/SIGNED_DECODER/dataSI_s<1>  2     3     FB5_5   DFF     RESET
+DISPLAY/data0_s<1>                  2     4     FB5_6   DFF     RESET
+DISPLAY/SIGNED_DECODER/dataSI_s<3>  4     6     FB5_7   DFF     RESET
+DISPLAY/SIGNED_DECODER/dataUN_s<2>  2     3     FB5_8   DEFF    RESET
+DISPLAY/SIGNED_DECODER/dataUN_s<1>  2     3     FB5_9   DEFF    RESET
+DISPLAY/data1_s<3>                  2     4     FB5_10  DFF     RESET
+DISPLAY/SIGNED_DECODER/dataSI_s<7>  2     3     FB5_11  DFF     RESET
+DISPLAY/SIGNED_DECODER/dataUN_s<7>  2     2     FB5_12  DEFF    RESET
+DISPLAY/SIGNED_DECODER/dataUN_s<6>  2     3     FB5_13  DEFF    RESET
+DISPLAY/data0_s<0>                  2     4     FB5_14  DFF     RESET
+DISPLAY/SIGNED_DECODER/dataUN_s<5>  2     3     FB5_15  DEFF    RESET
+DISPLAY/SIGNED_DECODER/dataUN_s<4>  2     3     FB5_16  DEFF    RESET
+number_s<1>                         10    8     FB6_3   DFF     RESET
+number_s<0>                         5     5     FB6_5   DFF     RESET
+MY_ALU/control_s                    2     3     FB6_6   DFF     RESET
+N_PZ_521                            2     2     FB6_7           
+DISPLAY/data1_s<2>                  2     4     FB6_8   DFF     RESET
+DISPLAY/data1_s<1>                  2     4     FB6_9   DFF     RESET
+DISPLAY/data1_s<0>                  2     4     FB6_10  DFF     RESET
+DISPLAY/data0_s<2>                  2     4     FB6_11  DFF     RESET
+N_PZ_377                            2     2     FB6_12          
+N_PZ_376                            2     2     FB6_13          
+number_s<3>                         13    9     FB6_14  DFF     RESET
+number_s<2>                         5     6     FB6_15  DFF     RESET
 
-Signal                           Bank Loc     Pin   Pin       Pin     I/O      I/O
-Name                                          No.   Type      Use     STD      Style
-SW_CPLD<13>                      2    FB1_3   143   GSR/I/O   I       LVCMOS18 KPR
-SW_CPLD<14>                      2    FB1_4   142   I/O       I       LVCMOS18 KPR
-SW_CPLD<15>                      2    FB1_6   140   I/O       I       LVCMOS18 KPR
-SW_CPLD<2>                       2    FB1_12  139   I/O       I       LVCMOS18 KPR
-SW_CPLD<3>                       2    FB1_13  138   I/O       I       LVCMOS18 KPR
-SW_CPLD<4>                       2    FB1_14  137   I/O       I       LVCMOS18 KPR
-SW_CPLD<0>                       2    FB3_2   135   I/O       I       LVCMOS18 KPR
-SW_CPLD<10>                      2    FB3_3   134   I/O       I       LVCMOS18 KPR
-SW_CPLD<11>                      2    FB3_5   133   I/O       I       LVCMOS18 KPR
-SW_CPLD<12>                      2    FB3_14  132   I/O       I       LVCMOS18 KPR
-SW_CPLD<1>                       2    FB3_16  131   I/O       I       LVCMOS18 KPR
-SW<0>                            2    FB4_12  17    I/O       I       LVCMOS18 KPR
-SW<1>                            2    FB4_14  18    I/O       I       LVCMOS18 KPR
-clk_i                            1    FB5_4   32    GCK/I/O   GCK     LVCMOS18 KPR
-SW_CPLD<5>                       1    FB5_5   31    I/O       I       LVCMOS18 KPR
-SW_CPLD<6>                       1    FB5_6   30    GCK/I/O   I       LVCMOS18 KPR
-SW_CPLD<7>                       1    FB5_14  28    I/O       I       LVCMOS18 KPR
-SW_CPLD<8>                       1    FB6_1   34    I/O       I       LVCMOS18 KPR
-SW_CPLD<9>                       1    FB6_2   35    CDR/I/O   I       LVCMOS18 KPR
+Signal                              Total Total Loc     Reg     Reg Init
+Name                                Pts   Inps          Use     State
+MY_ALU/F_ADDER_1/carry_2to3_s       6     5     FB6_16          
+N_PZ_474                            2     2     FB7_1           
+N_PZ_499                            2     2     FB7_2           
+N_PZ_471                            2     2     FB7_3           
+N_PZ_378                            2     2     FB7_4           
+MY_ALU/F_ADDER_1/carry_6to7_s       9     6     FB7_7           
+number_s<4>                         5     6     FB7_8   DFF     RESET
+number_s<5>                         13    9     FB7_9   DFF     RESET
+number_s<6>                         5     6     FB7_10  DFF     RESET
+B_s<6>                              2     2     FB8_1   LATCH   RESET
+B_s<5>                              2     2     FB8_2   LATCH   RESET
+B_s<4>                              2     2     FB8_3   LATCH   RESET
+A_s<6>                              2     2     FB8_4   LATCH   RESET
+B_s<3>                              2     2     FB8_5   LATCH   RESET
+B_s<2>                              2     2     FB8_6   LATCH   RESET
+A_s<5>                              2     2     FB8_7   LATCH   RESET
+A_s<4>                              2     2     FB8_8   LATCH   RESET
+A_s<3>                              2     2     FB8_9   LATCH   RESET
+A_s<2>                              2     2     FB8_10  LATCH   RESET
+B_s<1>                              2     2     FB8_11  LATCH   RESET
+B_s<0>                              2     2     FB8_12  LATCH   RESET
+A_s<7>                              2     2     FB8_13  LATCH   RESET
+A_s<1>                              2     2     FB8_14  LATCH   RESET
+A_s<0>                              2     2     FB8_15  LATCH   RESET
+MY_ALU/F_ADDER_1/carry_4to5_s       9     6     FB8_16          
+operation_s<1>                      2     2     FB9_10  LATCH   RESET
+operation_s<0>                      2     2     FB9_11  LATCH   RESET
+B_s<7>                              2     2     FB9_16  LATCH   RESET
+
+** 11 Inputs **
+
+Signal                              Bank Loc     Pin   Pin       Pin     I/O      I/O
+Name                                             No.   Type      Use     STD      Style
+BTN1                                2    FB1_3   143   GSR/I/O   GSR/I   LVCMOS18 KPR
+SW_CPLD<0>                          2    FB1_4   142   I/O       I       LVCMOS18 KPR
+SW_CPLD<1>                          2    FB1_6   140   I/O       I       LVCMOS18 KPR
+SW_CPLD<2>                          2    FB1_12  139   I/O       I       LVCMOS18 KPR
+SW_CPLD<3>                          2    FB1_13  138   I/O       I       LVCMOS18 KPR
+SW_CPLD<4>                          2    FB1_14  137   I/O       I       LVCMOS18 KPR
+SW_CPLD<5>                          2    FB2_1   2     GTS/I/O   I       LVCMOS18 KPR
+SW_CPLD<6>                          2    FB2_3   3     GTS/I/O   I       LVCMOS18 KPR
+SW_CPLD<7>                          2    FB2_4   4     I/O       I       LVCMOS18 KPR
+BTN0                                2    FB2_5   5     GTS/I/O   I       LVCMOS18 KPR
+clk_i                               1    FB5_4   32    GCK/I/O   GCK     LVCMOS18 KPR
 
 Legend:
 Pin No.   - ~     - User Assigned
@@ -187,347 +254,502 @@ Pin Type/Use - I  - Input             GCK - Global clock
 Pin No.      - ~  - User Assigned
 *********************************** FB1  ***********************************
 This function block is part of I/O Bank number:               2
-Number of function block inputs used/remaining:               7/33
+Number of function block inputs used/remaining:               10/30
 Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   8/48
+Number of PLA product terms used/remaining:                   25/31
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
-DISPLAY/CLOCK_ENABLE/s_cnt<9> 0     FB1_1        (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<8> 0     FB1_2        (b)     (b)               
-N_PZ_134                      1     FB1_3   143  GSR/I/O I                 
-DISPLAY/CLOCK_ENABLE/s_cnt<2> 2     FB1_4   142  I/O     I                 
-DISPLAY/CLOCK_ENABLE/s_cnt<7> 0     FB1_5        (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<1> 2     FB1_6   140  I/O     I                 
-DISPLAY/CLOCK_ENABLE/s_cnt<6> 0     FB1_7        (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<15>
-                              0     FB1_8        (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<14>
-                              0     FB1_9        (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<13>
-                              0     FB1_10       (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<12>
-                              0     FB1_11       (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<0> 1     FB1_12  139  I/O     I                 
-DISPLAY/s_cnt<1>              1     FB1_13  138  I/O     I                 
-DISPLAY/s_cnt<0>              1     FB1_14  137  I/O     I                 
-DISPLAY/CLOCK_ENABLE/s_cnt<11>
-                              0     FB1_15       (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<10>
-                              0     FB1_16       (b)     (b)               
+SECV_READER/regB<4>           2     FB1_1        (b)     (b)               
+SECV_READER/regB<3>           2     FB1_2        (b)     (b)               
+SECV_READER/regB<5>           2     FB1_3   143  GSR/I/O GSR/I             
+SECV_READER/regA<0>           1     FB1_4   142  I/O     I                 
+SECV_READER/regB<2>           2     FB1_5        (b)     (b)               
+SECV_READER/regA<1>           1     FB1_6   140  I/O     I                 
+SECV_READER/regO<1>           2     FB1_7        (b)     (b)               
+SECV_READER/regB<1>           2     FB1_8        (b)     (b)               
+SECV_READER/s_state_FSM_FFd3  2     FB1_9        (b)     (b)               
+SECV_READER/regO<0>           2     FB1_10       (b)     (b)               
+SECV_READER/regB<0>           2     FB1_11       (b)     (b)               
+SECV_READER/regA<2>           1     FB1_12  139  I/O     I                 
+SECV_READER/regA<3>           1     FB1_13  138  I/O     I                 
+SECV_READER/regA<4>           1     FB1_14  137  I/O     I                 
+SECV_READER/s_state_FSM_FFd1  2     FB1_15       (b)     (b)               
+SECV_READER/s_state_FSM_FFd2  2     FB1_16       (b)     (b)               
 
 Signals Used by Logic in Function Block
-  1: DISPLAY/CLOCK_ENABLE/s_cnt<0>   4: DISPLAY/s_cnt<0>          6: N_PZ_134 
-  2: DISPLAY/CLOCK_ENABLE/s_cnt<1>   5: DISPLAY/s_cnt_0__or0000   7: N_PZ_291 
-  3: DISPLAY/CLOCK_ENABLE/s_cnt<2> 
+  1: SECV_READER/s_state_FSM_FFd1   5: SW_CPLD<1>         8: SW_CPLD<4> 
+  2: SECV_READER/s_state_FSM_FFd2   6: SW_CPLD<2>         9: SW_CPLD<5> 
+  3: SECV_READER/s_state_FSM_FFd3   7: SW_CPLD<3>        10: enable_s 
+  4: SW_CPLD<0>                   
 
 Signal                     1         2         3         4 FB      
 Name             0----+----0----+----0----+----0----+----0 Inputs  
-DISPLAY/CLOCK_ENABLE/s_cnt<9> 
+SECV_READER/regB<4> 
+                  .X.....X.X.............................. 3       
+SECV_READER/regB<3> 
+                  .X....X..X.............................. 3       
+SECV_READER/regB<5> 
+                  .X......XX.............................. 3       
+SECV_READER/regB<2> 
+                  .X...X...X.............................. 3       
+SECV_READER/regO<1> 
+                  X...X....X.............................. 3       
+SECV_READER/regB<1> 
+                  .X..X....X.............................. 3       
+SECV_READER/s_state_FSM_FFd3 
+                  X........X.............................. 2       
+SECV_READER/regO<0> 
+                  X..X.....X.............................. 3       
+SECV_READER/regB<0> 
+                  .X.X.....X.............................. 3       
+SECV_READER/s_state_FSM_FFd1 
+                  .X.......X.............................. 2       
+SECV_READER/s_state_FSM_FFd2 
+                  ..X......X.............................. 2       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB2  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               7/33
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   10/46
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+SECV_READER/regA<5>           1     FB2_1   2    GTS/I/O I                 
+DISPLAY/CLOCK_ENABLE/s_cnt<13>
+                              0     FB2_2        (b)     (b)               
+SECV_READER/regA<6>           1     FB2_3   3    GTS/I/O I                 
+SECV_READER/regA<7>           1     FB2_4   4    I/O     I                 
+DISPLAY/CLOCK_ENABLE/s_cnt<8> 0     FB2_5   5    GTS/I/O I                 
+DISPLAY/CLOCK_ENABLE/s_cnt<12>
+                              0     FB2_6        (b)     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<11>
+                              0     FB2_7        (b)     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<10>
+                              0     FB2_8        (b)     (b)               
+BUTTON_ENABLE/s_state_FSM_FFd1
+                              2     FB2_9        (b)     (b)               
+enable_s                      1     FB2_10       (b)     (b)               
+SECV_READER/regB<7>           2     FB2_11       (b)     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<7> 0     FB2_12  6    GTS/I/O (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<6> 0     FB2_13  7    I/O     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<15>
+                              0     FB2_14  9    I/O     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<14>
+                              0     FB2_15  10   I/O     (b)               
+SECV_READER/regB<6>           2     FB2_16       (b)     (b)               
+
+Signals Used by Logic in Function Block
+  1: BTN0                             4: SECV_READER/s_state_FSM_FFd3   6: SW_CPLD<7> 
+  2: BUTTON_ENABLE/s_state_FSM_FFd1   5: SW_CPLD<6>                     7: enable_s 
+  3: SECV_READER/s_state_FSM_FFd2   
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+DISPLAY/CLOCK_ENABLE/s_cnt<13> 
                   ........................................ 0       
 DISPLAY/CLOCK_ENABLE/s_cnt<8> 
                   ........................................ 0       
-N_PZ_134          XXX..................................... 3       
-DISPLAY/CLOCK_ENABLE/s_cnt<2> 
-                  XXX..XX................................. 5       
+DISPLAY/CLOCK_ENABLE/s_cnt<12> 
+                  ........................................ 0       
+DISPLAY/CLOCK_ENABLE/s_cnt<11> 
+                  ........................................ 0       
+DISPLAY/CLOCK_ENABLE/s_cnt<10> 
+                  ........................................ 0       
+BUTTON_ENABLE/s_state_FSM_FFd1 
+                  XX....X................................. 3       
+enable_s          XX....X................................. 3       
+SECV_READER/regB<7> 
+                  ..X..XX................................. 3       
 DISPLAY/CLOCK_ENABLE/s_cnt<7> 
                   ........................................ 0       
-DISPLAY/CLOCK_ENABLE/s_cnt<1> 
-                  XX....X................................. 3       
 DISPLAY/CLOCK_ENABLE/s_cnt<6> 
                   ........................................ 0       
 DISPLAY/CLOCK_ENABLE/s_cnt<15> 
                   ........................................ 0       
 DISPLAY/CLOCK_ENABLE/s_cnt<14> 
                   ........................................ 0       
-DISPLAY/CLOCK_ENABLE/s_cnt<13> 
-                  ........................................ 0       
-DISPLAY/CLOCK_ENABLE/s_cnt<12> 
-                  ........................................ 0       
-DISPLAY/CLOCK_ENABLE/s_cnt<0> 
-                  X.....X................................. 2       
-DISPLAY/s_cnt<1>  ...XX................................... 2       
-DISPLAY/s_cnt<0>  ....X................................... 1       
-DISPLAY/CLOCK_ENABLE/s_cnt<11> 
-                  ........................................ 0       
-DISPLAY/CLOCK_ENABLE/s_cnt<10> 
-                  ........................................ 0       
-                 0----+----1----+----2----+----3----+----4
-                           0         0         0         0
-*********************************** FB2  ***********************************
-This function block is part of I/O Bank number:               2
-Number of function block inputs used/remaining:               19/21
-Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   55/1
-Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
-Name                          Pt            No.  Type    Use   
-disp_seg_o<3>                 6     FB2_1   2    GTS/I/O O                 
-(unused)                      0     FB2_2        (b)           
-disp_seg_o<6>                 5     FB2_3   3    GTS/I/O O                 
-disp_seg_o<1>                 6     FB2_4   4    I/O     O                 
-disp_seg_o<5>                 7     FB2_5   5    GTS/I/O O                 
-(unused)                      0     FB2_6        (b)           
-N_PZ_139                      2     FB2_7        (b)     (b)               
-N_PZ_238                      1     FB2_8        (b)     (b)               
-number_s<0>                   4     FB2_9        (b)     (b)               
-MYALU/control_s               2     FB2_10       (b)     (b)               
-N_PZ_222                      2     FB2_11       (b)     (b)               
-disp_seg_o<4>                 6     FB2_12  6    GTS/I/O O                 
-disp_seg_o<0>                 6     FB2_13  7    I/O     O                 
-disp_seg_o<2>                 6     FB2_14  9    I/O     O                 
-LED_CPLD<1>                   1     FB2_15  10   I/O     O                 
-MYALU/Mxor_status_o<4>__xor0001
-                              5     FB2_16       (b)     (b)               
-
-Signals Used by Logic in Function Block
-  1: DISPLAY/s_cnt<0>                  8: SW<0>             14: number_s<1> 
-  2: DISPLAY/s_cnt<1>                  9: SW<1>             15: number_s<2> 
-  3: LED_CPLD<2>                      10: SW_CPLD<0>        16: number_s<3> 
-  4: MYALU/Mxor_status_o<4>__xor0001  11: SW_CPLD<15>       17: number_s<4> 
-  5: MYALU/control_s                  12: SW_CPLD<8>        18: number_s<5> 
-  6: N_PZ_222                         13: number_s<0>       19: number_s<6> 
-  7: N_PZ_238                        
-
-Signal                     1         2         3         4 FB      
-Name             0----+----0----+----0----+----0----+----0 Inputs  
-disp_seg_o<3>     XXXX.X......XXXXXXX..................... 12      
-disp_seg_o<6>     XXXX.X......XX.XXXX..................... 11      
-disp_seg_o<1>     XXXX.X......XXXX.XX..................... 11      
-disp_seg_o<5>     XXXX........XXXXXXX..................... 11      
-N_PZ_139          ....X.....X............................. 2       
-N_PZ_238          .........X.X............................ 2       
-number_s<0>       ....X.XXXX.X............................ 6       
-MYALU/control_s   ....X..XX............................... 3       
-N_PZ_222          ................X.X..................... 2       
-disp_seg_o<4>     XXX.........XXXXXXX..................... 10      
-disp_seg_o<0>     XXXX........XX.XXXX..................... 10      
-disp_seg_o<2>     XXX.........XXXXXXX..................... 10      
-LED_CPLD<1>       ..X.........XXXXXXX..................... 8       
-MYALU/Mxor_status_o<4>__xor0001 
-                  ............XXXX........................ 4       
+SECV_READER/regB<6> 
+                  ..X.X.X................................. 3       
                  0----+----1----+----2----+----3----+----4
                            0         0         0         0
 *********************************** FB3  ***********************************
 This function block is part of I/O Bank number:               2
-Number of function block inputs used/remaining:               17/23
+Number of function block inputs used/remaining:               30/10
 Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   55/1
+Number of PLA product terms used/remaining:                   28/28
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
 disp_dig_o<0>                 1     FB3_1   136  I/O     O                 
-(unused)                      0     FB3_2   135  I/O     I     
-(unused)                      0     FB3_3   134  I/O     I     
-(unused)                      0     FB3_4        (b)           
-(unused)                      0     FB3_5   133  I/O     I     
-(unused)                      0     FB3_6        (b)           
-(unused)                      0     FB3_7        (b)           
-(unused)                      0     FB3_8        (b)           
-MYALU/F_ADDER_1/carry_6to7_s  9     FB3_9        (b)     (b)               
-number_s<5>                   13    FB3_10       (b)     (b)               
-number_s<4>                   5     FB3_11       (b)     (b)               
-MYALU/F_ADDER_1/carry_4to5_s  9     FB3_12       (b)     (b)               
-number_s<3>                   13    FB3_13       (b)     (b)               
-(unused)                      0     FB3_14  132  I/O     I     
-number_s<2>                   5     FB3_15       (b)     (b)               
-(unused)                      0     FB3_16  131  I/O     I     
+disp_dig_o<1>                 1     FB3_2   135  I/O     O                 
+disp_dig_o<2>                 1     FB3_3   134  I/O     O                 
+DISPLAY/CLOCK_ENABLE/s_cnt<1> 2     FB3_4        (b)     (b)               
+disp_dig_o<3>                 1     FB3_5   133  I/O     O                 
+DISPLAY/CLOCK_ENABLE/s_cnt<2> 2     FB3_6        (b)     (b)               
+N_PZ_560                      2     FB3_7        (b)     (b)               
+DISPLAY/s_en                  3     FB3_8        (b)     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<4> 3     FB3_9        (b)     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<5> 2     FB3_10       (b)     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<3> 2     FB3_11       (b)     (b)               
+N_PZ_507                      2     FB3_12       (b)     (b)               
+DISPLAY/s_cnt<0>              2     FB3_13       (b)     (b)               
+N_PZ_373                      1     FB3_14  132  I/O     (b)               
+DISPLAY/s_cnt<1>              2     FB3_15       (b)     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<0> 1     FB3_16  131  I/O     (b)               
 
 Signals Used by Logic in Function Block
-  1: DISPLAY/s_cnt<0>               7: N_PZ_137          13: SW_CPLD<13> 
-  2: DISPLAY/s_cnt<1>               8: SW<0>             14: SW_CPLD<2> 
-  3: MYALU/F_ADDER_1/carry_4to5_s   9: SW<1>             15: SW_CPLD<3> 
-  4: MYALU/F_ADDER_1/carry_6to7_s  10: SW_CPLD<10>       16: SW_CPLD<4> 
-  5: MYALU/control_s               11: SW_CPLD<11>       17: SW_CPLD<5> 
-  6: N_PZ_136                      12: SW_CPLD<12>      
+  1: BTN1                            11: DISPLAY/CLOCK_ENABLE/s_cnt<3>  21: DISPLAY/data0_s<3> 
+  2: DISPLAY/CLOCK_ENABLE/s_cnt<0>   12: DISPLAY/CLOCK_ENABLE/s_cnt<4>  22: DISPLAY/data1_s<0> 
+  3: DISPLAY/CLOCK_ENABLE/s_cnt<10>  13: DISPLAY/CLOCK_ENABLE/s_cnt<5>  23: DISPLAY/data1_s<1> 
+  4: DISPLAY/CLOCK_ENABLE/s_cnt<11>  14: DISPLAY/CLOCK_ENABLE/s_cnt<6>  24: DISPLAY/data1_s<2> 
+  5: DISPLAY/CLOCK_ENABLE/s_cnt<12>  15: DISPLAY/CLOCK_ENABLE/s_cnt<7>  25: DISPLAY/data1_s<3> 
+  6: DISPLAY/CLOCK_ENABLE/s_cnt<13>  16: DISPLAY/CLOCK_ENABLE/s_cnt<8>  26: DISPLAY/s_cnt<0> 
+  7: DISPLAY/CLOCK_ENABLE/s_cnt<14>  17: DISPLAY/CLOCK_ENABLE/s_cnt<9>  27: DISPLAY/s_cnt<1> 
+  8: DISPLAY/CLOCK_ENABLE/s_cnt<15>  18: DISPLAY/data0_s<0>             28: DISPLAY/s_en 
+  9: DISPLAY/CLOCK_ENABLE/s_cnt<1>   19: DISPLAY/data0_s<1>             29: N_PZ_373 
+ 10: DISPLAY/CLOCK_ENABLE/s_cnt<2>   20: DISPLAY/data0_s<2>             30: N_PZ_560 
 
 Signal                     1         2         3         4 FB      
 Name             0----+----0----+----0----+----0----+----0 Inputs  
-disp_dig_o<0>     XX...................................... 2       
-MYALU/F_ADDER_1/carry_6to7_s 
-                  ....X.X....XX..XX....................... 6       
-number_s<5>       ...XX.XXX..XX..XX....................... 9       
-number_s<4>       ....X.XXX..X...X........................ 6       
-MYALU/F_ADDER_1/carry_4to5_s 
-                  ....XX...XX..XX......................... 6       
-number_s<3>       ..X.XX.XXXX..XX......................... 9       
-number_s<2>       ....XX.XXX...X.......................... 6       
+disp_dig_o<0>     .........................XX............. 2       
+disp_dig_o<1>     .........................XX............. 2       
+disp_dig_o<2>     .........................XX............. 2       
+DISPLAY/CLOCK_ENABLE/s_cnt<1> 
+                  .X......X....................X.......... 3       
+disp_dig_o<3>     .........................XX............. 2       
+DISPLAY/CLOCK_ENABLE/s_cnt<2> 
+                  .X......XX..................XX.......... 5       
+N_PZ_560          X.XXXXXX..XXXXXXX....................... 14      
+DISPLAY/s_en      X.XXXXXX..XXXXXXX...........X........... 15      
+DISPLAY/CLOCK_ENABLE/s_cnt<4> 
+                  X.XXXXXX..XXXXXXX...........X........... 15      
+DISPLAY/CLOCK_ENABLE/s_cnt<5> 
+                  X.XXXXXX..XXXXXXX...........X........... 15      
+DISPLAY/CLOCK_ENABLE/s_cnt<3> 
+                  X.XXXXXX..X.XXXXX...........X........... 14      
+N_PZ_507          .................XXXXXXXXXX............. 10      
+DISPLAY/s_cnt<0>  X........................X.X............ 3       
+N_PZ_373          .X......XX.............................. 3       
+DISPLAY/s_cnt<1>  X........................XXX............ 4       
+DISPLAY/CLOCK_ENABLE/s_cnt<0> 
+                  .X...........................X.......... 2       
                  0----+----1----+----2----+----3----+----4
                            0         0         0         0
 *********************************** FB4  ***********************************
 This function block is part of I/O Bank number:               2
-Number of function block inputs used/remaining:               35/5
+Number of function block inputs used/remaining:               25/15
 Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   54/2
+Number of PLA product terms used/remaining:                   56/0
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
-LED_CPLD<2>                   9     FB4_1   11   I/O     O                 
-LED_CPLD<0>                   4     FB4_2   12   I/O     O                 
-LED_CPLD<3>                   2     FB4_3   13   I/O     O                 
-disp_dig_o<1>                 1     FB4_4   14   I/O     O                 
-disp_dig_o<2>                 1     FB4_5   15   I/O     O                 
-disp_dig_o<3>                 1     FB4_6   16   I/O     O                 
-DISPLAY/CLOCK_ENABLE/s_cnt<5> 2     FB4_7        (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<3> 2     FB4_8        (b)     (b)               
-N_PZ_136                      2     FB4_9        (b)     (b)               
-N_PZ_239                      2     FB4_10       (b)     (b)               
-N_PZ_218                      2     FB4_11       (b)     (b)               
-DISPLAY/CLOCK_ENABLE/s_cnt<4> 3     FB4_12  17   I/O     I                 
-MYALU/F_ADDER_1/carry_2to3_s  6     FB4_13       (b)     (b)               
-DISPLAY/s_cnt_0__or0000       2     FB4_14  18   I/O     I                 
-number_s<1>                   10    FB4_15       (b)     (b)               
-number_s<6>                   5     FB4_16       (b)     (b)               
+disp_seg_o<3>                 8     FB4_1   11   I/O     O                 
+disp_seg_o<6>                 8     FB4_2   12   I/O     O                 
+disp_seg_o<2>                 6     FB4_3   13   I/O     O                 
+disp_seg_o<5>                 7     FB4_4   14   I/O     O                 
+disp_seg_o<1>                 9     FB4_5   15   I/O     O                 
+disp_seg_o<4>                 7     FB4_6   16   I/O     O                 
+DISPLAY/SIGNED_DECODER/dataSI_s<4>
+                              3     FB4_7        (b)     (b)               
+N_PZ_468                      1     FB4_8        (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataSI_s<5>
+                              3     FB4_9        (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataSI_s<6>
+                              3     FB4_10       (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataUN_s<0>
+                              2     FB4_11       (b)     (b)               
+disp_seg_o<0>                 8     FB4_12  17   I/O     O                 
+DISPLAY/SIGNED_DECODER/dataSI_s<0>
+                              2     FB4_13       (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataSI_s<2>
+                              3     FB4_14  18   I/O     (b)               
+DISPLAY/data_minus_s          1     FB4_15       (b)     (b)               
+DISPLAY/CLOCK_ENABLE/s_cnt<9> 0     FB4_16       (b)     (b)               
 
 Signals Used by Logic in Function Block
-  1: DISPLAY/CLOCK_ENABLE/s_cnt<10>  13: DISPLAY/CLOCK_ENABLE/s_cnt<9>  25: SW<0> 
-  2: DISPLAY/CLOCK_ENABLE/s_cnt<11>  14: DISPLAY/s_cnt<0>               26: SW<1> 
-  3: DISPLAY/CLOCK_ENABLE/s_cnt<12>  15: DISPLAY/s_cnt<1>               27: SW_CPLD<0> 
-  4: DISPLAY/CLOCK_ENABLE/s_cnt<13>  16: LED_CPLD<0>                    28: SW_CPLD<14> 
-  5: DISPLAY/CLOCK_ENABLE/s_cnt<14>  17: MYALU/F_ADDER_1/carry_2to3_s   29: SW_CPLD<15> 
-  6: DISPLAY/CLOCK_ENABLE/s_cnt<15>  18: MYALU/F_ADDER_1/carry_6to7_s   30: SW_CPLD<1> 
-  7: DISPLAY/CLOCK_ENABLE/s_cnt<3>   19: MYALU/control_s                31: SW_CPLD<2> 
-  8: DISPLAY/CLOCK_ENABLE/s_cnt<4>   20: N_PZ_134                       32: SW_CPLD<6> 
-  9: DISPLAY/CLOCK_ENABLE/s_cnt<5>   21: N_PZ_139                       33: SW_CPLD<7> 
- 10: DISPLAY/CLOCK_ENABLE/s_cnt<6>   22: N_PZ_218                       34: SW_CPLD<8> 
- 11: DISPLAY/CLOCK_ENABLE/s_cnt<7>   23: N_PZ_238                       35: SW_CPLD<9> 
- 12: DISPLAY/CLOCK_ENABLE/s_cnt<8>   24: N_PZ_239                      
+  1: DISPLAY/SIGNED_DECODER/dataSI_s<2>  10: DISPLAY/data1_s<1>    18: N_PZ_507 
+  2: DISPLAY/SIGNED_DECODER/dataSI_s<4>  11: DISPLAY/data1_s<2>    19: number_s<0> 
+  3: DISPLAY/SIGNED_DECODER/dataSI_s<5>  12: DISPLAY/data1_s<3>    20: number_s<1> 
+  4: DISPLAY/SIGNED_DECODER/dataSI_s<6>  13: DISPLAY/data_minus_s  21: number_s<2> 
+  5: DISPLAY/data0_s<0>                  14: DISPLAY/s_cnt<0>      22: number_s<3> 
+  6: DISPLAY/data0_s<1>                  15: DISPLAY/s_cnt<1>      23: number_s<4> 
+  7: DISPLAY/data0_s<2>                  16: LED_CPLD<2>           24: number_s<5> 
+  8: DISPLAY/data0_s<3>                  17: N_PZ_468              25: number_s<6> 
+  9: DISPLAY/data1_s<0>                 
 
 Signal                     1         2         3         4 FB      
 Name             0----+----0----+----0----+----0----+----0 Inputs  
-LED_CPLD<2>       .................X...X.XXX.XX..XX....... 9       
-LED_CPLD<0>       ..................X.XX.X...X...X........ 6       
-LED_CPLD<3>       ...............X....X...........X....... 3       
-disp_dig_o<1>     .............XX......................... 2       
-disp_dig_o<2>     .............XX......................... 2       
-disp_dig_o<3>     .............XX......................... 2       
-DISPLAY/CLOCK_ENABLE/s_cnt<5> 
-                  XXXXXXXXXXXXX......X.................... 14      
-DISPLAY/CLOCK_ENABLE/s_cnt<3> 
-                  XXXXXXX.XXXXX......X.................... 13      
-N_PZ_136          ................X.............X......... 2       
-N_PZ_239          ....................X...........X....... 2       
-N_PZ_218          .................X.............X........ 2       
-DISPLAY/CLOCK_ENABLE/s_cnt<4> 
-                  XXXXXXXXXXXXX......X.................... 14      
-MYALU/F_ADDER_1/carry_2to3_s 
-                  ..................X...X...X..X...XX..... 6       
-DISPLAY/s_cnt_0__or0000 
-                  XXXXXXXXXXXXX......X.................... 14      
-number_s<1>       ................X.X...X.XXX..X...XX..... 9       
-number_s<6>       ..................X..X..XX.X...X........ 6       
+disp_seg_o<3>     ....XXXXXXXXXXX..X...................... 12      
+disp_seg_o<6>     ....XXXXXXXXXXX..X...................... 12      
+disp_seg_o<2>     ....XXXXXXXXXXX..X...................... 12      
+disp_seg_o<5>     ....XXXXXXXXXXX..X...................... 12      
+disp_seg_o<1>     ....XXXXXXXXXXX......................... 11      
+disp_seg_o<4>     ....XXXXXXXXXXX......................... 11      
+DISPLAY/SIGNED_DECODER/dataSI_s<4> 
+                  .X.............X..XXXXX................. 7       
+N_PZ_468          ..................XXXXXXX............... 7       
+DISPLAY/SIGNED_DECODER/dataSI_s<5> 
+                  ..X............X..XXXXXX................ 8       
+DISPLAY/SIGNED_DECODER/dataSI_s<6> 
+                  ...X...........XX.XXXXXXX............... 10      
+DISPLAY/SIGNED_DECODER/dataUN_s<0> 
+                  ...............XX.X..................... 3       
+disp_seg_o<0>     ....XXXXXXXXXXX......................... 11      
+DISPLAY/SIGNED_DECODER/dataSI_s<0> 
+                  ...............X..X..................... 2       
+DISPLAY/SIGNED_DECODER/dataSI_s<2> 
+                  X..............X..XXX................... 5       
+DISPLAY/data_minus_s 
+                  ...............X........................ 1       
+DISPLAY/CLOCK_ENABLE/s_cnt<9> 
+                  ........................................ 0       
                  0----+----1----+----2----+----3----+----4
                            0         0         0         0
 *********************************** FB5  ***********************************
 This function block is part of I/O Bank number:               1
 Number of function block inputs used/remaining:               19/21
 Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   9/47
+Number of PLA product terms used/remaining:                   36/20
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
-(unused)                      0     FB5_1        (b)           
+DISPLAY/data0_s<3>            2     FB5_1        (b)     (b)               
 LED_CPLD<4>                   5     FB5_2   33   I/O     O                 
-(unused)                      0     FB5_3        (b)           
-(unused)                      0     FB5_4   32   GCK/I/O GCK   
-(unused)                      0     FB5_5   31   I/O     I     
-(unused)                      0     FB5_6   30   GCK/I/O I     
-(unused)                      0     FB5_7        (b)           
-(unused)                      0     FB5_8        (b)           
-(unused)                      0     FB5_9        (b)           
-(unused)                      0     FB5_10       (b)           
-(unused)                      0     FB5_11       (b)           
-(unused)                      0     FB5_12       (b)           
-(unused)                      0     FB5_13       (b)           
-(unused)                      0     FB5_14  28   I/O     I     
-N_PZ_291                      2     FB5_15       (b)     (b)               
-N_PZ_137                      2     FB5_16       (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataUN_s<3>
+                              2     FB5_3        (b)     (b)               
+MY_ALU/Mxor_status_o<4>__xor0001
+                              3     FB5_4   32   GCK/I/O GCK               
+DISPLAY/SIGNED_DECODER/dataSI_s<1>
+                              2     FB5_5   31   I/O     (b)               
+DISPLAY/data0_s<1>            2     FB5_6   30   GCK/I/O (b)               
+DISPLAY/SIGNED_DECODER/dataSI_s<3>
+                              4     FB5_7        (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataUN_s<2>
+                              2     FB5_8        (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataUN_s<1>
+                              2     FB5_9        (b)     (b)               
+DISPLAY/data1_s<3>            2     FB5_10       (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataSI_s<7>
+                              2     FB5_11       (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataUN_s<7>
+                              2     FB5_12       (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataUN_s<6>
+                              2     FB5_13       (b)     (b)               
+DISPLAY/data0_s<0>            2     FB5_14  28   I/O     (b)               
+DISPLAY/SIGNED_DECODER/dataUN_s<5>
+                              2     FB5_15       (b)     (b)               
+DISPLAY/SIGNED_DECODER/dataUN_s<4>
+                              2     FB5_16       (b)     (b)               
 
 Signals Used by Logic in Function Block
-  1: DISPLAY/CLOCK_ENABLE/s_cnt<10>   8: DISPLAY/CLOCK_ENABLE/s_cnt<4>  14: LED_CPLD<2> 
-  2: DISPLAY/CLOCK_ENABLE/s_cnt<11>   9: DISPLAY/CLOCK_ENABLE/s_cnt<5>  15: MYALU/F_ADDER_1/carry_4to5_s 
-  3: DISPLAY/CLOCK_ENABLE/s_cnt<12>  10: DISPLAY/CLOCK_ENABLE/s_cnt<6>  16: MYALU/Mxor_status_o<4>__xor0001 
-  4: DISPLAY/CLOCK_ENABLE/s_cnt<13>  11: DISPLAY/CLOCK_ENABLE/s_cnt<7>  17: N_PZ_222 
-  5: DISPLAY/CLOCK_ENABLE/s_cnt<14>  12: DISPLAY/CLOCK_ENABLE/s_cnt<8>  18: SW_CPLD<4> 
-  6: DISPLAY/CLOCK_ENABLE/s_cnt<15>  13: DISPLAY/CLOCK_ENABLE/s_cnt<9>  19: number_s<5> 
-  7: DISPLAY/CLOCK_ENABLE/s_cnt<3>  
+  1: DISPLAY/SIGNED_DECODER/dataSI_s<0>   8: DISPLAY/SIGNED_DECODER/dataUN_s<7>  14: number_s<1> 
+  2: DISPLAY/SIGNED_DECODER/dataSI_s<1>   9: LED_CPLD<2>                         15: number_s<2> 
+  3: DISPLAY/SIGNED_DECODER/dataSI_s<3>  10: MY_ALU/Mxor_status_o<4>__xor0001    16: number_s<3> 
+  4: DISPLAY/SIGNED_DECODER/dataSI_s<7>  11: N_PZ_468                            17: number_s<4> 
+  5: DISPLAY/SIGNED_DECODER/dataUN_s<0>  12: N_PZ_474                            18: number_s<5> 
+  6: DISPLAY/SIGNED_DECODER/dataUN_s<1>  13: N_PZ_521                            19: number_s<6> 
+  7: DISPLAY/SIGNED_DECODER/dataUN_s<3> 
 
 Signal                     1         2         3         4 FB      
 Name             0----+----0----+----0----+----0----+----0 Inputs  
-LED_CPLD<4>       .............X.XX.X..................... 4       
-N_PZ_291          XXXXXXXXXXXXX........................... 13      
-N_PZ_137          ..............X..X...................... 2       
+DISPLAY/data0_s<3> 
+                  ..X...X.X.X............................. 4       
+LED_CPLD<4>       ............X...XXX..................... 4       
+DISPLAY/SIGNED_DECODER/dataUN_s<3> 
+                  ........X.X....X........................ 3       
+MY_ALU/Mxor_status_o<4>__xor0001 
+                  ...........X..XX........................ 3       
+DISPLAY/SIGNED_DECODER/dataSI_s<1> 
+                  .X......X..X............................ 3       
+DISPLAY/data0_s<1> 
+                  .X...X..X.X............................. 4       
+DISPLAY/SIGNED_DECODER/dataSI_s<3> 
+                  ..X.....XX...XXX........................ 6       
+DISPLAY/SIGNED_DECODER/dataUN_s<2> 
+                  ........X.X...X......................... 3       
+DISPLAY/SIGNED_DECODER/dataUN_s<1> 
+                  ........X.X..X.......................... 3       
+DISPLAY/data1_s<3> 
+                  ...X...XX.X............................. 4       
+DISPLAY/SIGNED_DECODER/dataSI_s<7> 
+                  ...X....X.X............................. 3       
+DISPLAY/SIGNED_DECODER/dataUN_s<7> 
+                  ........X.X............................. 2       
+DISPLAY/SIGNED_DECODER/dataUN_s<6> 
+                  ........X.X.......X..................... 3       
+DISPLAY/data0_s<0> 
+                  X...X...X.X............................. 4       
+DISPLAY/SIGNED_DECODER/dataUN_s<5> 
+                  ........X.X......X...................... 3       
+DISPLAY/SIGNED_DECODER/dataUN_s<4> 
+                  ........X.X.....X....................... 3       
                  0----+----1----+----2----+----3----+----4
                            0         0         0         0
 *********************************** FB6  ***********************************
 This function block is part of I/O Bank number:               1
-Number of function block inputs used/remaining:               0/40
+Number of function block inputs used/remaining:               26/14
 Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   0/56
+Number of PLA product terms used/remaining:                   56/0
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
-(unused)                      0     FB6_1   34   I/O     I     
-(unused)                      0     FB6_2   35   CDR/I/O I     
-(unused)                      0     FB6_3        (b)           
+LED_CPLD<1>                   1     FB6_1   34   I/O     O                 
+(unused)                      0     FB6_2   35   CDR/I/O       
+number_s<1>                   10    FB6_3        (b)     (b)               
 (unused)                      0     FB6_4   38   GCK/I/O       
-(unused)                      0     FB6_5        (b)           
-(unused)                      0     FB6_6        (b)           
-(unused)                      0     FB6_7        (b)           
-(unused)                      0     FB6_8        (b)           
-(unused)                      0     FB6_9        (b)           
-(unused)                      0     FB6_10       (b)           
-(unused)                      0     FB6_11       (b)           
-(unused)                      0     FB6_12  39   DGE/I/O       
-(unused)                      0     FB6_13  40   I/O           
-(unused)                      0     FB6_14  41   I/O           
-(unused)                      0     FB6_15  42   I/O           
-(unused)                      0     FB6_16  43   I/O           
+number_s<0>                   5     FB6_5        (b)     (b)               
+MY_ALU/control_s              2     FB6_6        (b)     (b)               
+N_PZ_521                      2     FB6_7        (b)     (b)               
+DISPLAY/data1_s<2>            2     FB6_8        (b)     (b)               
+DISPLAY/data1_s<1>            2     FB6_9        (b)     (b)               
+DISPLAY/data1_s<0>            2     FB6_10       (b)     (b)               
+DISPLAY/data0_s<2>            2     FB6_11       (b)     (b)               
+N_PZ_377                      2     FB6_12  39   DGE/I/O (b)               
+N_PZ_376                      2     FB6_13  40   I/O     (b)               
+number_s<3>                   13    FB6_14  41   I/O     (b)               
+number_s<2>                   5     FB6_15  42   I/O     (b)               
+MY_ALU/F_ADDER_1/carry_2to3_s 6     FB6_16  43   I/O     (b)               
+
+Signals Used by Logic in Function Block
+  1: A_s<0>            10: DISPLAY/SIGNED_DECODER/dataSI_s<2>  19: MY_ALU/F_ADDER_1/carry_2to3_s 
+  2: A_s<1>            11: DISPLAY/SIGNED_DECODER/dataSI_s<4>  20: MY_ALU/F_ADDER_1/carry_4to5_s 
+  3: A_s<2>            12: DISPLAY/SIGNED_DECODER/dataSI_s<5>  21: MY_ALU/Mxor_status_o<4>__xor0001 
+  4: A_s<3>            13: DISPLAY/SIGNED_DECODER/dataSI_s<6>  22: MY_ALU/control_s 
+  5: A_s<4>            14: DISPLAY/SIGNED_DECODER/dataUN_s<2>  23: N_PZ_376 
+  6: B_s<0>            15: DISPLAY/SIGNED_DECODER/dataUN_s<4>  24: N_PZ_468 
+  7: B_s<1>            16: DISPLAY/SIGNED_DECODER/dataUN_s<5>  25: operation_s<0> 
+  8: B_s<2>            17: DISPLAY/SIGNED_DECODER/dataUN_s<6>  26: operation_s<1> 
+  9: B_s<3>            18: LED_CPLD<2>                        
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+LED_CPLD<1>       .................X.....X................ 2       
+number_s<1>       XX...XX...........X..X..XX.............. 8       
+number_s<0>       X....X...............X..XX.............. 5       
+MY_ALU/control_s  .....................X..XX.............. 3       
+N_PZ_521          .................X..X................... 2       
+DISPLAY/data1_s<2> 
+                  ............X...XX.....X................ 4       
+DISPLAY/data1_s<1> 
+                  ...........X...X.X.....X................ 4       
+DISPLAY/data1_s<0> 
+                  ..........X...X..X.....X................ 4       
+DISPLAY/data0_s<2> 
+                  .........X...X...X.....X................ 4       
+N_PZ_377          ....X..............X.................... 2       
+N_PZ_376          ..X...............X..................... 2       
+number_s<3>       ..XX...XX..........X.XX.XX.............. 9       
+number_s<2>       ..X....X.............XX.XX.............. 6       
+MY_ALU/F_ADDER_1/carry_2to3_s 
+                  XX...XX..............X.................. 5       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
 *********************************** FB7  ***********************************
 This function block is part of I/O Bank number:               1
-Number of function block inputs used/remaining:               0/40
+Number of function block inputs used/remaining:               19/21
 Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   0/56
+Number of PLA product terms used/remaining:                   55/1
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
-(unused)                      0     FB7_1        (b)           
-(unused)                      0     FB7_2        (b)           
-(unused)                      0     FB7_3        (b)           
-(unused)                      0     FB7_4        (b)           
-(unused)                      0     FB7_5   26   I/O           
-(unused)                      0     FB7_6   25   I/O           
-(unused)                      0     FB7_7        (b)           
-(unused)                      0     FB7_8        (b)           
-(unused)                      0     FB7_9        (b)           
-(unused)                      0     FB7_10       (b)           
-(unused)                      0     FB7_11  24   I/O           
+N_PZ_474                      2     FB7_1        (b)     (b)               
+N_PZ_499                      2     FB7_2        (b)     (b)               
+N_PZ_471                      2     FB7_3        (b)     (b)               
+N_PZ_378                      2     FB7_4        (b)     (b)               
+LED_CPLD<2>                   9     FB7_5   26   I/O     O                 
+LED_CPLD<0>                   4     FB7_6   25   I/O     O                 
+MY_ALU/F_ADDER_1/carry_6to7_s 9     FB7_7        (b)     (b)               
+number_s<4>                   5     FB7_8        (b)     (b)               
+number_s<5>                   13    FB7_9        (b)     (b)               
+number_s<6>                   5     FB7_10       (b)     (b)               
+LED_CPLD<3>                   2     FB7_11  24   I/O     O                 
 (unused)                      0     FB7_12  23   I/O           
 (unused)                      0     FB7_13  22   I/O           
 (unused)                      0     FB7_14  21   I/O           
 (unused)                      0     FB7_15  20   I/O           
 (unused)                      0     FB7_16  19   I/O           
+
+Signals Used by Logic in Function Block
+  1: A_s<4>             8: B_s<7>                         14: N_PZ_471 
+  2: A_s<5>             9: LED_CPLD<0>                    15: N_PZ_499 
+  3: A_s<6>            10: MY_ALU/F_ADDER_1/carry_6to7_s  16: number_s<0> 
+  4: A_s<7>            11: MY_ALU/control_s               17: number_s<1> 
+  5: B_s<4>            12: N_PZ_377                       18: operation_s<0> 
+  6: B_s<5>            13: N_PZ_378                       19: operation_s<1> 
+  7: B_s<6>           
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+N_PZ_474          ...............XX....................... 2       
+N_PZ_499          ...X........X........................... 2       
+N_PZ_471          ..X......X.............................. 2       
+N_PZ_378          .......X..X............................. 2       
+LED_CPLD<2>       ..XX..XX.X...XX..XX..................... 9       
+LED_CPLD<0>       ..X...X...X.XXX......................... 6       
+MY_ALU/F_ADDER_1/carry_6to7_s 
+                  XX..XX....XX............................ 6       
+number_s<4>       X...X.....XX.....XX..................... 6       
+number_s<5>       XX..XX...XXX.....XX..................... 9       
+number_s<6>       ..X...X...X..X...XX..................... 6       
+LED_CPLD<3>       ...X....X...X........................... 3       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
 *********************************** FB8  ***********************************
 This function block is part of I/O Bank number:               1
-Number of function block inputs used/remaining:               0/40
-Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   0/56
+Number of function block inputs used/remaining:               22/18
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   25/31
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
-(unused)                      0     FB8_1   44   I/O           
-(unused)                      0     FB8_2   45   I/O           
-(unused)                      0     FB8_3   46   I/O           
-(unused)                      0     FB8_4        (b)           
-(unused)                      0     FB8_5   48   I/O           
-(unused)                      0     FB8_6   49   I/O           
-(unused)                      0     FB8_7        (b)           
-(unused)                      0     FB8_8        (b)           
-(unused)                      0     FB8_9        (b)           
-(unused)                      0     FB8_10       (b)           
-(unused)                      0     FB8_11  50   I/O           
-(unused)                      0     FB8_12  51   I/O           
-(unused)                      0     FB8_13  52   I/O           
-(unused)                      0     FB8_14       (b)           
-(unused)                      0     FB8_15       (b)           
-(unused)                      0     FB8_16       (b)           
+B_s<6>                        2     FB8_1   44   I/O     (b)    +          
+B_s<5>                        2     FB8_2   45   I/O     (b)    +          
+B_s<4>                        2     FB8_3   46   I/O     (b)    +          
+A_s<6>                        2     FB8_4        (b)     (b)    +          
+B_s<3>                        2     FB8_5   48   I/O     (b)    +          
+B_s<2>                        2     FB8_6   49   I/O     (b)    +          
+A_s<5>                        2     FB8_7        (b)     (b)    +          
+A_s<4>                        2     FB8_8        (b)     (b)    +          
+A_s<3>                        2     FB8_9        (b)     (b)    +          
+A_s<2>                        2     FB8_10       (b)     (b)    +          
+B_s<1>                        2     FB8_11  50   I/O     (b)    +          
+B_s<0>                        2     FB8_12  51   I/O     (b)    +          
+A_s<7>                        2     FB8_13  52   I/O     (b)    +          
+A_s<1>                        2     FB8_14       (b)     (b)    +          
+A_s<0>                        2     FB8_15       (b)     (b)    +          
+MY_ALU/F_ADDER_1/carry_4to5_s 9     FB8_16       (b)     (b)               
+
+Signals Used by Logic in Function Block
+  1: A_s<2>                9: SECV_READER/regA<2>  16: SECV_READER/regB<1> 
+  2: A_s<3>               10: SECV_READER/regA<3>  17: SECV_READER/regB<2> 
+  3: B_s<2>               11: SECV_READER/regA<4>  18: SECV_READER/regB<3> 
+  4: B_s<3>               12: SECV_READER/regA<5>  19: SECV_READER/regB<4> 
+  5: MY_ALU/control_s     13: SECV_READER/regA<6>  20: SECV_READER/regB<5> 
+  6: N_PZ_376             14: SECV_READER/regA<7>  21: SECV_READER/regB<6> 
+  7: SECV_READER/regA<0>  15: SECV_READER/regB<0>  22: SECV_READER/s_state_FSM_FFd3 
+  8: SECV_READER/regA<1> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+B_s<6>            ....................XX.................. 2       
+B_s<5>            ...................X.X.................. 2       
+B_s<4>            ..................X..X.................. 2       
+A_s<6>            ............X........X.................. 2       
+B_s<3>            .................X...X.................. 2       
+B_s<2>            ................X....X.................. 2       
+A_s<5>            ...........X.........X.................. 2       
+A_s<4>            ..........X..........X.................. 2       
+A_s<3>            .........X...........X.................. 2       
+A_s<2>            ........X............X.................. 2       
+B_s<1>            ...............X.....X.................. 2       
+B_s<0>            ..............X......X.................. 2       
+A_s<7>            .............X.......X.................. 2       
+A_s<1>            .......X.............X.................. 2       
+A_s<0>            ......X..............X.................. 2       
+MY_ALU/F_ADDER_1/carry_4to5_s 
+                  XXXXXX.................................. 6       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
 *********************************** FB9  ***********************************
 This function block is part of I/O Bank number:               2
-Number of function block inputs used/remaining:               0/40
-Number of function block control terms used/remaining:        0/4
-Number of PLA product terms used/remaining:                   0/56
+Number of function block inputs used/remaining:               4/36
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   4/52
 Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
 Name                          Pt            No.  Type    Use   
 (unused)                      0     FB9_1   112  I/O           
@@ -539,13 +761,25 @@ Name                          Pt            No.  Type    Use
 (unused)                      0     FB9_7        (b)           
 (unused)                      0     FB9_8        (b)           
 (unused)                      0     FB9_9        (b)           
-(unused)                      0     FB9_10       (b)           
-(unused)                      0     FB9_11       (b)           
+operation_s<1>                2     FB9_10       (b)     (b)    +          
+operation_s<0>                2     FB9_11       (b)     (b)    +          
 (unused)                      0     FB9_12  116  I/O           
 (unused)                      0     FB9_13  117  I/O           
 (unused)                      0     FB9_14  118  I/O           
 (unused)                      0     FB9_15  119  I/O           
-(unused)                      0     FB9_16       (b)           
+B_s<7>                        2     FB9_16       (b)     (b)    +          
+
+Signals Used by Logic in Function Block
+  1: SECV_READER/regB<7>   3: SECV_READER/regO<1>   4: SECV_READER/s_state_FSM_FFd3 
+  2: SECV_READER/regO<0> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+operation_s<1>    ..XX.................................... 2       
+operation_s<0>    .X.X.................................... 2       
+B_s<7>            X..X.................................... 2       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
 *********************************** FB10 ***********************************
 This function block is part of I/O Bank number:               2
 Number of function block inputs used/remaining:               0/40
@@ -711,75 +945,111 @@ Name                          Pt            No.  Type    Use
 
 ********** Mapped Logic **********
 
+LDCP_A_s0: LDCP port map (A_s(0),SECV_READER/regA(0),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_A_s1: LDCP port map (A_s(1),SECV_READER/regA(1),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_A_s2: LDCP port map (A_s(2),SECV_READER/regA(2),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_A_s3: LDCP port map (A_s(3),SECV_READER/regA(3),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_A_s4: LDCP port map (A_s(4),SECV_READER/regA(4),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_A_s5: LDCP port map (A_s(5),SECV_READER/regA(5),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_A_s6: LDCP port map (A_s(6),SECV_READER/regA(6),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_A_s7: LDCP port map (A_s(7),SECV_READER/regA(7),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+FDCPE_BUTTON_ENABLE/s_state_FSM_FFd1: FDCPE port map (BUTTON_ENABLE/s_state_FSM_FFd1,BUTTON_ENABLE/s_state_FSM_FFd1_D,clk_i,'0','0','1');
+BUTTON_ENABLE/s_state_FSM_FFd1_D <= NOT (((NOT enable_s AND BTN0)
+	OR (NOT enable_s AND NOT BUTTON_ENABLE/s_state_FSM_FFd1)));
+
+LDCP_B_s0: LDCP port map (B_s(0),SECV_READER/regB(0),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_B_s1: LDCP port map (B_s(1),SECV_READER/regB(1),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_B_s2: LDCP port map (B_s(2),SECV_READER/regB(2),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_B_s3: LDCP port map (B_s(3),SECV_READER/regB(3),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_B_s4: LDCP port map (B_s(4),SECV_READER/regB(4),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_B_s5: LDCP port map (B_s(5),SECV_READER/regB(5),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_B_s6: LDCP port map (B_s(6),SECV_READER/regB(6),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_B_s7: LDCP port map (B_s(7),SECV_READER/regB(7),SECV_READER/s_state_FSM_FFd3,'0','0');
+
 FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt0: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(0),DISPLAY/CLOCK_ENABLE/s_cnt_D(0),clk_i,'0','0','1');
-DISPLAY/CLOCK_ENABLE/s_cnt_D(0) <= (NOT DISPLAY/CLOCK_ENABLE/s_cnt(0) AND N_PZ_291);
+DISPLAY/CLOCK_ENABLE/s_cnt_D(0) <= (NOT DISPLAY/CLOCK_ENABLE/s_cnt(0) AND N_PZ_560);
 
 FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt1: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(1),DISPLAY/CLOCK_ENABLE/s_cnt_D(1),clk_i,'0','0','1');
-DISPLAY/CLOCK_ENABLE/s_cnt_D(1) <= ((DISPLAY/CLOCK_ENABLE/s_cnt(0) AND N_PZ_291 AND 
+DISPLAY/CLOCK_ENABLE/s_cnt_D(1) <= ((DISPLAY/CLOCK_ENABLE/s_cnt(0) AND N_PZ_560 AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(1))
-	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(0) AND N_PZ_291 AND 
+	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(0) AND N_PZ_560 AND 
 	DISPLAY/CLOCK_ENABLE/s_cnt(1)));
 
 FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt2: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(2),DISPLAY/CLOCK_ENABLE/s_cnt_D(2),clk_i,'0','0','1');
-DISPLAY/CLOCK_ENABLE/s_cnt_D(2) <= ((NOT N_PZ_134 AND N_PZ_291 AND 
+DISPLAY/CLOCK_ENABLE/s_cnt_D(2) <= ((NOT N_PZ_373 AND N_PZ_560 AND 
 	DISPLAY/CLOCK_ENABLE/s_cnt(2))
-	OR (NOT N_PZ_134 AND DISPLAY/CLOCK_ENABLE/s_cnt(0) AND 
-	N_PZ_291 AND DISPLAY/CLOCK_ENABLE/s_cnt(1)));
+	OR (NOT N_PZ_373 AND DISPLAY/CLOCK_ENABLE/s_cnt(0) AND 
+	N_PZ_560 AND DISPLAY/CLOCK_ENABLE/s_cnt(1)));
 
 FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt3: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(3),DISPLAY/CLOCK_ENABLE/s_cnt_D(3),clk_i,'0','0','1');
-DISPLAY/CLOCK_ENABLE/s_cnt_D(3) <= ((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+DISPLAY/CLOCK_ENABLE/s_cnt_D(3) <= ((NOT BTN1 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
-	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_134)
-	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_373)
+	OR (NOT BTN1 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
-	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND N_PZ_134));
+	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND N_PZ_373));
 
 FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt4: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(4),DISPLAY/CLOCK_ENABLE/s_cnt_D(4),clk_i,'0','0','1');
-DISPLAY/CLOCK_ENABLE/s_cnt_D(4) <= ((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+DISPLAY/CLOCK_ENABLE/s_cnt_D(4) <= ((NOT BTN1 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND DISPLAY/CLOCK_ENABLE/s_cnt(4))
-	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+	OR (NOT BTN1 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND 
-	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_134 AND 
+	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_373 AND 
 	DISPLAY/CLOCK_ENABLE/s_cnt(4))
-	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+	OR (NOT BTN1 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
-	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND N_PZ_134 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(4)));
+	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND N_PZ_373 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(4)));
 
 FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt5: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(5),DISPLAY/CLOCK_ENABLE/s_cnt_D(5),clk_i,'0','0','1');
-DISPLAY/CLOCK_ENABLE/s_cnt_D(5) <= ((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+DISPLAY/CLOCK_ENABLE/s_cnt_D(5) <= ((NOT BTN1 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
-	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_134 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(4))
-	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_373 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(4))
+	OR (NOT BTN1 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND DISPLAY/CLOCK_ENABLE/s_cnt(3) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND 
-	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND N_PZ_134 AND DISPLAY/CLOCK_ENABLE/s_cnt(4)));
+	NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND N_PZ_373 AND DISPLAY/CLOCK_ENABLE/s_cnt(4)));
 
 FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt6: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(6),'0',clk_i,'0','0','1');
 
@@ -801,13 +1071,124 @@ FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt14: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(1
 
 FDCPE_DISPLAY/CLOCK_ENABLE/s_cnt15: FDCPE port map (DISPLAY/CLOCK_ENABLE/s_cnt(15),'0',clk_i,'0','0','1');
 
-FTCPE_DISPLAY/s_cnt0: FTCPE port map (DISPLAY/s_cnt(0),DISPLAY/s_cnt_0__or0000,clk_i,'0','0','1');
+FDCPE_DISPLAY/SIGNED_DECODER/dataSI_s0: FDCPE port map (DISPLAY/SIGNED_DECODER/dataSI_s(0),number_s(0),clk_i,'0','0',LED_CPLD(2));
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataSI_s1: FDCPE port map (DISPLAY/SIGNED_DECODER/dataSI_s(1),DISPLAY/SIGNED_DECODER/dataSI_s_D(1),clk_i,'0','0','1');
+DISPLAY/SIGNED_DECODER/dataSI_s_D(1) <= ((LED_CPLD(2) AND N_PZ_474)
+	OR (NOT LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(1)));
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataSI_s2: FDCPE port map (DISPLAY/SIGNED_DECODER/dataSI_s(2),DISPLAY/SIGNED_DECODER/dataSI_s_D(2),clk_i,'0','0','1');
+DISPLAY/SIGNED_DECODER/dataSI_s_D(2) <= (LED_CPLD(2) AND NOT number_s(2))
+	XOR ((NOT LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(2))
+	OR (LED_CPLD(2) AND NOT number_s(0) AND NOT number_s(1)));
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataSI_s3: FDCPE port map (DISPLAY/SIGNED_DECODER/dataSI_s(3),DISPLAY/SIGNED_DECODER/dataSI_s_D(3),clk_i,'0','0','1');
+DISPLAY/SIGNED_DECODER/dataSI_s_D(3) <= ((NOT LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(3))
+	OR (LED_CPLD(2) AND number_s(1) AND NOT number_s(3))
+	OR (LED_CPLD(2) AND number_s(2) AND NOT number_s(3))
+	OR (LED_CPLD(2) AND NOT number_s(1) AND NOT number_s(2) AND 
+	MY_ALU/Mxor_status_o(4)__xor0001));
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataSI_s4: FDCPE port map (DISPLAY/SIGNED_DECODER/dataSI_s(4),DISPLAY/SIGNED_DECODER/dataSI_s_D(4),clk_i,'0','0','1');
+DISPLAY/SIGNED_DECODER/dataSI_s_D(4) <= (LED_CPLD(2) AND NOT number_s(4))
+	XOR ((NOT LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(4))
+	OR (LED_CPLD(2) AND NOT number_s(0) AND NOT number_s(1) AND 
+	NOT number_s(2) AND NOT number_s(3)));
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataSI_s5: FDCPE port map (DISPLAY/SIGNED_DECODER/dataSI_s(5),DISPLAY/SIGNED_DECODER/dataSI_s_D(5),clk_i,'0','0','1');
+DISPLAY/SIGNED_DECODER/dataSI_s_D(5) <= (LED_CPLD(2) AND NOT number_s(5))
+	XOR ((NOT LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(5))
+	OR (LED_CPLD(2) AND NOT number_s(0) AND NOT number_s(1) AND 
+	NOT number_s(2) AND NOT number_s(3) AND NOT number_s(4)));
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataSI_s6: FDCPE port map (DISPLAY/SIGNED_DECODER/dataSI_s(6),DISPLAY/SIGNED_DECODER/dataSI_s_D(6),clk_i,'0','0','1');
+DISPLAY/SIGNED_DECODER/dataSI_s_D(6) <= ((NOT LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(6))
+	OR (LED_CPLD(2) AND NOT N_PZ_468 AND NOT number_s(6))
+	OR (LED_CPLD(2) AND NOT N_PZ_468 AND NOT number_s(0) AND 
+	NOT number_s(1) AND NOT number_s(2) AND NOT number_s(3) AND NOT number_s(4) AND 
+	NOT number_s(5)));
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataSI_s7: FDCPE port map (DISPLAY/SIGNED_DECODER/dataSI_s(7),DISPLAY/SIGNED_DECODER/dataSI_s_D(7),clk_i,'0','0','1');
+DISPLAY/SIGNED_DECODER/dataSI_s_D(7) <= ((LED_CPLD(2) AND N_PZ_468)
+	OR (NOT LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(7)));
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataUN_s0: FDCPE port map (DISPLAY/SIGNED_DECODER/dataUN_s(0),number_s(0),clk_i,'0','0',DISPLAY/SIGNED_DECODER/dataUN_s_CE(0));
+DISPLAY/SIGNED_DECODER/dataUN_s_CE(0) <= (NOT LED_CPLD(2) AND NOT N_PZ_468);
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataUN_s1: FDCPE port map (DISPLAY/SIGNED_DECODER/dataUN_s(1),number_s(1),clk_i,'0','0',DISPLAY/SIGNED_DECODER/dataUN_s_CE(1));
+DISPLAY/SIGNED_DECODER/dataUN_s_CE(1) <= (NOT LED_CPLD(2) AND NOT N_PZ_468);
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataUN_s2: FDCPE port map (DISPLAY/SIGNED_DECODER/dataUN_s(2),number_s(2),clk_i,'0','0',DISPLAY/SIGNED_DECODER/dataUN_s_CE(2));
+DISPLAY/SIGNED_DECODER/dataUN_s_CE(2) <= (NOT LED_CPLD(2) AND NOT N_PZ_468);
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataUN_s3: FDCPE port map (DISPLAY/SIGNED_DECODER/dataUN_s(3),number_s(3),clk_i,'0','0',DISPLAY/SIGNED_DECODER/dataUN_s_CE(3));
+DISPLAY/SIGNED_DECODER/dataUN_s_CE(3) <= (NOT LED_CPLD(2) AND NOT N_PZ_468);
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataUN_s4: FDCPE port map (DISPLAY/SIGNED_DECODER/dataUN_s(4),number_s(4),clk_i,'0','0',DISPLAY/SIGNED_DECODER/dataUN_s_CE(4));
+DISPLAY/SIGNED_DECODER/dataUN_s_CE(4) <= (NOT LED_CPLD(2) AND NOT N_PZ_468);
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataUN_s5: FDCPE port map (DISPLAY/SIGNED_DECODER/dataUN_s(5),number_s(5),clk_i,'0','0',DISPLAY/SIGNED_DECODER/dataUN_s_CE(5));
+DISPLAY/SIGNED_DECODER/dataUN_s_CE(5) <= (NOT LED_CPLD(2) AND NOT N_PZ_468);
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataUN_s6: FDCPE port map (DISPLAY/SIGNED_DECODER/dataUN_s(6),number_s(6),clk_i,'0','0',DISPLAY/SIGNED_DECODER/dataUN_s_CE(6));
+DISPLAY/SIGNED_DECODER/dataUN_s_CE(6) <= (NOT LED_CPLD(2) AND NOT N_PZ_468);
+
+FDCPE_DISPLAY/SIGNED_DECODER/dataUN_s7: FDCPE port map (DISPLAY/SIGNED_DECODER/dataUN_s(7),LED_CPLD(2),clk_i,'0','0',DISPLAY/SIGNED_DECODER/dataUN_s_CE(7));
+DISPLAY/SIGNED_DECODER/dataUN_s_CE(7) <= (NOT LED_CPLD(2) AND NOT N_PZ_468);
+
+FDCPE_DISPLAY/data0_s0: FDCPE port map (DISPLAY/data0_s(0),DISPLAY/data0_s_D(0),clk_i,'0','0','1');
+DISPLAY/data0_s_D(0) <= ((LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(0))
+	OR (NOT LED_CPLD(2) AND NOT N_PZ_468 AND 
+	DISPLAY/SIGNED_DECODER/dataUN_s(0)));
+
+FDCPE_DISPLAY/data0_s1: FDCPE port map (DISPLAY/data0_s(1),DISPLAY/data0_s_D(1),clk_i,'0','0','1');
+DISPLAY/data0_s_D(1) <= ((LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(1))
+	OR (NOT LED_CPLD(2) AND NOT N_PZ_468 AND 
+	DISPLAY/SIGNED_DECODER/dataUN_s(1)));
+
+FDCPE_DISPLAY/data0_s2: FDCPE port map (DISPLAY/data0_s(2),DISPLAY/data0_s_D(2),clk_i,'0','0','1');
+DISPLAY/data0_s_D(2) <= ((LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(2))
+	OR (NOT LED_CPLD(2) AND NOT N_PZ_468 AND 
+	DISPLAY/SIGNED_DECODER/dataUN_s(2)));
+
+FDCPE_DISPLAY/data0_s3: FDCPE port map (DISPLAY/data0_s(3),DISPLAY/data0_s_D(3),clk_i,'0','0','1');
+DISPLAY/data0_s_D(3) <= ((LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(3))
+	OR (NOT LED_CPLD(2) AND NOT N_PZ_468 AND 
+	DISPLAY/SIGNED_DECODER/dataUN_s(3)));
+
+FDCPE_DISPLAY/data1_s0: FDCPE port map (DISPLAY/data1_s(0),DISPLAY/data1_s_D(0),clk_i,'0','0','1');
+DISPLAY/data1_s_D(0) <= ((LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(4))
+	OR (NOT LED_CPLD(2) AND NOT N_PZ_468 AND 
+	DISPLAY/SIGNED_DECODER/dataUN_s(4)));
+
+FDCPE_DISPLAY/data1_s1: FDCPE port map (DISPLAY/data1_s(1),DISPLAY/data1_s_D(1),clk_i,'0','0','1');
+DISPLAY/data1_s_D(1) <= ((LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(5))
+	OR (NOT LED_CPLD(2) AND NOT N_PZ_468 AND 
+	DISPLAY/SIGNED_DECODER/dataUN_s(5)));
+
+FDCPE_DISPLAY/data1_s2: FDCPE port map (DISPLAY/data1_s(2),DISPLAY/data1_s_D(2),clk_i,'0','0','1');
+DISPLAY/data1_s_D(2) <= ((LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(6))
+	OR (NOT LED_CPLD(2) AND NOT N_PZ_468 AND 
+	DISPLAY/SIGNED_DECODER/dataUN_s(6)));
+
+FDCPE_DISPLAY/data1_s3: FDCPE port map (DISPLAY/data1_s(3),DISPLAY/data1_s_D(3),clk_i,'0','0','1');
+DISPLAY/data1_s_D(3) <= ((LED_CPLD(2) AND DISPLAY/SIGNED_DECODER/dataSI_s(7))
+	OR (NOT LED_CPLD(2) AND NOT N_PZ_468 AND 
+	DISPLAY/SIGNED_DECODER/dataUN_s(7)));
+
+FDCPE_DISPLAY/data_minus_s: FDCPE port map (DISPLAY/data_minus_s,LED_CPLD(2),clk_i,'0','0','1');
+
+FDCPE_DISPLAY/s_cnt0: FDCPE port map (DISPLAY/s_cnt(0),DISPLAY/s_cnt_D(0),clk_i,'0','0','1');
+DISPLAY/s_cnt_D(0) <= ((DISPLAY/s_cnt(0) AND NOT BTN1 AND NOT DISPLAY/s_en)
+	OR (NOT DISPLAY/s_cnt(0) AND NOT BTN1 AND DISPLAY/s_en));
 
 FTCPE_DISPLAY/s_cnt1: FTCPE port map (DISPLAY/s_cnt(1),DISPLAY/s_cnt_T(1),clk_i,'0','0','1');
-DISPLAY/s_cnt_T(1) <= (DISPLAY/s_cnt(0) AND DISPLAY/s_cnt_0__or0000);
+DISPLAY/s_cnt_T(1) <= ((BTN1 AND DISPLAY/s_cnt(1))
+	OR (DISPLAY/s_cnt(0) AND NOT BTN1 AND DISPLAY/s_en));
 
-FDCPE_DISPLAY/s_cnt_0__or0000: FDCPE port map (DISPLAY/s_cnt_0__or0000,DISPLAY/s_cnt_0__or0000_D,clk_i,'0','0','1');
-DISPLAY/s_cnt_0__or0000_D <= NOT (((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+FDCPE_DISPLAY/s_en: FDCPE port map (DISPLAY/s_en,DISPLAY/s_en_D,clk_i,'0','0','1');
+DISPLAY/s_en_D <= NOT (((BTN1)
+	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
@@ -818,153 +1199,203 @@ DISPLAY/s_cnt_0__or0000_D <= NOT (((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND 
-	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_134 AND 
+	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND NOT N_PZ_373 AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(4))));
 
 
-LED_CPLD(0) <= NOT (((NOT N_PZ_239 AND N_PZ_139)
-	OR (NOT N_PZ_218 AND NOT SW_CPLD(6) AND N_PZ_239)
-	OR (SW_CPLD(14) AND MYALU/control_s AND N_PZ_218 AND 
-	N_PZ_239)
-	OR (NOT SW_CPLD(14) AND NOT MYALU/control_s AND N_PZ_218 AND 
-	N_PZ_239)));
+LED_CPLD(0) <= NOT (((NOT N_PZ_499 AND N_PZ_378)
+	OR (NOT N_PZ_471 AND NOT A_s(6) AND N_PZ_499)
+	OR (MY_ALU/control_s AND B_s(6) AND N_PZ_471 AND N_PZ_499)
+	OR (NOT MY_ALU/control_s AND NOT B_s(6) AND N_PZ_471 AND N_PZ_499)));
 
 
-LED_CPLD(1) <= (NOT LED_CPLD(2) AND NOT number_s(0) AND NOT number_s(1) AND 
-	NOT number_s(2) AND NOT number_s(3) AND NOT number_s(4) AND NOT number_s(5) AND 
-	NOT number_s(6));
+LED_CPLD(1) <= (NOT LED_CPLD(2) AND N_PZ_468);
 
 FDCPE_LED_CPLD2: FDCPE port map (LED_CPLD(2),LED_CPLD_D(2),clk_i,'0','0','1');
-LED_CPLD_D(2) <= NOT (((NOT SW(0) AND SW(1) AND NOT SW_CPLD(7))
-	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(15))
-	OR (SW(1) AND NOT SW_CPLD(7) AND NOT SW_CPLD(15))
-	OR (NOT SW_CPLD(14) AND N_PZ_218 AND NOT SW_CPLD(7) AND 
-	NOT SW_CPLD(15))
-	OR (NOT SW(1) AND SW_CPLD(6) AND 
-	NOT MYALU/F_ADDER_1/carry_6to7_s AND N_PZ_239)
-	OR (NOT SW(1) AND NOT SW_CPLD(6) AND 
-	MYALU/F_ADDER_1/carry_6to7_s AND NOT N_PZ_239)
-	OR (SW_CPLD(14) AND NOT SW(1) AND N_PZ_218 AND SW_CPLD(7) AND 
-	NOT SW_CPLD(15))
-	OR (SW_CPLD(14) AND NOT SW(1) AND N_PZ_218 AND NOT SW_CPLD(7) AND 
-	SW_CPLD(15))
-	OR (NOT SW_CPLD(14) AND NOT SW(1) AND N_PZ_218 AND SW_CPLD(7) AND 
-	SW_CPLD(15))));
+LED_CPLD_D(2) <= NOT (((operation_s(1) AND NOT operation_s(0) AND NOT A_s(7))
+	OR (operation_s(1) AND NOT operation_s(0) AND NOT B_s(7))
+	OR (operation_s(1) AND NOT A_s(7) AND NOT B_s(7))
+	OR (NOT operation_s(1) AND A_s(6) AND 
+	NOT MY_ALU/F_ADDER_1/carry_6to7_s AND N_PZ_499)
+	OR (NOT operation_s(1) AND NOT A_s(6) AND 
+	MY_ALU/F_ADDER_1/carry_6to7_s AND NOT N_PZ_499)
+	OR (NOT B_s(6) AND N_PZ_471 AND NOT A_s(7) AND NOT B_s(7))
+	OR (NOT operation_s(1) AND B_s(6) AND N_PZ_471 AND A_s(7) AND 
+	NOT B_s(7))
+	OR (NOT operation_s(1) AND B_s(6) AND N_PZ_471 AND NOT A_s(7) AND 
+	B_s(7))
+	OR (NOT operation_s(1) AND NOT B_s(6) AND N_PZ_471 AND A_s(7) AND 
+	B_s(7))));
 
 
-LED_CPLD(3) <= ((SW_CPLD(7) AND N_PZ_139 AND LED_CPLD(0))
-	OR (NOT SW_CPLD(7) AND NOT N_PZ_139 AND NOT LED_CPLD(0)));
+LED_CPLD(3) <= ((A_s(7) AND N_PZ_378 AND LED_CPLD(0))
+	OR (NOT A_s(7) AND NOT N_PZ_378 AND NOT LED_CPLD(0)));
 
 
-LED_CPLD(4) <= LED_CPLD(2)
-	XOR ((number_s(5) AND MYALU/Mxor_status_o(4)__xor0001 AND 
-	N_PZ_222)
-	OR (number_s(5) AND NOT MYALU/Mxor_status_o(4)__xor0001 AND 
-	NOT N_PZ_222)
-	OR (NOT number_s(5) AND MYALU/Mxor_status_o(4)__xor0001 AND 
-	NOT N_PZ_222)
-	OR (NOT number_s(5) AND NOT MYALU/Mxor_status_o(4)__xor0001 AND 
-	N_PZ_222));
+LED_CPLD(4) <= number_s(4)
+	XOR ((number_s(5) AND number_s(6) AND NOT N_PZ_521)
+	OR (number_s(5) AND NOT number_s(6) AND N_PZ_521)
+	OR (NOT number_s(5) AND number_s(6) AND N_PZ_521)
+	OR (NOT number_s(5) AND NOT number_s(6) AND NOT N_PZ_521));
 
 
-MYALU/F_ADDER_1/carry_2to3_s <= ((MYALU/control_s AND NOT SW_CPLD(1) AND SW_CPLD(9))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(1) AND NOT SW_CPLD(9))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(1) AND NOT N_PZ_238)
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(9) AND NOT N_PZ_238)
-	OR (NOT SW_CPLD(8) AND NOT SW_CPLD(0) AND NOT SW_CPLD(1))
-	OR (MYALU/control_s AND NOT SW_CPLD(8) AND NOT SW_CPLD(0) AND 
-	SW_CPLD(9)));
+MY_ALU/F_ADDER_1/carry_2to3_s <= (NOT A_s(1) AND B_s(1))
+	XOR ((NOT MY_ALU/control_s AND NOT B_s(1) AND NOT B_s(0))
+	OR (NOT MY_ALU/control_s AND NOT B_s(1) AND NOT A_s(0))
+	OR (NOT MY_ALU/control_s AND NOT A_s(1) AND B_s(0) AND A_s(0))
+	OR (NOT A_s(1) AND NOT B_s(1) AND NOT B_s(0) AND NOT A_s(0))
+	OR (MY_ALU/control_s AND A_s(1) AND B_s(1) AND NOT B_s(0) AND 
+	NOT A_s(0)));
 
 
-MYALU/F_ADDER_1/carry_4to5_s <= ((MYALU/control_s AND SW_CPLD(11) AND NOT SW_CPLD(3))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(11) AND NOT SW_CPLD(3))
-	OR (NOT SW_CPLD(3) AND NOT SW_CPLD(2) AND N_PZ_136)
-	OR (MYALU/control_s AND SW_CPLD(11) AND NOT SW_CPLD(2) AND 
-	N_PZ_136)
-	OR (MYALU/control_s AND SW_CPLD(11) AND NOT N_PZ_136 AND 
-	SW_CPLD(10))
-	OR (MYALU/control_s AND NOT SW_CPLD(3) AND NOT N_PZ_136 AND 
-	SW_CPLD(10))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(11) AND NOT SW_CPLD(2) AND 
-	N_PZ_136)
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(11) AND NOT N_PZ_136 AND 
-	NOT SW_CPLD(10))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(3) AND NOT N_PZ_136 AND 
-	NOT SW_CPLD(10)));
+MY_ALU/F_ADDER_1/carry_4to5_s <= ((MY_ALU/control_s AND NOT A_s(3) AND B_s(3))
+	OR (NOT MY_ALU/control_s AND NOT A_s(3) AND NOT B_s(3))
+	OR (NOT A_s(3) AND NOT A_s(2) AND N_PZ_376)
+	OR (MY_ALU/control_s AND B_s(3) AND NOT A_s(2) AND N_PZ_376)
+	OR (MY_ALU/control_s AND B_s(3) AND NOT N_PZ_376 AND B_s(2))
+	OR (NOT MY_ALU/control_s AND NOT B_s(3) AND NOT A_s(2) AND N_PZ_376)
+	OR (NOT MY_ALU/control_s AND NOT B_s(3) AND NOT N_PZ_376 AND NOT B_s(2))
+	OR (NOT A_s(3) AND B_s(3) AND NOT N_PZ_376 AND NOT B_s(2))
+	OR (NOT A_s(3) AND NOT B_s(3) AND NOT N_PZ_376 AND B_s(2)));
 
 
-MYALU/F_ADDER_1/carry_6to7_s <= ((MYALU/control_s AND SW_CPLD(13) AND NOT SW_CPLD(5))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(13) AND NOT SW_CPLD(5))
-	OR (NOT SW_CPLD(5) AND NOT SW_CPLD(4) AND N_PZ_137)
-	OR (MYALU/control_s AND SW_CPLD(13) AND NOT SW_CPLD(4) AND 
-	N_PZ_137)
-	OR (MYALU/control_s AND SW_CPLD(13) AND NOT N_PZ_137 AND 
-	SW_CPLD(12))
-	OR (MYALU/control_s AND NOT SW_CPLD(5) AND NOT N_PZ_137 AND 
-	SW_CPLD(12))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(13) AND NOT SW_CPLD(4) AND 
-	N_PZ_137)
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(13) AND NOT N_PZ_137 AND 
-	NOT SW_CPLD(12))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(5) AND NOT N_PZ_137 AND 
-	NOT SW_CPLD(12)));
+MY_ALU/F_ADDER_1/carry_6to7_s <= ((MY_ALU/control_s AND NOT A_s(5) AND B_s(5))
+	OR (NOT MY_ALU/control_s AND NOT A_s(5) AND NOT B_s(5))
+	OR (NOT A_s(5) AND NOT A_s(4) AND N_PZ_377)
+	OR (MY_ALU/control_s AND B_s(5) AND NOT A_s(4) AND N_PZ_377)
+	OR (MY_ALU/control_s AND B_s(5) AND NOT N_PZ_377 AND B_s(4))
+	OR (NOT MY_ALU/control_s AND NOT B_s(5) AND NOT A_s(4) AND N_PZ_377)
+	OR (NOT MY_ALU/control_s AND NOT B_s(5) AND NOT N_PZ_377 AND NOT B_s(4))
+	OR (NOT A_s(5) AND B_s(5) AND NOT N_PZ_377 AND NOT B_s(4))
+	OR (NOT A_s(5) AND NOT B_s(5) AND NOT N_PZ_377 AND B_s(4)));
 
 
-MYALU/Mxor_status_o(4)__xor0001 <= number_s(0)
-	XOR ((number_s(1) AND number_s(2) AND number_s(3))
-	OR (number_s(1) AND NOT number_s(2) AND NOT number_s(3))
-	OR (NOT number_s(1) AND number_s(2) AND NOT number_s(3))
-	OR (NOT number_s(1) AND NOT number_s(2) AND number_s(3)));
+MY_ALU/Mxor_status_o(4)__xor0001 <= number_s(2)
+	XOR ((number_s(3) AND NOT N_PZ_474)
+	OR (NOT number_s(3) AND N_PZ_474));
 
-FDCPE_MYALU/control_s: FDCPE port map (MYALU/control_s,MYALU/control_s_D,clk_i,'0','0','1');
-MYALU/control_s_D <= NOT (((NOT MYALU/control_s AND SW(1))
-	OR (NOT SW(0) AND NOT SW(1))));
+FDCPE_MY_ALU/control_s: FDCPE port map (MY_ALU/control_s,MY_ALU/control_s_D,clk_i,'0','0','1');
+MY_ALU/control_s_D <= NOT (((NOT MY_ALU/control_s AND operation_s(1))
+	OR (NOT operation_s(1) AND NOT operation_s(0))));
 
 
-N_PZ_134 <= (DISPLAY/CLOCK_ENABLE/s_cnt(0) AND 
+N_PZ_373 <= (DISPLAY/CLOCK_ENABLE/s_cnt(0) AND 
 	DISPLAY/CLOCK_ENABLE/s_cnt(1) AND DISPLAY/CLOCK_ENABLE/s_cnt(2));
 
 
-N_PZ_136 <= ((SW_CPLD(2) AND NOT MYALU/F_ADDER_1/carry_2to3_s)
-	OR (NOT SW_CPLD(2) AND MYALU/F_ADDER_1/carry_2to3_s));
+N_PZ_376 <= ((A_s(2) AND NOT MY_ALU/F_ADDER_1/carry_2to3_s)
+	OR (NOT A_s(2) AND MY_ALU/F_ADDER_1/carry_2to3_s));
 
 
-N_PZ_137 <= ((SW_CPLD(4) AND NOT MYALU/F_ADDER_1/carry_4to5_s)
-	OR (NOT SW_CPLD(4) AND MYALU/F_ADDER_1/carry_4to5_s));
+N_PZ_377 <= ((A_s(4) AND NOT MY_ALU/F_ADDER_1/carry_4to5_s)
+	OR (NOT A_s(4) AND MY_ALU/F_ADDER_1/carry_4to5_s));
 
 
-N_PZ_139 <= ((MYALU/control_s AND SW_CPLD(15))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(15)));
+N_PZ_378 <= ((MY_ALU/control_s AND B_s(7))
+	OR (NOT MY_ALU/control_s AND NOT B_s(7)));
 
 
-N_PZ_218 <= ((SW_CPLD(6) AND MYALU/F_ADDER_1/carry_6to7_s)
-	OR (NOT SW_CPLD(6) AND NOT MYALU/F_ADDER_1/carry_6to7_s));
+N_PZ_468 <= (NOT number_s(0) AND NOT number_s(1) AND NOT number_s(2) AND 
+	NOT number_s(3) AND NOT number_s(4) AND NOT number_s(5) AND NOT number_s(6));
 
 
-N_PZ_222 <= ((number_s(4) AND NOT number_s(6))
-	OR (NOT number_s(4) AND number_s(6)));
+N_PZ_471 <= ((A_s(6) AND MY_ALU/F_ADDER_1/carry_6to7_s)
+	OR (NOT A_s(6) AND NOT MY_ALU/F_ADDER_1/carry_6to7_s));
 
 
-N_PZ_238 <= (SW_CPLD(8) AND SW_CPLD(0));
+N_PZ_474 <= ((number_s(0) AND NOT number_s(1))
+	OR (NOT number_s(0) AND number_s(1)));
 
 
-N_PZ_239 <= ((SW_CPLD(7) AND N_PZ_139)
-	OR (NOT SW_CPLD(7) AND NOT N_PZ_139));
+N_PZ_499 <= ((A_s(7) AND N_PZ_378)
+	OR (NOT A_s(7) AND NOT N_PZ_378));
 
 
-N_PZ_291 <= ((NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+N_PZ_507 <= ((DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(1) AND DISPLAY/data1_s(2) AND 
+	NOT DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data0_s(0) AND NOT DISPLAY/data0_s(1) AND DISPLAY/data0_s(2) AND 
+	NOT DISPLAY/data0_s(3)));
+
+
+N_PZ_521 <= ((LED_CPLD(2) AND MY_ALU/Mxor_status_o(4)__xor0001)
+	OR (NOT LED_CPLD(2) AND NOT MY_ALU/Mxor_status_o(4)__xor0001));
+
+
+N_PZ_560 <= ((NOT BTN1 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(5) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15))
-	OR (NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
+	OR (NOT BTN1 AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(10) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(11) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(12) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(13) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(14) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(3) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(6) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(7) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(8) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(9) AND NOT DISPLAY/CLOCK_ENABLE/s_cnt(15) AND 
 	NOT DISPLAY/CLOCK_ENABLE/s_cnt(4)));
+
+FDCPE_SECV_READER/regA0: FDCPE port map (SECV_READER/regA(0),SW_CPLD(0),clk_i,BTN1,'0',SECV_READER/regA_CE(0));
+SECV_READER/regA_CE(0) <= (SECV_READER/s_state_FSM_FFd3 AND enable_s);
+
+FDCPE_SECV_READER/regA1: FDCPE port map (SECV_READER/regA(1),SW_CPLD(1),clk_i,BTN1,'0',SECV_READER/regA_CE(1));
+SECV_READER/regA_CE(1) <= (SECV_READER/s_state_FSM_FFd3 AND enable_s);
+
+FDCPE_SECV_READER/regA2: FDCPE port map (SECV_READER/regA(2),SW_CPLD(2),clk_i,BTN1,'0',SECV_READER/regA_CE(2));
+SECV_READER/regA_CE(2) <= (SECV_READER/s_state_FSM_FFd3 AND enable_s);
+
+FDCPE_SECV_READER/regA3: FDCPE port map (SECV_READER/regA(3),SW_CPLD(3),clk_i,BTN1,'0',SECV_READER/regA_CE(3));
+SECV_READER/regA_CE(3) <= (SECV_READER/s_state_FSM_FFd3 AND enable_s);
+
+FDCPE_SECV_READER/regA4: FDCPE port map (SECV_READER/regA(4),SW_CPLD(4),clk_i,BTN1,'0',SECV_READER/regA_CE(4));
+SECV_READER/regA_CE(4) <= (SECV_READER/s_state_FSM_FFd3 AND enable_s);
+
+FDCPE_SECV_READER/regA5: FDCPE port map (SECV_READER/regA(5),SW_CPLD(5),clk_i,BTN1,'0',SECV_READER/regA_CE(5));
+SECV_READER/regA_CE(5) <= (SECV_READER/s_state_FSM_FFd3 AND enable_s);
+
+FDCPE_SECV_READER/regA6: FDCPE port map (SECV_READER/regA(6),SW_CPLD(6),clk_i,BTN1,'0',SECV_READER/regA_CE(6));
+SECV_READER/regA_CE(6) <= (SECV_READER/s_state_FSM_FFd3 AND enable_s);
+
+FDCPE_SECV_READER/regA7: FDCPE port map (SECV_READER/regA(7),SW_CPLD(7),clk_i,BTN1,'0',SECV_READER/regA_CE(7));
+SECV_READER/regA_CE(7) <= (SECV_READER/s_state_FSM_FFd3 AND enable_s);
+
+FDCPE_SECV_READER/regB0: FDCPE port map (SECV_READER/regB(0),SW_CPLD(0),clk_i,BTN1,'0',SECV_READER/regB_CE(0));
+SECV_READER/regB_CE(0) <= (SECV_READER/s_state_FSM_FFd2 AND enable_s);
+
+FDCPE_SECV_READER/regB1: FDCPE port map (SECV_READER/regB(1),SW_CPLD(1),clk_i,BTN1,'0',SECV_READER/regB_CE(1));
+SECV_READER/regB_CE(1) <= (SECV_READER/s_state_FSM_FFd2 AND enable_s);
+
+FDCPE_SECV_READER/regB2: FDCPE port map (SECV_READER/regB(2),SW_CPLD(2),clk_i,BTN1,'0',SECV_READER/regB_CE(2));
+SECV_READER/regB_CE(2) <= (SECV_READER/s_state_FSM_FFd2 AND enable_s);
+
+FDCPE_SECV_READER/regB3: FDCPE port map (SECV_READER/regB(3),SW_CPLD(3),clk_i,BTN1,'0',SECV_READER/regB_CE(3));
+SECV_READER/regB_CE(3) <= (SECV_READER/s_state_FSM_FFd2 AND enable_s);
+
+FDCPE_SECV_READER/regB4: FDCPE port map (SECV_READER/regB(4),SW_CPLD(4),clk_i,BTN1,'0',SECV_READER/regB_CE(4));
+SECV_READER/regB_CE(4) <= (SECV_READER/s_state_FSM_FFd2 AND enable_s);
+
+FDCPE_SECV_READER/regB5: FDCPE port map (SECV_READER/regB(5),SW_CPLD(5),clk_i,BTN1,'0',SECV_READER/regB_CE(5));
+SECV_READER/regB_CE(5) <= (SECV_READER/s_state_FSM_FFd2 AND enable_s);
+
+FDCPE_SECV_READER/regB6: FDCPE port map (SECV_READER/regB(6),SW_CPLD(6),clk_i,BTN1,'0',SECV_READER/regB_CE(6));
+SECV_READER/regB_CE(6) <= (SECV_READER/s_state_FSM_FFd2 AND enable_s);
+
+FDCPE_SECV_READER/regB7: FDCPE port map (SECV_READER/regB(7),SW_CPLD(7),clk_i,BTN1,'0',SECV_READER/regB_CE(7));
+SECV_READER/regB_CE(7) <= (SECV_READER/s_state_FSM_FFd2 AND enable_s);
+
+FDCPE_SECV_READER/regO0: FDCPE port map (SECV_READER/regO(0),SW_CPLD(0),clk_i,BTN1,'0',SECV_READER/regO_CE(0));
+SECV_READER/regO_CE(0) <= (SECV_READER/s_state_FSM_FFd1 AND enable_s);
+
+FDCPE_SECV_READER/regO1: FDCPE port map (SECV_READER/regO(1),SW_CPLD(1),clk_i,BTN1,'0',SECV_READER/regO_CE(1));
+SECV_READER/regO_CE(1) <= (SECV_READER/s_state_FSM_FFd1 AND enable_s);
+
+FDCPE_SECV_READER/s_state_FSM_FFd1: FDCPE port map (SECV_READER/s_state_FSM_FFd1,SECV_READER/s_state_FSM_FFd2,clk_i,BTN1,'0',enable_s);
+
+FDCPE_SECV_READER/s_state_FSM_FFd2: FDCPE port map (SECV_READER/s_state_FSM_FFd2,SECV_READER/s_state_FSM_FFd3,clk_i,BTN1,'0',enable_s);
+
+FDCPE_SECV_READER/s_state_FSM_FFd3: FDCPE port map (SECV_READER/s_state_FSM_FFd3,SECV_READER/s_state_FSM_FFd1,clk_i,'0',BTN1,enable_s);
 
 
 disp_dig_o(0) <= NOT ((NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
@@ -979,197 +1410,248 @@ disp_dig_o(2) <= NOT ((NOT DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1)));
 disp_dig_o(3) <= NOT ((DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1)));
 
 
-disp_seg_o(0) <= ((DISPLAY/s_cnt(1))
-	OR (NOT LED_CPLD(2) AND NOT number_s(5) AND NOT number_s(6) AND 
-	DISPLAY/s_cnt(0))
-	OR (number_s(0) AND NOT number_s(3) AND 
-	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0))
-	OR (NOT number_s(0) AND NOT number_s(1) AND 
-	NOT MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0))
-	OR (LED_CPLD(2) AND NOT number_s(4) AND NOT number_s(5) AND 
-	number_s(6) AND DISPLAY/s_cnt(0))
-	OR (NOT LED_CPLD(2) AND number_s(4) AND number_s(5) AND 
-	number_s(6) AND DISPLAY/s_cnt(0)));
+disp_seg_o(0) <= ((NOT DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1))
+	OR (DISPLAY/s_cnt(1) AND NOT DISPLAY/data_minus_s)
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/data0_s(1) AND 
+	NOT DISPLAY/data0_s(2) AND NOT DISPLAY/data0_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(2) AND NOT DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND DISPLAY/data0_s(0) AND 
+	DISPLAY/data0_s(1) AND DISPLAY/data0_s(2) AND NOT DISPLAY/data0_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/data0_s(0) AND 
+	NOT DISPLAY/data0_s(1) AND DISPLAY/data0_s(2) AND DISPLAY/data0_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND DISPLAY/data1_s(1) AND DISPLAY/data1_s(2) AND 
+	NOT DISPLAY/data1_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(1) AND DISPLAY/data1_s(2) AND 
+	DISPLAY/data1_s(3)));
 
 
-disp_seg_o(1) <= ((NOT LED_CPLD(2) AND number_s(5) AND NOT N_PZ_222 AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT LED_CPLD(2) AND NOT number_s(6) AND N_PZ_222 AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(0) AND number_s(1) AND NOT number_s(3) AND 
-	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(0) AND NOT number_s(1) AND 
-	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(1) AND NOT number_s(2) AND NOT number_s(3) AND 
-	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (LED_CPLD(2) AND NOT number_s(5) AND number_s(6) AND 
-	NOT N_PZ_222 AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+disp_seg_o(1) <= ((DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1) AND 
+	DISPLAY/data_minus_s)
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(2) AND NOT DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND DISPLAY/data0_s(1) AND NOT DISPLAY/data0_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(1) AND NOT DISPLAY/data0_s(2) AND NOT DISPLAY/data0_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(1) AND DISPLAY/data1_s(2) AND 
+	DISPLAY/data1_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(2) AND 
+	NOT DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND NOT DISPLAY/data0_s(1) AND DISPLAY/data0_s(2) AND 
+	DISPLAY/data0_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND NOT DISPLAY/data0_s(1) AND NOT DISPLAY/data0_s(2) AND 
+	NOT DISPLAY/data0_s(3)));
 
 
-disp_seg_o(2) <= ((NOT LED_CPLD(2) AND number_s(4) AND DISPLAY/s_cnt(0) AND 
-	NOT DISPLAY/s_cnt(1))
-	OR (number_s(0) AND NOT number_s(3) AND NOT DISPLAY/s_cnt(0) AND 
-	NOT DISPLAY/s_cnt(1))
-	OR (number_s(0) AND NOT number_s(1) AND NOT number_s(2) AND 
-	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(4) AND NOT number_s(5) AND NOT number_s(6) AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT LED_CPLD(2) AND NOT number_s(4) AND NOT number_s(5) AND 
-	number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT number_s(0) AND NOT number_s(1) AND number_s(2) AND 
-	NOT number_s(3) AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+disp_seg_o(2) <= ((N_PZ_507)
+	OR (DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1) AND 
+	DISPLAY/data_minus_s)
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND NOT DISPLAY/data0_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(2))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND NOT DISPLAY/data0_s(1) AND NOT DISPLAY/data0_s(2)));
 
 
-disp_seg_o(3) <= ((NOT LED_CPLD(2) AND NOT number_s(5) AND N_PZ_222 AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(0) AND number_s(1) AND number_s(2) AND 
-	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(1) AND number_s(3) AND 
-	NOT MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT number_s(1) AND NOT number_s(3) AND 
-	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(4) AND number_s(5) AND number_s(6) AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (LED_CPLD(2) AND NOT number_s(4) AND number_s(5) AND 
-	NOT number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+disp_seg_o(3) <= ((N_PZ_507)
+	OR (DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1) AND 
+	DISPLAY/data_minus_s)
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND DISPLAY/data1_s(1) AND DISPLAY/data1_s(2))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND DISPLAY/data0_s(1) AND DISPLAY/data0_s(2))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(2) AND 
+	NOT DISPLAY/data1_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data1_s(0) AND DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(2) AND 
+	DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND NOT DISPLAY/data0_s(1) AND NOT DISPLAY/data0_s(2) AND 
+	NOT DISPLAY/data0_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data0_s(0) AND DISPLAY/data0_s(1) AND NOT DISPLAY/data0_s(2) AND 
+	DISPLAY/data0_s(3)));
 
 
-disp_seg_o(4) <= ((LED_CPLD(2) AND NOT number_s(4) AND number_s(6) AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (LED_CPLD(2) AND number_s(5) AND number_s(6) AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT number_s(0) AND number_s(2) AND number_s(3) AND 
-	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(1) AND number_s(2) AND number_s(3) AND 
-	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT LED_CPLD(2) AND NOT number_s(4) AND number_s(5) AND 
-	NOT number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT number_s(0) AND number_s(1) AND NOT number_s(2) AND 
-	NOT number_s(3) AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+disp_seg_o(4) <= ((DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1) AND 
+	DISPLAY/data_minus_s)
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data1_s(0) AND DISPLAY/data1_s(2) AND DISPLAY/data1_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(1) AND DISPLAY/data1_s(2) AND DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data0_s(0) AND DISPLAY/data0_s(2) AND DISPLAY/data0_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(1) AND DISPLAY/data0_s(2) AND DISPLAY/data0_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data1_s(0) AND DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(2) AND 
+	NOT DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data0_s(0) AND DISPLAY/data0_s(1) AND NOT DISPLAY/data0_s(2) AND 
+	NOT DISPLAY/data0_s(3)));
 
 
-disp_seg_o(5) <= ((number_s(2) AND NOT MYALU/Mxor_status_o(4)__xor0001 AND 
-	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (LED_CPLD(2) AND number_s(4) AND number_s(5) AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (LED_CPLD(2) AND NOT number_s(4) AND number_s(6) AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(0) AND number_s(1) AND number_s(3) AND 
-	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT number_s(0) AND number_s(2) AND number_s(3) AND 
-	NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT number_s(4) AND number_s(5) AND number_s(6) AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT LED_CPLD(2) AND number_s(4) AND NOT number_s(5) AND 
-	number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+disp_seg_o(5) <= ((DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1) AND 
+	DISPLAY/data_minus_s)
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND DISPLAY/data1_s(1) AND DISPLAY/data1_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data1_s(0) AND DISPLAY/data1_s(2) AND NOT N_PZ_507)
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND DISPLAY/data0_s(1) AND DISPLAY/data0_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	NOT DISPLAY/data0_s(0) AND DISPLAY/data0_s(2) AND NOT N_PZ_507)
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(1) AND DISPLAY/data1_s(2) AND 
+	NOT DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND NOT DISPLAY/data0_s(1) AND DISPLAY/data0_s(2) AND 
+	NOT DISPLAY/data0_s(3)));
 
 
-disp_seg_o(6) <= ((NOT LED_CPLD(2) AND NOT number_s(5) AND N_PZ_222 AND 
-	DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (number_s(0) AND number_s(3) AND 
-	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (NOT number_s(1) AND NOT number_s(3) AND 
-	MYALU/Mxor_status_o(4)__xor0001 AND NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (LED_CPLD(2) AND number_s(4) AND number_s(5) AND 
-	NOT number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1))
-	OR (LED_CPLD(2) AND number_s(4) AND NOT number_s(5) AND 
-	number_s(6) AND DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1)));
+disp_seg_o(6) <= ((N_PZ_507)
+	OR (DISPLAY/s_cnt(0) AND DISPLAY/s_cnt(1) AND 
+	DISPLAY/data_minus_s)
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(2) AND 
+	DISPLAY/data1_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(1) AND DISPLAY/data1_s(2) AND 
+	DISPLAY/data1_s(3))
+	OR (DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data1_s(0) AND NOT DISPLAY/data1_s(1) AND NOT DISPLAY/data1_s(2) AND 
+	NOT DISPLAY/data1_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND DISPLAY/data0_s(1) AND NOT DISPLAY/data0_s(2) AND 
+	DISPLAY/data0_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND NOT DISPLAY/data0_s(1) AND DISPLAY/data0_s(2) AND 
+	DISPLAY/data0_s(3))
+	OR (NOT DISPLAY/s_cnt(0) AND NOT DISPLAY/s_cnt(1) AND 
+	DISPLAY/data0_s(0) AND NOT DISPLAY/data0_s(1) AND NOT DISPLAY/data0_s(2) AND 
+	NOT DISPLAY/data0_s(3)));
+
+FDCPE_enable_s: FDCPE port map (enable_s,enable_s_D,clk_i,'0','0','1');
+enable_s_D <= (NOT enable_s AND NOT BTN0 AND NOT BUTTON_ENABLE/s_state_FSM_FFd1);
 
 FDCPE_number_s0: FDCPE port map (number_s(0),number_s_D(0),clk_i,'0','0','1');
-number_s_D(0) <= NOT ((MYALU/control_s AND NOT SW(1))
-	XOR ((NOT SW(1) AND N_PZ_238)
-	OR (NOT SW_CPLD(8) AND NOT SW_CPLD(0))
-	OR (NOT SW(0) AND SW(1) AND NOT N_PZ_238)));
+number_s_D(0) <= NOT ((MY_ALU/control_s AND NOT operation_s(1))
+	XOR ((NOT B_s(0) AND NOT A_s(0))
+	OR (operation_s(1) AND NOT operation_s(0) AND NOT B_s(0))
+	OR (operation_s(1) AND NOT operation_s(0) AND NOT A_s(0))
+	OR (NOT operation_s(1) AND B_s(0) AND A_s(0))));
 
 FDCPE_number_s1: FDCPE port map (number_s(1),number_s_D(1),clk_i,'0','0','1');
-number_s_D(1) <= NOT (((NOT SW(0) AND SW(1) AND NOT SW_CPLD(1))
-	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(9))
-	OR (SW(1) AND NOT SW_CPLD(1) AND NOT SW_CPLD(9))
-	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_2to3_s AND 
-	NOT SW_CPLD(1))
-	OR (MYALU/control_s AND NOT SW(1) AND 
-	NOT MYALU/F_ADDER_1/carry_2to3_s AND SW_CPLD(9))
-	OR (NOT MYALU/control_s AND NOT SW(1) AND 
-	NOT MYALU/F_ADDER_1/carry_2to3_s AND NOT SW_CPLD(9))
-	OR (NOT MYALU/control_s AND NOT SW(1) AND 
-	NOT MYALU/F_ADDER_1/carry_2to3_s AND NOT N_PZ_238)
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(1) AND NOT SW_CPLD(9) AND 
-	NOT N_PZ_238)
-	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_2to3_s AND 
-	NOT SW_CPLD(8) AND NOT SW_CPLD(0))
-	OR (MYALU/control_s AND NOT SW(1) AND NOT SW_CPLD(8) AND 
-	NOT SW_CPLD(0) AND NOT SW_CPLD(1) AND SW_CPLD(9))));
+number_s_D(1) <= NOT ((NOT operation_s(1) AND NOT MY_ALU/F_ADDER_1/carry_2to3_s)
+	XOR ((operation_s(1) AND NOT operation_s(0) AND NOT A_s(1))
+	OR (operation_s(1) AND NOT operation_s(0) AND NOT B_s(1))
+	OR (operation_s(1) AND NOT A_s(1) AND NOT B_s(1))
+	OR (NOT MY_ALU/control_s AND MY_ALU/F_ADDER_1/carry_2to3_s AND 
+	NOT A_s(1) AND NOT B_s(1) AND NOT B_s(0))
+	OR (NOT MY_ALU/control_s AND MY_ALU/F_ADDER_1/carry_2to3_s AND 
+	NOT A_s(1) AND NOT B_s(1) AND NOT A_s(0))
+	OR (MY_ALU/control_s AND NOT operation_s(1) AND 
+	NOT MY_ALU/F_ADDER_1/carry_2to3_s AND A_s(1) AND NOT B_s(1) AND B_s(0))
+	OR (MY_ALU/control_s AND NOT operation_s(1) AND 
+	NOT MY_ALU/F_ADDER_1/carry_2to3_s AND A_s(1) AND NOT B_s(1) AND A_s(0))
+	OR (MY_ALU/control_s AND NOT operation_s(1) AND 
+	MY_ALU/F_ADDER_1/carry_2to3_s AND NOT A_s(1) AND B_s(1) AND NOT B_s(0) AND NOT A_s(0))
+	OR (NOT MY_ALU/control_s AND NOT operation_s(1) AND 
+	NOT MY_ALU/F_ADDER_1/carry_2to3_s AND A_s(1) AND B_s(1) AND B_s(0) AND A_s(0))));
 
 FDCPE_number_s2: FDCPE port map (number_s(2),number_s_D(2),clk_i,'0','0','1');
-number_s_D(2) <= NOT (NOT SW_CPLD(10)
-	XOR ((MYALU/control_s AND NOT SW(1) AND N_PZ_136)
-	OR (NOT MYALU/control_s AND NOT SW(1) AND NOT N_PZ_136)
-	OR (SW(0) AND SW(1) AND SW_CPLD(2) AND NOT SW_CPLD(10))
-	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(2) AND SW_CPLD(10))));
+number_s_D(2) <= NOT (NOT B_s(2)
+	XOR ((MY_ALU/control_s AND NOT operation_s(1) AND N_PZ_376)
+	OR (NOT MY_ALU/control_s AND NOT operation_s(1) AND NOT N_PZ_376)
+	OR (operation_s(1) AND operation_s(0) AND A_s(2) AND 
+	NOT B_s(2))
+	OR (operation_s(1) AND NOT operation_s(0) AND NOT A_s(2) AND 
+	B_s(2))));
 
 FDCPE_number_s3: FDCPE port map (number_s(3),number_s_D(3),clk_i,'0','0','1');
-number_s_D(3) <= NOT (((NOT SW(0) AND SW(1) AND NOT SW_CPLD(11))
-	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(3))
-	OR (SW(1) AND NOT SW_CPLD(11) AND NOT SW_CPLD(3))
-	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_4to5_s AND 
-	NOT SW_CPLD(3))
-	OR (MYALU/control_s AND NOT SW(1) AND 
-	NOT MYALU/F_ADDER_1/carry_4to5_s AND SW_CPLD(11))
-	OR (NOT MYALU/control_s AND NOT SW(1) AND 
-	NOT MYALU/F_ADDER_1/carry_4to5_s AND NOT SW_CPLD(11))
-	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_4to5_s AND 
-	NOT SW_CPLD(2) AND N_PZ_136)
-	OR (NOT SW_CPLD(11) AND NOT SW_CPLD(3) AND NOT N_PZ_136 AND 
-	NOT SW_CPLD(10))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(11) AND NOT SW_CPLD(3) AND 
-	NOT SW_CPLD(2) AND N_PZ_136)
-	OR (NOT SW(1) AND SW_CPLD(11) AND SW_CPLD(3) AND NOT N_PZ_136 AND 
-	NOT SW_CPLD(10))
-	OR (NOT SW(1) AND SW_CPLD(11) AND NOT SW_CPLD(3) AND NOT N_PZ_136 AND 
-	SW_CPLD(10))
-	OR (NOT SW(1) AND NOT SW_CPLD(11) AND SW_CPLD(3) AND NOT N_PZ_136 AND 
-	SW_CPLD(10))
-	OR (MYALU/control_s AND NOT SW(1) AND SW_CPLD(11) AND 
-	NOT SW_CPLD(3) AND NOT SW_CPLD(2) AND N_PZ_136)));
+number_s_D(3) <= NOT (((operation_s(1) AND NOT operation_s(0) AND NOT A_s(3))
+	OR (operation_s(1) AND NOT operation_s(0) AND NOT B_s(3))
+	OR (operation_s(1) AND NOT A_s(3) AND NOT B_s(3))
+	OR (NOT operation_s(1) AND NOT MY_ALU/F_ADDER_1/carry_4to5_s AND 
+	NOT A_s(3))
+	OR (MY_ALU/control_s AND NOT operation_s(1) AND 
+	NOT MY_ALU/F_ADDER_1/carry_4to5_s AND B_s(3))
+	OR (NOT MY_ALU/control_s AND NOT operation_s(1) AND 
+	NOT MY_ALU/F_ADDER_1/carry_4to5_s AND NOT B_s(3))
+	OR (NOT operation_s(1) AND NOT MY_ALU/F_ADDER_1/carry_4to5_s AND 
+	NOT A_s(2) AND N_PZ_376)
+	OR (NOT MY_ALU/control_s AND NOT A_s(3) AND NOT B_s(3) AND NOT A_s(2) AND 
+	N_PZ_376)
+	OR (NOT operation_s(1) AND A_s(3) AND B_s(3) AND NOT N_PZ_376 AND 
+	NOT B_s(2))
+	OR (NOT operation_s(1) AND A_s(3) AND NOT B_s(3) AND NOT N_PZ_376 AND 
+	B_s(2))
+	OR (NOT operation_s(1) AND NOT A_s(3) AND B_s(3) AND NOT N_PZ_376 AND 
+	B_s(2))
+	OR (NOT operation_s(1) AND NOT A_s(3) AND NOT B_s(3) AND NOT N_PZ_376 AND 
+	NOT B_s(2))
+	OR (MY_ALU/control_s AND NOT operation_s(1) AND NOT A_s(3) AND 
+	B_s(3) AND NOT A_s(2) AND N_PZ_376)));
 
 FDCPE_number_s4: FDCPE port map (number_s(4),number_s_D(4),clk_i,'0','0','1');
-number_s_D(4) <= NOT (NOT SW_CPLD(12)
-	XOR ((MYALU/control_s AND NOT SW(1) AND N_PZ_137)
-	OR (NOT MYALU/control_s AND NOT SW(1) AND NOT N_PZ_137)
-	OR (SW(0) AND SW(1) AND SW_CPLD(4) AND NOT SW_CPLD(12))
-	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(4) AND SW_CPLD(12))));
+number_s_D(4) <= NOT (NOT B_s(4)
+	XOR ((MY_ALU/control_s AND NOT operation_s(1) AND N_PZ_377)
+	OR (NOT MY_ALU/control_s AND NOT operation_s(1) AND NOT N_PZ_377)
+	OR (operation_s(1) AND operation_s(0) AND A_s(4) AND 
+	NOT B_s(4))
+	OR (operation_s(1) AND NOT operation_s(0) AND NOT A_s(4) AND 
+	B_s(4))));
 
 FDCPE_number_s5: FDCPE port map (number_s(5),number_s_D(5),clk_i,'0','0','1');
-number_s_D(5) <= NOT (((NOT SW(0) AND SW(1) AND NOT SW_CPLD(13))
-	OR (NOT SW(0) AND SW(1) AND NOT SW_CPLD(5))
-	OR (SW(1) AND NOT SW_CPLD(13) AND NOT SW_CPLD(5))
-	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_6to7_s AND 
-	NOT SW_CPLD(5))
-	OR (MYALU/control_s AND NOT SW(1) AND 
-	NOT MYALU/F_ADDER_1/carry_6to7_s AND SW_CPLD(13))
-	OR (NOT MYALU/control_s AND NOT SW(1) AND 
-	NOT MYALU/F_ADDER_1/carry_6to7_s AND NOT SW_CPLD(13))
-	OR (NOT SW(1) AND NOT MYALU/F_ADDER_1/carry_6to7_s AND 
-	NOT SW_CPLD(4) AND N_PZ_137)
-	OR (NOT SW_CPLD(13) AND NOT SW_CPLD(5) AND NOT N_PZ_137 AND 
-	NOT SW_CPLD(12))
-	OR (NOT MYALU/control_s AND NOT SW_CPLD(13) AND NOT SW_CPLD(5) AND 
-	NOT SW_CPLD(4) AND N_PZ_137)
-	OR (NOT SW(1) AND SW_CPLD(13) AND SW_CPLD(5) AND NOT N_PZ_137 AND 
-	NOT SW_CPLD(12))
-	OR (NOT SW(1) AND SW_CPLD(13) AND NOT SW_CPLD(5) AND NOT N_PZ_137 AND 
-	SW_CPLD(12))
-	OR (NOT SW(1) AND NOT SW_CPLD(13) AND SW_CPLD(5) AND NOT N_PZ_137 AND 
-	SW_CPLD(12))
-	OR (MYALU/control_s AND NOT SW(1) AND SW_CPLD(13) AND 
-	NOT SW_CPLD(5) AND NOT SW_CPLD(4) AND N_PZ_137)));
+number_s_D(5) <= NOT (((operation_s(1) AND NOT operation_s(0) AND NOT A_s(5))
+	OR (operation_s(1) AND NOT operation_s(0) AND NOT B_s(5))
+	OR (operation_s(1) AND NOT A_s(5) AND NOT B_s(5))
+	OR (NOT operation_s(1) AND NOT MY_ALU/F_ADDER_1/carry_6to7_s AND 
+	NOT A_s(5))
+	OR (MY_ALU/control_s AND NOT operation_s(1) AND 
+	NOT MY_ALU/F_ADDER_1/carry_6to7_s AND B_s(5))
+	OR (NOT MY_ALU/control_s AND NOT operation_s(1) AND 
+	NOT MY_ALU/F_ADDER_1/carry_6to7_s AND NOT B_s(5))
+	OR (NOT operation_s(1) AND NOT MY_ALU/F_ADDER_1/carry_6to7_s AND 
+	NOT A_s(4) AND N_PZ_377)
+	OR (NOT MY_ALU/control_s AND NOT A_s(5) AND NOT B_s(5) AND NOT A_s(4) AND 
+	N_PZ_377)
+	OR (NOT operation_s(1) AND A_s(5) AND B_s(5) AND NOT N_PZ_377 AND 
+	NOT B_s(4))
+	OR (NOT operation_s(1) AND A_s(5) AND NOT B_s(5) AND NOT N_PZ_377 AND 
+	B_s(4))
+	OR (NOT operation_s(1) AND NOT A_s(5) AND B_s(5) AND NOT N_PZ_377 AND 
+	B_s(4))
+	OR (NOT operation_s(1) AND NOT A_s(5) AND NOT B_s(5) AND NOT N_PZ_377 AND 
+	NOT B_s(4))
+	OR (MY_ALU/control_s AND NOT operation_s(1) AND NOT A_s(5) AND 
+	B_s(5) AND NOT A_s(4) AND N_PZ_377)));
 
 FDCPE_number_s6: FDCPE port map (number_s(6),number_s_D(6),clk_i,'0','0','1');
-number_s_D(6) <= NOT (NOT SW_CPLD(14)
-	XOR ((MYALU/control_s AND NOT SW(1) AND NOT N_PZ_218)
-	OR (NOT MYALU/control_s AND NOT SW(1) AND N_PZ_218)
-	OR (SW_CPLD(14) AND NOT SW(0) AND SW(1) AND NOT SW_CPLD(6))
-	OR (NOT SW_CPLD(14) AND SW(0) AND SW(1) AND SW_CPLD(6))));
+number_s_D(6) <= NOT (NOT B_s(6)
+	XOR ((MY_ALU/control_s AND NOT operation_s(1) AND NOT N_PZ_471)
+	OR (NOT MY_ALU/control_s AND NOT operation_s(1) AND N_PZ_471)
+	OR (operation_s(1) AND operation_s(0) AND NOT B_s(6) AND 
+	A_s(6))
+	OR (operation_s(1) AND NOT operation_s(0) AND B_s(6) AND 
+	NOT A_s(6))));
+
+LDCP_operation_s0: LDCP port map (operation_s(0),SECV_READER/regO(0),SECV_READER/s_state_FSM_FFd3,'0','0');
+
+LDCP_operation_s1: LDCP port map (operation_s(1),SECV_READER/regO(1),SECV_READER/s_state_FSM_FFd3,'0','0');
 
 
 Register Legend:
@@ -1187,40 +1669,40 @@ Device : XC2C256-6-TQ144
 Pin Signal                         Pin Signal                        
 No. Name                           No. Name                          
   1 VCC                              73 VCCIO-1.8                     
-  2 disp_seg_o<3>                    74 KPR                           
-  3 disp_seg_o<6>                    75 KPR                           
-  4 disp_seg_o<1>                    76 KPR                           
-  5 disp_seg_o<5>                    77 KPR                           
-  6 disp_seg_o<4>                    78 KPR                           
-  7 disp_seg_o<0>                    79 KPR                           
+  2 SW_CPLD<5>                       74 KPR                           
+  3 SW_CPLD<6>                       75 KPR                           
+  4 SW_CPLD<7>                       76 KPR                           
+  5 BTN0                             77 KPR                           
+  6 KPR                              78 KPR                           
+  7 KPR                              79 KPR                           
   8 VCCAUX                           80 KPR                           
-  9 disp_seg_o<2>                    81 KPR                           
- 10 LED_CPLD<1>                      82 KPR                           
- 11 LED_CPLD<2>                      83 KPR                           
- 12 LED_CPLD<0>                      84 VCC                           
- 13 LED_CPLD<3>                      85 KPR                           
- 14 disp_dig_o<1>                    86 KPR                           
- 15 disp_dig_o<2>                    87 KPR                           
- 16 disp_dig_o<3>                    88 KPR                           
- 17 SW<0>                            89 GND                           
- 18 SW<1>                            90 GND                           
+  9 KPR                              81 KPR                           
+ 10 KPR                              82 KPR                           
+ 11 disp_seg_o<3>                    83 KPR                           
+ 12 disp_seg_o<6>                    84 VCC                           
+ 13 disp_seg_o<2>                    85 KPR                           
+ 14 disp_seg_o<5>                    86 KPR                           
+ 15 disp_seg_o<1>                    87 KPR                           
+ 16 disp_seg_o<4>                    88 KPR                           
+ 17 disp_seg_o<0>                    89 GND                           
+ 18 KPR                              90 GND                           
  19 KPR                              91 KPR                           
  20 KPR                              92 KPR                           
  21 KPR                              93 VCCIO-1.8                     
  22 KPR                              94 KPR                           
  23 KPR                              95 KPR                           
- 24 KPR                              96 KPR                           
- 25 KPR                              97 KPR                           
- 26 KPR                              98 KPR                           
+ 24 LED_CPLD<3>                      96 KPR                           
+ 25 LED_CPLD<0>                      97 KPR                           
+ 26 LED_CPLD<2>                      98 KPR                           
  27 VCCIO-1.8                        99 GND                           
- 28 SW_CPLD<7>                      100 KPR                           
+ 28 KPR                             100 KPR                           
  29 GND                             101 KPR                           
- 30 SW_CPLD<6>                      102 KPR                           
- 31 SW_CPLD<5>                      103 KPR                           
+ 30 KPR                             102 KPR                           
+ 31 KPR                             103 KPR                           
  32 clk_i                           104 KPR                           
  33 LED_CPLD<4>                     105 KPR                           
- 34 SW_CPLD<8>                      106 KPR                           
- 35 SW_CPLD<9>                      107 KPR                           
+ 34 LED_CPLD<1>                     106 KPR                           
+ 35 KPR                             107 KPR                           
  36 GND                             108 GND                           
  37 VCC                             109 VCCIO-1.8                     
  38 KPR                             110 KPR                           
@@ -1244,19 +1726,19 @@ No. Name                           No. Name
  56 KPR                             128 KPR                           
  57 KPR                             129 KPR                           
  58 KPR                             130 KPR                           
- 59 KPR                             131 SW_CPLD<1>                    
- 60 KPR                             132 SW_CPLD<12>                   
- 61 KPR                             133 SW_CPLD<11>                   
- 62 GND                             134 SW_CPLD<10>                   
- 63 TDI                             135 SW_CPLD<0>                    
+ 59 KPR                             131 KPR                           
+ 60 KPR                             132 KPR                           
+ 61 KPR                             133 disp_dig_o<3>                 
+ 62 GND                             134 disp_dig_o<2>                 
+ 63 TDI                             135 disp_dig_o<1>                 
  64 KPR                             136 disp_dig_o<0>                 
  65 TMS                             137 SW_CPLD<4>                    
  66 KPR                             138 SW_CPLD<3>                    
  67 TCK                             139 SW_CPLD<2>                    
- 68 KPR                             140 SW_CPLD<15>                   
+ 68 KPR                             140 SW_CPLD<1>                    
  69 KPR                             141 VCCIO-1.8                     
- 70 KPR                             142 SW_CPLD<14>                   
- 71 KPR                             143 SW_CPLD<13>                   
+ 70 KPR                             142 SW_CPLD<0>                    
+ 71 KPR                             143 BTN1                          
  72 GND                             144 GND                           
 
 

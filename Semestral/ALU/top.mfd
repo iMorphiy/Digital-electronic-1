@@ -1,405 +1,864 @@
 MDF Database:  version 1.0
 MDF_INFO | top | XC2C256-6-TQ144
-MACROCELL | 3 | 1 | LED_CPLD<0>_MC
+MACROCELL | 6 | 5 | LED_CPLD<0>_MC
 ATTRIBUTES | 1610875650 | 0
-OUTPUTMC | 1 | 3 | 2
-INPUTS | 6 | N_PZ_239  | N_PZ_139  | N_PZ_218  | SW_CPLD<6>  | SW_CPLD<14>  | MYALU/control_s
-INPUTMC | 4 | 3 | 9 | 1 | 6 | 3 | 10 | 1 | 9
-INPUTP | 2 | 48 | 217
-EQ | 6 | 
-   !LED_CPLD<0> = !N_PZ_239 & N_PZ_139
-	# !N_PZ_218 & !SW_CPLD<6> & N_PZ_239
-	# SW_CPLD<14> & MYALU/control_s & N_PZ_218 & 
-	N_PZ_239
-	# !SW_CPLD<14> & !MYALU/control_s & N_PZ_218 & 
-	N_PZ_239;	// (4 pt, 6 inp)
+OUTPUTMC | 1 | 6 | 10
+INPUTS | 6 | N_PZ_499  | N_PZ_378  | N_PZ_471  | A_s<6>  | MY_ALU/control_s  | B_s<6>
+INPUTMC | 6 | 6 | 1 | 6 | 3 | 6 | 2 | 7 | 3 | 5 | 5 | 7 | 0
+EQ | 4 | 
+   !LED_CPLD<0> = !N_PZ_499 & N_PZ_378
+	# !N_PZ_471 & !A_s<6> & N_PZ_499
+	# MY_ALU/control_s & B_s<6> & N_PZ_471 & N_PZ_499
+	# !MY_ALU/control_s & !B_s<6> & N_PZ_471 & N_PZ_499;	// (4 pt, 6 inp)
 
-MACROCELL | 1 | 9 | MYALU/control_s_MC
+MACROCELL | 5 | 5 | MY_ALU/control_s_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 13 | 1 | 9 | 3 | 12 | 2 | 11 | 2 | 8 | 1 | 6 | 3 | 1 | 1 | 8 | 3 | 14 | 2 | 14 | 2 | 12 | 2 | 10 | 2 | 9 | 3 | 15
-INPUTS | 3 | MYALU/control_s  | SW<1>  | SW<0>
-INPUTMC | 1 | 1 | 9
-INPUTP | 2 | 23 | 21
+OUTPUTMC | 13 | 5 | 5 | 5 | 15 | 7 | 15 | 6 | 6 | 6 | 3 | 6 | 5 | 5 | 4 | 5 | 2 | 5 | 14 | 5 | 13 | 6 | 7 | 6 | 8 | 6 | 9
+INPUTS | 3 | MY_ALU/control_s  | operation_s<1>  | operation_s<0>
+INPUTMC | 3 | 5 | 5 | 8 | 9 | 8 | 10
 EQ | 3 | 
-   !MYALU/control_s := !MYALU/control_s & SW<1>
-	# !SW<0> & !SW<1>;	// (2 pt, 3 inp)
-   MYALU/control_s.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+   !MY_ALU/control_s := !MY_ALU/control_s & operation_s<1>
+	# !operation_s<1> & !operation_s<0>;	// (2 pt, 3 inp)
+   MY_ALU/control_s.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 3 | 10 | N_PZ_218_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 3 | 3 | 1 | 3 | 0 | 3 | 15
-INPUTS | 2 | SW_CPLD<6>  | MYALU/F_ADDER_1/carry_6to7_s
-INPUTMC | 1 | 2 | 8
-INPUTP | 1 | 48
+MACROCELL | 8 | 9 | operation_s<1>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 9 | 5 | 5 | 6 | 4 | 5 | 4 | 5 | 2 | 5 | 14 | 5 | 13 | 6 | 7 | 6 | 8 | 6 | 9
+INPUTS | 1 | SECV_READER/regO<1>
+INPUTMC | 1 | 0 | 6
+LCT | 1 | 2 | Internal_Name
 EQ | 2 | 
-   N_PZ_218 = SW_CPLD<6> & MYALU/F_ADDER_1/carry_6to7_s
-	# !SW_CPLD<6> & !MYALU/F_ADDER_1/carry_6to7_s;	// (2 pt, 2 inp)
+   operation_s<1>.D = SECV_READER/regO<1>;	// (1 pt, 1 inp)
+    operation_s<1>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
 
-MACROCELL | 2 | 8 | MYALU/F_ADDER_1/carry_6to7_s_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 3 | 3 | 10 | 3 | 0 | 2 | 9
-INPUTS | 6 | MYALU/control_s  | SW_CPLD<13>  | SW_CPLD<5>  | SW_CPLD<4>  | N_PZ_137  | SW_CPLD<12>
-INPUTMC | 2 | 1 | 9 | 4 | 15
-INPUTP | 4 | 218 | 49 | 211 | 199
-EQ | 15 | 
-   MYALU/F_ADDER_1/carry_6to7_s = MYALU/control_s & SW_CPLD<13> & !SW_CPLD<5>
-	# !MYALU/control_s & !SW_CPLD<13> & !SW_CPLD<5>
-	# !SW_CPLD<5> & !SW_CPLD<4> & N_PZ_137
-	# MYALU/control_s & SW_CPLD<13> & !SW_CPLD<4> & 
-	N_PZ_137
-	# MYALU/control_s & SW_CPLD<13> & !N_PZ_137 & 
-	SW_CPLD<12>
-	# MYALU/control_s & !SW_CPLD<5> & !N_PZ_137 & 
-	SW_CPLD<12>
-	# !MYALU/control_s & !SW_CPLD<13> & !SW_CPLD<4> & 
-	N_PZ_137
-	# !MYALU/control_s & !SW_CPLD<13> & !N_PZ_137 & 
-	!SW_CPLD<12>
-	# !MYALU/control_s & !SW_CPLD<5> & !N_PZ_137 & 
-	!SW_CPLD<12>;	// (9 pt, 6 inp)
-
-MACROCELL | 4 | 15 | N_PZ_137_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 3 | 2 | 8 | 2 | 10 | 2 | 9
-INPUTS | 2 | SW_CPLD<4>  | MYALU/F_ADDER_1/carry_4to5_s
-INPUTMC | 1 | 2 | 11
-INPUTP | 1 | 211
-EQ | 2 | 
-   N_PZ_137 = SW_CPLD<4> & !MYALU/F_ADDER_1/carry_4to5_s
-	# !SW_CPLD<4> & MYALU/F_ADDER_1/carry_4to5_s;	// (2 pt, 2 inp)
-
-MACROCELL | 2 | 11 | MYALU/F_ADDER_1/carry_4to5_s_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 2 | 4 | 15 | 2 | 12
-INPUTS | 6 | MYALU/control_s  | SW_CPLD<11>  | SW_CPLD<3>  | SW_CPLD<2>  | N_PZ_136  | SW_CPLD<10>
-INPUTMC | 2 | 1 | 9 | 3 | 8
-INPUTP | 4 | 204 | 212 | 213 | 206
-EQ | 15 | 
-   MYALU/F_ADDER_1/carry_4to5_s = MYALU/control_s & SW_CPLD<11> & !SW_CPLD<3>
-	# !MYALU/control_s & !SW_CPLD<11> & !SW_CPLD<3>
-	# !SW_CPLD<3> & !SW_CPLD<2> & N_PZ_136
-	# MYALU/control_s & SW_CPLD<11> & !SW_CPLD<2> & 
-	N_PZ_136
-	# MYALU/control_s & SW_CPLD<11> & !N_PZ_136 & 
-	SW_CPLD<10>
-	# MYALU/control_s & !SW_CPLD<3> & !N_PZ_136 & 
-	SW_CPLD<10>
-	# !MYALU/control_s & !SW_CPLD<11> & !SW_CPLD<2> & 
-	N_PZ_136
-	# !MYALU/control_s & !SW_CPLD<11> & !N_PZ_136 & 
-	!SW_CPLD<10>
-	# !MYALU/control_s & !SW_CPLD<3> & !N_PZ_136 & 
-	!SW_CPLD<10>;	// (9 pt, 6 inp)
-
-MACROCELL | 3 | 8 | N_PZ_136_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 3 | 2 | 11 | 2 | 14 | 2 | 12
-INPUTS | 2 | SW_CPLD<2>  | MYALU/F_ADDER_1/carry_2to3_s
-INPUTMC | 1 | 3 | 12
-INPUTP | 1 | 213
-EQ | 2 | 
-   N_PZ_136 = SW_CPLD<2> & !MYALU/F_ADDER_1/carry_2to3_s
-	# !SW_CPLD<2> & MYALU/F_ADDER_1/carry_2to3_s;	// (2 pt, 2 inp)
-
-MACROCELL | 3 | 12 | MYALU/F_ADDER_1/carry_2to3_s_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 2 | 3 | 8 | 3 | 14
-INPUTS | 6 | MYALU/control_s  | SW_CPLD<1>  | SW_CPLD<9>  | N_PZ_238  | SW_CPLD<8>  | SW_CPLD<0>
-INPUTMC | 2 | 1 | 9 | 1 | 7
-INPUTP | 4 | 197 | 55 | 54 | 207
-EQ | 7 | 
-   MYALU/F_ADDER_1/carry_2to3_s = MYALU/control_s & !SW_CPLD<1> & SW_CPLD<9>
-	# !MYALU/control_s & !SW_CPLD<1> & !SW_CPLD<9>
-	# !MYALU/control_s & !SW_CPLD<1> & !N_PZ_238
-	# !MYALU/control_s & !SW_CPLD<9> & !N_PZ_238
-	# !SW_CPLD<8> & !SW_CPLD<0> & !SW_CPLD<1>
-	# MYALU/control_s & !SW_CPLD<8> & !SW_CPLD<0> & 
-	SW_CPLD<9>;	// (6 pt, 6 inp)
-
-MACROCELL | 1 | 7 | N_PZ_238_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 3 | 3 | 12 | 1 | 8 | 3 | 14
-INPUTS | 2 | SW_CPLD<8>  | SW_CPLD<0>
-INPUTP | 2 | 54 | 207
-EQ | 1 | 
-   N_PZ_238 = SW_CPLD<8> & SW_CPLD<0>;	// (1 pt, 2 inp)
-
-MACROCELL | 3 | 9 | N_PZ_239_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 2 | 3 | 1 | 3 | 0
-INPUTS | 2 | SW_CPLD<7>  | N_PZ_139
-INPUTMC | 1 | 1 | 6
-INPUTP | 1 | 44
-EQ | 2 | 
-   N_PZ_239 = SW_CPLD<7> & N_PZ_139
-	# !SW_CPLD<7> & !N_PZ_139;	// (2 pt, 2 inp)
-
-MACROCELL | 1 | 6 | N_PZ_139_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 3 | 3 | 9 | 3 | 1 | 3 | 2
-INPUTS | 2 | MYALU/control_s  | SW_CPLD<15>
-INPUTMC | 1 | 1 | 9
+MACROCELL | 0 | 6 | SECV_READER/regO<1>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 8 | 9
+INPUTS | 3 | SW_CPLD<1>  | SECV_READER/s_state_FSM_FFd1  | enable_s
+INPUTMC | 2 | 0 | 14 | 1 | 9
 INPUTP | 1 | 214
+EQ | 4 | 
+   SECV_READER/regO<1> := SW_CPLD<1>;	// (1 pt, 1 inp)
+   SECV_READER/regO<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regO<1>.CE = SECV_READER/s_state_FSM_FFd1 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regO<1>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 0 | 14 | SECV_READER/s_state_FSM_FFd1_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 3 | 0 | 8 | 0 | 6 | 0 | 9
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd2  | enable_s
+INPUTMC | 2 | 0 | 15 | 1 | 9
+EQ | 4 | 
+   SECV_READER/s_state_FSM_FFd1 := SECV_READER/s_state_FSM_FFd2;	// (1 pt, 1 inp)
+   SECV_READER/s_state_FSM_FFd1.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/s_state_FSM_FFd1.CE = enable_s;	// (1 pt, 1 inp)
+   SECV_READER/s_state_FSM_FFd1.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 0 | 15 | SECV_READER/s_state_FSM_FFd2_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 9 | 0 | 14 | 1 | 15 | 0 | 2 | 0 | 1 | 0 | 7 | 0 | 10 | 0 | 4 | 0 | 0 | 1 | 10
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd3  | enable_s
+INPUTMC | 2 | 0 | 8 | 1 | 9
+EQ | 4 | 
+   SECV_READER/s_state_FSM_FFd2 := SECV_READER/s_state_FSM_FFd3;	// (1 pt, 1 inp)
+   SECV_READER/s_state_FSM_FFd2.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/s_state_FSM_FFd2.CE = enable_s;	// (1 pt, 1 inp)
+   SECV_READER/s_state_FSM_FFd2.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 0 | 8 | SECV_READER/s_state_FSM_FFd3_MC
+ATTRIBUTES | 2172683076 | 0
+OUTPUTMC | 9 | 0 | 15 | 1 | 2 | 1 | 0 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 5 | 0 | 3 | 1 | 3
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd1  | enable_s
+INPUTMC | 2 | 0 | 14 | 1 | 9
+EQ | 4 | 
+   SECV_READER/s_state_FSM_FFd3 := SECV_READER/s_state_FSM_FFd1;	// (1 pt, 1 inp)
+   SECV_READER/s_state_FSM_FFd3.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/s_state_FSM_FFd3.CE = enable_s;	// (1 pt, 1 inp)
+   SECV_READER/s_state_FSM_FFd3.AP = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 1 | BTN1
+
+MACROCELL | 1 | 9 | enable_s_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 23 | 1 | 8 | 1 | 9 | 0 | 8 | 0 | 15 | 0 | 14 | 0 | 6 | 0 | 9 | 1 | 15 | 1 | 2 | 1 | 0 | 0 | 2 | 0 | 13 | 0 | 12 | 0 | 1 | 0 | 11 | 0 | 5 | 0 | 7 | 0 | 10 | 0 | 3 | 0 | 4 | 0 | 0 | 1 | 3 | 1 | 10
+INPUTS | 3 | enable_s  | BTN0  | BUTTON_ENABLE/s_state_FSM_FFd1
+INPUTMC | 2 | 1 | 9 | 1 | 8
+INPUTP | 1 | 5
 EQ | 2 | 
-   N_PZ_139 = MYALU/control_s & SW_CPLD<15>
-	# !MYALU/control_s & !SW_CPLD<15>;	// (2 pt, 2 inp)
+   enable_s := !enable_s & !BTN0 & !BUTTON_ENABLE/s_state_FSM_FFd1;	// (1 pt, 3 inp)
+   enable_s.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 1 | 14 | LED_CPLD<1>_MC
-ATTRIBUTES | 1074004738 | 0
-INPUTS | 8 | LED_CPLD<2>  | number_s<0>  | number_s<1>  | number_s<2>  | number_s<3>  | number_s<4>  | number_s<5>  | number_s<6>
-INPUTMC | 8 | 3 | 0 | 1 | 8 | 3 | 14 | 2 | 14 | 2 | 12 | 2 | 10 | 2 | 9 | 3 | 15
+MACROCELL | 1 | 8 | BUTTON_ENABLE/s_state_FSM_FFd1_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 1 | 8 | 1 | 9
+INPUTS | 3 | enable_s  | BTN0  | BUTTON_ENABLE/s_state_FSM_FFd1
+INPUTMC | 2 | 1 | 9 | 1 | 8
+INPUTP | 1 | 5
 EQ | 3 | 
-   LED_CPLD<1> = !LED_CPLD<2> & !number_s<0> & !number_s<1> & 
-	!number_s<2> & !number_s<3> & !number_s<4> & !number_s<5> & 
-	!number_s<6>;	// (1 pt, 8 inp)
+   !BUTTON_ENABLE/s_state_FSM_FFd1 := !enable_s & BTN0
+	# !enable_s & !BUTTON_ENABLE/s_state_FSM_FFd1;	// (2 pt, 3 inp)
+   BUTTON_ENABLE/s_state_FSM_FFd1.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 3 | 0 | LED_CPLD<2>_MC
+MACROCELL | 8 | 10 | operation_s<0>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 9 | 5 | 5 | 6 | 4 | 5 | 4 | 5 | 2 | 5 | 14 | 5 | 13 | 6 | 7 | 6 | 8 | 6 | 9
+INPUTS | 1 | SECV_READER/regO<0>
+INPUTMC | 1 | 0 | 9
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   operation_s<0>.D = SECV_READER/regO<0>;	// (1 pt, 1 inp)
+    operation_s<0>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 9 | SECV_READER/regO<0>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 8 | 10
+INPUTS | 3 | SW_CPLD<0>  | SECV_READER/s_state_FSM_FFd1  | enable_s
+INPUTMC | 2 | 0 | 14 | 1 | 9
+INPUTP | 1 | 217
+EQ | 4 | 
+   SECV_READER/regO<0> := SW_CPLD<0>;	// (1 pt, 1 inp)
+   SECV_READER/regO<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regO<0>.CE = SECV_READER/s_state_FSM_FFd1 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regO<0>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 0 | B_s<6>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 3 | 6 | 5 | 6 | 4 | 6 | 9
+INPUTS | 1 | SECV_READER/regB<6>
+INPUTMC | 1 | 1 | 15
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   B_s<6>.D = SECV_READER/regB<6>;	// (1 pt, 1 inp)
+    B_s<6>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 15 | SECV_READER/regB<6>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 7 | 0
+INPUTS | 3 | SW_CPLD<6>  | SECV_READER/s_state_FSM_FFd2  | enable_s
+INPUTMC | 2 | 0 | 15 | 1 | 9
+INPUTP | 1 | 3
+EQ | 4 | 
+   SECV_READER/regB<6> := SW_CPLD<6>;	// (1 pt, 1 inp)
+   SECV_READER/regB<6>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regB<6>.CE = SECV_READER/s_state_FSM_FFd2 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regB<6>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 6 | 2 | N_PZ_471_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 3 | 6 | 5 | 6 | 4 | 6 | 9
+INPUTS | 2 | A_s<6>  | MY_ALU/F_ADDER_1/carry_6to7_s
+INPUTMC | 2 | 7 | 3 | 6 | 6
+EQ | 2 | 
+   N_PZ_471 = A_s<6> & MY_ALU/F_ADDER_1/carry_6to7_s
+	# !A_s<6> & !MY_ALU/F_ADDER_1/carry_6to7_s;	// (2 pt, 2 inp)
+
+MACROCELL | 7 | 3 | A_s<6>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 4 | 6 | 2 | 6 | 5 | 6 | 4 | 6 | 9
+INPUTS | 1 | SECV_READER/regA<6>
+INPUTMC | 1 | 1 | 2
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   A_s<6>.D = SECV_READER/regA<6>;	// (1 pt, 1 inp)
+    A_s<6>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 2 | SECV_READER/regA<6>_MC
+ATTRIBUTES | 2189459520 | 4
+OUTPUTMC | 1 | 7 | 3
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd3  | enable_s
+INPUTMC | 2 | 0 | 8 | 1 | 9
+EQ | 6 | 
+   
+// Direct Input Register
+SECV_READER/regA<6> := SW_CPLD<6>;	// (0 pt, 0 inp)
+   SECV_READER/regA<6>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regA<6>.CE = SECV_READER/s_state_FSM_FFd3 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regA<6>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 6 | 6 | MY_ALU/F_ADDER_1/carry_6to7_s_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 3 | 6 | 2 | 6 | 4 | 6 | 8
+INPUTS | 6 | MY_ALU/control_s  | A_s<5>  | B_s<5>  | A_s<4>  | N_PZ_377  | B_s<4>
+INPUTMC | 6 | 5 | 5 | 7 | 6 | 7 | 1 | 7 | 7 | 5 | 11 | 7 | 2
+EQ | 9 | 
+   MY_ALU/F_ADDER_1/carry_6to7_s = MY_ALU/control_s & !A_s<5> & B_s<5>
+	# !MY_ALU/control_s & !A_s<5> & !B_s<5>
+	# !A_s<5> & !A_s<4> & N_PZ_377
+	# MY_ALU/control_s & B_s<5> & !A_s<4> & N_PZ_377
+	# MY_ALU/control_s & B_s<5> & !N_PZ_377 & B_s<4>
+	# !MY_ALU/control_s & !B_s<5> & !A_s<4> & N_PZ_377
+	# !MY_ALU/control_s & !B_s<5> & !N_PZ_377 & !B_s<4>
+	# !A_s<5> & B_s<5> & !N_PZ_377 & !B_s<4>
+	# !A_s<5> & !B_s<5> & !N_PZ_377 & B_s<4>;	// (9 pt, 6 inp)
+
+MACROCELL | 7 | 6 | A_s<5>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 2 | 6 | 6 | 6 | 8
+INPUTS | 1 | SECV_READER/regA<5>
+INPUTMC | 1 | 1 | 0
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   A_s<5>.D = SECV_READER/regA<5>;	// (1 pt, 1 inp)
+    A_s<5>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 0 | SECV_READER/regA<5>_MC
+ATTRIBUTES | 2189459520 | 4
+OUTPUTMC | 1 | 7 | 6
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd3  | enable_s
+INPUTMC | 2 | 0 | 8 | 1 | 9
+EQ | 6 | 
+   
+// Direct Input Register
+SECV_READER/regA<5> := SW_CPLD<5>;	// (0 pt, 0 inp)
+   SECV_READER/regA<5>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regA<5>.CE = SECV_READER/s_state_FSM_FFd3 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regA<5>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 1 | B_s<5>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 2 | 6 | 6 | 6 | 8
+INPUTS | 1 | SECV_READER/regB<5>
+INPUTMC | 1 | 0 | 2
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   B_s<5>.D = SECV_READER/regB<5>;	// (1 pt, 1 inp)
+    B_s<5>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 2 | SECV_READER/regB<5>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 7 | 1
+INPUTS | 3 | SW_CPLD<5>  | SECV_READER/s_state_FSM_FFd2  | enable_s
+INPUTMC | 2 | 0 | 15 | 1 | 9
+INPUTP | 1 | 1
+EQ | 4 | 
+   SECV_READER/regB<5> := SW_CPLD<5>;	// (1 pt, 1 inp)
+   SECV_READER/regB<5>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regB<5>.CE = SECV_READER/s_state_FSM_FFd2 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regB<5>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 7 | A_s<4>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 4 | 5 | 11 | 6 | 6 | 6 | 7 | 6 | 8
+INPUTS | 1 | SECV_READER/regA<4>
+INPUTMC | 1 | 0 | 13
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   A_s<4>.D = SECV_READER/regA<4>;	// (1 pt, 1 inp)
+    A_s<4>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 13 | SECV_READER/regA<4>_MC
+ATTRIBUTES | 2189459520 | 4
+OUTPUTMC | 1 | 7 | 7
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd3  | enable_s
+INPUTMC | 2 | 0 | 8 | 1 | 9
+EQ | 6 | 
+   
+// Direct Input Register
+SECV_READER/regA<4> := SW_CPLD<4>;	// (0 pt, 0 inp)
+   SECV_READER/regA<4>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regA<4>.CE = SECV_READER/s_state_FSM_FFd3 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regA<4>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 5 | 11 | N_PZ_377_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 3 | 6 | 6 | 6 | 7 | 6 | 8
+INPUTS | 2 | A_s<4>  | MY_ALU/F_ADDER_1/carry_4to5_s
+INPUTMC | 2 | 7 | 7 | 7 | 15
+EQ | 2 | 
+   N_PZ_377 = A_s<4> & !MY_ALU/F_ADDER_1/carry_4to5_s
+	# !A_s<4> & MY_ALU/F_ADDER_1/carry_4to5_s;	// (2 pt, 2 inp)
+
+MACROCELL | 7 | 15 | MY_ALU/F_ADDER_1/carry_4to5_s_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 2 | 5 | 11 | 5 | 13
+INPUTS | 6 | MY_ALU/control_s  | A_s<3>  | B_s<3>  | A_s<2>  | N_PZ_376  | B_s<2>
+INPUTMC | 6 | 5 | 5 | 7 | 8 | 7 | 4 | 7 | 9 | 5 | 12 | 7 | 5
+EQ | 9 | 
+   MY_ALU/F_ADDER_1/carry_4to5_s = MY_ALU/control_s & !A_s<3> & B_s<3>
+	# !MY_ALU/control_s & !A_s<3> & !B_s<3>
+	# !A_s<3> & !A_s<2> & N_PZ_376
+	# MY_ALU/control_s & B_s<3> & !A_s<2> & N_PZ_376
+	# MY_ALU/control_s & B_s<3> & !N_PZ_376 & B_s<2>
+	# !MY_ALU/control_s & !B_s<3> & !A_s<2> & N_PZ_376
+	# !MY_ALU/control_s & !B_s<3> & !N_PZ_376 & !B_s<2>
+	# !A_s<3> & B_s<3> & !N_PZ_376 & !B_s<2>
+	# !A_s<3> & !B_s<3> & !N_PZ_376 & B_s<2>;	// (9 pt, 6 inp)
+
+MACROCELL | 7 | 8 | A_s<3>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 2 | 7 | 15 | 5 | 13
+INPUTS | 1 | SECV_READER/regA<3>
+INPUTMC | 1 | 0 | 12
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   A_s<3>.D = SECV_READER/regA<3>;	// (1 pt, 1 inp)
+    A_s<3>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 12 | SECV_READER/regA<3>_MC
+ATTRIBUTES | 2189459520 | 4
+OUTPUTMC | 1 | 7 | 8
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd3  | enable_s
+INPUTMC | 2 | 0 | 8 | 1 | 9
+EQ | 6 | 
+   
+// Direct Input Register
+SECV_READER/regA<3> := SW_CPLD<3>;	// (0 pt, 0 inp)
+   SECV_READER/regA<3>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regA<3>.CE = SECV_READER/s_state_FSM_FFd3 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regA<3>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 4 | B_s<3>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 2 | 7 | 15 | 5 | 13
+INPUTS | 1 | SECV_READER/regB<3>
+INPUTMC | 1 | 0 | 1
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   B_s<3>.D = SECV_READER/regB<3>;	// (1 pt, 1 inp)
+    B_s<3>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 1 | SECV_READER/regB<3>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 7 | 4
+INPUTS | 3 | SW_CPLD<3>  | SECV_READER/s_state_FSM_FFd2  | enable_s
+INPUTMC | 2 | 0 | 15 | 1 | 9
+INPUTP | 1 | 212
+EQ | 4 | 
+   SECV_READER/regB<3> := SW_CPLD<3>;	// (1 pt, 1 inp)
+   SECV_READER/regB<3>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regB<3>.CE = SECV_READER/s_state_FSM_FFd2 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regB<3>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 9 | A_s<2>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 4 | 5 | 12 | 7 | 15 | 5 | 14 | 5 | 13
+INPUTS | 1 | SECV_READER/regA<2>
+INPUTMC | 1 | 0 | 11
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   A_s<2>.D = SECV_READER/regA<2>;	// (1 pt, 1 inp)
+    A_s<2>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 11 | SECV_READER/regA<2>_MC
+ATTRIBUTES | 2189459520 | 4
+OUTPUTMC | 1 | 7 | 9
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd3  | enable_s
+INPUTMC | 2 | 0 | 8 | 1 | 9
+EQ | 6 | 
+   
+// Direct Input Register
+SECV_READER/regA<2> := SW_CPLD<2>;	// (0 pt, 0 inp)
+   SECV_READER/regA<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regA<2>.CE = SECV_READER/s_state_FSM_FFd3 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regA<2>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 5 | 12 | N_PZ_376_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 3 | 7 | 15 | 5 | 14 | 5 | 13
+INPUTS | 2 | A_s<2>  | MY_ALU/F_ADDER_1/carry_2to3_s
+INPUTMC | 2 | 7 | 9 | 5 | 15
+EQ | 2 | 
+   N_PZ_376 = A_s<2> & !MY_ALU/F_ADDER_1/carry_2to3_s
+	# !A_s<2> & MY_ALU/F_ADDER_1/carry_2to3_s;	// (2 pt, 2 inp)
+
+MACROCELL | 5 | 15 | MY_ALU/F_ADDER_1/carry_2to3_s_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 2 | 5 | 12 | 5 | 2
+INPUTS | 5 | A_s<1>  | B_s<1>  | MY_ALU/control_s  | B_s<0>  | A_s<0>
+INPUTMC | 5 | 7 | 13 | 7 | 10 | 5 | 5 | 7 | 11 | 7 | 14
+EQ | 7 | 
+   MY_ALU/F_ADDER_1/carry_2to3_s = !A_s<1> & B_s<1>
+	$ !MY_ALU/control_s & !B_s<1> & !B_s<0>
+	# !MY_ALU/control_s & !B_s<1> & !A_s<0>
+	# !MY_ALU/control_s & !A_s<1> & B_s<0> & A_s<0>
+	# !A_s<1> & !B_s<1> & !B_s<0> & !A_s<0>
+	# MY_ALU/control_s & A_s<1> & B_s<1> & !B_s<0> & 
+	!A_s<0>;	// (6 pt, 5 inp)
+
+MACROCELL | 7 | 13 | A_s<1>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 2 | 5 | 15 | 5 | 2
+INPUTS | 1 | SECV_READER/regA<1>
+INPUTMC | 1 | 0 | 5
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   A_s<1>.D = SECV_READER/regA<1>;	// (1 pt, 1 inp)
+    A_s<1>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 5 | SECV_READER/regA<1>_MC
+ATTRIBUTES | 2189459520 | 4
+OUTPUTMC | 1 | 7 | 13
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd3  | enable_s
+INPUTMC | 2 | 0 | 8 | 1 | 9
+EQ | 6 | 
+   
+// Direct Input Register
+SECV_READER/regA<1> := SW_CPLD<1>;	// (0 pt, 0 inp)
+   SECV_READER/regA<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regA<1>.CE = SECV_READER/s_state_FSM_FFd3 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regA<1>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 10 | B_s<1>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 2 | 5 | 15 | 5 | 2
+INPUTS | 1 | SECV_READER/regB<1>
+INPUTMC | 1 | 0 | 7
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   B_s<1>.D = SECV_READER/regB<1>;	// (1 pt, 1 inp)
+    B_s<1>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 7 | SECV_READER/regB<1>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 7 | 10
+INPUTS | 3 | SW_CPLD<1>  | SECV_READER/s_state_FSM_FFd2  | enable_s
+INPUTMC | 2 | 0 | 15 | 1 | 9
+INPUTP | 1 | 214
+EQ | 4 | 
+   SECV_READER/regB<1> := SW_CPLD<1>;	// (1 pt, 1 inp)
+   SECV_READER/regB<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regB<1>.CE = SECV_READER/s_state_FSM_FFd2 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regB<1>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 11 | B_s<0>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 3 | 5 | 15 | 5 | 4 | 5 | 2
+INPUTS | 1 | SECV_READER/regB<0>
+INPUTMC | 1 | 0 | 10
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   B_s<0>.D = SECV_READER/regB<0>;	// (1 pt, 1 inp)
+    B_s<0>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 10 | SECV_READER/regB<0>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 7 | 11
+INPUTS | 3 | SW_CPLD<0>  | SECV_READER/s_state_FSM_FFd2  | enable_s
+INPUTMC | 2 | 0 | 15 | 1 | 9
+INPUTP | 1 | 217
+EQ | 4 | 
+   SECV_READER/regB<0> := SW_CPLD<0>;	// (1 pt, 1 inp)
+   SECV_READER/regB<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regB<0>.CE = SECV_READER/s_state_FSM_FFd2 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regB<0>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 14 | A_s<0>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 3 | 5 | 15 | 5 | 4 | 5 | 2
+INPUTS | 1 | SECV_READER/regA<0>
+INPUTMC | 1 | 0 | 3
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   A_s<0>.D = SECV_READER/regA<0>;	// (1 pt, 1 inp)
+    A_s<0>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 3 | SECV_READER/regA<0>_MC
+ATTRIBUTES | 2189459520 | 4
+OUTPUTMC | 1 | 7 | 14
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd3  | enable_s
+INPUTMC | 2 | 0 | 8 | 1 | 9
+EQ | 6 | 
+   
+// Direct Input Register
+SECV_READER/regA<0> := SW_CPLD<0>;	// (0 pt, 0 inp)
+   SECV_READER/regA<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regA<0>.CE = SECV_READER/s_state_FSM_FFd3 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regA<0>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 5 | B_s<2>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 3 | 7 | 15 | 5 | 14 | 5 | 13
+INPUTS | 1 | SECV_READER/regB<2>
+INPUTMC | 1 | 0 | 4
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   B_s<2>.D = SECV_READER/regB<2>;	// (1 pt, 1 inp)
+    B_s<2>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 4 | SECV_READER/regB<2>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 7 | 5
+INPUTS | 3 | SW_CPLD<2>  | SECV_READER/s_state_FSM_FFd2  | enable_s
+INPUTMC | 2 | 0 | 15 | 1 | 9
+INPUTP | 1 | 213
+EQ | 4 | 
+   SECV_READER/regB<2> := SW_CPLD<2>;	// (1 pt, 1 inp)
+   SECV_READER/regB<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regB<2>.CE = SECV_READER/s_state_FSM_FFd2 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regB<2>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 7 | 2 | B_s<4>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 3 | 6 | 6 | 6 | 7 | 6 | 8
+INPUTS | 1 | SECV_READER/regB<4>
+INPUTMC | 1 | 0 | 0
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   B_s<4>.D = SECV_READER/regB<4>;	// (1 pt, 1 inp)
+    B_s<4>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 0 | SECV_READER/regB<4>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 7 | 2
+INPUTS | 3 | SW_CPLD<4>  | SECV_READER/s_state_FSM_FFd2  | enable_s
+INPUTMC | 2 | 0 | 15 | 1 | 9
+INPUTP | 1 | 211
+EQ | 4 | 
+   SECV_READER/regB<4> := SW_CPLD<4>;	// (1 pt, 1 inp)
+   SECV_READER/regB<4>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regB<4>.CE = SECV_READER/s_state_FSM_FFd2 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regB<4>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 6 | 1 | N_PZ_499_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 2 | 6 | 5 | 6 | 4
+INPUTS | 2 | A_s<7>  | N_PZ_378
+INPUTMC | 2 | 7 | 12 | 6 | 3
+EQ | 2 | 
+   N_PZ_499 = A_s<7> & N_PZ_378
+	# !A_s<7> & !N_PZ_378;	// (2 pt, 2 inp)
+
+MACROCELL | 7 | 12 | A_s<7>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 3 | 6 | 1 | 6 | 4 | 6 | 10
+INPUTS | 1 | SECV_READER/regA<7>
+INPUTMC | 1 | 1 | 3
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   A_s<7>.D = SECV_READER/regA<7>;	// (1 pt, 1 inp)
+    A_s<7>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 3 | SECV_READER/regA<7>_MC
+ATTRIBUTES | 2189459520 | 4
+OUTPUTMC | 1 | 7 | 12
+INPUTS | 2 | SECV_READER/s_state_FSM_FFd3  | enable_s
+INPUTMC | 2 | 0 | 8 | 1 | 9
+EQ | 6 | 
+   
+// Direct Input Register
+SECV_READER/regA<7> := SW_CPLD<7>;	// (0 pt, 0 inp)
+   SECV_READER/regA<7>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regA<7>.CE = SECV_READER/s_state_FSM_FFd3 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regA<7>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 6 | 3 | N_PZ_378_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 3 | 6 | 1 | 6 | 5 | 6 | 10
+INPUTS | 2 | MY_ALU/control_s  | B_s<7>
+INPUTMC | 2 | 5 | 5 | 8 | 15
+EQ | 2 | 
+   N_PZ_378 = MY_ALU/control_s & B_s<7>
+	# !MY_ALU/control_s & !B_s<7>;	// (2 pt, 2 inp)
+
+MACROCELL | 8 | 15 | B_s<7>_MC
+ATTRIBUTES | 2282226432 | 0
+OUTPUTMC | 2 | 6 | 3 | 6 | 4
+INPUTS | 1 | SECV_READER/regB<7>
+INPUTMC | 1 | 1 | 10
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   B_s<7>.D = SECV_READER/regB<7>;	// (1 pt, 1 inp)
+    B_s<7>.LH = SECV_READER/s_state_FSM_FFd3;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 1 | 10 | SECV_READER/regB<7>_MC
+ATTRIBUTES | 2189460288 | 0
+OUTPUTMC | 1 | 8 | 15
+INPUTS | 3 | SW_CPLD<7>  | SECV_READER/s_state_FSM_FFd2  | enable_s
+INPUTMC | 2 | 0 | 15 | 1 | 9
+INPUTP | 1 | 4
+EQ | 4 | 
+   SECV_READER/regB<7> := SW_CPLD<7>;	// (1 pt, 1 inp)
+   SECV_READER/regB<7>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    SECV_READER/regB<7>.CE = SECV_READER/s_state_FSM_FFd2 & enable_s;	// (1 pt, 2 inp)
+   SECV_READER/regB<7>.AR = BTN1;	// GSR	(0 pt, 0 inp)
+GLOBALS | 2 | 2 | clk_i | 4 | BTN1
+
+MACROCELL | 5 | 0 | LED_CPLD<1>_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 2 | LED_CPLD<2>  | N_PZ_468
+INPUTMC | 2 | 6 | 4 | 3 | 7
+EQ | 1 | 
+   LED_CPLD<1> = !LED_CPLD<2> & N_PZ_468;	// (1 pt, 2 inp)
+
+MACROCELL | 6 | 4 | LED_CPLD<2>_MC
 ATTRIBUTES | 2156167938 | 0
-OUTPUTMC | 9 | 1 | 14 | 4 | 1 | 1 | 12 | 1 | 3 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4 | 1 | 2
-INPUTS | 9 | SW<0>  | SW<1>  | SW_CPLD<7>  | SW_CPLD<15>  | SW_CPLD<14>  | N_PZ_218  | SW_CPLD<6>  | MYALU/F_ADDER_1/carry_6to7_s  | N_PZ_239
-INPUTMC | 3 | 3 | 10 | 2 | 8 | 3 | 9
-INPUTP | 6 | 21 | 23 | 44 | 214 | 217 | 48
-EQ | 16 | 
-   !LED_CPLD<2> := !SW<0> & SW<1> & !SW_CPLD<7>
-	# !SW<0> & SW<1> & !SW_CPLD<15>
-	# SW<1> & !SW_CPLD<7> & !SW_CPLD<15>
-	# !SW_CPLD<14> & N_PZ_218 & !SW_CPLD<7> & 
-	!SW_CPLD<15>
-	# !SW<1> & SW_CPLD<6> & 
-	!MYALU/F_ADDER_1/carry_6to7_s & N_PZ_239
-	# !SW<1> & !SW_CPLD<6> & 
-	MYALU/F_ADDER_1/carry_6to7_s & !N_PZ_239
-	# SW_CPLD<14> & !SW<1> & N_PZ_218 & SW_CPLD<7> & 
-	!SW_CPLD<15>
-	# SW_CPLD<14> & !SW<1> & N_PZ_218 & !SW_CPLD<7> & 
-	SW_CPLD<15>
-	# !SW_CPLD<14> & !SW<1> & N_PZ_218 & SW_CPLD<7> & 
-	SW_CPLD<15>;	// (9 pt, 9 inp)
+OUTPUTMC | 27 | 5 | 0 | 5 | 6 | 3 | 12 | 3 | 10 | 4 | 13 | 4 | 4 | 4 | 8 | 4 | 5 | 3 | 13 | 4 | 7 | 5 | 10 | 4 | 6 | 4 | 2 | 4 | 0 | 3 | 6 | 4 | 15 | 5 | 9 | 3 | 8 | 4 | 14 | 5 | 8 | 3 | 9 | 4 | 12 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 9 | 3 | 14
+INPUTS | 9 | operation_s<1>  | operation_s<0>  | A_s<7>  | B_s<7>  | A_s<6>  | MY_ALU/F_ADDER_1/carry_6to7_s  | N_PZ_499  | B_s<6>  | N_PZ_471
+INPUTMC | 9 | 8 | 9 | 8 | 10 | 7 | 12 | 8 | 15 | 7 | 3 | 6 | 6 | 6 | 1 | 7 | 0 | 6 | 2
+EQ | 15 | 
+   !LED_CPLD<2> := operation_s<1> & !operation_s<0> & !A_s<7>
+	# operation_s<1> & !operation_s<0> & !B_s<7>
+	# operation_s<1> & !A_s<7> & !B_s<7>
+	# !operation_s<1> & A_s<6> & 
+	!MY_ALU/F_ADDER_1/carry_6to7_s & N_PZ_499
+	# !operation_s<1> & !A_s<6> & 
+	MY_ALU/F_ADDER_1/carry_6to7_s & !N_PZ_499
+	# !B_s<6> & N_PZ_471 & !A_s<7> & !B_s<7>
+	# !operation_s<1> & B_s<6> & N_PZ_471 & A_s<7> & 
+	!B_s<7>
+	# !operation_s<1> & B_s<6> & N_PZ_471 & !A_s<7> & 
+	B_s<7>
+	# !operation_s<1> & !B_s<6> & N_PZ_471 & A_s<7> & 
+	B_s<7>;	// (9 pt, 9 inp)
    LED_CPLD<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 1 | 8 | number_s<0>_MC
+MACROCELL | 3 | 7 | N_PZ_468_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 19 | 5 | 0 | 3 | 10 | 4 | 13 | 4 | 8 | 4 | 5 | 4 | 7 | 5 | 10 | 4 | 2 | 4 | 0 | 4 | 15 | 5 | 9 | 4 | 14 | 5 | 8 | 3 | 9 | 4 | 12 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 9
+INPUTS | 7 | number_s<0>  | number_s<1>  | number_s<2>  | number_s<3>  | number_s<4>  | number_s<5>  | number_s<6>
+INPUTMC | 7 | 5 | 4 | 5 | 2 | 5 | 14 | 5 | 13 | 6 | 7 | 6 | 8 | 6 | 9
+EQ | 2 | 
+   N_PZ_468 = !number_s<0> & !number_s<1> & !number_s<2> & 
+	!number_s<3> & !number_s<4> & !number_s<5> & !number_s<6>;	// (1 pt, 7 inp)
+
+MACROCELL | 5 | 4 | number_s<0>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 9 | 1 | 14 | 1 | 15 | 1 | 12 | 1 | 3 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4 | 1 | 2
-INPUTS | 6 | MYALU/control_s  | SW<1>  | N_PZ_238  | SW_CPLD<8>  | SW_CPLD<0>  | SW<0>
-INPUTMC | 2 | 1 | 9 | 1 | 7
-INPUTP | 4 | 23 | 54 | 207 | 21
-EQ | 5 | 
-   !number_s<0> := MYALU/control_s & !SW<1>
-	$ !SW<1> & N_PZ_238
-	# !SW_CPLD<8> & !SW_CPLD<0>
-	# !SW<0> & SW<1> & !N_PZ_238;	// (4 pt, 6 inp)
+OUTPUTMC | 8 | 3 | 7 | 6 | 0 | 3 | 12 | 3 | 10 | 3 | 13 | 3 | 6 | 3 | 8 | 3 | 9
+INPUTS | 5 | MY_ALU/control_s  | operation_s<1>  | B_s<0>  | A_s<0>  | operation_s<0>
+INPUTMC | 5 | 5 | 5 | 8 | 9 | 7 | 11 | 7 | 14 | 8 | 10
+EQ | 6 | 
+   !number_s<0> := MY_ALU/control_s & !operation_s<1>
+	$ !B_s<0> & !A_s<0>
+	# operation_s<1> & !operation_s<0> & !B_s<0>
+	# operation_s<1> & !operation_s<0> & !A_s<0>
+	# !operation_s<1> & B_s<0> & A_s<0>;	// (5 pt, 5 inp)
    number_s<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 3 | 14 | number_s<1>_MC
+MACROCELL | 5 | 2 | number_s<1>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 9 | 1 | 14 | 1 | 15 | 1 | 12 | 1 | 3 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4 | 1 | 2
-INPUTS | 9 | SW<0>  | SW<1>  | SW_CPLD<1>  | SW_CPLD<9>  | MYALU/F_ADDER_1/carry_2to3_s  | MYALU/control_s  | N_PZ_238  | SW_CPLD<8>  | SW_CPLD<0>
-INPUTMC | 3 | 3 | 12 | 1 | 9 | 1 | 7
-INPUTP | 6 | 21 | 23 | 197 | 55 | 54 | 207
-EQ | 18 | 
-   !number_s<1> := !SW<0> & SW<1> & !SW_CPLD<1>
-	# !SW<0> & SW<1> & !SW_CPLD<9>
-	# SW<1> & !SW_CPLD<1> & !SW_CPLD<9>
-	# !SW<1> & !MYALU/F_ADDER_1/carry_2to3_s & 
-	!SW_CPLD<1>
-	# MYALU/control_s & !SW<1> & 
-	!MYALU/F_ADDER_1/carry_2to3_s & SW_CPLD<9>
-	# !MYALU/control_s & !SW<1> & 
-	!MYALU/F_ADDER_1/carry_2to3_s & !SW_CPLD<9>
-	# !MYALU/control_s & !SW<1> & 
-	!MYALU/F_ADDER_1/carry_2to3_s & !N_PZ_238
-	# !MYALU/control_s & !SW_CPLD<1> & !SW_CPLD<9> & 
-	!N_PZ_238
-	# !SW<1> & !MYALU/F_ADDER_1/carry_2to3_s & 
-	!SW_CPLD<8> & !SW_CPLD<0>
-	# MYALU/control_s & !SW<1> & !SW_CPLD<8> & 
-	!SW_CPLD<0> & !SW_CPLD<1> & SW_CPLD<9>;	// (10 pt, 9 inp)
+OUTPUTMC | 8 | 3 | 7 | 6 | 0 | 4 | 8 | 3 | 13 | 4 | 6 | 3 | 6 | 3 | 8 | 3 | 9
+INPUTS | 8 | operation_s<1>  | MY_ALU/F_ADDER_1/carry_2to3_s  | operation_s<0>  | A_s<1>  | B_s<1>  | MY_ALU/control_s  | B_s<0>  | A_s<0>
+INPUTMC | 8 | 8 | 9 | 5 | 15 | 8 | 10 | 7 | 13 | 7 | 10 | 5 | 5 | 7 | 11 | 7 | 14
+EQ | 17 | 
+   !number_s<1> := !operation_s<1> & !MY_ALU/F_ADDER_1/carry_2to3_s
+	$ operation_s<1> & !operation_s<0> & !A_s<1>
+	# operation_s<1> & !operation_s<0> & !B_s<1>
+	# operation_s<1> & !A_s<1> & !B_s<1>
+	# !MY_ALU/control_s & MY_ALU/F_ADDER_1/carry_2to3_s & 
+	!A_s<1> & !B_s<1> & !B_s<0>
+	# !MY_ALU/control_s & MY_ALU/F_ADDER_1/carry_2to3_s & 
+	!A_s<1> & !B_s<1> & !A_s<0>
+	# MY_ALU/control_s & !operation_s<1> & 
+	!MY_ALU/F_ADDER_1/carry_2to3_s & A_s<1> & !B_s<1> & B_s<0>
+	# MY_ALU/control_s & !operation_s<1> & 
+	!MY_ALU/F_ADDER_1/carry_2to3_s & A_s<1> & !B_s<1> & A_s<0>
+	# MY_ALU/control_s & !operation_s<1> & 
+	MY_ALU/F_ADDER_1/carry_2to3_s & !A_s<1> & B_s<1> & !B_s<0> & !A_s<0>
+	# !MY_ALU/control_s & !operation_s<1> & 
+	!MY_ALU/F_ADDER_1/carry_2to3_s & A_s<1> & B_s<1> & B_s<0> & A_s<0>;	// (10 pt, 8 inp)
    number_s<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 2 | 14 | number_s<2>_MC
+MACROCELL | 5 | 14 | number_s<2>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 7 | 1 | 14 | 1 | 15 | 1 | 3 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4
-INPUTS | 6 | SW_CPLD<10>  | MYALU/control_s  | SW<1>  | N_PZ_136  | SW<0>  | SW_CPLD<2>
-INPUTMC | 2 | 1 | 9 | 3 | 8
-INPUTP | 4 | 206 | 23 | 21 | 213
-EQ | 6 | 
-   !number_s<2> := !SW_CPLD<10>
-	$ MYALU/control_s & !SW<1> & N_PZ_136
-	# !MYALU/control_s & !SW<1> & !N_PZ_136
-	# SW<0> & SW<1> & SW_CPLD<2> & !SW_CPLD<10>
-	# !SW<0> & SW<1> & !SW_CPLD<2> & SW_CPLD<10>;	// (5 pt, 6 inp)
+OUTPUTMC | 8 | 3 | 7 | 4 | 3 | 3 | 13 | 4 | 7 | 4 | 6 | 3 | 6 | 3 | 8 | 3 | 9
+INPUTS | 6 | B_s<2>  | MY_ALU/control_s  | operation_s<1>  | N_PZ_376  | operation_s<0>  | A_s<2>
+INPUTMC | 6 | 7 | 5 | 5 | 5 | 8 | 9 | 5 | 12 | 8 | 10 | 7 | 9
+EQ | 8 | 
+   !number_s<2> := !B_s<2>
+	$ MY_ALU/control_s & !operation_s<1> & N_PZ_376
+	# !MY_ALU/control_s & !operation_s<1> & !N_PZ_376
+	# operation_s<1> & operation_s<0> & A_s<2> & 
+	!B_s<2>
+	# operation_s<1> & !operation_s<0> & !A_s<2> & 
+	B_s<2>;	// (5 pt, 6 inp)
    number_s<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 2 | 12 | number_s<3>_MC
+MACROCELL | 5 | 13 | number_s<3>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 9 | 1 | 14 | 1 | 15 | 1 | 12 | 1 | 3 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4 | 1 | 2
-INPUTS | 9 | SW<0>  | SW<1>  | SW_CPLD<11>  | SW_CPLD<3>  | MYALU/F_ADDER_1/carry_4to5_s  | MYALU/control_s  | SW_CPLD<2>  | N_PZ_136  | SW_CPLD<10>
-INPUTMC | 3 | 2 | 11 | 1 | 9 | 3 | 8
-INPUTP | 6 | 21 | 23 | 204 | 212 | 213 | 206
+OUTPUTMC | 7 | 3 | 7 | 4 | 3 | 4 | 6 | 4 | 2 | 3 | 6 | 3 | 8 | 3 | 9
+INPUTS | 9 | operation_s<1>  | operation_s<0>  | A_s<3>  | B_s<3>  | MY_ALU/F_ADDER_1/carry_4to5_s  | MY_ALU/control_s  | A_s<2>  | N_PZ_376  | B_s<2>
+INPUTMC | 9 | 8 | 9 | 8 | 10 | 7 | 8 | 7 | 4 | 7 | 15 | 5 | 5 | 7 | 9 | 5 | 12 | 7 | 5
 EQ | 24 | 
-   !number_s<3> := !SW<0> & SW<1> & !SW_CPLD<11>
-	# !SW<0> & SW<1> & !SW_CPLD<3>
-	# SW<1> & !SW_CPLD<11> & !SW_CPLD<3>
-	# !SW<1> & !MYALU/F_ADDER_1/carry_4to5_s & 
-	!SW_CPLD<3>
-	# MYALU/control_s & !SW<1> & 
-	!MYALU/F_ADDER_1/carry_4to5_s & SW_CPLD<11>
-	# !MYALU/control_s & !SW<1> & 
-	!MYALU/F_ADDER_1/carry_4to5_s & !SW_CPLD<11>
-	# !SW<1> & !MYALU/F_ADDER_1/carry_4to5_s & 
-	!SW_CPLD<2> & N_PZ_136
-	# !SW_CPLD<11> & !SW_CPLD<3> & !N_PZ_136 & 
-	!SW_CPLD<10>
-	# !MYALU/control_s & !SW_CPLD<11> & !SW_CPLD<3> & 
-	!SW_CPLD<2> & N_PZ_136
-	# !SW<1> & SW_CPLD<11> & SW_CPLD<3> & !N_PZ_136 & 
-	!SW_CPLD<10>
-	# !SW<1> & SW_CPLD<11> & !SW_CPLD<3> & !N_PZ_136 & 
-	SW_CPLD<10>
-	# !SW<1> & !SW_CPLD<11> & SW_CPLD<3> & !N_PZ_136 & 
-	SW_CPLD<10>
-	# MYALU/control_s & !SW<1> & SW_CPLD<11> & 
-	!SW_CPLD<3> & !SW_CPLD<2> & N_PZ_136;	// (13 pt, 9 inp)
+   !number_s<3> := operation_s<1> & !operation_s<0> & !A_s<3>
+	# operation_s<1> & !operation_s<0> & !B_s<3>
+	# operation_s<1> & !A_s<3> & !B_s<3>
+	# !operation_s<1> & !MY_ALU/F_ADDER_1/carry_4to5_s & 
+	!A_s<3>
+	# MY_ALU/control_s & !operation_s<1> & 
+	!MY_ALU/F_ADDER_1/carry_4to5_s & B_s<3>
+	# !MY_ALU/control_s & !operation_s<1> & 
+	!MY_ALU/F_ADDER_1/carry_4to5_s & !B_s<3>
+	# !operation_s<1> & !MY_ALU/F_ADDER_1/carry_4to5_s & 
+	!A_s<2> & N_PZ_376
+	# !MY_ALU/control_s & !A_s<3> & !B_s<3> & !A_s<2> & 
+	N_PZ_376
+	# !operation_s<1> & A_s<3> & B_s<3> & !N_PZ_376 & 
+	!B_s<2>
+	# !operation_s<1> & A_s<3> & !B_s<3> & !N_PZ_376 & 
+	B_s<2>
+	# !operation_s<1> & !A_s<3> & B_s<3> & !N_PZ_376 & 
+	B_s<2>
+	# !operation_s<1> & !A_s<3> & !B_s<3> & !N_PZ_376 & 
+	!B_s<2>
+	# MY_ALU/control_s & !operation_s<1> & !A_s<3> & 
+	B_s<3> & !A_s<2> & N_PZ_376;	// (13 pt, 9 inp)
    number_s<3>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 2 | 10 | number_s<4>_MC
+MACROCELL | 6 | 7 | number_s<4>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 8 | 1 | 14 | 1 | 10 | 1 | 12 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4 | 1 | 2
-INPUTS | 6 | SW_CPLD<12>  | MYALU/control_s  | SW<1>  | N_PZ_137  | SW<0>  | SW_CPLD<4>
-INPUTMC | 2 | 1 | 9 | 4 | 15
-INPUTP | 4 | 199 | 23 | 21 | 211
-EQ | 6 | 
-   !number_s<4> := !SW_CPLD<12>
-	$ MYALU/control_s & !SW<1> & N_PZ_137
-	# !MYALU/control_s & !SW<1> & !N_PZ_137
-	# SW<0> & SW<1> & SW_CPLD<4> & !SW_CPLD<12>
-	# !SW<0> & SW<1> & !SW_CPLD<4> & SW_CPLD<12>;	// (5 pt, 6 inp)
+OUTPUTMC | 6 | 3 | 7 | 4 | 1 | 3 | 6 | 4 | 15 | 3 | 8 | 3 | 9
+INPUTS | 6 | B_s<4>  | MY_ALU/control_s  | operation_s<1>  | N_PZ_377  | operation_s<0>  | A_s<4>
+INPUTMC | 6 | 7 | 2 | 5 | 5 | 8 | 9 | 5 | 11 | 8 | 10 | 7 | 7
+EQ | 8 | 
+   !number_s<4> := !B_s<4>
+	$ MY_ALU/control_s & !operation_s<1> & N_PZ_377
+	# !MY_ALU/control_s & !operation_s<1> & !N_PZ_377
+	# operation_s<1> & operation_s<0> & A_s<4> & 
+	!B_s<4>
+	# operation_s<1> & !operation_s<0> & !A_s<4> & 
+	B_s<4>;	// (5 pt, 6 inp)
    number_s<4>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 2 | 9 | number_s<5>_MC
+MACROCELL | 6 | 8 | number_s<5>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 9 | 1 | 14 | 4 | 1 | 1 | 12 | 1 | 3 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4 | 1 | 2
-INPUTS | 9 | SW<0>  | SW<1>  | SW_CPLD<13>  | SW_CPLD<5>  | MYALU/F_ADDER_1/carry_6to7_s  | MYALU/control_s  | SW_CPLD<4>  | N_PZ_137  | SW_CPLD<12>
-INPUTMC | 3 | 2 | 8 | 1 | 9 | 4 | 15
-INPUTP | 6 | 21 | 23 | 218 | 49 | 211 | 199
+OUTPUTMC | 5 | 3 | 7 | 4 | 1 | 3 | 8 | 4 | 14 | 3 | 9
+INPUTS | 9 | operation_s<1>  | operation_s<0>  | A_s<5>  | B_s<5>  | MY_ALU/F_ADDER_1/carry_6to7_s  | MY_ALU/control_s  | A_s<4>  | N_PZ_377  | B_s<4>
+INPUTMC | 9 | 8 | 9 | 8 | 10 | 7 | 6 | 7 | 1 | 6 | 6 | 5 | 5 | 7 | 7 | 5 | 11 | 7 | 2
 EQ | 24 | 
-   !number_s<5> := !SW<0> & SW<1> & !SW_CPLD<13>
-	# !SW<0> & SW<1> & !SW_CPLD<5>
-	# SW<1> & !SW_CPLD<13> & !SW_CPLD<5>
-	# !SW<1> & !MYALU/F_ADDER_1/carry_6to7_s & 
-	!SW_CPLD<5>
-	# MYALU/control_s & !SW<1> & 
-	!MYALU/F_ADDER_1/carry_6to7_s & SW_CPLD<13>
-	# !MYALU/control_s & !SW<1> & 
-	!MYALU/F_ADDER_1/carry_6to7_s & !SW_CPLD<13>
-	# !SW<1> & !MYALU/F_ADDER_1/carry_6to7_s & 
-	!SW_CPLD<4> & N_PZ_137
-	# !SW_CPLD<13> & !SW_CPLD<5> & !N_PZ_137 & 
-	!SW_CPLD<12>
-	# !MYALU/control_s & !SW_CPLD<13> & !SW_CPLD<5> & 
-	!SW_CPLD<4> & N_PZ_137
-	# !SW<1> & SW_CPLD<13> & SW_CPLD<5> & !N_PZ_137 & 
-	!SW_CPLD<12>
-	# !SW<1> & SW_CPLD<13> & !SW_CPLD<5> & !N_PZ_137 & 
-	SW_CPLD<12>
-	# !SW<1> & !SW_CPLD<13> & SW_CPLD<5> & !N_PZ_137 & 
-	SW_CPLD<12>
-	# MYALU/control_s & !SW<1> & SW_CPLD<13> & 
-	!SW_CPLD<5> & !SW_CPLD<4> & N_PZ_137;	// (13 pt, 9 inp)
+   !number_s<5> := operation_s<1> & !operation_s<0> & !A_s<5>
+	# operation_s<1> & !operation_s<0> & !B_s<5>
+	# operation_s<1> & !A_s<5> & !B_s<5>
+	# !operation_s<1> & !MY_ALU/F_ADDER_1/carry_6to7_s & 
+	!A_s<5>
+	# MY_ALU/control_s & !operation_s<1> & 
+	!MY_ALU/F_ADDER_1/carry_6to7_s & B_s<5>
+	# !MY_ALU/control_s & !operation_s<1> & 
+	!MY_ALU/F_ADDER_1/carry_6to7_s & !B_s<5>
+	# !operation_s<1> & !MY_ALU/F_ADDER_1/carry_6to7_s & 
+	!A_s<4> & N_PZ_377
+	# !MY_ALU/control_s & !A_s<5> & !B_s<5> & !A_s<4> & 
+	N_PZ_377
+	# !operation_s<1> & A_s<5> & B_s<5> & !N_PZ_377 & 
+	!B_s<4>
+	# !operation_s<1> & A_s<5> & !B_s<5> & !N_PZ_377 & 
+	B_s<4>
+	# !operation_s<1> & !A_s<5> & B_s<5> & !N_PZ_377 & 
+	B_s<4>
+	# !operation_s<1> & !A_s<5> & !B_s<5> & !N_PZ_377 & 
+	!B_s<4>
+	# MY_ALU/control_s & !operation_s<1> & !A_s<5> & 
+	B_s<5> & !A_s<4> & N_PZ_377;	// (13 pt, 9 inp)
    number_s<5>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 3 | 15 | number_s<6>_MC
+MACROCELL | 6 | 9 | number_s<6>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 9 | 1 | 14 | 1 | 10 | 1 | 12 | 1 | 3 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4 | 1 | 2
-INPUTS | 6 | SW_CPLD<14>  | MYALU/control_s  | SW<1>  | N_PZ_218  | SW<0>  | SW_CPLD<6>
-INPUTMC | 2 | 1 | 9 | 3 | 10
-INPUTP | 4 | 217 | 23 | 21 | 48
-EQ | 6 | 
-   !number_s<6> := !SW_CPLD<14>
-	$ MYALU/control_s & !SW<1> & !N_PZ_218
-	# !MYALU/control_s & !SW<1> & N_PZ_218
-	# SW_CPLD<14> & !SW<0> & SW<1> & !SW_CPLD<6>
-	# !SW_CPLD<14> & SW<0> & SW<1> & SW_CPLD<6>;	// (5 pt, 6 inp)
+OUTPUTMC | 4 | 3 | 7 | 4 | 1 | 3 | 9 | 4 | 12
+INPUTS | 6 | B_s<6>  | MY_ALU/control_s  | operation_s<1>  | N_PZ_471  | operation_s<0>  | A_s<6>
+INPUTMC | 6 | 7 | 0 | 5 | 5 | 8 | 9 | 6 | 2 | 8 | 10 | 7 | 3
+EQ | 8 | 
+   !number_s<6> := !B_s<6>
+	$ MY_ALU/control_s & !operation_s<1> & !N_PZ_471
+	# !MY_ALU/control_s & !operation_s<1> & N_PZ_471
+	# operation_s<1> & operation_s<0> & !B_s<6> & 
+	A_s<6>
+	# operation_s<1> & !operation_s<0> & B_s<6> & 
+	!A_s<6>;	// (5 pt, 6 inp)
    number_s<6>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 3 | 2 | LED_CPLD<3>_MC
+MACROCELL | 6 | 10 | LED_CPLD<3>_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 3 | SW_CPLD<7>  | N_PZ_139  | LED_CPLD<0>
-INPUTMC | 2 | 1 | 6 | 3 | 1
-INPUTP | 1 | 44
+INPUTS | 3 | A_s<7>  | N_PZ_378  | LED_CPLD<0>
+INPUTMC | 3 | 7 | 12 | 6 | 3 | 6 | 5
 EQ | 2 | 
-   LED_CPLD<3> = SW_CPLD<7> & N_PZ_139 & LED_CPLD<0>
-	# !SW_CPLD<7> & !N_PZ_139 & !LED_CPLD<0>;	// (2 pt, 3 inp)
+   LED_CPLD<3> = A_s<7> & N_PZ_378 & LED_CPLD<0>
+	# !A_s<7> & !N_PZ_378 & !LED_CPLD<0>;	// (2 pt, 3 inp)
 
 MACROCELL | 4 | 1 | LED_CPLD<4>_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 4 | LED_CPLD<2>  | number_s<5>  | MYALU/Mxor_status_o<4>__xor0001  | N_PZ_222
-INPUTMC | 4 | 3 | 0 | 2 | 9 | 1 | 15 | 1 | 10
-EQ | 9 | 
-   LED_CPLD<4> = LED_CPLD<2>
-	$ number_s<5> & MYALU/Mxor_status_o<4>__xor0001 & 
-	N_PZ_222
-	# number_s<5> & !MYALU/Mxor_status_o<4>__xor0001 & 
-	!N_PZ_222
-	# !number_s<5> & MYALU/Mxor_status_o<4>__xor0001 & 
-	!N_PZ_222
-	# !number_s<5> & !MYALU/Mxor_status_o<4>__xor0001 & 
-	N_PZ_222;	// (5 pt, 4 inp)
-
-MACROCELL | 1 | 15 | MYALU/Mxor_status_o<4>__xor0001_MC
-ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 6 | 4 | 1 | 1 | 12 | 1 | 3 | 1 | 0 | 1 | 4 | 1 | 2
-INPUTS | 4 | number_s<0>  | number_s<1>  | number_s<2>  | number_s<3>
-INPUTMC | 4 | 1 | 8 | 3 | 14 | 2 | 14 | 2 | 12
+INPUTS | 4 | number_s<4>  | number_s<5>  | number_s<6>  | N_PZ_521
+INPUTMC | 4 | 6 | 7 | 6 | 8 | 6 | 9 | 5 | 6
 EQ | 5 | 
-   MYALU/Mxor_status_o<4>__xor0001 = number_s<0>
-	$ number_s<1> & number_s<2> & number_s<3>
-	# number_s<1> & !number_s<2> & !number_s<3>
-	# !number_s<1> & number_s<2> & !number_s<3>
-	# !number_s<1> & !number_s<2> & number_s<3>;	// (5 pt, 4 inp)
+   LED_CPLD<4> = number_s<4>
+	$ number_s<5> & number_s<6> & !N_PZ_521
+	# number_s<5> & !number_s<6> & N_PZ_521
+	# !number_s<5> & number_s<6> & N_PZ_521
+	# !number_s<5> & !number_s<6> & !N_PZ_521;	// (5 pt, 4 inp)
 
-MACROCELL | 1 | 10 | N_PZ_222_MC
+MACROCELL | 5 | 6 | N_PZ_521_MC
 ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 4 | 4 | 1 | 1 | 3 | 1 | 0 | 1 | 2
-INPUTS | 2 | number_s<4>  | number_s<6>
-INPUTMC | 2 | 2 | 10 | 3 | 15
+OUTPUTMC | 1 | 4 | 1
+INPUTS | 2 | LED_CPLD<2>  | MY_ALU/Mxor_status_o<4>__xor0001
+INPUTMC | 2 | 6 | 4 | 4 | 3
 EQ | 2 | 
-   N_PZ_222 = number_s<4> & !number_s<6>
-	# !number_s<4> & number_s<6>;	// (2 pt, 2 inp)
+   N_PZ_521 = LED_CPLD<2> & MY_ALU/Mxor_status_o<4>__xor0001
+	# !LED_CPLD<2> & !MY_ALU/Mxor_status_o<4>__xor0001;	// (2 pt, 2 inp)
+
+MACROCELL | 4 | 3 | MY_ALU/Mxor_status_o<4>__xor0001_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 2 | 5 | 6 | 4 | 6
+INPUTS | 3 | number_s<2>  | number_s<3>  | N_PZ_474
+INPUTMC | 3 | 5 | 14 | 5 | 13 | 6 | 0
+EQ | 3 | 
+   MY_ALU/Mxor_status_o<4>__xor0001 = number_s<2>
+	$ number_s<3> & !N_PZ_474
+	# !number_s<3> & N_PZ_474;	// (3 pt, 3 inp)
+
+MACROCELL | 6 | 0 | N_PZ_474_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 2 | 4 | 3 | 4 | 4
+INPUTS | 2 | number_s<0>  | number_s<1>
+INPUTMC | 2 | 5 | 4 | 5 | 2
+EQ | 2 | 
+   N_PZ_474 = number_s<0> & !number_s<1>
+	# !number_s<0> & number_s<1>;	// (2 pt, 2 inp)
 
 MACROCELL | 2 | 0 | disp_dig_o<0>_MC
 ATTRIBUTES | 1074004738 | 0
 INPUTS | 2 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>
-INPUTMC | 2 | 0 | 13 | 0 | 12
+INPUTMC | 2 | 2 | 12 | 2 | 14
 EQ | 1 | 
    !disp_dig_o<0> = !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>;	// (1 pt, 2 inp)
 
-MACROCELL | 0 | 13 | DISPLAY/s_cnt<0>_MC
-ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 12 | 0 | 12 | 2 | 0 | 3 | 3 | 3 | 4 | 3 | 5 | 1 | 12 | 1 | 3 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4 | 1 | 2
-INPUTS | 1 | DISPLAY/s_cnt_0__or0000
-INPUTMC | 1 | 3 | 13
-EQ | 2 | 
-   DISPLAY/s_cnt<0>.T := DISPLAY/s_cnt_0__or0000;	// (1 pt, 1 inp)
+MACROCELL | 2 | 12 | DISPLAY/s_cnt<0>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 14 | 2 | 12 | 2 | 14 | 2 | 0 | 2 | 1 | 2 | 2 | 2 | 4 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 3 | DISPLAY/s_cnt<0>  | BTN1  | DISPLAY/s_en
+INPUTMC | 2 | 2 | 12 | 2 | 7
+INPUTP | 1 | 218
+EQ | 3 | 
+   DISPLAY/s_cnt<0> := DISPLAY/s_cnt<0> & !BTN1 & !DISPLAY/s_en
+	# !DISPLAY/s_cnt<0> & !BTN1 & DISPLAY/s_en;	// (2 pt, 3 inp)
    DISPLAY/s_cnt<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 3 | 13 | DISPLAY/s_cnt_0__or0000_MC
+MACROCELL | 2 | 7 | DISPLAY/s_en_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 2 | 0 | 13 | 0 | 12
-INPUTS | 14 | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | N_PZ_134  | DISPLAY/CLOCK_ENABLE/s_cnt<4>
-INPUTMC | 14 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 3 | 6 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 7 | 3 | 7 | 0 | 2 | 3 | 11
-EQ | 14 | 
-   !DISPLAY/s_cnt_0__or0000 := !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+OUTPUTMC | 2 | 2 | 12 | 2 | 14
+INPUTS | 15 | BTN1  | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | N_PZ_373  | DISPLAY/CLOCK_ENABLE/s_cnt<4>
+INPUTMC | 14 | 1 | 7 | 1 | 6 | 1 | 5 | 1 | 1 | 1 | 14 | 2 | 9 | 1 | 12 | 1 | 11 | 1 | 4 | 3 | 15 | 1 | 13 | 2 | 10 | 2 | 13 | 2 | 8
+INPUTP | 1 | 218
+EQ | 15 | 
+   !DISPLAY/s_en := BTN1
+	# !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<5> & !DISPLAY/CLOCK_ENABLE/s_cnt<6> & 
@@ -410,430 +869,772 @@ EQ | 14 |
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<3> & !DISPLAY/CLOCK_ENABLE/s_cnt<6> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<7> & !DISPLAY/CLOCK_ENABLE/s_cnt<8> & 
-	!DISPLAY/CLOCK_ENABLE/s_cnt<9> & !DISPLAY/CLOCK_ENABLE/s_cnt<15> & !N_PZ_134 & 
-	!DISPLAY/CLOCK_ENABLE/s_cnt<4>;	// (2 pt, 14 inp)
-   DISPLAY/s_cnt_0__or0000.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+	!DISPLAY/CLOCK_ENABLE/s_cnt<9> & !DISPLAY/CLOCK_ENABLE/s_cnt<15> & !N_PZ_373 & 
+	!DISPLAY/CLOCK_ENABLE/s_cnt<4>;	// (3 pt, 15 inp)
+   DISPLAY/s_en.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 15 | DISPLAY/CLOCK_ENABLE/s_cnt<10>_MC
+MACROCELL | 1 | 7 | DISPLAY/CLOCK_ENABLE/s_cnt<10>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<10> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<10>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 14 | DISPLAY/CLOCK_ENABLE/s_cnt<11>_MC
+MACROCELL | 1 | 6 | DISPLAY/CLOCK_ENABLE/s_cnt<11>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<11> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<11>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 10 | DISPLAY/CLOCK_ENABLE/s_cnt<12>_MC
+MACROCELL | 1 | 5 | DISPLAY/CLOCK_ENABLE/s_cnt<12>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<12> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<12>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 9 | DISPLAY/CLOCK_ENABLE/s_cnt<13>_MC
+MACROCELL | 1 | 1 | DISPLAY/CLOCK_ENABLE/s_cnt<13>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<13> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<13>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 8 | DISPLAY/CLOCK_ENABLE/s_cnt<14>_MC
+MACROCELL | 1 | 14 | DISPLAY/CLOCK_ENABLE/s_cnt<14>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<14> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<14>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 3 | 6 | DISPLAY/CLOCK_ENABLE/s_cnt<5>_MC
+MACROCELL | 2 | 9 | DISPLAY/CLOCK_ENABLE/s_cnt<5>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
-INPUTS | 14 | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | N_PZ_134  | DISPLAY/CLOCK_ENABLE/s_cnt<4>
-INPUTMC | 14 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 3 | 6 | 3 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 7 | 0 | 2 | 3 | 11
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
+INPUTS | 15 | BTN1  | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | N_PZ_373  | DISPLAY/CLOCK_ENABLE/s_cnt<4>
+INPUTMC | 14 | 1 | 7 | 1 | 6 | 1 | 5 | 1 | 1 | 1 | 14 | 2 | 9 | 2 | 10 | 1 | 12 | 1 | 11 | 1 | 4 | 3 | 15 | 1 | 13 | 2 | 13 | 2 | 8
+INPUTP | 1 | 218
 EQ | 15 | 
-   DISPLAY/CLOCK_ENABLE/s_cnt<5> := !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+   DISPLAY/CLOCK_ENABLE/s_cnt<5> := !BTN1 & !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	DISPLAY/CLOCK_ENABLE/s_cnt<5> & !DISPLAY/CLOCK_ENABLE/s_cnt<3> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<6> & !DISPLAY/CLOCK_ENABLE/s_cnt<7> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<8> & !DISPLAY/CLOCK_ENABLE/s_cnt<9> & 
-	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & !N_PZ_134 & !DISPLAY/CLOCK_ENABLE/s_cnt<4>
-	# !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & !N_PZ_373 & !DISPLAY/CLOCK_ENABLE/s_cnt<4>
+	# !BTN1 & !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<5> & DISPLAY/CLOCK_ENABLE/s_cnt<3> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<6> & !DISPLAY/CLOCK_ENABLE/s_cnt<7> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<8> & !DISPLAY/CLOCK_ENABLE/s_cnt<9> & 
-	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & N_PZ_134 & DISPLAY/CLOCK_ENABLE/s_cnt<4>;	// (2 pt, 14 inp)
+	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & N_PZ_373 & DISPLAY/CLOCK_ENABLE/s_cnt<4>;	// (2 pt, 15 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<5>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 3 | 7 | DISPLAY/CLOCK_ENABLE/s_cnt<3>_MC
+MACROCELL | 2 | 10 | DISPLAY/CLOCK_ENABLE/s_cnt<3>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
-INPUTS | 13 | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | N_PZ_134
-INPUTMC | 13 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 3 | 6 | 3 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 7 | 0 | 2
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
+INPUTS | 14 | BTN1  | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | N_PZ_373
+INPUTMC | 13 | 1 | 7 | 1 | 6 | 1 | 5 | 1 | 1 | 1 | 14 | 2 | 9 | 2 | 10 | 1 | 12 | 1 | 11 | 1 | 4 | 3 | 15 | 1 | 13 | 2 | 13
+INPUTP | 1 | 218
 EQ | 15 | 
-   DISPLAY/CLOCK_ENABLE/s_cnt<3> := !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+   DISPLAY/CLOCK_ENABLE/s_cnt<3> := !BTN1 & !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<5> & DISPLAY/CLOCK_ENABLE/s_cnt<3> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<6> & !DISPLAY/CLOCK_ENABLE/s_cnt<7> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<8> & !DISPLAY/CLOCK_ENABLE/s_cnt<9> & 
-	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & !N_PZ_134
-	# !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & !N_PZ_373
+	# !BTN1 & !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<5> & !DISPLAY/CLOCK_ENABLE/s_cnt<3> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<6> & !DISPLAY/CLOCK_ENABLE/s_cnt<7> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<8> & !DISPLAY/CLOCK_ENABLE/s_cnt<9> & 
-	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & N_PZ_134;	// (2 pt, 13 inp)
+	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & N_PZ_373;	// (2 pt, 14 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<3>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 6 | DISPLAY/CLOCK_ENABLE/s_cnt<6>_MC
+MACROCELL | 1 | 12 | DISPLAY/CLOCK_ENABLE/s_cnt<6>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<6> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<6>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 4 | DISPLAY/CLOCK_ENABLE/s_cnt<7>_MC
+MACROCELL | 1 | 11 | DISPLAY/CLOCK_ENABLE/s_cnt<7>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<7> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<7>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 1 | DISPLAY/CLOCK_ENABLE/s_cnt<8>_MC
+MACROCELL | 1 | 4 | DISPLAY/CLOCK_ENABLE/s_cnt<8>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<8> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<8>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 0 | DISPLAY/CLOCK_ENABLE/s_cnt<9>_MC
+MACROCELL | 3 | 15 | DISPLAY/CLOCK_ENABLE/s_cnt<9>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<9> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<9>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 7 | DISPLAY/CLOCK_ENABLE/s_cnt<15>_MC
+MACROCELL | 1 | 13 | DISPLAY/CLOCK_ENABLE/s_cnt<15>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 5 | 3 | 11 | 4 | 14 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 0
 EQ | 2 | 
    DISPLAY/CLOCK_ENABLE/s_cnt<15> := Gnd;	// (0 pt, 0 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<15>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 2 | N_PZ_134_MC
+MACROCELL | 2 | 13 | N_PZ_373_MC
 ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 5 | 3 | 11 | 0 | 3 | 3 | 7 | 3 | 6 | 3 | 13
+OUTPUTMC | 5 | 2 | 8 | 2 | 5 | 2 | 10 | 2 | 9 | 2 | 7
 INPUTS | 3 | DISPLAY/CLOCK_ENABLE/s_cnt<0>  | DISPLAY/CLOCK_ENABLE/s_cnt<1>  | DISPLAY/CLOCK_ENABLE/s_cnt<2>
-INPUTMC | 3 | 0 | 11 | 0 | 5 | 0 | 3
+INPUTMC | 3 | 2 | 15 | 2 | 3 | 2 | 5
 EQ | 2 | 
-   N_PZ_134 = DISPLAY/CLOCK_ENABLE/s_cnt<0> & 
+   N_PZ_373 = DISPLAY/CLOCK_ENABLE/s_cnt<0> & 
 	DISPLAY/CLOCK_ENABLE/s_cnt<1> & DISPLAY/CLOCK_ENABLE/s_cnt<2>;	// (1 pt, 3 inp)
 
-MACROCELL | 0 | 11 | DISPLAY/CLOCK_ENABLE/s_cnt<0>_MC
+MACROCELL | 2 | 15 | DISPLAY/CLOCK_ENABLE/s_cnt<0>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 4 | 0 | 11 | 0 | 5 | 0 | 3 | 0 | 2
-INPUTS | 2 | DISPLAY/CLOCK_ENABLE/s_cnt<0>  | N_PZ_291
-INPUTMC | 2 | 0 | 11 | 4 | 14
+OUTPUTMC | 4 | 2 | 15 | 2 | 3 | 2 | 5 | 2 | 13
+INPUTS | 2 | DISPLAY/CLOCK_ENABLE/s_cnt<0>  | N_PZ_560
+INPUTMC | 2 | 2 | 15 | 2 | 6
 EQ | 2 | 
-   DISPLAY/CLOCK_ENABLE/s_cnt<0> := !DISPLAY/CLOCK_ENABLE/s_cnt<0> & N_PZ_291;	// (1 pt, 2 inp)
+   DISPLAY/CLOCK_ENABLE/s_cnt<0> := !DISPLAY/CLOCK_ENABLE/s_cnt<0> & N_PZ_560;	// (1 pt, 2 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 4 | 14 | N_PZ_291_MC
+MACROCELL | 2 | 6 | N_PZ_560_MC
 ATTRIBUTES | 536871680 | 0
-OUTPUTMC | 3 | 0 | 11 | 0 | 5 | 0 | 3
-INPUTS | 13 | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | DISPLAY/CLOCK_ENABLE/s_cnt<4>
-INPUTMC | 13 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 3 | 6 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 7 | 3 | 7 | 3 | 11
+OUTPUTMC | 3 | 2 | 15 | 2 | 3 | 2 | 5
+INPUTS | 14 | BTN1  | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | DISPLAY/CLOCK_ENABLE/s_cnt<4>
+INPUTMC | 13 | 1 | 7 | 1 | 6 | 1 | 5 | 1 | 1 | 1 | 14 | 2 | 9 | 1 | 12 | 1 | 11 | 1 | 4 | 3 | 15 | 1 | 13 | 2 | 10 | 2 | 8
+INPUTP | 1 | 218
 EQ | 13 | 
-   N_PZ_291 = !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+   N_PZ_560 = !BTN1 & !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<5> & !DISPLAY/CLOCK_ENABLE/s_cnt<6> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<7> & !DISPLAY/CLOCK_ENABLE/s_cnt<8> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<9> & !DISPLAY/CLOCK_ENABLE/s_cnt<15>
-	# !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+	# !BTN1 & !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<3> & !DISPLAY/CLOCK_ENABLE/s_cnt<6> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<7> & !DISPLAY/CLOCK_ENABLE/s_cnt<8> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<9> & !DISPLAY/CLOCK_ENABLE/s_cnt<15> & 
-	!DISPLAY/CLOCK_ENABLE/s_cnt<4>;	// (2 pt, 13 inp)
+	!DISPLAY/CLOCK_ENABLE/s_cnt<4>;	// (2 pt, 14 inp)
 
-MACROCELL | 3 | 11 | DISPLAY/CLOCK_ENABLE/s_cnt<4>_MC
+MACROCELL | 2 | 8 | DISPLAY/CLOCK_ENABLE/s_cnt<4>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 4 | 3 | 11 | 4 | 14 | 3 | 6 | 3 | 13
-INPUTS | 14 | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | DISPLAY/CLOCK_ENABLE/s_cnt<4>  | N_PZ_134
-INPUTMC | 14 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 3 | 6 | 3 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 7 | 3 | 11 | 0 | 2
+OUTPUTMC | 4 | 2 | 8 | 2 | 6 | 2 | 9 | 2 | 7
+INPUTS | 15 | BTN1  | DISPLAY/CLOCK_ENABLE/s_cnt<10>  | DISPLAY/CLOCK_ENABLE/s_cnt<11>  | DISPLAY/CLOCK_ENABLE/s_cnt<12>  | DISPLAY/CLOCK_ENABLE/s_cnt<13>  | DISPLAY/CLOCK_ENABLE/s_cnt<14>  | DISPLAY/CLOCK_ENABLE/s_cnt<5>  | DISPLAY/CLOCK_ENABLE/s_cnt<3>  | DISPLAY/CLOCK_ENABLE/s_cnt<6>  | DISPLAY/CLOCK_ENABLE/s_cnt<7>  | DISPLAY/CLOCK_ENABLE/s_cnt<8>  | DISPLAY/CLOCK_ENABLE/s_cnt<9>  | DISPLAY/CLOCK_ENABLE/s_cnt<15>  | DISPLAY/CLOCK_ENABLE/s_cnt<4>  | N_PZ_373
+INPUTMC | 14 | 1 | 7 | 1 | 6 | 1 | 5 | 1 | 1 | 1 | 14 | 2 | 9 | 2 | 10 | 1 | 12 | 1 | 11 | 1 | 4 | 3 | 15 | 1 | 13 | 2 | 8 | 2 | 13
+INPUTP | 1 | 218
 EQ | 22 | 
-   DISPLAY/CLOCK_ENABLE/s_cnt<4> := !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+   DISPLAY/CLOCK_ENABLE/s_cnt<4> := !BTN1 & !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<5> & !DISPLAY/CLOCK_ENABLE/s_cnt<3> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<6> & !DISPLAY/CLOCK_ENABLE/s_cnt<7> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<8> & !DISPLAY/CLOCK_ENABLE/s_cnt<9> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & DISPLAY/CLOCK_ENABLE/s_cnt<4>
-	# !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+	# !BTN1 & !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<5> & !DISPLAY/CLOCK_ENABLE/s_cnt<6> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<7> & !DISPLAY/CLOCK_ENABLE/s_cnt<8> & 
-	!DISPLAY/CLOCK_ENABLE/s_cnt<9> & !DISPLAY/CLOCK_ENABLE/s_cnt<15> & !N_PZ_134 & 
+	!DISPLAY/CLOCK_ENABLE/s_cnt<9> & !DISPLAY/CLOCK_ENABLE/s_cnt<15> & !N_PZ_373 & 
 	DISPLAY/CLOCK_ENABLE/s_cnt<4>
-	# !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
+	# !BTN1 & !DISPLAY/CLOCK_ENABLE/s_cnt<10> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<11> & !DISPLAY/CLOCK_ENABLE/s_cnt<12> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<13> & !DISPLAY/CLOCK_ENABLE/s_cnt<14> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<5> & DISPLAY/CLOCK_ENABLE/s_cnt<3> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<6> & !DISPLAY/CLOCK_ENABLE/s_cnt<7> & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<8> & !DISPLAY/CLOCK_ENABLE/s_cnt<9> & 
-	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & N_PZ_134 & !DISPLAY/CLOCK_ENABLE/s_cnt<4>;	// (3 pt, 14 inp)
+	!DISPLAY/CLOCK_ENABLE/s_cnt<15> & N_PZ_373 & !DISPLAY/CLOCK_ENABLE/s_cnt<4>;	// (3 pt, 15 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<4>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 5 | DISPLAY/CLOCK_ENABLE/s_cnt<1>_MC
+MACROCELL | 2 | 3 | DISPLAY/CLOCK_ENABLE/s_cnt<1>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 3 | 0 | 5 | 0 | 3 | 0 | 2
-INPUTS | 3 | DISPLAY/CLOCK_ENABLE/s_cnt<0>  | N_PZ_291  | DISPLAY/CLOCK_ENABLE/s_cnt<1>
-INPUTMC | 3 | 0 | 11 | 4 | 14 | 0 | 5
+OUTPUTMC | 3 | 2 | 3 | 2 | 5 | 2 | 13
+INPUTS | 3 | DISPLAY/CLOCK_ENABLE/s_cnt<0>  | N_PZ_560  | DISPLAY/CLOCK_ENABLE/s_cnt<1>
+INPUTMC | 3 | 2 | 15 | 2 | 6 | 2 | 3
 EQ | 5 | 
-   DISPLAY/CLOCK_ENABLE/s_cnt<1> := DISPLAY/CLOCK_ENABLE/s_cnt<0> & N_PZ_291 & 
+   DISPLAY/CLOCK_ENABLE/s_cnt<1> := DISPLAY/CLOCK_ENABLE/s_cnt<0> & N_PZ_560 & 
 	!DISPLAY/CLOCK_ENABLE/s_cnt<1>
-	# !DISPLAY/CLOCK_ENABLE/s_cnt<0> & N_PZ_291 & 
+	# !DISPLAY/CLOCK_ENABLE/s_cnt<0> & N_PZ_560 & 
 	DISPLAY/CLOCK_ENABLE/s_cnt<1>;	// (2 pt, 3 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 3 | DISPLAY/CLOCK_ENABLE/s_cnt<2>_MC
+MACROCELL | 2 | 5 | DISPLAY/CLOCK_ENABLE/s_cnt<2>_MC
 ATTRIBUTES | 2155905792 | 0
-OUTPUTMC | 2 | 0 | 3 | 0 | 2
-INPUTS | 5 | N_PZ_134  | N_PZ_291  | DISPLAY/CLOCK_ENABLE/s_cnt<2>  | DISPLAY/CLOCK_ENABLE/s_cnt<0>  | DISPLAY/CLOCK_ENABLE/s_cnt<1>
-INPUTMC | 5 | 0 | 2 | 4 | 14 | 0 | 3 | 0 | 11 | 0 | 5
+OUTPUTMC | 2 | 2 | 5 | 2 | 13
+INPUTS | 5 | N_PZ_373  | N_PZ_560  | DISPLAY/CLOCK_ENABLE/s_cnt<2>  | DISPLAY/CLOCK_ENABLE/s_cnt<0>  | DISPLAY/CLOCK_ENABLE/s_cnt<1>
+INPUTMC | 5 | 2 | 13 | 2 | 6 | 2 | 5 | 2 | 15 | 2 | 3
 EQ | 5 | 
-   DISPLAY/CLOCK_ENABLE/s_cnt<2> := !N_PZ_134 & N_PZ_291 & 
+   DISPLAY/CLOCK_ENABLE/s_cnt<2> := !N_PZ_373 & N_PZ_560 & 
 	DISPLAY/CLOCK_ENABLE/s_cnt<2>
-	# !N_PZ_134 & DISPLAY/CLOCK_ENABLE/s_cnt<0> & 
-	N_PZ_291 & DISPLAY/CLOCK_ENABLE/s_cnt<1>;	// (2 pt, 5 inp)
+	# !N_PZ_373 & DISPLAY/CLOCK_ENABLE/s_cnt<0> & 
+	N_PZ_560 & DISPLAY/CLOCK_ENABLE/s_cnt<1>;	// (2 pt, 5 inp)
    DISPLAY/CLOCK_ENABLE/s_cnt<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 0 | 12 | DISPLAY/s_cnt<1>_MC
+MACROCELL | 2 | 14 | DISPLAY/s_cnt<1>_MC
 ATTRIBUTES | 2151711488 | 0
-OUTPUTMC | 11 | 2 | 0 | 3 | 3 | 3 | 4 | 3 | 5 | 1 | 12 | 1 | 3 | 1 | 13 | 1 | 0 | 1 | 11 | 1 | 4 | 1 | 2
-INPUTS | 2 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt_0__or0000
-INPUTMC | 2 | 0 | 13 | 3 | 13
-EQ | 2 | 
-   DISPLAY/s_cnt<1>.T := DISPLAY/s_cnt<0> & DISPLAY/s_cnt_0__or0000;	// (1 pt, 2 inp)
+OUTPUTMC | 13 | 2 | 14 | 2 | 0 | 2 | 1 | 2 | 2 | 2 | 4 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 4 | BTN1  | DISPLAY/s_cnt<1>  | DISPLAY/s_cnt<0>  | DISPLAY/s_en
+INPUTMC | 3 | 2 | 14 | 2 | 12 | 2 | 7
+INPUTP | 1 | 218
+EQ | 3 | 
+   DISPLAY/s_cnt<1>.T := BTN1 & DISPLAY/s_cnt<1>
+	# DISPLAY/s_cnt<0> & !BTN1 & DISPLAY/s_en;	// (2 pt, 4 inp)
    DISPLAY/s_cnt<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
 GLOBALS | 1 | 2 | clk_i
 
-MACROCELL | 3 | 3 | disp_dig_o<1>_MC
+MACROCELL | 2 | 1 | disp_dig_o<1>_MC
 ATTRIBUTES | 1074004738 | 0
 INPUTS | 2 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>
-INPUTMC | 2 | 0 | 13 | 0 | 12
+INPUTMC | 2 | 2 | 12 | 2 | 14
 EQ | 1 | 
    !disp_dig_o<1> = DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>;	// (1 pt, 2 inp)
 
-MACROCELL | 3 | 4 | disp_dig_o<2>_MC
+MACROCELL | 2 | 2 | disp_dig_o<2>_MC
 ATTRIBUTES | 1074004738 | 0
 INPUTS | 2 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>
-INPUTMC | 2 | 0 | 13 | 0 | 12
+INPUTMC | 2 | 2 | 12 | 2 | 14
 EQ | 1 | 
    !disp_dig_o<2> = !DISPLAY/s_cnt<0> & DISPLAY/s_cnt<1>;	// (1 pt, 2 inp)
 
-MACROCELL | 3 | 5 | disp_dig_o<3>_MC
+MACROCELL | 2 | 4 | disp_dig_o<3>_MC
 ATTRIBUTES | 1074004738 | 0
 INPUTS | 2 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>
-INPUTMC | 2 | 0 | 13 | 0 | 12
+INPUTMC | 2 | 2 | 12 | 2 | 14
 EQ | 1 | 
    !disp_dig_o<3> = DISPLAY/s_cnt<0> & DISPLAY/s_cnt<1>;	// (1 pt, 2 inp)
 
-MACROCELL | 1 | 12 | disp_seg_o<0>_MC
+MACROCELL | 3 | 11 | disp_seg_o<0>_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 10 | DISPLAY/s_cnt<1>  | LED_CPLD<2>  | number_s<5>  | number_s<6>  | DISPLAY/s_cnt<0>  | number_s<0>  | number_s<3>  | MYALU/Mxor_status_o<4>__xor0001  | number_s<1>  | number_s<4>
-INPUTMC | 10 | 0 | 12 | 3 | 0 | 2 | 9 | 3 | 15 | 0 | 13 | 1 | 8 | 2 | 12 | 1 | 15 | 3 | 14 | 2 | 10
+INPUTS | 11 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | DISPLAY/data_minus_s  | DISPLAY/data0_s<1>  | DISPLAY/data0_s<2>  | DISPLAY/data0_s<3>  | DISPLAY/data1_s<1>  | DISPLAY/data1_s<2>  | DISPLAY/data1_s<3>  | DISPLAY/data0_s<0>  | DISPLAY/data1_s<0>
+INPUTMC | 11 | 2 | 12 | 2 | 14 | 3 | 14 | 4 | 5 | 5 | 10 | 4 | 0 | 5 | 8 | 5 | 7 | 4 | 9 | 4 | 13 | 5 | 9
+EQ | 16 | 
+   disp_seg_o<0> = !DISPLAY/s_cnt<0> & DISPLAY/s_cnt<1>
+	# DISPLAY/s_cnt<1> & !DISPLAY/data_minus_s
+	# !DISPLAY/s_cnt<0> & !DISPLAY/data0_s<1> & 
+	!DISPLAY/data0_s<2> & !DISPLAY/data0_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data1_s<1> & !DISPLAY/data1_s<2> & !DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & DISPLAY/data0_s<0> & 
+	DISPLAY/data0_s<1> & DISPLAY/data0_s<2> & !DISPLAY/data0_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/data0_s<0> & 
+	!DISPLAY/data0_s<1> & DISPLAY/data0_s<2> & DISPLAY/data0_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & DISPLAY/data1_s<1> & DISPLAY/data1_s<2> & 
+	!DISPLAY/data1_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data1_s<0> & !DISPLAY/data1_s<1> & DISPLAY/data1_s<2> & 
+	DISPLAY/data1_s<3>;	// (8 pt, 11 inp)
+
+MACROCELL | 4 | 13 | DISPLAY/data0_s<0>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 8 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 4 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<0>  | N_PZ_468  | DISPLAY/SIGNED_DECODER/dataUN_s<0>
+INPUTMC | 4 | 6 | 4 | 3 | 12 | 3 | 7 | 3 | 10
+EQ | 4 | 
+   DISPLAY/data0_s<0> := LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<0>
+	# !LED_CPLD<2> & !N_PZ_468 & 
+	DISPLAY/SIGNED_DECODER/dataUN_s<0>;	// (2 pt, 4 inp)
+   DISPLAY/data0_s<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 3 | 12 | DISPLAY/SIGNED_DECODER/dataSI_s<0>_MC
+ATTRIBUTES | 2155905856 | 0
+OUTPUTMC | 1 | 4 | 13
+INPUTS | 2 | number_s<0>  | LED_CPLD<2>
+INPUTMC | 2 | 5 | 4 | 6 | 4
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataSI_s<0> := number_s<0>;	// (1 pt, 1 inp)
+   DISPLAY/SIGNED_DECODER/dataSI_s<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    DISPLAY/SIGNED_DECODER/dataSI_s<0>.CE = LED_CPLD<2>;	// (1 pt, 1 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 3 | 10 | DISPLAY/SIGNED_DECODER/dataUN_s<0>_MC
+ATTRIBUTES | 2155905856 | 0
+OUTPUTMC | 1 | 4 | 13
+INPUTS | 3 | number_s<0>  | LED_CPLD<2>  | N_PZ_468
+INPUTMC | 3 | 5 | 4 | 6 | 4 | 3 | 7
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataUN_s<0> := number_s<0>;	// (1 pt, 1 inp)
+   DISPLAY/SIGNED_DECODER/dataUN_s<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    DISPLAY/SIGNED_DECODER/dataUN_s<0>.CE = !LED_CPLD<2> & !N_PZ_468;	// (1 pt, 2 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 5 | DISPLAY/data0_s<1>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 8 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 4 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<1>  | N_PZ_468  | DISPLAY/SIGNED_DECODER/dataUN_s<1>
+INPUTMC | 4 | 6 | 4 | 4 | 4 | 3 | 7 | 4 | 8
+EQ | 4 | 
+   DISPLAY/data0_s<1> := LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<1>
+	# !LED_CPLD<2> & !N_PZ_468 & 
+	DISPLAY/SIGNED_DECODER/dataUN_s<1>;	// (2 pt, 4 inp)
+   DISPLAY/data0_s<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 4 | DISPLAY/SIGNED_DECODER/dataSI_s<1>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 4 | 4 | 4 | 5
+INPUTS | 3 | LED_CPLD<2>  | N_PZ_474  | DISPLAY/SIGNED_DECODER/dataSI_s<1>
+INPUTMC | 3 | 6 | 4 | 6 | 0 | 4 | 4
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataSI_s<1> := LED_CPLD<2> & N_PZ_474
+	# !LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<1>;	// (2 pt, 3 inp)
+   DISPLAY/SIGNED_DECODER/dataSI_s<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 8 | DISPLAY/SIGNED_DECODER/dataUN_s<1>_MC
+ATTRIBUTES | 2155905856 | 0
+OUTPUTMC | 1 | 4 | 5
+INPUTS | 3 | number_s<1>  | LED_CPLD<2>  | N_PZ_468
+INPUTMC | 3 | 5 | 2 | 6 | 4 | 3 | 7
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataUN_s<1> := number_s<1>;	// (1 pt, 1 inp)
+   DISPLAY/SIGNED_DECODER/dataUN_s<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    DISPLAY/SIGNED_DECODER/dataUN_s<1>.CE = !LED_CPLD<2> & !N_PZ_468;	// (1 pt, 2 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 5 | 10 | DISPLAY/data0_s<2>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 8 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 4 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<2>  | N_PZ_468  | DISPLAY/SIGNED_DECODER/dataUN_s<2>
+INPUTMC | 4 | 6 | 4 | 3 | 13 | 3 | 7 | 4 | 7
+EQ | 4 | 
+   DISPLAY/data0_s<2> := LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<2>
+	# !LED_CPLD<2> & !N_PZ_468 & 
+	DISPLAY/SIGNED_DECODER/dataUN_s<2>;	// (2 pt, 4 inp)
+   DISPLAY/data0_s<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 3 | 13 | DISPLAY/SIGNED_DECODER/dataSI_s<2>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 3 | 13 | 5 | 10
+INPUTS | 5 | LED_CPLD<2>  | number_s<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<2>  | number_s<0>  | number_s<1>
+INPUTMC | 5 | 6 | 4 | 5 | 14 | 3 | 13 | 5 | 4 | 5 | 2
+EQ | 4 | 
+   DISPLAY/SIGNED_DECODER/dataSI_s<2> := LED_CPLD<2> & !number_s<2>
+	$ !LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<2>
+	# LED_CPLD<2> & !number_s<0> & !number_s<1>;	// (3 pt, 5 inp)
+   DISPLAY/SIGNED_DECODER/dataSI_s<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 7 | DISPLAY/SIGNED_DECODER/dataUN_s<2>_MC
+ATTRIBUTES | 2155905856 | 0
+OUTPUTMC | 1 | 5 | 10
+INPUTS | 3 | number_s<2>  | LED_CPLD<2>  | N_PZ_468
+INPUTMC | 3 | 5 | 14 | 6 | 4 | 3 | 7
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataUN_s<2> := number_s<2>;	// (1 pt, 1 inp)
+   DISPLAY/SIGNED_DECODER/dataUN_s<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    DISPLAY/SIGNED_DECODER/dataUN_s<2>.CE = !LED_CPLD<2> & !N_PZ_468;	// (1 pt, 2 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 0 | DISPLAY/data0_s<3>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 8 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 4 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<3>  | N_PZ_468  | DISPLAY/SIGNED_DECODER/dataUN_s<3>
+INPUTMC | 4 | 6 | 4 | 4 | 6 | 3 | 7 | 4 | 2
+EQ | 4 | 
+   DISPLAY/data0_s<3> := LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<3>
+	# !LED_CPLD<2> & !N_PZ_468 & 
+	DISPLAY/SIGNED_DECODER/dataUN_s<3>;	// (2 pt, 4 inp)
+   DISPLAY/data0_s<3>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 6 | DISPLAY/SIGNED_DECODER/dataSI_s<3>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 4 | 6 | 4 | 0
+INPUTS | 6 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<3>  | number_s<1>  | number_s<3>  | number_s<2>  | MY_ALU/Mxor_status_o<4>__xor0001
+INPUTMC | 6 | 6 | 4 | 4 | 6 | 5 | 2 | 5 | 13 | 5 | 14 | 4 | 3
+EQ | 6 | 
+   DISPLAY/SIGNED_DECODER/dataSI_s<3> := !LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<3>
+	# LED_CPLD<2> & number_s<1> & !number_s<3>
+	# LED_CPLD<2> & number_s<2> & !number_s<3>
+	# LED_CPLD<2> & !number_s<1> & !number_s<2> & 
+	MY_ALU/Mxor_status_o<4>__xor0001;	// (4 pt, 6 inp)
+   DISPLAY/SIGNED_DECODER/dataSI_s<3>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 2 | DISPLAY/SIGNED_DECODER/dataUN_s<3>_MC
+ATTRIBUTES | 2155905856 | 0
+OUTPUTMC | 1 | 4 | 0
+INPUTS | 3 | number_s<3>  | LED_CPLD<2>  | N_PZ_468
+INPUTMC | 3 | 5 | 13 | 6 | 4 | 3 | 7
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataUN_s<3> := number_s<3>;	// (1 pt, 1 inp)
+   DISPLAY/SIGNED_DECODER/dataUN_s<3>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    DISPLAY/SIGNED_DECODER/dataUN_s<3>.CE = !LED_CPLD<2> & !N_PZ_468;	// (1 pt, 2 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 5 | 9 | DISPLAY/data1_s<0>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 8 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 4 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<4>  | N_PZ_468  | DISPLAY/SIGNED_DECODER/dataUN_s<4>
+INPUTMC | 4 | 6 | 4 | 3 | 6 | 3 | 7 | 4 | 15
+EQ | 4 | 
+   DISPLAY/data1_s<0> := LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<4>
+	# !LED_CPLD<2> & !N_PZ_468 & 
+	DISPLAY/SIGNED_DECODER/dataUN_s<4>;	// (2 pt, 4 inp)
+   DISPLAY/data1_s<0>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 3 | 6 | DISPLAY/SIGNED_DECODER/dataSI_s<4>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 3 | 6 | 5 | 9
+INPUTS | 7 | LED_CPLD<2>  | number_s<4>  | DISPLAY/SIGNED_DECODER/dataSI_s<4>  | number_s<0>  | number_s<1>  | number_s<2>  | number_s<3>
+INPUTMC | 7 | 6 | 4 | 6 | 7 | 3 | 6 | 5 | 4 | 5 | 2 | 5 | 14 | 5 | 13
+EQ | 5 | 
+   DISPLAY/SIGNED_DECODER/dataSI_s<4> := LED_CPLD<2> & !number_s<4>
+	$ !LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<4>
+	# LED_CPLD<2> & !number_s<0> & !number_s<1> & 
+	!number_s<2> & !number_s<3>;	// (3 pt, 7 inp)
+   DISPLAY/SIGNED_DECODER/dataSI_s<4>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 15 | DISPLAY/SIGNED_DECODER/dataUN_s<4>_MC
+ATTRIBUTES | 2155905856 | 0
+OUTPUTMC | 1 | 5 | 9
+INPUTS | 3 | number_s<4>  | LED_CPLD<2>  | N_PZ_468
+INPUTMC | 3 | 6 | 7 | 6 | 4 | 3 | 7
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataUN_s<4> := number_s<4>;	// (1 pt, 1 inp)
+   DISPLAY/SIGNED_DECODER/dataUN_s<4>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    DISPLAY/SIGNED_DECODER/dataUN_s<4>.CE = !LED_CPLD<2> & !N_PZ_468;	// (1 pt, 2 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 5 | 8 | DISPLAY/data1_s<1>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 8 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 4 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<5>  | N_PZ_468  | DISPLAY/SIGNED_DECODER/dataUN_s<5>
+INPUTMC | 4 | 6 | 4 | 3 | 8 | 3 | 7 | 4 | 14
+EQ | 4 | 
+   DISPLAY/data1_s<1> := LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<5>
+	# !LED_CPLD<2> & !N_PZ_468 & 
+	DISPLAY/SIGNED_DECODER/dataUN_s<5>;	// (2 pt, 4 inp)
+   DISPLAY/data1_s<1>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 3 | 8 | DISPLAY/SIGNED_DECODER/dataSI_s<5>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 3 | 8 | 5 | 8
+INPUTS | 8 | LED_CPLD<2>  | number_s<5>  | DISPLAY/SIGNED_DECODER/dataSI_s<5>  | number_s<0>  | number_s<1>  | number_s<2>  | number_s<3>  | number_s<4>
+INPUTMC | 8 | 6 | 4 | 6 | 8 | 3 | 8 | 5 | 4 | 5 | 2 | 5 | 14 | 5 | 13 | 6 | 7
+EQ | 5 | 
+   DISPLAY/SIGNED_DECODER/dataSI_s<5> := LED_CPLD<2> & !number_s<5>
+	$ !LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<5>
+	# LED_CPLD<2> & !number_s<0> & !number_s<1> & 
+	!number_s<2> & !number_s<3> & !number_s<4>;	// (3 pt, 8 inp)
+   DISPLAY/SIGNED_DECODER/dataSI_s<5>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 14 | DISPLAY/SIGNED_DECODER/dataUN_s<5>_MC
+ATTRIBUTES | 2155905856 | 0
+OUTPUTMC | 1 | 5 | 8
+INPUTS | 3 | number_s<5>  | LED_CPLD<2>  | N_PZ_468
+INPUTMC | 3 | 6 | 8 | 6 | 4 | 3 | 7
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataUN_s<5> := number_s<5>;	// (1 pt, 1 inp)
+   DISPLAY/SIGNED_DECODER/dataUN_s<5>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    DISPLAY/SIGNED_DECODER/dataUN_s<5>.CE = !LED_CPLD<2> & !N_PZ_468;	// (1 pt, 2 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 5 | 7 | DISPLAY/data1_s<2>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 8 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 4 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<6>  | N_PZ_468  | DISPLAY/SIGNED_DECODER/dataUN_s<6>
+INPUTMC | 4 | 6 | 4 | 3 | 9 | 3 | 7 | 4 | 12
+EQ | 4 | 
+   DISPLAY/data1_s<2> := LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<6>
+	# !LED_CPLD<2> & !N_PZ_468 & 
+	DISPLAY/SIGNED_DECODER/dataUN_s<6>;	// (2 pt, 4 inp)
+   DISPLAY/data1_s<2>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 3 | 9 | DISPLAY/SIGNED_DECODER/dataSI_s<6>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 3 | 9 | 5 | 7
+INPUTS | 10 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<6>  | N_PZ_468  | number_s<6>  | number_s<0>  | number_s<1>  | number_s<2>  | number_s<3>  | number_s<4>  | number_s<5>
+INPUTMC | 10 | 6 | 4 | 3 | 9 | 3 | 7 | 6 | 9 | 5 | 4 | 5 | 2 | 5 | 14 | 5 | 13 | 6 | 7 | 6 | 8
+EQ | 6 | 
+   DISPLAY/SIGNED_DECODER/dataSI_s<6> := !LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<6>
+	# LED_CPLD<2> & !N_PZ_468 & !number_s<6>
+	# LED_CPLD<2> & !N_PZ_468 & !number_s<0> & 
+	!number_s<1> & !number_s<2> & !number_s<3> & !number_s<4> & 
+	!number_s<5>;	// (3 pt, 10 inp)
+   DISPLAY/SIGNED_DECODER/dataSI_s<6>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 12 | DISPLAY/SIGNED_DECODER/dataUN_s<6>_MC
+ATTRIBUTES | 2155905856 | 0
+OUTPUTMC | 1 | 5 | 7
+INPUTS | 3 | number_s<6>  | LED_CPLD<2>  | N_PZ_468
+INPUTMC | 3 | 6 | 9 | 6 | 4 | 3 | 7
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataUN_s<6> := number_s<6>;	// (1 pt, 1 inp)
+   DISPLAY/SIGNED_DECODER/dataUN_s<6>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    DISPLAY/SIGNED_DECODER/dataUN_s<6>.CE = !LED_CPLD<2> & !N_PZ_468;	// (1 pt, 2 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 9 | DISPLAY/data1_s<3>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 8 | 3 | 11 | 3 | 4 | 2 | 11 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 4 | LED_CPLD<2>  | DISPLAY/SIGNED_DECODER/dataSI_s<7>  | N_PZ_468  | DISPLAY/SIGNED_DECODER/dataUN_s<7>
+INPUTMC | 4 | 6 | 4 | 4 | 10 | 3 | 7 | 4 | 11
+EQ | 4 | 
+   DISPLAY/data1_s<3> := LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<7>
+	# !LED_CPLD<2> & !N_PZ_468 & 
+	DISPLAY/SIGNED_DECODER/dataUN_s<7>;	// (2 pt, 4 inp)
+   DISPLAY/data1_s<3>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 10 | DISPLAY/SIGNED_DECODER/dataSI_s<7>_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 2 | 4 | 10 | 4 | 9
+INPUTS | 3 | LED_CPLD<2>  | N_PZ_468  | DISPLAY/SIGNED_DECODER/dataSI_s<7>
+INPUTMC | 3 | 6 | 4 | 3 | 7 | 4 | 10
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataSI_s<7> := LED_CPLD<2> & N_PZ_468
+	# !LED_CPLD<2> & DISPLAY/SIGNED_DECODER/dataSI_s<7>;	// (2 pt, 3 inp)
+   DISPLAY/SIGNED_DECODER/dataSI_s<7>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 4 | 11 | DISPLAY/SIGNED_DECODER/dataUN_s<7>_MC
+ATTRIBUTES | 2155905856 | 0
+OUTPUTMC | 1 | 4 | 9
+INPUTS | 2 | LED_CPLD<2>  | N_PZ_468
+INPUTMC | 2 | 6 | 4 | 3 | 7
+EQ | 3 | 
+   DISPLAY/SIGNED_DECODER/dataUN_s<7> := LED_CPLD<2>;	// (1 pt, 1 inp)
+   DISPLAY/SIGNED_DECODER/dataUN_s<7>.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+    DISPLAY/SIGNED_DECODER/dataUN_s<7>.CE = !LED_CPLD<2> & !N_PZ_468;	// (1 pt, 2 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 3 | 14 | DISPLAY/data_minus_s_MC
+ATTRIBUTES | 2155905792 | 0
+OUTPUTMC | 7 | 3 | 11 | 3 | 4 | 3 | 2 | 3 | 0 | 3 | 5 | 3 | 3 | 3 | 1
+INPUTS | 1 | LED_CPLD<2>
+INPUTMC | 1 | 6 | 4
+EQ | 2 | 
+   DISPLAY/data_minus_s := LED_CPLD<2>;	// (1 pt, 1 inp)
+   DISPLAY/data_minus_s.CLK  =  clk_i;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk_i
+
+MACROCELL | 3 | 4 | disp_seg_o<1>_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 11 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | DISPLAY/data_minus_s  | DISPLAY/data1_s<0>  | DISPLAY/data1_s<1>  | DISPLAY/data1_s<3>  | DISPLAY/data1_s<2>  | DISPLAY/data0_s<0>  | DISPLAY/data0_s<1>  | DISPLAY/data0_s<3>  | DISPLAY/data0_s<2>
+INPUTMC | 11 | 2 | 12 | 2 | 14 | 3 | 14 | 5 | 9 | 5 | 8 | 4 | 9 | 5 | 7 | 4 | 13 | 4 | 5 | 4 | 0 | 5 | 10
+EQ | 22 | 
+   disp_seg_o<1> = DISPLAY/s_cnt<0> & DISPLAY/s_cnt<1> & 
+	DISPLAY/data_minus_s
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & DISPLAY/data1_s<1> & !DISPLAY/data1_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<1> & !DISPLAY/data1_s<2> & !DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & DISPLAY/data0_s<1> & !DISPLAY/data0_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<1> & !DISPLAY/data0_s<2> & !DISPLAY/data0_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & !DISPLAY/data1_s<1> & DISPLAY/data1_s<2> & 
+	DISPLAY/data1_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & !DISPLAY/data1_s<1> & !DISPLAY/data1_s<2> & 
+	!DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & !DISPLAY/data0_s<1> & DISPLAY/data0_s<2> & 
+	DISPLAY/data0_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & !DISPLAY/data0_s<1> & !DISPLAY/data0_s<2> & 
+	!DISPLAY/data0_s<3>;	// (9 pt, 11 inp)
+
+MACROCELL | 3 | 2 | disp_seg_o<2>_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 12 | N_PZ_507  | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | DISPLAY/data_minus_s  | DISPLAY/data1_s<0>  | DISPLAY/data1_s<3>  | DISPLAY/data0_s<0>  | DISPLAY/data0_s<3>  | DISPLAY/data1_s<1>  | DISPLAY/data1_s<2>  | DISPLAY/data0_s<1>  | DISPLAY/data0_s<2>
+INPUTMC | 12 | 2 | 11 | 2 | 12 | 2 | 14 | 3 | 14 | 5 | 9 | 4 | 9 | 4 | 13 | 4 | 0 | 5 | 8 | 5 | 7 | 4 | 5 | 5 | 10
 EQ | 11 | 
-   disp_seg_o<0> = DISPLAY/s_cnt<1>
-	# !LED_CPLD<2> & !number_s<5> & !number_s<6> & 
-	DISPLAY/s_cnt<0>
-	# number_s<0> & !number_s<3> & 
-	MYALU/Mxor_status_o<4>__xor0001 & !DISPLAY/s_cnt<0>
-	# !number_s<0> & !number_s<1> & 
-	!MYALU/Mxor_status_o<4>__xor0001 & !DISPLAY/s_cnt<0>
-	# LED_CPLD<2> & !number_s<4> & !number_s<5> & 
-	number_s<6> & DISPLAY/s_cnt<0>
-	# !LED_CPLD<2> & number_s<4> & number_s<5> & 
-	number_s<6> & DISPLAY/s_cnt<0>;	// (6 pt, 10 inp)
+   disp_seg_o<2> = N_PZ_507
+	# DISPLAY/s_cnt<0> & DISPLAY/s_cnt<1> & 
+	DISPLAY/data_minus_s
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & !DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & !DISPLAY/data0_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & !DISPLAY/data1_s<1> & !DISPLAY/data1_s<2>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & !DISPLAY/data0_s<1> & !DISPLAY/data0_s<2>;	// (6 pt, 12 inp)
 
-MACROCELL | 1 | 3 | disp_seg_o<1>_MC
+MACROCELL | 2 | 11 | N_PZ_507_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 4 | 3 | 2 | 3 | 0 | 3 | 3 | 3 | 1
+INPUTS | 10 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | DISPLAY/data1_s<0>  | DISPLAY/data1_s<1>  | DISPLAY/data1_s<2>  | DISPLAY/data1_s<3>  | DISPLAY/data0_s<0>  | DISPLAY/data0_s<1>  | DISPLAY/data0_s<2>  | DISPLAY/data0_s<3>
+INPUTMC | 10 | 2 | 12 | 2 | 14 | 5 | 9 | 5 | 8 | 5 | 7 | 4 | 9 | 4 | 13 | 4 | 5 | 5 | 10 | 4 | 0
+EQ | 6 | 
+   N_PZ_507 = DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data1_s<0> & !DISPLAY/data1_s<1> & DISPLAY/data1_s<2> & 
+	!DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data0_s<0> & !DISPLAY/data0_s<1> & DISPLAY/data0_s<2> & 
+	!DISPLAY/data0_s<3>;	// (2 pt, 10 inp)
+
+MACROCELL | 3 | 0 | disp_seg_o<3>_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 11 | LED_CPLD<2>  | number_s<5>  | N_PZ_222  | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | number_s<6>  | number_s<0>  | number_s<1>  | number_s<3>  | MYALU/Mxor_status_o<4>__xor0001  | number_s<2>
-INPUTMC | 11 | 3 | 0 | 2 | 9 | 1 | 10 | 0 | 13 | 0 | 12 | 3 | 15 | 1 | 8 | 3 | 14 | 2 | 12 | 1 | 15 | 2 | 14
-EQ | 12 | 
-   disp_seg_o<1> = !LED_CPLD<2> & number_s<5> & !N_PZ_222 & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !LED_CPLD<2> & !number_s<6> & N_PZ_222 & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<0> & number_s<1> & !number_s<3> & 
-	!DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<0> & !number_s<1> & 
-	MYALU/Mxor_status_o<4>__xor0001 & !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<1> & !number_s<2> & !number_s<3> & 
-	!DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# LED_CPLD<2> & !number_s<5> & number_s<6> & 
-	!N_PZ_222 & DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>;	// (6 pt, 11 inp)
+INPUTS | 12 | N_PZ_507  | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | DISPLAY/data_minus_s  | DISPLAY/data1_s<0>  | DISPLAY/data1_s<1>  | DISPLAY/data1_s<2>  | DISPLAY/data0_s<0>  | DISPLAY/data0_s<1>  | DISPLAY/data0_s<2>  | DISPLAY/data1_s<3>  | DISPLAY/data0_s<3>
+INPUTMC | 12 | 2 | 11 | 2 | 12 | 2 | 14 | 3 | 14 | 5 | 9 | 5 | 8 | 5 | 7 | 4 | 13 | 4 | 5 | 5 | 10 | 4 | 9 | 4 | 0
+EQ | 19 | 
+   disp_seg_o<3> = N_PZ_507
+	# DISPLAY/s_cnt<0> & DISPLAY/s_cnt<1> & 
+	DISPLAY/data_minus_s
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & DISPLAY/data1_s<1> & DISPLAY/data1_s<2>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & DISPLAY/data0_s<1> & DISPLAY/data0_s<2>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & !DISPLAY/data1_s<1> & !DISPLAY/data1_s<2> & 
+	!DISPLAY/data1_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data1_s<0> & DISPLAY/data1_s<1> & !DISPLAY/data1_s<2> & 
+	DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & !DISPLAY/data0_s<1> & !DISPLAY/data0_s<2> & 
+	!DISPLAY/data0_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data0_s<0> & DISPLAY/data0_s<1> & !DISPLAY/data0_s<2> & 
+	DISPLAY/data0_s<3>;	// (8 pt, 12 inp)
 
-MACROCELL | 1 | 13 | disp_seg_o<2>_MC
+MACROCELL | 3 | 5 | disp_seg_o<4>_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 10 | LED_CPLD<2>  | number_s<4>  | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | number_s<0>  | number_s<3>  | number_s<1>  | number_s<2>  | number_s<5>  | number_s<6>
-INPUTMC | 10 | 3 | 0 | 2 | 10 | 0 | 13 | 0 | 12 | 1 | 8 | 2 | 12 | 3 | 14 | 2 | 14 | 2 | 9 | 3 | 15
-EQ | 12 | 
-   disp_seg_o<2> = !LED_CPLD<2> & number_s<4> & DISPLAY/s_cnt<0> & 
-	!DISPLAY/s_cnt<1>
-	# number_s<0> & !number_s<3> & !DISPLAY/s_cnt<0> & 
-	!DISPLAY/s_cnt<1>
-	# number_s<0> & !number_s<1> & !number_s<2> & 
-	!DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<4> & !number_s<5> & !number_s<6> & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !LED_CPLD<2> & !number_s<4> & !number_s<5> & 
-	number_s<6> & DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !number_s<0> & !number_s<1> & number_s<2> & 
-	!number_s<3> & !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>;	// (6 pt, 10 inp)
+INPUTS | 11 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | DISPLAY/data_minus_s  | DISPLAY/data1_s<0>  | DISPLAY/data1_s<2>  | DISPLAY/data1_s<3>  | DISPLAY/data1_s<1>  | DISPLAY/data0_s<0>  | DISPLAY/data0_s<2>  | DISPLAY/data0_s<3>  | DISPLAY/data0_s<1>
+INPUTMC | 11 | 2 | 12 | 2 | 14 | 3 | 14 | 5 | 9 | 5 | 7 | 4 | 9 | 5 | 8 | 4 | 13 | 5 | 10 | 4 | 0 | 4 | 5
+EQ | 16 | 
+   disp_seg_o<4> = DISPLAY/s_cnt<0> & DISPLAY/s_cnt<1> & 
+	DISPLAY/data_minus_s
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data1_s<0> & DISPLAY/data1_s<2> & DISPLAY/data1_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<1> & DISPLAY/data1_s<2> & DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data0_s<0> & DISPLAY/data0_s<2> & DISPLAY/data0_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<1> & DISPLAY/data0_s<2> & DISPLAY/data0_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data1_s<0> & DISPLAY/data1_s<1> & !DISPLAY/data1_s<2> & 
+	!DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data0_s<0> & DISPLAY/data0_s<1> & !DISPLAY/data0_s<2> & 
+	!DISPLAY/data0_s<3>;	// (7 pt, 11 inp)
 
-MACROCELL | 1 | 0 | disp_seg_o<3>_MC
+MACROCELL | 3 | 3 | disp_seg_o<5>_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 12 | LED_CPLD<2>  | number_s<5>  | N_PZ_222  | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | number_s<0>  | number_s<1>  | number_s<2>  | number_s<3>  | MYALU/Mxor_status_o<4>__xor0001  | number_s<4>  | number_s<6>
-INPUTMC | 12 | 3 | 0 | 2 | 9 | 1 | 10 | 0 | 13 | 0 | 12 | 1 | 8 | 3 | 14 | 2 | 14 | 2 | 12 | 1 | 15 | 2 | 10 | 3 | 15
-EQ | 12 | 
-   disp_seg_o<3> = !LED_CPLD<2> & !number_s<5> & N_PZ_222 & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<0> & number_s<1> & number_s<2> & 
-	!DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<1> & number_s<3> & 
-	!MYALU/Mxor_status_o<4>__xor0001 & !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !number_s<1> & !number_s<3> & 
-	MYALU/Mxor_status_o<4>__xor0001 & !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<4> & number_s<5> & number_s<6> & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# LED_CPLD<2> & !number_s<4> & number_s<5> & 
-	!number_s<6> & DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>;	// (6 pt, 12 inp)
+INPUTS | 12 | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | DISPLAY/data_minus_s  | DISPLAY/data1_s<0>  | DISPLAY/data1_s<1>  | DISPLAY/data1_s<3>  | DISPLAY/data1_s<2>  | N_PZ_507  | DISPLAY/data0_s<0>  | DISPLAY/data0_s<1>  | DISPLAY/data0_s<3>  | DISPLAY/data0_s<2>
+INPUTMC | 12 | 2 | 12 | 2 | 14 | 3 | 14 | 5 | 9 | 5 | 8 | 4 | 9 | 5 | 7 | 2 | 11 | 4 | 13 | 4 | 5 | 4 | 0 | 5 | 10
+EQ | 16 | 
+   disp_seg_o<5> = DISPLAY/s_cnt<0> & DISPLAY/s_cnt<1> & 
+	DISPLAY/data_minus_s
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & DISPLAY/data1_s<1> & DISPLAY/data1_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data1_s<0> & DISPLAY/data1_s<2> & !N_PZ_507
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & DISPLAY/data0_s<1> & DISPLAY/data0_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	!DISPLAY/data0_s<0> & DISPLAY/data0_s<2> & !N_PZ_507
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & !DISPLAY/data1_s<1> & DISPLAY/data1_s<2> & 
+	!DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & !DISPLAY/data0_s<1> & DISPLAY/data0_s<2> & 
+	!DISPLAY/data0_s<3>;	// (7 pt, 12 inp)
 
-MACROCELL | 1 | 11 | disp_seg_o<4>_MC
+MACROCELL | 3 | 1 | disp_seg_o<6>_MC
 ATTRIBUTES | 1074004738 | 0
-INPUTS | 10 | LED_CPLD<2>  | number_s<4>  | number_s<6>  | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | number_s<5>  | number_s<0>  | number_s<2>  | number_s<3>  | number_s<1>
-INPUTMC | 10 | 3 | 0 | 2 | 10 | 3 | 15 | 0 | 13 | 0 | 12 | 2 | 9 | 1 | 8 | 2 | 14 | 2 | 12 | 3 | 14
-EQ | 12 | 
-   disp_seg_o<4> = LED_CPLD<2> & !number_s<4> & number_s<6> & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# LED_CPLD<2> & number_s<5> & number_s<6> & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !number_s<0> & number_s<2> & number_s<3> & 
-	!DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<1> & number_s<2> & number_s<3> & 
-	!DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !LED_CPLD<2> & !number_s<4> & number_s<5> & 
-	!number_s<6> & DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !number_s<0> & number_s<1> & !number_s<2> & 
-	!number_s<3> & !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>;	// (6 pt, 10 inp)
+INPUTS | 12 | N_PZ_507  | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | DISPLAY/data_minus_s  | DISPLAY/data1_s<0>  | DISPLAY/data1_s<1>  | DISPLAY/data1_s<2>  | DISPLAY/data1_s<3>  | DISPLAY/data0_s<0>  | DISPLAY/data0_s<1>  | DISPLAY/data0_s<2>  | DISPLAY/data0_s<3>
+INPUTMC | 12 | 2 | 11 | 2 | 12 | 2 | 14 | 3 | 14 | 5 | 9 | 5 | 8 | 5 | 7 | 4 | 9 | 4 | 13 | 4 | 5 | 5 | 10 | 4 | 0
+EQ | 21 | 
+   disp_seg_o<6> = N_PZ_507
+	# DISPLAY/s_cnt<0> & DISPLAY/s_cnt<1> & 
+	DISPLAY/data_minus_s
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & DISPLAY/data1_s<1> & !DISPLAY/data1_s<2> & 
+	DISPLAY/data1_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & !DISPLAY/data1_s<1> & DISPLAY/data1_s<2> & 
+	DISPLAY/data1_s<3>
+	# DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data1_s<0> & !DISPLAY/data1_s<1> & !DISPLAY/data1_s<2> & 
+	!DISPLAY/data1_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & DISPLAY/data0_s<1> & !DISPLAY/data0_s<2> & 
+	DISPLAY/data0_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & !DISPLAY/data0_s<1> & DISPLAY/data0_s<2> & 
+	DISPLAY/data0_s<3>
+	# !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1> & 
+	DISPLAY/data0_s<0> & !DISPLAY/data0_s<1> & !DISPLAY/data0_s<2> & 
+	!DISPLAY/data0_s<3>;	// (8 pt, 12 inp)
 
-MACROCELL | 1 | 4 | disp_seg_o<5>_MC
-ATTRIBUTES | 1074004738 | 0
-INPUTS | 11 | number_s<2>  | MYALU/Mxor_status_o<4>__xor0001  | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | LED_CPLD<2>  | number_s<4>  | number_s<5>  | number_s<6>  | number_s<0>  | number_s<1>  | number_s<3>
-INPUTMC | 11 | 2 | 14 | 1 | 15 | 0 | 13 | 0 | 12 | 3 | 0 | 2 | 10 | 2 | 9 | 3 | 15 | 1 | 8 | 3 | 14 | 2 | 12
-EQ | 14 | 
-   disp_seg_o<5> = number_s<2> & !MYALU/Mxor_status_o<4>__xor0001 & 
-	!DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# LED_CPLD<2> & number_s<4> & number_s<5> & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# LED_CPLD<2> & !number_s<4> & number_s<6> & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<0> & number_s<1> & number_s<3> & 
-	!DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !number_s<0> & number_s<2> & number_s<3> & 
-	!DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !number_s<4> & number_s<5> & number_s<6> & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !LED_CPLD<2> & number_s<4> & !number_s<5> & 
-	number_s<6> & DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>;	// (7 pt, 11 inp)
-
-MACROCELL | 1 | 2 | disp_seg_o<6>_MC
-ATTRIBUTES | 1074004738 | 0
-INPUTS | 11 | LED_CPLD<2>  | number_s<5>  | N_PZ_222  | DISPLAY/s_cnt<0>  | DISPLAY/s_cnt<1>  | number_s<0>  | number_s<3>  | MYALU/Mxor_status_o<4>__xor0001  | number_s<1>  | number_s<4>  | number_s<6>
-INPUTMC | 11 | 3 | 0 | 2 | 9 | 1 | 10 | 0 | 13 | 0 | 12 | 1 | 8 | 2 | 12 | 1 | 15 | 3 | 14 | 2 | 10 | 3 | 15
-EQ | 10 | 
-   disp_seg_o<6> = !LED_CPLD<2> & !number_s<5> & N_PZ_222 & 
-	DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# number_s<0> & number_s<3> & 
-	MYALU/Mxor_status_o<4>__xor0001 & !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# !number_s<1> & !number_s<3> & 
-	MYALU/Mxor_status_o<4>__xor0001 & !DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# LED_CPLD<2> & number_s<4> & number_s<5> & 
-	!number_s<6> & DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>
-	# LED_CPLD<2> & number_s<4> & !number_s<5> & 
-	number_s<6> & DISPLAY/s_cnt<0> & !DISPLAY/s_cnt<1>;	// (5 pt, 11 inp)
-
-PIN | SW_CPLD<14> | 64 | 16 | LVCMOS18 | 217 | 3 | 3 | 1 | 3 | 0 | 3 | 15
-PIN | SW<0> | 64 | 16 | LVCMOS18 | 21 | 9 | 1 | 9 | 3 | 0 | 1 | 8 | 3 | 14 | 2 | 14 | 2 | 12 | 2 | 10 | 2 | 9 | 3 | 15
-PIN | SW<1> | 64 | 16 | LVCMOS18 | 23 | 9 | 1 | 9 | 3 | 0 | 1 | 8 | 3 | 14 | 2 | 14 | 2 | 12 | 2 | 10 | 2 | 9 | 3 | 15
-PIN | clk_i | 8192 | 16 | LVCMOS18 | 50 | 28 | 1 | 9 | 3 | 0 | 1 | 8 | 3 | 14 | 2 | 14 | 2 | 12 | 2 | 10 | 2 | 9 | 3 | 15 | 0 | 15 | 0 | 14 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 7 | 3 | 11 | 0 | 11 | 0 | 5 | 0 | 3 | 3 | 7 | 3 | 6 | 3 | 13 | 0 | 13 | 0 | 12
-PIN | SW_CPLD<6> | 64 | 16 | LVCMOS18 | 48 | 4 | 3 | 10 | 3 | 1 | 3 | 0 | 3 | 15
-PIN | SW_CPLD<13> | 64 | 16 | LVCMOS18 | 218 | 2 | 2 | 8 | 2 | 9
-PIN | SW_CPLD<5> | 64 | 16 | LVCMOS18 | 49 | 2 | 2 | 8 | 2 | 9
-PIN | SW_CPLD<4> | 64 | 16 | LVCMOS18 | 211 | 4 | 4 | 15 | 2 | 8 | 2 | 10 | 2 | 9
-PIN | SW_CPLD<11> | 64 | 16 | LVCMOS18 | 204 | 2 | 2 | 11 | 2 | 12
-PIN | SW_CPLD<3> | 64 | 16 | LVCMOS18 | 212 | 2 | 2 | 11 | 2 | 12
-PIN | SW_CPLD<2> | 64 | 16 | LVCMOS18 | 213 | 4 | 3 | 8 | 2 | 11 | 2 | 14 | 2 | 12
-PIN | SW_CPLD<8> | 64 | 16 | LVCMOS18 | 54 | 4 | 1 | 7 | 3 | 12 | 1 | 8 | 3 | 14
-PIN | SW_CPLD<0> | 64 | 16 | LVCMOS18 | 207 | 4 | 1 | 7 | 3 | 12 | 1 | 8 | 3 | 14
-PIN | SW_CPLD<1> | 64 | 16 | LVCMOS18 | 197 | 2 | 3 | 12 | 3 | 14
-PIN | SW_CPLD<9> | 64 | 16 | LVCMOS18 | 55 | 2 | 3 | 12 | 3 | 14
-PIN | SW_CPLD<10> | 64 | 16 | LVCMOS18 | 206 | 3 | 2 | 11 | 2 | 14 | 2 | 12
-PIN | SW_CPLD<12> | 64 | 16 | LVCMOS18 | 199 | 3 | 2 | 8 | 2 | 10 | 2 | 9
-PIN | SW_CPLD<7> | 64 | 16 | LVCMOS18 | 44 | 3 | 3 | 9 | 3 | 0 | 3 | 2
-PIN | SW_CPLD<15> | 64 | 16 | LVCMOS18 | 214 | 2 | 1 | 6 | 3 | 0
-PIN | LED_CPLD<0> | 536871040 | 0 | LVCMOS18 | 16
-PIN | LED_CPLD<1> | 536871040 | 0 | LVCMOS18 | 12
-PIN | LED_CPLD<2> | 536871040 | 0 | LVCMOS18 | 15
-PIN | LED_CPLD<3> | 536871040 | 0 | LVCMOS18 | 17
+PIN | BTN0 | 64 | 16 | LVCMOS18 | 5 | 2 | 1 | 8 | 1 | 9
+PIN | BTN1 | 65600 | 16 | LVCMOS18 | 218 | 28 | 2 | 8 | 2 | 6 | 2 | 10 | 2 | 9 | 2 | 7 | 2 | 12 | 2 | 14 | 0 | 8 | 0 | 15 | 0 | 14 | 0 | 6 | 0 | 9 | 1 | 15 | 1 | 2 | 1 | 0 | 0 | 2 | 0 | 13 | 0 | 12 | 0 | 1 | 0 | 11 | 0 | 5 | 0 | 7 | 0 | 10 | 0 | 3 | 0 | 4 | 0 | 0 | 1 | 3 | 1 | 10
+PIN | SW_CPLD<1> | 64 | 16 | LVCMOS18 | 214 | 3 | 0 | 6 | 0 | 7 | 0 | 5
+PIN | clk_i | 8192 | 16 | LVCMOS18 | 50 | 76 | 1 | 8 | 1 | 9 | 0 | 8 | 0 | 15 | 0 | 14 | 0 | 6 | 0 | 9 | 5 | 5 | 1 | 15 | 1 | 2 | 1 | 0 | 0 | 2 | 0 | 13 | 0 | 12 | 0 | 1 | 0 | 11 | 0 | 5 | 0 | 7 | 0 | 10 | 0 | 3 | 0 | 4 | 0 | 0 | 1 | 3 | 1 | 10 | 6 | 4 | 5 | 4 | 5 | 2 | 5 | 14 | 5 | 13 | 6 | 7 | 6 | 8 | 6 | 9 | 1 | 7 | 1 | 6 | 1 | 5 | 1 | 1 | 1 | 14 | 1 | 12 | 1 | 11 | 1 | 4 | 3 | 15 | 1 | 13 | 2 | 8 | 2 | 15 | 2 | 3 | 2 | 5 | 2 | 10 | 2 | 9 | 2 | 7 | 2 | 12 | 2 | 14 | 3 | 12 | 3 | 10 | 4 | 13 | 4 | 4 | 4 | 8 | 4 | 5 | 3 | 13 | 4 | 7 | 5 | 10 | 4 | 6 | 4 | 2 | 4 | 0 | 3 | 6 | 4 | 15 | 5 | 9 | 3 | 8 | 4 | 14 | 5 | 8 | 3 | 9 | 4 | 12 | 5 | 7 | 4 | 10 | 4 | 11 | 4 | 9 | 3 | 14
+PIN | SW_CPLD<0> | 64 | 16 | LVCMOS18 | 217 | 3 | 0 | 9 | 0 | 10 | 0 | 3
+PIN | SW_CPLD<6> | 64 | 16 | LVCMOS18 | 3 | 2 | 1 | 15 | 1 | 2
+PIN | SW_CPLD<5> | 64 | 16 | LVCMOS18 | 1 | 2 | 0 | 2 | 1 | 0
+PIN | SW_CPLD<3> | 64 | 16 | LVCMOS18 | 212 | 2 | 0 | 1 | 0 | 12
+PIN | SW_CPLD<2> | 64 | 16 | LVCMOS18 | 213 | 2 | 0 | 4 | 0 | 11
+PIN | SW_CPLD<4> | 64 | 16 | LVCMOS18 | 211 | 2 | 0 | 0 | 0 | 13
+PIN | SW_CPLD<7> | 64 | 16 | LVCMOS18 | 4 | 2 | 1 | 10 | 1 | 3
+PIN | LED_CPLD<0> | 536871040 | 0 | LVCMOS18 | 34
+PIN | LED_CPLD<1> | 536871040 | 0 | LVCMOS18 | 54
+PIN | LED_CPLD<2> | 536871040 | 0 | LVCMOS18 | 35
+PIN | LED_CPLD<3> | 536871040 | 0 | LVCMOS18 | 33
 PIN | LED_CPLD<4> | 536871040 | 0 | LVCMOS18 | 52
 PIN | disp_dig_o<0> | 536871040 | 0 | LVCMOS18 | 208
-PIN | disp_dig_o<1> | 536871040 | 0 | LVCMOS18 | 18
-PIN | disp_dig_o<2> | 536871040 | 0 | LVCMOS18 | 19
-PIN | disp_dig_o<3> | 536871040 | 0 | LVCMOS18 | 20
-PIN | disp_seg_o<0> | 536871040 | 0 | LVCMOS18 | 8
-PIN | disp_seg_o<1> | 536871040 | 0 | LVCMOS18 | 4
-PIN | disp_seg_o<2> | 536871040 | 0 | LVCMOS18 | 10
-PIN | disp_seg_o<3> | 536871040 | 0 | LVCMOS18 | 1
-PIN | disp_seg_o<4> | 536871040 | 0 | LVCMOS18 | 7
-PIN | disp_seg_o<5> | 536871040 | 0 | LVCMOS18 | 5
-PIN | disp_seg_o<6> | 536871040 | 0 | LVCMOS18 | 3
+PIN | disp_dig_o<1> | 536871040 | 0 | LVCMOS18 | 207
+PIN | disp_dig_o<2> | 536871040 | 0 | LVCMOS18 | 206
+PIN | disp_dig_o<3> | 536871040 | 0 | LVCMOS18 | 204
+PIN | disp_seg_o<0> | 536871040 | 0 | LVCMOS18 | 21
+PIN | disp_seg_o<1> | 536871040 | 0 | LVCMOS18 | 19
+PIN | disp_seg_o<2> | 536871040 | 0 | LVCMOS18 | 17
+PIN | disp_seg_o<3> | 536871040 | 0 | LVCMOS18 | 15
+PIN | disp_seg_o<4> | 536871040 | 0 | LVCMOS18 | 20
+PIN | disp_seg_o<5> | 536871040 | 0 | LVCMOS18 | 18
+PIN | disp_seg_o<6> | 536871040 | 0 | LVCMOS18 | 16

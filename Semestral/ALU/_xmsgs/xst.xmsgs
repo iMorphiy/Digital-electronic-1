@@ -5,10 +5,75 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="Xst" num="819" delta="new" >&quot;<arg fmt="%s" index="1">C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/READER.vhd</arg>&quot; line <arg fmt="%d" index="2">56</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;regA&gt;, &lt;regB&gt;, &lt;regO&gt;</arg>
+</msg>
+
 <msg type="info" file="Xst" num="1561" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.vhd</arg>&quot; line <arg fmt="%d" index="2">49</arg>: Mux is complete : default of case is discarded
 </msg>
 
+<msg type="warning" file="Xst" num="819" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/driver_7seg.vhd</arg>&quot; line <arg fmt="%d" index="2">95</arg>: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+<arg fmt="%s" index="3">&lt;data_minus_s&gt;</arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1610" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/signed_to_display_driver.vhd</arg>&quot; line <arg fmt="%d" index="2">35</arg>: Width mismatch. &lt;<arg fmt="%s" index="3">unsigneddata_s</arg>&gt; has a width of <arg fmt="%d" index="4">8</arg> bits but assigned expression is <arg fmt="%d" index="5">9</arg>-bit wide.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">data2_s</arg>&gt; in unit &lt;<arg fmt="%s" index="2">signed_to_display_driver</arg>&gt; has a constant value of <arg fmt="%s" index="3">0000</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="info" file="Xst" num="2679" delta="old" >Register &lt;<arg fmt="%s" index="1">data3_s</arg>&gt; in unit &lt;<arg fmt="%s" index="2">signed_to_display_driver</arg>&gt; has a constant value of <arg fmt="%s" index="3">0000</arg> during circuit operation. The register is replaced by logic.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">8</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">operation_o</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">8</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">A_o</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">8</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">B_o</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
 <msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">s_dig</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">operation_s&lt;7:2&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">operation_o_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">operation_o_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">operation_o_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">operation_o_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">operation_o_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">operation_o_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">regO_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">regO_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">regO_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">regO_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">regO_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">regO_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SECV_READER</arg>&gt;.
 </msg>
 
 </messages>

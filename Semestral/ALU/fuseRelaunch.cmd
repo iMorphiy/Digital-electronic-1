@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_READER_isim_beh.exe" -prj "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_READER_beh.prj" "work.TEST_READER" 
+-intstyle "ise" -incremental -o "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/test_button_isim_beh.exe" -prj "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/test_button_beh.prj" "work.test_button" 

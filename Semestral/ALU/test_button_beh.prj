@@ -1,0 +1,2 @@
+vhdl work "instruction_enable.vhd"
+vhdl work "test_button.vhd"

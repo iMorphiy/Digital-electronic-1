@@ -1,50 +1,75 @@
-V3 27
+V3 39
 FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ADDER8BIT.vhd 2020/04/30.02:22:15 P.20131013
-EN work/ADDER8BIT 1588216557 \
+EN work/ADDER8BIT 1588274163 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ADDER8BIT.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/ADDER8BIT/Behavioral 1588216558 \
+AR work/ADDER8BIT/Behavioral 1588274164 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ADDER8BIT.vhd \
-      EN work/ADDER8BIT 1588216557 CP work/FULL_ADDER
+      EN work/ADDER8BIT 1588274163 CP work/FULL_ADDER
 FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.vhd 2020/04/30.04:43:42 P.20131013
-EN work/ALU 1588216559 \
+EN work/ALU 1588274169 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/ALU/Behavioral 1588216560 \
+AR work/ALU/Behavioral 1588274170 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.vhd \
-      EN work/ALU 1588216559 CP work/ADDER8BIT
+      EN work/ALU 1588274169 CP work/ADDER8BIT
 FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/clock_enable.vhd 2020/03/13.14:43:14 P.20131013
-EN work/clock_enable 1588216553 \
+EN work/clock_enable 1588274157 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/clock_enable.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/clock_enable/Behavioral 1588216554 \
+AR work/clock_enable/Behavioral 1588274158 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/clock_enable.vhd \
-      EN work/clock_enable 1588216553
-FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/driver_7seg.vhd 2020/04/30.05:07:39 P.20131013
-EN work/driver_7seg 1588216561 \
+      EN work/clock_enable 1588274157
+FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/driver_7seg.vhd 2020/04/30.20:34:43 P.20131013
+EN work/driver_7seg 1588274171 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/driver_7seg.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/driver_7seg/Behavioral 1588216562 \
+AR work/driver_7seg/Behavioral 1588274172 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/driver_7seg.vhd \
-      EN work/driver_7seg 1588216561 CP work/clock_enable CP work/hex_to_7seg
+      EN work/driver_7seg 1588274171 CP work/clock_enable CP work/hex_to_7seg \
+      CP work/signed_to_display_driver
 FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/FULL_ADDER.vhd 2020/04/30.00:01:22 P.20131013
-EN work/FULL_ADDER 1588216551 \
+EN work/FULL_ADDER 1588274155 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/FULL_ADDER.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/FULL_ADDER/Behavioral 1588216552 \
+AR work/FULL_ADDER/Behavioral 1588274156 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/FULL_ADDER.vhd \
-      EN work/FULL_ADDER 1588216551
-FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/hex_to_7seg.vhd 2020/03/13.14:44:00 P.20131013
-EN work/hex_to_7seg 1588216555 \
+      EN work/FULL_ADDER 1588274155
+FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/hex_to_7seg.vhd 2020/04/30.20:31:58 P.20131013
+EN work/hex_to_7seg 1588274159 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/hex_to_7seg.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/hex_to_7seg/Behavioral 1588216556 \
+AR work/hex_to_7seg/Behavioral 1588274160 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/hex_to_7seg.vhd \
-      EN work/hex_to_7seg 1588216555
-FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/top.vhd 2020/04/30.05:15:45 P.20131013
-EN work/top 1588216563 \
+      EN work/hex_to_7seg 1588274159
+FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/instruction_enable.vhd 2020/04/30.21:13:02 P.20131013
+EN work/instruction_enable 1588274165 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/instruction_enable.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/instruction_enable/Behavioral 1588274166 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/instruction_enable.vhd \
+      EN work/instruction_enable 1588274165
+FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/READER.vhd 2020/04/30.13:40:25 P.20131013
+EN work/READER 1588274167 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/READER.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/READER/Behavioral 1588274168 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/READER.vhd \
+      EN work/READER 1588274167
+FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/signed_to_display_driver.vhd 2020/04/30.20:18:47 P.20131013
+EN work/signed_to_display_driver 1588274161 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/signed_to_display_driver.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PB ieee/STD_LOGIC_SIGNED 1381692178 \
+      PB ieee/MATH_REAL 1381692182
+AR work/signed_to_display_driver/Behavioral 1588274162 \
+      FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/signed_to_display_driver.vhd \
+      EN work/signed_to_display_driver 1588274161
+FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/top.vhd 2020/04/30.21:15:35 P.20131013
+EN work/top 1588274173 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/top.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/top/Behavioral 1588216564 \
+AR work/top/Behavioral 1588274174 \
       FL C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/top.vhd \
-      EN work/top 1588216563 CP work/ALU CP work/driver_7seg
+      EN work/top 1588274173 CP work/instruction_enable CP work/READER CP work/ALU \
+      CP work/driver_7seg

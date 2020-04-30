@@ -100,37 +100,37 @@ BEGIN
 		data_i <= "00000010"; -- 	2
 		wait for 50 ns;
 		action_i <= '1';
-		wait for 50 ns;
+		wait for clk_i_period;
 		action_i <= '0';
 		
 		data_i <= "00000111"; -- 	7
 		wait for 50 ns;
       action_i <= '1';
-		wait for 50 ns;
+		wait for clk_i_period;
 		action_i <= '0';
 		
 		data_i <= "00000100"; -- 	7
 		wait for 50 ns;
       action_i <= '1';
-		wait for 50 ns;
+		wait for clk_i_period;
 		action_i <= '0';
 		
 		data_i <= "00000011"; -- 	2
 		wait for 50 ns;
 		action_i <= '1';
-		wait for 50 ns;
+		wait for clk_i_period;
 		action_i <= '0';
 		
 		data_i <= "00000110"; -- 	7
 		wait for 50 ns;
       action_i <= '1';
-		wait for 50 ns;
+		wait for clk_i_period;
 		action_i <= '0';
 		
 		data_i <= "10000101"; -- 	7
 		wait for 50 ns;
       action_i <= '1';
-		wait for 50 ns;
+		wait for clk_i_period;
 		action_i <= '0';
 		
 		

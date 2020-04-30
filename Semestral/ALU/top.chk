@@ -5,127 +5,202 @@
 0 Group(s)
 
 GCLK1: 1=clk_i.p
+GSET: 2=BTN1.p
+GRST: 2=BTN1.p
 ----------------- B l o c k 0 ------------------
-PLApt(8/56), Fanin(7/38), Clk(1/3), Bct(0/4), Pin(6/6), Mcell(16/16)
-PLApts[8/50] 196 197 205 206 () () () () () () () () () () () () 53 () () () () () () () () () () () () () () () () () () () () () () () () () () 195 () () 55 () () 54
-Fanins[ 7] DISPLAY/CLOCK_ENABLE/s_cnt<0>.n DISPLAY/CLOCK_ENABLE/s_cnt<1>.n DISPLAY/CLOCK_ENABLE/s_cnt<2>.n DISPLAY/s_cnt<0>.n DISPLAY/s_cnt_0__or0000.n N_PZ_134.n N_PZ_291.n
+PLApt(25/56), Fanin(10/38), Clk(1/3), Bct(0/4), Pin(6/6), Mcell(16/16)
+PLApts[25/56] 11 13 3 12 4 5 6 7 8 () 44 () () 44 () () 44 () () 42 () () 44 () () 42 () () 43 () () 44 () () 41 () () 43 () () 44 () () 42 () () 42 () () 42 () () 41 () () 41
+Fanins[10] SECV_READER/s_state_FSM_FFd1.n SECV_READER/s_state_FSM_FFd2.n SECV_READER/s_state_FSM_FFd3.n enable_s.n SW_CPLD<0>.p SW_CPLD<1>.p SW_CPLD<2>.p SW_CPLD<3>.p SW_CPLD<4>.p SW_CPLD<5>.p
 clk[1] clk_i 
 CTC: 
 CTR: 
 CTS: 
 CTE: 
 vref: [0]
-Signal[22] [SW_CPLD<13>(143)] [SW_CPLD<14>(142)] [SW_CPLD<15>(140)] [SW_CPLD<2>(139)] [SW_CPLD<3>(138)]  
-           [SW_CPLD<4>(137)] [DISPLAY/CLOCK_ENABLE/s_cnt<10>(160)] [DISPLAY/CLOCK_ENABLE/s_cnt<11>(159)]  
-           [DISPLAY/CLOCK_ENABLE/s_cnt<12>(155)] [DISPLAY/CLOCK_ENABLE/s_cnt<13>(154)]  
-           [DISPLAY/CLOCK_ENABLE/s_cnt<14>(153)] [DISPLAY/CLOCK_ENABLE/s_cnt<15>(152)]  
-           [DISPLAY/CLOCK_ENABLE/s_cnt<6>(151)] [DISPLAY/CLOCK_ENABLE/s_cnt<7>(149)]  
-           [DISPLAY/CLOCK_ENABLE/s_cnt<8>(146)] [DISPLAY/CLOCK_ENABLE/s_cnt<9>(145)] [DISPLAY/s_cnt<0>(158)]  
-           [DISPLAY/s_cnt<1>(157)] [DISPLAY/CLOCK_ENABLE/s_cnt<0>(156)] [DISPLAY/CLOCK_ENABLE/s_cnt<1>(150)]  
-           [DISPLAY/CLOCK_ENABLE/s_cnt<2>(148)] [N_PZ_134(147)] 
-Signal[22] [ 0: DISPLAY/CLOCK_ENABLE/s_cnt<9>(145)  ][ 1: DISPLAY/CLOCK_ENABLE/s_cnt<8>(146)  ][ 2:  
-           N_PZ_134(147) SW_CPLD<13>(143)  ][ 3: DISPLAY/CLOCK_ENABLE/s_cnt<2>(148) SW_CPLD<14>(142)  ][ 4:  
-           DISPLAY/CLOCK_ENABLE/s_cnt<7>(149)  ][ 5: DISPLAY/CLOCK_ENABLE/s_cnt<1>(150) SW_CPLD<15>(140)  ] 
-           [ 6: DISPLAY/CLOCK_ENABLE/s_cnt<6>(151)  ][ 7: DISPLAY/CLOCK_ENABLE/s_cnt<15>(152)  ][ 8:  
-           DISPLAY/CLOCK_ENABLE/s_cnt<14>(153)  ][ 9: DISPLAY/CLOCK_ENABLE/s_cnt<13>(154)  ][ 10:  
-           DISPLAY/CLOCK_ENABLE/s_cnt<12>(155)  ][ 11: DISPLAY/CLOCK_ENABLE/s_cnt<0>(156) SW_CPLD<2>(139)  ] 
-           [ 12: DISPLAY/s_cnt<1>(157) SW_CPLD<3>(138)  ][ 13: DISPLAY/s_cnt<0>(158) SW_CPLD<4>(137)  ][ 14:  
-           DISPLAY/CLOCK_ENABLE/s_cnt<11>(159)  ][ 15: DISPLAY/CLOCK_ENABLE/s_cnt<10>(160)  ]
+Signal[22] [BTN1(143)] [SECV_READER/regA<0>,SW_CPLD<0>(142)] [SECV_READER/regA<1>,SW_CPLD<1>(140)]  
+           [SECV_READER/regA<2>,SW_CPLD<2>(139)] [SECV_READER/regA<3>,SW_CPLD<3>(138)]  
+           [SECV_READER/regA<4>,SW_CPLD<4>(137)] [SECV_READER/s_state_FSM_FFd2(160)]  
+           [SECV_READER/s_state_FSM_FFd1(159)] [SECV_READER/regB<0>(155)] [SECV_READER/regO<0>(154)]  
+           [SECV_READER/s_state_FSM_FFd3(153)] [SECV_READER/regB<1>(152)] [SECV_READER/regO<1>(151)]  
+           [SECV_READER/regB<2>(149)] [SECV_READER/regB<3>(146)] [SECV_READER/regB<4>(145)]  
+           [SECV_READER/regB<5>(147)] 
+Signal[22] [ 0: SECV_READER/regB<4>(145)  ][ 1: SECV_READER/regB<3>(146)  ][ 2: SECV_READER/regB<5>(147)  
+           BTN1(143)  ][ 3: SECV_READER/regA<0>(148) SW_CPLD<0>(142)  ][ 4: SECV_READER/regB<2>(149)  ][ 5:  
+           SECV_READER/regA<1>(150) SW_CPLD<1>(140)  ][ 6: SECV_READER/regO<1>(151)  ][ 7:  
+           SECV_READER/regB<1>(152)  ][ 8: SECV_READER/s_state_FSM_FFd3(153)  ][ 9: SECV_READER/regO<0>(154)  
+            ][ 10: SECV_READER/regB<0>(155)  ][ 11: SECV_READER/regA<2>(156) SW_CPLD<2>(139)  ][ 12:  
+           SECV_READER/regA<3>(157) SW_CPLD<3>(138)  ][ 13: SECV_READER/regA<4>(158) SW_CPLD<4>(137)  ][ 14:  
+           SECV_READER/s_state_FSM_FFd1(159)  ][ 15: SECV_READER/s_state_FSM_FFd2(160)  ]
 ----------------- B l o c k 1 ------------------
-PLApt(55/56), Fanin(19/38), Clk(1/3), Bct(0/4), Pin(8/8), Mcell(14/16)
-PLApts[55/56] 35 84 89 95 103 105 69 75 101 208 215 216 58 68 73 79 90 96 57 85 93 104 107 207 60 62 77 82 83 94 59 5 80 86 45 88 106 87 92 102 61 66 71 74 81 91 34 52 6 110 112 40 97 48 () 56
-Fanins[19] LED_CPLD<2>.n DISPLAY/s_cnt<0>.n DISPLAY/s_cnt<1>.n MYALU/Mxor_status_o<4>__xor0001.n MYALU/control_s.n N_PZ_222.n N_PZ_238.n number_s<0>.n number_s<1>.n number_s<2>.n number_s<3>.n number_s<4>.n number_s<5>.n number_s<6>.n SW<0>.p SW<1>.p SW_CPLD<0>.p SW_CPLD<15>.p SW_CPLD<8>.p
+PLApt(10/56), Fanin(7/38), Clk(1/3), Bct(0/4), Pin(4/8), Mcell(16/16)
+PLApts[10/56] 9 10 45 140 () () () () () () 42 () () () () () 42 () () 42 () () () () () () () () () () () () () () () () () 141 () () 44 () () () () () () () () () () () () () () 44
+Fanins[ 7] BUTTON_ENABLE/s_state_FSM_FFd1.n SECV_READER/s_state_FSM_FFd2.n SECV_READER/s_state_FSM_FFd3.n enable_s.n BTN0.p SW_CPLD<6>.p SW_CPLD<7>.p
 clk[1] clk_i 
 CTC: 
 CTR: 
 CTS: 
 CTE: 
 vref: [0]
-Signal[14] [LED_CPLD<1>(175),LED_CPLD<1>(10)] [disp_seg_o<0>(173),disp_seg_o<0>(7)]  
-           [disp_seg_o<1>(164),disp_seg_o<1>(4)] [disp_seg_o<2>(174),disp_seg_o<2>(9)]  
-           [disp_seg_o<3>(161),disp_seg_o<3>(2)] [disp_seg_o<4>(172),disp_seg_o<4>(6)]  
-           [disp_seg_o<5>(165),disp_seg_o<5>(5)] [disp_seg_o<6>(163),disp_seg_o<6>(3)]  
-           [MYALU/Mxor_status_o<4>__xor0001(176)] [N_PZ_222(171)] [MYALU/control_s(170)] [number_s<0>(169)]  
-           [N_PZ_238(168)] [N_PZ_139(167)] 
-Signal[14] [ 0: disp_seg_o<3>(161) disp_seg_o<3>(2)  ][ 1:  ][ 2: disp_seg_o<6>(163) disp_seg_o<6>(3)  ][ 3:  
-           disp_seg_o<1>(164) disp_seg_o<1>(4)  ][ 4: disp_seg_o<5>(165) disp_seg_o<5>(5)  ][ 5:  ][ 6:  
-           N_PZ_139(167)  ][ 7: N_PZ_238(168)  ][ 8: number_s<0>(169)  ][ 9: MYALU/control_s(170)  ][ 10:  
-           N_PZ_222(171)  ][ 11: disp_seg_o<4>(172) disp_seg_o<4>(6)  ][ 12: disp_seg_o<0>(173)  
-           disp_seg_o<0>(7)  ][ 13: disp_seg_o<2>(174) disp_seg_o<2>(9)  ][ 14: LED_CPLD<1>(175)  
-           LED_CPLD<1>(10)  ][ 15: MYALU/Mxor_status_o<4>__xor0001(176)  ]
+Signal[20] [BTN0(5)] [SECV_READER/regA<5>,SW_CPLD<5>(2)] [SECV_READER/regA<6>,SW_CPLD<6>(3)]  
+           [SECV_READER/regA<7>,SW_CPLD<7>(4)] [SECV_READER/regB<6>(176)] [SECV_READER/regB<7>(171)]  
+           [enable_s(170)] [BUTTON_ENABLE/s_state_FSM_FFd1(169)] [DISPLAY/CLOCK_ENABLE/s_cnt<10>(168)]  
+           [DISPLAY/CLOCK_ENABLE/s_cnt<11>(167)] [DISPLAY/CLOCK_ENABLE/s_cnt<12>(166)]  
+           [DISPLAY/CLOCK_ENABLE/s_cnt<13>(162)] [DISPLAY/CLOCK_ENABLE/s_cnt<14>(175)]  
+           [DISPLAY/CLOCK_ENABLE/s_cnt<15>(174)] [DISPLAY/CLOCK_ENABLE/s_cnt<6>(173)]  
+           [DISPLAY/CLOCK_ENABLE/s_cnt<7>(172)] [DISPLAY/CLOCK_ENABLE/s_cnt<8>(165)] 
+Signal[20] [ 0: SECV_READER/regA<5>(161) SW_CPLD<5>(2)  ][ 1: DISPLAY/CLOCK_ENABLE/s_cnt<13>(162)  ][ 2:  
+           SECV_READER/regA<6>(163) SW_CPLD<6>(3)  ][ 3: SECV_READER/regA<7>(164) SW_CPLD<7>(4)  ][ 4:  
+           DISPLAY/CLOCK_ENABLE/s_cnt<8>(165) BTN0(5)  ][ 5: DISPLAY/CLOCK_ENABLE/s_cnt<12>(166)  ][ 6:  
+           DISPLAY/CLOCK_ENABLE/s_cnt<11>(167)  ][ 7: DISPLAY/CLOCK_ENABLE/s_cnt<10>(168)  ][ 8:  
+           BUTTON_ENABLE/s_state_FSM_FFd1(169)  ][ 9: enable_s(170)  ][ 10: SECV_READER/regB<7>(171)  ][ 11:  
+           DISPLAY/CLOCK_ENABLE/s_cnt<7>(172) (6)  ][ 12: DISPLAY/CLOCK_ENABLE/s_cnt<6>(173) (7)  ][ 13:  
+           DISPLAY/CLOCK_ENABLE/s_cnt<15>(174) (9)  ][ 14: DISPLAY/CLOCK_ENABLE/s_cnt<14>(175) (10)  ][ 15:  
+           SECV_READER/regB<6>(176)  ]
 ----------------- B l o c k 2 ------------------
-PLApt(55/56), Fanin(17/38), Clk(1/3), Bct(0/4), Pin(6/6), Mcell(7/16)
-PLApts[55/55] 20 21 127 142 14 22 23 129 131 133 39 134 135 136 146 147 148 149 43 50 125 126 130 137 138 140 141 25 26 152 167 15 27 28 154 156 158 159 160 161 3 171 172 173 174 44 51 150 151 155 162 163 2 165 166
-Fanins[17] DISPLAY/s_cnt<0>.n DISPLAY/s_cnt<1>.n MYALU/F_ADDER_1/carry_4to5_s.n MYALU/F_ADDER_1/carry_6to7_s.n MYALU/control_s.n N_PZ_136.n N_PZ_137.n SW<0>.p SW<1>.p SW_CPLD<10>.p SW_CPLD<11>.p SW_CPLD<12>.p SW_CPLD<13>.p SW_CPLD<2>.p SW_CPLD<3>.p SW_CPLD<4>.p SW_CPLD<5>.p
+PLApt(28/56), Fanin(30/38), Clk(1/3), Bct(0/4), Pin(4/6), Mcell(16/16)
+PLApts[28/56] 32 142 143 144 158 176 312 317 313 316 36 139 314 35 318 2 34 137 315 136 138 319 33 320 310 311 () () () () () () () () () () () () () () () () () () () () () () () 95 () () () () () 309
+Fanins[30] DISPLAY/CLOCK_ENABLE/s_cnt<0>.n DISPLAY/CLOCK_ENABLE/s_cnt<10>.n DISPLAY/CLOCK_ENABLE/s_cnt<11>.n DISPLAY/CLOCK_ENABLE/s_cnt<12>.n DISPLAY/CLOCK_ENABLE/s_cnt<13>.n DISPLAY/CLOCK_ENABLE/s_cnt<14>.n DISPLAY/CLOCK_ENABLE/s_cnt<15>.n DISPLAY/CLOCK_ENABLE/s_cnt<1>.n DISPLAY/CLOCK_ENABLE/s_cnt<2>.n DISPLAY/CLOCK_ENABLE/s_cnt<3>.n DISPLAY/CLOCK_ENABLE/s_cnt<4>.n DISPLAY/CLOCK_ENABLE/s_cnt<5>.n DISPLAY/CLOCK_ENABLE/s_cnt<6>.n DISPLAY/CLOCK_ENABLE/s_cnt<7>.n DISPLAY/CLOCK_ENABLE/s_cnt<8>.n DISPLAY/CLOCK_ENABLE/s_cnt<9>.n DISPLAY/data0_s<0>.n DISPLAY/data0_s<1>.n DISPLAY/data0_s<2>.n DISPLAY/data0_s<3>.n DISPLAY/data1_s<0>.n DISPLAY/data1_s<1>.n DISPLAY/data1_s<2>.n DISPLAY/data1_s<3>.n DISPLAY/s_cnt<0>.n DISPLAY/s_cnt<1>.n DISPLAY/s_en.n N_PZ_373.n N_PZ_560.n BTN1.p
 clk[1] clk_i 
 CTC: 
 CTR: 
 CTS: 
 CTE: 
 vref: [0]
-Signal[12] [disp_dig_o<0>(177),disp_dig_o<0>(136)] [SW_CPLD<0>(135)] [SW_CPLD<10>(134)] [SW_CPLD<11>(133)]  
-           [SW_CPLD<12>(132)] [SW_CPLD<1>(131)] [number_s<2>(191)] [number_s<3>(189)]  
-           [MYALU/F_ADDER_1/carry_4to5_s(188)] [number_s<4>(187)] [number_s<5>(186)]  
-           [MYALU/F_ADDER_1/carry_6to7_s(185)] 
-Signal[12] [ 0: disp_dig_o<0>(177) disp_dig_o<0>(136)  ][ 1: SW_CPLD<0>(135)  ][ 2: SW_CPLD<10>(134)  ][ 3:  
-            ][ 4: SW_CPLD<11>(133)  ][ 5:  ][ 6:  ][ 7:  ][ 8: MYALU/F_ADDER_1/carry_6to7_s(185)  ][ 9:  
-           number_s<5>(186)  ][ 10: number_s<4>(187)  ][ 11: MYALU/F_ADDER_1/carry_4to5_s(188)  ][ 12:  
-           number_s<3>(189)  ][ 13: SW_CPLD<12>(132)  ][ 14: number_s<2>(191)  ][ 15: SW_CPLD<1>(131)  ]
+Signal[16] [disp_dig_o<0>(177),disp_dig_o<0>(136)] [disp_dig_o<1>(178),disp_dig_o<1>(135)]  
+           [disp_dig_o<2>(179),disp_dig_o<2>(134)] [disp_dig_o<3>(181),disp_dig_o<3>(133)]  
+           [DISPLAY/s_cnt<1>(191)] [DISPLAY/s_cnt<0>(189)] [N_PZ_507(188)]  
+           [DISPLAY/CLOCK_ENABLE/s_cnt<3>(187)] [DISPLAY/CLOCK_ENABLE/s_cnt<5>(186)]  
+           [DISPLAY/CLOCK_ENABLE/s_cnt<4>(185)] [DISPLAY/s_en(184)] [N_PZ_560(183)]  
+           [DISPLAY/CLOCK_ENABLE/s_cnt<2>(182)] [DISPLAY/CLOCK_ENABLE/s_cnt<1>(180)]  
+           [DISPLAY/CLOCK_ENABLE/s_cnt<0>(192)] [N_PZ_373(190)] 
+Signal[16] [ 0: disp_dig_o<0>(177) disp_dig_o<0>(136)  ][ 1: disp_dig_o<1>(178) disp_dig_o<1>(135)  ][ 2:  
+           disp_dig_o<2>(179) disp_dig_o<2>(134)  ][ 3: DISPLAY/CLOCK_ENABLE/s_cnt<1>(180)  ][ 4:  
+           disp_dig_o<3>(181) disp_dig_o<3>(133)  ][ 5: DISPLAY/CLOCK_ENABLE/s_cnt<2>(182)  ][ 6:  
+           N_PZ_560(183)  ][ 7: DISPLAY/s_en(184)  ][ 8: DISPLAY/CLOCK_ENABLE/s_cnt<4>(185)  ][ 9:  
+           DISPLAY/CLOCK_ENABLE/s_cnt<5>(186)  ][ 10: DISPLAY/CLOCK_ENABLE/s_cnt<3>(187)  ][ 11:  
+           N_PZ_507(188)  ][ 12: DISPLAY/s_cnt<0>(189)  ][ 13: N_PZ_373(190) (132)  ][ 14:  
+           DISPLAY/s_cnt<1>(191)  ][ 15: DISPLAY/CLOCK_ENABLE/s_cnt<0>(192) (131)  ]
 ----------------- B l o c k 3 ------------------
-PLApt(54/56), Fanin(35/38), Clk(1/3), Bct(0/4), Pin(8/8), Mcell(16/16)
-PLApts[54/56] 12 32 33 179 180 181 182 189 193 190 191 192 194 176 178 30 31 184 186 38 13 17 37 18 47 36 115 120 121 122 123 124 7 41 42 49 113 114 169 170 175 177 118 119 198 203 199 202 99 201 100 200 204 () () 4
-Fanins[35] LED_CPLD<0>.n DISPLAY/CLOCK_ENABLE/s_cnt<10>.n DISPLAY/CLOCK_ENABLE/s_cnt<11>.n DISPLAY/CLOCK_ENABLE/s_cnt<12>.n DISPLAY/CLOCK_ENABLE/s_cnt<13>.n DISPLAY/CLOCK_ENABLE/s_cnt<14>.n DISPLAY/CLOCK_ENABLE/s_cnt<15>.n DISPLAY/CLOCK_ENABLE/s_cnt<3>.n DISPLAY/CLOCK_ENABLE/s_cnt<4>.n DISPLAY/CLOCK_ENABLE/s_cnt<5>.n DISPLAY/CLOCK_ENABLE/s_cnt<6>.n DISPLAY/CLOCK_ENABLE/s_cnt<7>.n DISPLAY/CLOCK_ENABLE/s_cnt<8>.n DISPLAY/CLOCK_ENABLE/s_cnt<9>.n DISPLAY/s_cnt<0>.n DISPLAY/s_cnt<1>.n MYALU/F_ADDER_1/carry_2to3_s.n MYALU/F_ADDER_1/carry_6to7_s.n MYALU/control_s.n N_PZ_134.n N_PZ_139.n N_PZ_218.n N_PZ_238.n N_PZ_239.n SW<0>.p SW<1>.p SW_CPLD<0>.p SW_CPLD<14>.p SW_CPLD<15>.p SW_CPLD<1>.p SW_CPLD<2>.p SW_CPLD<6>.p SW_CPLD<7>.p SW_CPLD<8>.p SW_CPLD<9>.p
+PLApt(56/56), Fanin(25/38), Clk(1/3), Bct(0/4), Pin(7/8), Mcell(16/16)
+PLApts[56/56] 34 151 156 161 169 174 179 182 150 155 159 162 168 173 177 180 181 146 154 164 172 306 145 153 163 171 148 149 63 160 166 78 167 178 71 147 157 165 175 307 295 308 152 170 46 194 0 304 305 54 68 192 60 190 51 186
+Fanins[25] LED_CPLD<2>.n DISPLAY/SIGNED_DECODER/dataSI_s<2>.n DISPLAY/SIGNED_DECODER/dataSI_s<4>.n DISPLAY/SIGNED_DECODER/dataSI_s<5>.n DISPLAY/SIGNED_DECODER/dataSI_s<6>.n DISPLAY/data0_s<0>.n DISPLAY/data0_s<1>.n DISPLAY/data0_s<2>.n DISPLAY/data0_s<3>.n DISPLAY/data1_s<0>.n DISPLAY/data1_s<1>.n DISPLAY/data1_s<2>.n DISPLAY/data1_s<3>.n DISPLAY/data_minus_s.n DISPLAY/s_cnt<0>.n DISPLAY/s_cnt<1>.n N_PZ_468.n N_PZ_507.n number_s<0>.n number_s<1>.n number_s<2>.n number_s<3>.n number_s<4>.n number_s<5>.n number_s<6>.n
 clk[1] clk_i 
 CTC: 
 CTR: 
 CTS: 
 CTE: 
 vref: [0]
-Signal[18] [LED_CPLD<2>(193),LED_CPLD<2>(11)] [LED_CPLD<0>(194),LED_CPLD<0>(12)]  
-           [LED_CPLD<3>(195),LED_CPLD<3>(13)] [disp_dig_o<1>(196),disp_dig_o<1>(14)]  
-           [disp_dig_o<2>(197),disp_dig_o<2>(15)] [disp_dig_o<3>(198),disp_dig_o<3>(16)] [SW<0>(17)]  
-           [SW<1>(18)] [number_s<6>(208)] [number_s<1>(207)] [MYALU/F_ADDER_1/carry_2to3_s(205)]  
-           [N_PZ_218(203)] [N_PZ_239(202)] [N_PZ_136(201)] [DISPLAY/CLOCK_ENABLE/s_cnt<3>(200)]  
-           [DISPLAY/CLOCK_ENABLE/s_cnt<5>(199)] [DISPLAY/s_cnt_0__or0000(206)]  
-           [DISPLAY/CLOCK_ENABLE/s_cnt<4>(204)] 
-Signal[18] [ 0: LED_CPLD<2>(193) LED_CPLD<2>(11)  ][ 1: LED_CPLD<0>(194) LED_CPLD<0>(12)  ][ 2:  
-           LED_CPLD<3>(195) LED_CPLD<3>(13)  ][ 3: disp_dig_o<1>(196) disp_dig_o<1>(14)  ][ 4:  
-           disp_dig_o<2>(197) disp_dig_o<2>(15)  ][ 5: disp_dig_o<3>(198) disp_dig_o<3>(16)  ][ 6:  
-           DISPLAY/CLOCK_ENABLE/s_cnt<5>(199)  ][ 7: DISPLAY/CLOCK_ENABLE/s_cnt<3>(200)  ][ 8: N_PZ_136(201)  
-            ][ 9: N_PZ_239(202)  ][ 10: N_PZ_218(203)  ][ 11: DISPLAY/CLOCK_ENABLE/s_cnt<4>(204) SW<0>(17)  ] 
-           [ 12: MYALU/F_ADDER_1/carry_2to3_s(205)  ][ 13: DISPLAY/s_cnt_0__or0000(206) SW<1>(18)  ][ 14:  
-           number_s<1>(207)  ][ 15: number_s<6>(208)  ]
+Signal[16] [disp_seg_o<0>(204),disp_seg_o<0>(17)] [disp_seg_o<1>(197),disp_seg_o<1>(15)]  
+           [disp_seg_o<2>(195),disp_seg_o<2>(13)] [disp_seg_o<3>(193),disp_seg_o<3>(11)]  
+           [disp_seg_o<4>(198),disp_seg_o<4>(16)] [disp_seg_o<5>(196),disp_seg_o<5>(14)]  
+           [disp_seg_o<6>(194),disp_seg_o<6>(12)] [DISPLAY/CLOCK_ENABLE/s_cnt<9>(208)]  
+           [DISPLAY/data_minus_s(207)] [DISPLAY/SIGNED_DECODER/dataSI_s<0>(205)]  
+           [DISPLAY/SIGNED_DECODER/dataUN_s<0>(203)] [DISPLAY/SIGNED_DECODER/dataSI_s<6>(202)]  
+           [DISPLAY/SIGNED_DECODER/dataSI_s<5>(201)] [N_PZ_468(200)]  
+           [DISPLAY/SIGNED_DECODER/dataSI_s<4>(199)] [DISPLAY/SIGNED_DECODER/dataSI_s<2>(206)] 
+Signal[16] [ 0: disp_seg_o<3>(193) disp_seg_o<3>(11)  ][ 1: disp_seg_o<6>(194) disp_seg_o<6>(12)  ][ 2:  
+           disp_seg_o<2>(195) disp_seg_o<2>(13)  ][ 3: disp_seg_o<5>(196) disp_seg_o<5>(14)  ][ 4:  
+           disp_seg_o<1>(197) disp_seg_o<1>(15)  ][ 5: disp_seg_o<4>(198) disp_seg_o<4>(16)  ][ 6:  
+           DISPLAY/SIGNED_DECODER/dataSI_s<4>(199)  ][ 7: N_PZ_468(200)  ][ 8:  
+           DISPLAY/SIGNED_DECODER/dataSI_s<5>(201)  ][ 9: DISPLAY/SIGNED_DECODER/dataSI_s<6>(202)  ][ 10:  
+           DISPLAY/SIGNED_DECODER/dataUN_s<0>(203)  ][ 11: disp_seg_o<0>(204) disp_seg_o<0>(17)  ][ 12:  
+           DISPLAY/SIGNED_DECODER/dataSI_s<0>(205)  ][ 13: DISPLAY/SIGNED_DECODER/dataSI_s<2>(206) (18)  ] 
+           [ 14: DISPLAY/data_minus_s(207)  ][ 15: DISPLAY/CLOCK_ENABLE/s_cnt<9>(208)  ]
 ----------------- B l o c k 4 ------------------
-PLApt(9/56), Fanin(19/38), Clk(0/3), Bct(0/4), Pin(5/5), Mcell(3/16)
-PLApts[9/14] 209 213 218 220 144 145 98 99 () () () () () 0
-Fanins[19] LED_CPLD<2>.n DISPLAY/CLOCK_ENABLE/s_cnt<10>.n DISPLAY/CLOCK_ENABLE/s_cnt<11>.n DISPLAY/CLOCK_ENABLE/s_cnt<12>.n DISPLAY/CLOCK_ENABLE/s_cnt<13>.n DISPLAY/CLOCK_ENABLE/s_cnt<14>.n DISPLAY/CLOCK_ENABLE/s_cnt<15>.n DISPLAY/CLOCK_ENABLE/s_cnt<3>.n DISPLAY/CLOCK_ENABLE/s_cnt<4>.n DISPLAY/CLOCK_ENABLE/s_cnt<5>.n DISPLAY/CLOCK_ENABLE/s_cnt<6>.n DISPLAY/CLOCK_ENABLE/s_cnt<7>.n DISPLAY/CLOCK_ENABLE/s_cnt<8>.n DISPLAY/CLOCK_ENABLE/s_cnt<9>.n MYALU/F_ADDER_1/carry_4to5_s.n MYALU/Mxor_status_o<4>__xor0001.n N_PZ_222.n number_s<5>.n SW_CPLD<4>.p
-clk[0] 
+PLApt(36/56), Fanin(19/38), Clk(1/3), Bct(0/4), Pin(2/5), Mcell(16/16)
+PLApts[36/56] 322 324 327 331 69 77 0 196 293 195 303 48 58 61 59 188 295 214 57 52 187 299 37 296 183 297 184 286 288 290 () 295 () () 295 () () () () () () () () 295 () () 295 () () () () () 295 () () 295
+Fanins[19] LED_CPLD<2>.n DISPLAY/SIGNED_DECODER/dataSI_s<0>.n DISPLAY/SIGNED_DECODER/dataSI_s<1>.n DISPLAY/SIGNED_DECODER/dataSI_s<3>.n DISPLAY/SIGNED_DECODER/dataSI_s<7>.n DISPLAY/SIGNED_DECODER/dataUN_s<0>.n DISPLAY/SIGNED_DECODER/dataUN_s<1>.n DISPLAY/SIGNED_DECODER/dataUN_s<3>.n DISPLAY/SIGNED_DECODER/dataUN_s<7>.n MY_ALU/Mxor_status_o<4>__xor0001.n N_PZ_468.n N_PZ_474.n N_PZ_521.n number_s<1>.n number_s<2>.n number_s<3>.n number_s<4>.n number_s<5>.n number_s<6>.n
+clk[1] clk_i 
 CTC: 
 CTR: 
 CTS: 
 CTE: 
 vref: [0]
-Signal[ 7] [LED_CPLD<4>(210),LED_CPLD<4>(33)] [SW_CPLD<5>(31)] [SW_CPLD<6>(30)] [SW_CPLD<7>(28)] [clk_i(32)]  
-           [N_PZ_137(224)] [N_PZ_291(223)] 
-Signal[ 7] [ 0:  ][ 1: LED_CPLD<4>(210) LED_CPLD<4>(33)  ][ 2:  ][ 3: clk_i(32)  ][ 4: SW_CPLD<5>(31)  ][ 5:  
-           SW_CPLD<6>(30)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10:  ][ 11:  ][ 12:  ][ 13: SW_CPLD<7>(28)  ][ 14:  
-           N_PZ_291(223)  ][ 15: N_PZ_137(224)  ]
+Signal[17] [LED_CPLD<4>(210),LED_CPLD<4>(33)] [clk_i(32)] [DISPLAY/SIGNED_DECODER/dataUN_s<4>(224)]  
+           [DISPLAY/SIGNED_DECODER/dataUN_s<5>(223)] [DISPLAY/SIGNED_DECODER/dataUN_s<6>(221)]  
+           [DISPLAY/SIGNED_DECODER/dataUN_s<7>(220)] [DISPLAY/SIGNED_DECODER/dataSI_s<7>(219)]  
+           [DISPLAY/data1_s<3>(218)] [DISPLAY/SIGNED_DECODER/dataUN_s<1>(217)]  
+           [DISPLAY/SIGNED_DECODER/dataUN_s<2>(216)] [DISPLAY/SIGNED_DECODER/dataSI_s<3>(215)]  
+           [DISPLAY/SIGNED_DECODER/dataUN_s<3>(211)] [DISPLAY/data0_s<3>(209)] [DISPLAY/data0_s<0>(222)]  
+           [DISPLAY/data0_s<1>(214)] [DISPLAY/SIGNED_DECODER/dataSI_s<1>(213)]  
+           [MY_ALU/Mxor_status_o<4>__xor0001(212)] 
+Signal[17] [ 0: DISPLAY/data0_s<3>(209)  ][ 1: LED_CPLD<4>(210) LED_CPLD<4>(33)  ][ 2:  
+           DISPLAY/SIGNED_DECODER/dataUN_s<3>(211)  ][ 3: MY_ALU/Mxor_status_o<4>__xor0001(212) clk_i(32)  ] 
+           [ 4: DISPLAY/SIGNED_DECODER/dataSI_s<1>(213) (31)  ][ 5: DISPLAY/data0_s<1>(214) (30)  ][ 6:  
+           DISPLAY/SIGNED_DECODER/dataSI_s<3>(215)  ][ 7: DISPLAY/SIGNED_DECODER/dataUN_s<2>(216)  ][ 8:  
+           DISPLAY/SIGNED_DECODER/dataUN_s<1>(217)  ][ 9: DISPLAY/data1_s<3>(218)  ][ 10:  
+           DISPLAY/SIGNED_DECODER/dataSI_s<7>(219)  ][ 11: DISPLAY/SIGNED_DECODER/dataUN_s<7>(220)  ][ 12:  
+           DISPLAY/SIGNED_DECODER/dataUN_s<6>(221)  ][ 13: DISPLAY/data0_s<0>(222) (28)  ][ 14:  
+           DISPLAY/SIGNED_DECODER/dataUN_s<5>(223)  ][ 15: DISPLAY/SIGNED_DECODER/dataUN_s<4>(224)  ]
 ----------------- B l o c k 5 ------------------
-PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(2/8), Mcell(0/16)
-PLApts[0/0]
-Fanins[ 0]
-clk[0] 
+PLApt(56/56), Fanin(26/38), Clk(1/3), Bct(0/4), Pin(1/8), Mcell(14/16)
+PLApts[56/56] 185 298 189 300 191 301 193 302 213 215 294 38 40 80 83 86 208 88 91 103 106 204 39 206 207 210 211 212 92 98 104 105 108 111 113 216 224 93 115 116 221 223 228 229 231 234 236 238 239 240 199 209 112 235 237 99
+Fanins[26] LED_CPLD<2>.n A_s<0>.n A_s<1>.n A_s<2>.n A_s<3>.n A_s<4>.n B_s<0>.n B_s<1>.n B_s<2>.n B_s<3>.n DISPLAY/SIGNED_DECODER/dataSI_s<2>.n DISPLAY/SIGNED_DECODER/dataSI_s<4>.n DISPLAY/SIGNED_DECODER/dataSI_s<5>.n DISPLAY/SIGNED_DECODER/dataSI_s<6>.n DISPLAY/SIGNED_DECODER/dataUN_s<2>.n DISPLAY/SIGNED_DECODER/dataUN_s<4>.n DISPLAY/SIGNED_DECODER/dataUN_s<5>.n DISPLAY/SIGNED_DECODER/dataUN_s<6>.n MY_ALU/F_ADDER_1/carry_2to3_s.n MY_ALU/F_ADDER_1/carry_4to5_s.n MY_ALU/Mxor_status_o<4>__xor0001.n MY_ALU/control_s.n N_PZ_376.n N_PZ_468.n operation_s<0>.n operation_s<1>.n
+clk[1] clk_i 
 CTC: 
 CTR: 
 CTS: 
 CTE: 
 vref: [0]
-Signal[ 2] [SW_CPLD<8>(34)] [SW_CPLD<9>(35)] 
-Signal[ 2] [ 0: SW_CPLD<8>(34)  ][ 1: SW_CPLD<9>(35)  ][ 2:  ][ 3: (38)  ][ 4:  ][ 5:  ][ 6:  ][ 7:  ][ 8:  ] 
-           [ 9:  ][ 10:  ][ 11: (39)  ][ 12: (40)  ][ 13: (41)  ][ 14: (42)  ][ 15: (43)  ]
+Signal[14] [LED_CPLD<1>(225),LED_CPLD<1>(34)] [DISPLAY/data0_s<2>(235)] [DISPLAY/data1_s<0>(234)]  
+           [DISPLAY/data1_s<1>(233)] [DISPLAY/data1_s<2>(232)] [N_PZ_521(231)] [MY_ALU/control_s(230)]  
+           [number_s<0>(229)] [number_s<1>(227)] [MY_ALU/F_ADDER_1/carry_2to3_s(240)] [number_s<2>(239)]  
+           [number_s<3>(238)] [N_PZ_376(237)] [N_PZ_377(236)] 
+Signal[14] [ 0: LED_CPLD<1>(225) LED_CPLD<1>(34)  ][ 1: (35)  ][ 2: number_s<1>(227)  ][ 3: (38)  ][ 4:  
+           number_s<0>(229)  ][ 5: MY_ALU/control_s(230)  ][ 6: N_PZ_521(231)  ][ 7: DISPLAY/data1_s<2>(232)  
+            ][ 8: DISPLAY/data1_s<1>(233)  ][ 9: DISPLAY/data1_s<0>(234)  ][ 10: DISPLAY/data0_s<2>(235)  ] 
+           [ 11: N_PZ_377(236) (39)  ][ 12: N_PZ_376(237) (40)  ][ 13: number_s<3>(238) (41)  ][ 14:  
+           number_s<2>(239) (42)  ][ 15: MY_ALU/F_ADDER_1/carry_2to3_s(240) (43)  ]
 ----------------- B l o c k 6 ------------------
+PLApt(55/56), Fanin(19/38), Clk(1/3), Bct(0/4), Pin(3/8), Mcell(11/16)
+PLApts[55/55] 47 133 135 273 274 275 276 280 284 281 282 283 285 267 269 129 131 270 277 94 124 125 246 248 253 254 256 259 261 263 264 121 265 120 122 241 249 130 123 126 242 245 247 252 255 257 258 132 134 260 262 266 268 49 50
+Fanins[19] LED_CPLD<0>.n A_s<4>.n A_s<5>.n A_s<6>.n A_s<7>.n B_s<4>.n B_s<5>.n B_s<6>.n B_s<7>.n MY_ALU/F_ADDER_1/carry_6to7_s.n MY_ALU/control_s.n N_PZ_377.n N_PZ_378.n N_PZ_471.n N_PZ_499.n number_s<0>.n number_s<1>.n operation_s<0>.n operation_s<1>.n
+clk[1] clk_i 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[11] [LED_CPLD<2>(245),LED_CPLD<2>(26)] [LED_CPLD<0>(246),LED_CPLD<0>(25)]  
+           [LED_CPLD<3>(251),LED_CPLD<3>(24)] [number_s<6>(250)] [number_s<5>(249)] [number_s<4>(248)]  
+           [MY_ALU/F_ADDER_1/carry_6to7_s(247)] [N_PZ_378(244)] [N_PZ_471(243)] [N_PZ_499(242)]  
+           [N_PZ_474(241)] 
+Signal[11] [ 0: N_PZ_474(241)  ][ 1: N_PZ_499(242)  ][ 2: N_PZ_471(243)  ][ 3: N_PZ_378(244)  ][ 4:  
+           LED_CPLD<2>(245) LED_CPLD<2>(26)  ][ 5: LED_CPLD<0>(246) LED_CPLD<0>(25)  ][ 6:  
+           MY_ALU/F_ADDER_1/carry_6to7_s(247)  ][ 7: number_s<4>(248)  ][ 8: number_s<5>(249)  ][ 9:  
+           number_s<6>(250)  ][ 10: LED_CPLD<3>(251) LED_CPLD<3>(24)  ][ 11: (23)  ][ 12: (22)  ][ 13: (21)  
+            ][ 14: (20)  ][ 15: (19)  ]
 ----------------- B l o c k 7 ------------------
+PLApt(25/56), Fanin(22/38), Clk(0/3), Bct(1/4), Pin(0/8), Mcell(16/16)
+PLApts[25/53] 114 117 217 220 11 222 227 230 232 233 28 () () 27 () () 26 () () 20 () () 25 () () 24 () () 19 () () 18 () () 17 () () 16 () () 23 () () 22 () () 21 () () 15 () () 14
+Fanins[22] A_s<2>.n A_s<3>.n B_s<2>.n B_s<3>.n MY_ALU/control_s.n N_PZ_376.n SECV_READER/regA<0>.n SECV_READER/regA<1>.n SECV_READER/regA<2>.n SECV_READER/regA<3>.n SECV_READER/regA<4>.n SECV_READER/regA<5>.n SECV_READER/regA<6>.n SECV_READER/regA<7>.n SECV_READER/regB<0>.n SECV_READER/regB<1>.n SECV_READER/regB<2>.n SECV_READER/regB<3>.n SECV_READER/regB<4>.n SECV_READER/regB<5>.n SECV_READER/regB<6>.n SECV_READER/s_state_FSM_FFd3.n
+clk[0] 
+CTC: (pt=11) SECV_READER/s_state_FSM_FFd3 ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[16] [MY_ALU/F_ADDER_1/carry_4to5_s(272)] [A_s<0>(271)] [A_s<1>(270)] [A_s<2>(266)] [A_s<3>(265)]  
+           [A_s<4>(264)] [A_s<5>(263)] [A_s<6>(260)] [A_s<7>(269)] [B_s<0>(268)] [B_s<1>(267)] [B_s<2>(262)]  
+           [B_s<3>(261)] [B_s<4>(259)] [B_s<5>(258)] [B_s<6>(257)] 
+Signal[16] [ 0: B_s<6>(257) (44)  ][ 1: B_s<5>(258) (45)  ][ 2: B_s<4>(259) (46)  ][ 3: A_s<6>(260)  ][ 4:  
+           B_s<3>(261) (48)  ][ 5: B_s<2>(262) (49)  ][ 6: A_s<5>(263)  ][ 7: A_s<4>(264)  ][ 8: A_s<3>(265)  
+            ][ 9: A_s<2>(266)  ][ 10: B_s<1>(267) (50)  ][ 11: B_s<0>(268) (51)  ][ 12: A_s<7>(269) (52)  ] 
+           [ 13: A_s<1>(270)  ][ 14: A_s<0>(271)  ][ 15: MY_ALU/F_ADDER_1/carry_4to5_s(272)  ]
 ----------------- B l o c k 8 ------------------
+PLApt(4/56), Fanin(4/38), Clk(0/3), Bct(1/4), Pin(0/8), Mcell(3/16)
+PLApts[4/56] () () () () 11 () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () () 31 () () 30 () () () () () () () () () () () () () () 29
+Fanins[ 4] SECV_READER/regB<7>.n SECV_READER/regO<0>.n SECV_READER/regO<1>.n SECV_READER/s_state_FSM_FFd3.n
+clk[0] 
+CTC: (pt=11) SECV_READER/s_state_FSM_FFd3 ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 3] [B_s<7>(288)] [operation_s<0>(283)] [operation_s<1>(282)] 
+Signal[ 3] [ 0: (112)  ][ 1: (113)  ][ 2:  ][ 3: (114)  ][ 4:  ][ 5: (115)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  
+           operation_s<1>(282)  ][ 10: operation_s<0>(283)  ][ 11: (116)  ][ 12: (117)  ][ 13: (118)  ][ 14:  
+           (119)  ][ 15: B_s<7>(288)  ]
 ----------------- B l o c k 9 ------------------
 ----------------- B l o c k 10 ------------------
 ----------------- B l o c k 11 ------------------

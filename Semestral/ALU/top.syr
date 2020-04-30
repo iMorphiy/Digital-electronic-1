@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
  
 --> Reading design: top.prj
 
@@ -81,8 +81,16 @@ Compiling vhdl file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1
 Architecture behavioral of Entity clock_enable is up to date.
 Compiling vhdl file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/hex_to_7seg.vhd" in Library work.
 Architecture behavioral of Entity hex_to_7seg is up to date.
+Compiling vhdl file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/signed_to_display_driver.vhd" in Library work.
+Architecture behavioral of Entity signed_to_display_driver is up to date.
 Compiling vhdl file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ADDER8BIT.vhd" in Library work.
 Architecture behavioral of Entity adder8bit is up to date.
+Compiling vhdl file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/instruction_enable.vhd" in Library work.
+Entity <instruction_enable> compiled.
+Entity <instruction_enable> (Architecture <Behavioral>) compiled.
+Compiling vhdl file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/READER.vhd" in Library work.
+Entity <READER> compiled.
+Entity <READER> (Architecture <Behavioral>) compiled.
 Compiling vhdl file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.vhd" in Library work.
 Architecture behavioral of Entity alu is up to date.
 Compiling vhdl file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/driver_7seg.vhd" in Library work.
@@ -96,6 +104,10 @@ Entity <top> (Architecture <behavioral>) compiled.
 =========================================================================
 Analyzing hierarchy for entity <top> in library <work> (architecture <behavioral>).
 
+Analyzing hierarchy for entity <instruction_enable> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <READER> in library <work> (architecture <Behavioral>).
+
 Analyzing hierarchy for entity <ALU> in library <work> (architecture <Behavioral>).
 
 Analyzing hierarchy for entity <driver_7seg> in library <work> (architecture <Behavioral>).
@@ -107,6 +119,8 @@ Analyzing hierarchy for entity <clock_enable> in library <work> (architecture <B
 
 Analyzing hierarchy for entity <hex_to_7seg> in library <work> (architecture <Behavioral>).
 
+Analyzing hierarchy for entity <signed_to_display_driver> in library <work> (architecture <Behavioral>).
+
 Analyzing hierarchy for entity <FULL_ADDER> in library <work> (architecture <Behavioral>).
 
 
@@ -115,6 +129,14 @@ Analyzing hierarchy for entity <FULL_ADDER> in library <work> (architecture <Beh
 =========================================================================
 Analyzing Entity <top> in library <work> (Architecture <behavioral>).
 Entity <top> analyzed. Unit <top> generated.
+
+Analyzing Entity <instruction_enable> in library <work> (Architecture <Behavioral>).
+Entity <instruction_enable> analyzed. Unit <instruction_enable> generated.
+
+Analyzing Entity <READER> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:819 - "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/READER.vhd" line 56: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <regA>, <regB>, <regO>
+Entity <READER> analyzed. Unit <READER> generated.
 
 Analyzing Entity <ALU> in library <work> (Architecture <Behavioral>).
 INFO:Xst:1561 - "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.vhd" line 49: Mux is complete : default of case is discarded
@@ -127,6 +149,8 @@ Analyzing Entity <FULL_ADDER> in library <work> (Architecture <Behavioral>).
 Entity <FULL_ADDER> analyzed. Unit <FULL_ADDER> generated.
 
 Analyzing Entity <driver_7seg> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:819 - "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/driver_7seg.vhd" line 95: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <data_minus_s>
 Entity <driver_7seg> analyzed. Unit <driver_7seg> generated.
 
 Analyzing generic Entity <clock_enable> in library <work> (Architecture <Behavioral>).
@@ -136,12 +160,64 @@ Entity <clock_enable> analyzed. Unit <clock_enable> generated.
 Analyzing Entity <hex_to_7seg> in library <work> (Architecture <Behavioral>).
 Entity <hex_to_7seg> analyzed. Unit <hex_to_7seg> generated.
 
+Analyzing Entity <signed_to_display_driver> in library <work> (Architecture <Behavioral>).
+WARNING:Xst:1610 - "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/signed_to_display_driver.vhd" line 35: Width mismatch. <unsigneddata_s> has a width of 8 bits but assigned expression is 9-bit wide.
+INFO:Xst:2679 - Register <data2_s> in unit <signed_to_display_driver> has a constant value of 0000 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <data3_s> in unit <signed_to_display_driver> has a constant value of 0000 during circuit operation. The register is replaced by logic.
+Entity <signed_to_display_driver> analyzed. Unit <signed_to_display_driver> generated.
+
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Performing bidirectional port resolution...
+
+Synthesizing Unit <instruction_enable>.
+    Related source file is "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/instruction_enable.vhd".
+    Found finite state machine <FSM_0> for signal <s_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk_i                     (rising_edge)        |
+    | Power Up State     | ready                                          |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <instruction_enable> synthesized.
+
+
+Synthesizing Unit <READER>.
+    Related source file is "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/READER.vhd".
+    Found finite state machine <FSM_1> for signal <s_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 3                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk_i                     (rising_edge)        |
+    | Clock enable       | action_i                  (positive)           |
+    | Reset              | reset_i                   (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | faze_a_st                                      |
+    | Power Up State     | faze_a_st                                      |
+    | Encoding           | automatic                                      |
+    | Implementation     | automatic                                      |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 8-bit latch for signal <operation_o>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 8-bit latch for signal <A_o>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 8-bit latch for signal <B_o>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 8-bit register for signal <regA>.
+    Found 8-bit register for signal <regB>.
+    Found 8-bit register for signal <regO>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <READER> synthesized.
+
 
 Synthesizing Unit <FULL_ADDER>.
     Related source file is "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/FULL_ADDER.vhd".
@@ -152,20 +228,36 @@ Unit <FULL_ADDER> synthesized.
 Synthesizing Unit <clock_enable>.
     Related source file is "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/clock_enable.vhd".
     Found 1-bit register for signal <clock_enable_o>.
+    Found 16-bit comparator less for signal <clock_enable_o$cmp_lt0000> created at line 51.
     Found 16-bit up counter for signal <s_cnt>.
     Found 16-bit comparator greatequal for signal <s_cnt$cmp_ge0000> created at line 51.
     Summary:
 	inferred   1 Counter(s).
-	inferred   1 Comparator(s).
+	inferred   2 Comparator(s).
 Unit <clock_enable> synthesized.
 
 
 Synthesizing Unit <hex_to_7seg>.
     Related source file is "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/hex_to_7seg.vhd".
-    Found 16x7-bit ROM for signal <seg_o>.
-    Summary:
-	inferred   1 ROM(s).
 Unit <hex_to_7seg> synthesized.
+
+
+Synthesizing Unit <signed_to_display_driver>.
+    Related source file is "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/signed_to_display_driver.vhd".
+    Found 4-bit register for signal <data0_s>.
+    Found 8-bit comparator less for signal <data0_s_2$cmp_lt0000> created at line 55.
+    Found 4-bit register for signal <data1_s>.
+    Found 1-bit register for signal <data_minus_s>.
+    Found 8-bit comparator greatequal for signal <data_minus_s$or0000>.
+    Found 8-bit register for signal <dataSI_s>.
+    Found 8-bit register for signal <dataUN_s>.
+    Found 8-bit comparator greater for signal <dataUN_s$cmp_gt0000> created at line 42.
+    Found 8-bit adder for signal <unsigneddata_s>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+Unit <signed_to_display_driver> synthesized.
 
 
 Synthesizing Unit <driver_7seg>.
@@ -173,6 +265,7 @@ Synthesizing Unit <driver_7seg>.
 WARNING:Xst:1780 - Signal <s_dig> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Found 1-of-4 decoder for signal <dig_o>.
     Found 2-bit up counter for signal <s_cnt>.
+    Found 4-bit 4-to-1 multiplexer for signal <s_hex>.
     Summary:
 	inferred   1 Counter(s).
 	inferred   1 Decoder(s).
@@ -199,6 +292,7 @@ Unit <ALU> synthesized.
 
 Synthesizing Unit <top>.
     Related source file is "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/top.vhd".
+WARNING:Xst:646 - Signal <operation_s<7:2>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <top> synthesized.
 
 
@@ -206,16 +300,24 @@ Unit <top> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 1
- 16x7-bit ROM                                          : 1
+# Adders/Subtractors                                   : 1
+ 8-bit adder                                           : 1
 # Counters                                             : 2
  16-bit up counter                                     : 1
  2-bit up counter                                      : 1
-# Registers                                            : 3
- 1-bit register                                        : 2
- 8-bit register                                        : 1
-# Comparators                                          : 1
+# Registers                                            : 17
+ 1-bit register                                        : 11
+ 8-bit register                                        : 6
+# Latches                                              : 3
+ 8-bit latch                                           : 3
+# Comparators                                          : 5
  16-bit comparator greatequal                          : 1
+ 16-bit comparator less                                : 1
+ 8-bit comparator greatequal                           : 1
+ 8-bit comparator greater                              : 1
+ 8-bit comparator less                                 : 1
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
 # Decoders                                             : 1
  1-of-4 decoder                                        : 1
 # Xors                                                 : 16
@@ -229,18 +331,41 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <SECV_READER/s_state/FSM> on signal <s_state[1:3]> with one-hot encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ faze_a_st    | 001
+ faze_b_st    | 010
+ faze_oper_st | 100
+--------------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <BUTTON_ENABLE/s_state/FSM> on signal <s_state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ ready | 00
+ onn   | 01
+ off   | 10
+-------------------
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 1
- 16x7-bit ROM                                          : 1
+# FSMs                                                 : 2
+# Adders/Subtractors                                   : 1
+ 8-bit adder                                           : 1
 # Counters                                             : 2
  16-bit up counter                                     : 1
  2-bit up counter                                      : 1
-# Registers                                            : 1
- Flip-Flops                                            : 1
+# Registers                                            : 9
+ Flip-Flops                                            : 9
+# Latches                                              : 3
+ 8-bit latch                                           : 3
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
 # Decoders                                             : 1
  1-of-4 decoder                                        : 1
 # Xors                                                 : 9
@@ -257,11 +382,53 @@ Optimizing unit <top> ...
 
 Optimizing unit <hex_to_7seg> ...
 
+Optimizing unit <instruction_enable> ...
+  implementation constraint: INIT=r	 : s_state_FSM_FFd2
+  implementation constraint: INIT=r	 : s_state_FSM_FFd1
+
+Optimizing unit <READER> ...
+  implementation constraint: INIT=r	 : regO_2
+  implementation constraint: INIT=r	 : regO_6
+  implementation constraint: INIT=r	 : regO_0
+  implementation constraint: INIT=r	 : regO_7
+  implementation constraint: INIT=r	 : regB_0
+  implementation constraint: INIT=r	 : regB_1
+  implementation constraint: INIT=r	 : regO_1
+  implementation constraint: INIT=r	 : regB_2
+  implementation constraint: INIT=r	 : regO_3
+  implementation constraint: INIT=r	 : regO_4
+  implementation constraint: INIT=r	 : regO_5
+  implementation constraint: INIT=r	 : regB_7
+  implementation constraint: INIT=r	 : regA_0
+  implementation constraint: INIT=r	 : regA_1
+  implementation constraint: INIT=s	 : s_state_FSM_FFd3
+  implementation constraint: INIT=r	 : regA_3
+  implementation constraint: INIT=r	 : regA_4
+  implementation constraint: INIT=r	 : regA_5
+  implementation constraint: INIT=r	 : regA_6
+  implementation constraint: INIT=r	 : regA_7
+  implementation constraint: INIT=r	 : s_state_FSM_FFd1
+  implementation constraint: INIT=r	 : s_state_FSM_FFd2
+  implementation constraint: INIT=r	 : regA_2
+  implementation constraint: INIT=r	 : regB_3
+  implementation constraint: INIT=r	 : regB_4
+  implementation constraint: INIT=r	 : regB_5
+  implementation constraint: INIT=r	 : regB_6
+
 Optimizing unit <FULL_ADDER> ...
+
+Optimizing unit <signed_to_display_driver> ...
+  implementation constraint: INIT=r	 : data0_s_2
+  implementation constraint: INIT=r	 : data0_s_3
+  implementation constraint: INIT=r	 : data1_s_0
+  implementation constraint: INIT=r	 : data1_s_1
+  implementation constraint: INIT=r	 : data1_s_2
+  implementation constraint: INIT=r	 : data1_s_3
+  implementation constraint: INIT=r	 : data0_s_0
+  implementation constraint: INIT=r	 : data0_s_1
 
 Optimizing unit <clock_enable> ...
   implementation constraint: INIT=r	 : s_cnt_15
-  implementation constraint: INIT=r	 : s_cnt_14
   implementation constraint: INIT=r	 : s_cnt_0
   implementation constraint: INIT=r	 : s_cnt_1
   implementation constraint: INIT=r	 : s_cnt_2
@@ -276,14 +443,27 @@ Optimizing unit <clock_enable> ...
   implementation constraint: INIT=r	 : s_cnt_11
   implementation constraint: INIT=r	 : s_cnt_12
   implementation constraint: INIT=r	 : s_cnt_13
+  implementation constraint: INIT=r	 : s_cnt_14
 
 Optimizing unit <ADDER8BIT> ...
 
 Optimizing unit <driver_7seg> ...
-  implementation constraint: INIT=r	 : s_cnt_1
   implementation constraint: INIT=r	 : s_cnt_0
+  implementation constraint: INIT=r	 : s_cnt_1
 
 Optimizing unit <ALU> ...
+WARNING:Xst:2677 - Node <operation_o_2> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <operation_o_3> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <operation_o_4> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <operation_o_5> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <operation_o_6> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <operation_o_7> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <regO_2> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <regO_3> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <regO_4> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <regO_5> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <regO_6> of sequential type is unconnected in block <SECV_READER>.
+WARNING:Xst:2677 - Node <regO_7> of sequential type is unconnected in block <SECV_READER>.
 
 =========================================================================
 *                           Partition Report                            *
@@ -312,36 +492,39 @@ Clock Enable                       : YES
 wysiwyg                            : NO
 
 Design Statistics
-# IOs                              : 35
+# IOs                              : 27
 
 Cell Usage :
-# BELS                             : 393
-#      AND2                        : 134
-#      AND3                        : 3
-#      AND4                        : 1
+# BELS                             : 517
+#      AND2                        : 166
+#      AND3                        : 16
+#      AND4                        : 4
 #      AND8                        : 1
-#      GND                         : 1
-#      INV                         : 107
-#      OR2                         : 99
-#      OR8                         : 1
-#      XOR2                        : 46
-# FlipFlops/Latches                : 28
-#      FD                          : 26
-#      FDCE                        : 2
-# IO Buffers                       : 35
-#      IBUF                        : 19
+#      GND                         : 2
+#      INV                         : 161
+#      OR2                         : 108
+#      OR3                         : 5
+#      OR7                         : 1
+#      XOR2                        : 53
+# FlipFlops/Latches                : 94
+#      FD                          : 37
+#      FDCE                        : 38
+#      FDPE                        : 1
+#      LD                          : 18
+# IO Buffers                       : 27
+#      IBUF                        : 11
 #      OBUF                        : 16
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.98 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.77 secs
  
 --> 
 
-Total memory usage is 4474912 kilobytes
+Total memory usage is 4474908 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
-Number of infos    :    1 (   0 filtered)
+Number of warnings :   20 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 

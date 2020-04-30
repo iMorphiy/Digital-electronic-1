@@ -13,12 +13,12 @@
 # Buttons & switches
 #-----------------------------------------------------------------------
 # Two push buttons
-#NET BTN1        LOC = P94;
-#NET BTN0        LOC = P143;
+NET BTN1        LOC = P94;
+NET BTN0        LOC = P143;
 
 # Two slide switches
-NET SW<1>         LOC = P124;
-NET SW<0>         LOC = P39;
+#NET SW<1>         LOC = P124;
+#NET SW<0>         LOC = P39;
 
 #-----------------------------------------------------------------------
 # Four discrete LEDs
@@ -83,14 +83,14 @@ NET clk_i           LOC = P38;
 #  o   o   o   o
 #  12  8   4   0
 #
-NET SW_CPLD<15>	LOC = P9;
-NET SW_CPLD<14>	LOC = P10;
-NET SW_CPLD<13>	LOC = P6;
-NET SW_CPLD<12>	LOC = P7;
-NET SW_CPLD<11>	LOC = P4;
-NET SW_CPLD<10>	LOC = P5;
-NET SW_CPLD<9>		LOC = P2;
-NET SW_CPLD<8>		LOC = P3;
+#NET SW_CPLD<15>	LOC = P9;
+#NET SW_CPLD<14>	LOC = P10;
+#NET SW_CPLD<13>	LOC = P6;
+#NET SW_CPLD<12>	LOC = P7;
+#NET SW_CPLD<11>	LOC = P4;
+#NET SW_CPLD<10>	LOC = P5;
+#NET SW_CPLD<9>		LOC = P2;
+#NET SW_CPLD<8>		LOC = P3;
 NET SW_CPLD<7>		LOC = P140;
 NET SW_CPLD<6>		LOC = P142;
 NET SW_CPLD<5>		LOC = P138;

@@ -17,9 +17,6 @@ end READER;
 architecture Behavioral of READER is
 	type FAZE_ST is (FAZE_A_ST, FAZE_B_ST, FAZE_OPER_ST);
 	signal s_state: FAZE_ST := FAZE_A_ST;
-	signal A_s : std_logic_vector(7 downto 0) := "00000000";
-	signal B_s : std_logic_vector(7 downto 0) := "00000000";
-	signal OPER_s : std_logic_vector(1 downto 0) := "00";
 	signal regA : bit_vector (7 downto 0) := "00000000";
 	signal regB : bit_vector (7 downto 0) := "00000000";
 	signal regO : bit_vector (7 downto 0) := "00000000";
@@ -30,8 +27,11 @@ process(clk_i, action_i, reset_i, data_i, s_state)
 begin
 
 		if reset_i = '0' then
+			regA <= "00000000";
+			regB <= "00000000";
+			regO <= "00000000";
 			s_state <= FAZE_A_ST;
-		elsif rising_edge(action_i) then
+		elsif rising_edge(clk_i) and action_i = '1' then
 			case s_state is
 				when FAZE_A_ST =>
 					regA <= To_bitvector(data_i);

@@ -17,7 +17,9 @@ use ieee.std_logic_1164.all;
 ------------------------------------------------------------------------
 entity hex_to_7seg is
     port (hex_i: in  std_logic_vector(4-1 downto 0);
-          seg_o: out std_logic_vector(7-1 downto 0));
+          seg_o: out std_logic_vector(7-1 downto 0);
+			 minus_i: in std_logic
+			 );
 end entity hex_to_7seg;
 
 ------------------------------------------------------------------------
@@ -56,7 +58,8 @@ begin
 	 
 	 
 	 
-    seg_o <= "0000001" when (hex_i = "0000") else   -- 0 
+    seg_o <= "1111110" when (minus_i = '1') else   -- 0 
+				 "0000001" when (hex_i = "0000") else   -- 0 
              "1001111" when (hex_i = "0001") else   -- 1
 				 "0010010" when (hex_i = "0010") else   -- 2
 				 "0000110" when (hex_i = "0011") else   -- 3
@@ -71,6 +74,6 @@ begin
 				 "0110001" when (hex_i = "1100") else   -- C
 				 "1000010" when (hex_i = "1101") else   -- D                   
              "0110000" when (hex_i = "1110") else   -- E
-             "0111000";                             -- F
-
+             "0111000";                             -- F (-)
+				 
 end architecture Behavioral;
