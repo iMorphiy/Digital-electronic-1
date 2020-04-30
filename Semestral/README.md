@@ -91,7 +91,7 @@ The most interesting of these is the test of Overflow[[5]]
 ## Sequential implementation
 
 #### Possibility of use Sequential READER
-Sequential READER can be placed in top.vhdl. It is able to read 3 bytes in a row (reads the rising_edge), Number_A, Number_B and operation (you can decide witch 2 bits will use)
+Sequential READER can be placed in top.vhdl. It is able to read 3 bytes in a row (reads in rising_edge), Number_A, Number_B and operation (you can decide witch 2 bits will use for oper.)
 
 #### TEST of Sequential READER
 ![TEST_FULL_ADDRE](IMG/TEST_READER.png)
