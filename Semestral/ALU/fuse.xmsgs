@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Simulator" num="0" delta="unknown" >Unable to copy libPortabilityNOSH.dll to the simulation executable directory: <arg fmt="%s" index="1">boost::filesystem::copy_file: Syst￩m nem￹ﾞe nal￩zt uvedenou cestu, &quot;isim\TEST_ALU_isim_beh.exe.sim\libPortability.dll&quot;</arg>.
+<msg type="warning" file="Simulator" num="0" delta="unknown" >Unable to copy libPortabilityNOSH.dll to the simulation executable directory: <arg fmt="%s" index="1">boost::filesystem::copy_file: Syst￩m nem￹ﾞe nal￩zt uvedenou cestu, &quot;isim\TEST_READER_isim_beh.exe.sim\libPortability.dll&quot;</arg>.
 </msg>
 
 </messages>

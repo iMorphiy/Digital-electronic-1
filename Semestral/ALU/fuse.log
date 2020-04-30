@@ -1,24 +1,20 @@
-Running: D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_ALU_isim_beh.exe -prj C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_ALU_beh.prj work.TEST_ALU 
+Running: D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_READER_isim_beh.exe -prj C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_READER_beh.prj work.TEST_READER 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/FULL_ADDER.vhd" into library work
-Parsing VHDL file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ADDER8BIT.vhd" into library work
-Parsing VHDL file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/ALU.vhd" into library work
-Parsing VHDL file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_ALU.vhd" into library work
+Parsing VHDL file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/READER.vhd" into library work
+Parsing VHDL file "C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_READER.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
-Compiling architecture behavioral of entity FULL_ADDER [full_adder_default]
-Compiling architecture behavioral of entity ADDER8BIT [adder8bit_default]
-Compiling architecture behavioral of entity ALU [alu_default]
-Compiling architecture behavior of entity test_alu
+Compiling architecture behavioral of entity READER [reader_default]
+Compiling architecture behavior of entity test_reader
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: Systém nemù e nalézt uvedenou cestu, "isim\TEST_ALU_isim_beh.exe.sim\libPortability.dll".
-Compiled 9 VHDL Units
-Built simulation executable C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_ALU_isim_beh.exe
-Fuse Memory Usage: 29836 KB
-Fuse CPU Usage: 453 ms
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: Systém nemù e nalézt uvedenou cestu, "isim\TEST_READER_isim_beh.exe.sim\libPortability.dll".
+Compiled 5 VHDL Units
+Built simulation executable C:/Users/vyma9/OneDrive/Plocha/VUT/DE1/Digital-electronic-1/Semestral/ALU/TEST_READER_isim_beh.exe
+Fuse Memory Usage: 29784 KB
+Fuse CPU Usage: 452 ms

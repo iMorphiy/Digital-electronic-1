@@ -1,3 +1,1 @@
-work	"ADDER8BIT.vhd"
-work	"ALU.vhd"
-work	"FULL_ADDER.vhd"
+work	"READER.vhd"

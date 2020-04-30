@@ -1,0 +1,2 @@
+vhdl isim_temp "READER.vhd"
+vhdl isim_temp "TEST_READER.vhd"
