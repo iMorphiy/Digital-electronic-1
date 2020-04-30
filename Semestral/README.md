@@ -54,7 +54,12 @@ Simple ALU should by able to do this instructions[[1]](1):\
 
 ## SIMULATIONS
 
-![TEST_FULL_ADDRE](IMG\TEST_FULL_ADDER.png)
+#### Test of FULL ADDER block
+![TEST_FULL_ADDRE](IMG/TEST_FULL_ADDER.png)
+#### Test of 8bit adder with control input signal
+![TEST_ADDER8BIT](IMG/TEST_ADDER8BIT.png)
+#### Test of final ALU
+![TEST_ALU](IMG/TEST_ALU.png)
 
 ## Resources
 \[1] [https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf](https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf)
