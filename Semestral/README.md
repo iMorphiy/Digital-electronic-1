@@ -10,7 +10,8 @@ Implementation of ALU (arithmetic logic unit)
 ## Problem analysis
 ALU (arithmetic logic unit) is a combinatorial logic unit witch do mathematical operations,  usually is used part of processor. All ALU must be implemented partially sequentially for reasons that would be huge. For study purposes, we also decided to implement it sequentially too.
 
-Simple ALU should by able to do this instructions:[[1]](1)
+#### Simple operations
+Simple ALU should by able to do this instructions:[[1]]
 
 \(C code is demonstration how to this instructions should work)
 
@@ -68,6 +69,21 @@ It brings many benefits. Sum of two signed numbers is easier and subtraction can
 Let's see a picture[[4]]
 ![TEST_FULL_ADDRE](IMG/NbitAdder.gif)
 
+#### OUTPUT into 7 segment display
+For easier implementation, we used modules from previous LABs.
+For this reason, the statement is NOT clear, because we display individual bytes as they are in output. for positive numbers is not so big problem but if we will want display negative member, output will be difficult to read.
+
+**It is one of the problems that should be solved in the future**
+
+#### OUTPUT into 5 LEDs
+The next output is 5 LEDs, each of which signals the other outputs, in order Carry-out Output, Zero Output, Negative Output, Overflow Output and Parity bit.
+(HIGH value is active)
+
+  - Carry-out - sum of two numbers is bigger then max value of output number
+  - Zero - output value from ALU is equal to 0
+  - Negative - output value from ALU is negative
+  - Overflow - output value from ALU is NOT true, value has been Overflow
+  - Parity bit - get parity bit from output value (odd parity)
 
 ## Implementation
 
