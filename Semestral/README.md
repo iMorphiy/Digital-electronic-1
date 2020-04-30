@@ -52,6 +52,10 @@ Simple ALU should by able to do this instructions[[1]](1):\
 ## Implementation
 
 
+## SIMULATIONS
+
+![TEST_FULL_ADDRE](IMG\TEST_FULL_ADDER.png)
+
 ## Resources
 \[1] [https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf](https://cw.fel.cvut.cz/old/_media/courses/a0b36apo/lectures/02/a0b36apo_prednaska02_2014.pdf)
 
